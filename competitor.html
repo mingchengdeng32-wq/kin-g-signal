@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金信诺竞争格局 & 投资推荐 | 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F;--surface:rgba(255,255,255,.042);--surface-h:rgba(255,255,255,.07);
+  --b:rgba(201,163,71,.18);--bs:rgba(255,255,255,.07);
+  --gold:#C9A347;--gl:#E8C76A;--gd:rgba(201,163,71,.22);
+  --bull:#15B77D;--bd:rgba(21,183,125,.14);
+  --bear:#E04455;--rd:rgba(224,68,85,.14);
+  --ice:#4A9EDB;--id:rgba(74,158,219,.14);
+  --amber:#F5A623;--ad:rgba(245,166,35,.14);
+  --txt:#E2D9CC;--muted:rgba(226,217,204,.55);--dim:rgba(226,217,204,.32);
+  --serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:var(--bg);color:var(--txt);font-family:var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;
+  background-image:linear-gradient(rgba(201,163,71,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(201,163,71,.035) 1px,transparent 1px);
+  background-size:60px 60px;pointer-events:none;z-index:0}
+.deck{width:100vw;height:100vh;position:relative;overflow:hidden}
+.slide{position:absolute;inset:0;width:100vw;height:100vh;display:flex;flex-direction:column;
+  padding:clamp(1.2rem,2.5vw,2.5rem) clamp(1.8rem,4.5vw,4.5rem);
+  opacity:0;transform:translateY(28px);pointer-events:none;z-index:1;overflow:hidden;
+  transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
+.slide.active{opacity:1;transform:translateY(0);pointer-events:all}
+.slide.exit{opacity:0;transform:translateY(-28px)}
+#pb{position:fixed;bottom:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gl));transition:width .4s ease;z-index:100}
+nav{position:fixed;bottom:1.2rem;right:1.8rem;display:flex;align-items:center;gap:.7rem;z-index:100}
+.nb{width:34px;height:34px;border-radius:50%;background:var(--surface);border:1px solid var(--b);
+  color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .2s,transform .2s;font-size:.95rem}
+.nb:hover{background:var(--gd);transform:scale(1.1)}
+#ctr{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.08em}
+.lbl{font-family:var(--mono);font-size:clamp(.58rem,.82vw,.7rem);color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.35rem;opacity:.8}
+.ttl{font-family:var(--serif);font-size:clamp(1.3rem,2.3vw,2rem);font-weight:700;color:var(--txt);line-height:1.2;margin-bottom:clamp(.6rem,1.5vh,1.2rem)}
+.ttl span{color:var(--gold)}
+.div{width:2.2rem;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:clamp(.6rem,1.5vh,1.2rem)}
+.card{background:var(--surface);border:1px solid var(--bs);border-radius:8px;padding:clamp(.7rem,1.3vw,1rem);transition:background .2s,border-color .2s}
+.card:hover{background:var(--surface-h);border-color:var(--b)}
+.card.gold{border-color:var(--gd)}
+.card.bull{border-color:rgba(21,183,125,.25);background:var(--bd)}
+.card.bear{border-color:rgba(224,68,85,.25);background:var(--rd)}
+.card.ice{border-color:rgba(74,158,219,.25);background:var(--id)}
+.ml{font-size:clamp(.58rem,.8vw,.68rem);color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem}
+.mv{font-family:var(--mono);font-size:clamp(1rem,1.8vw,1.5rem);font-weight:600}
+.mv.gold{color:var(--gold)} .mv.bull{color:var(--bull)} .mv.bear{color:var(--bear)} .mv.ice{color:var(--ice)} .mv.amber{color:var(--amber)}
+.mc{font-family:var(--mono);font-size:clamp(.58rem,.78vw,.68rem);margin-top:.2rem}
+.up{color:var(--bull)} .dn{color:var(--bear)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.5rem,1vw,.9rem)}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.5rem,1vw,.9rem)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.8rem,1.5vw,1.4rem)}
+.gsp{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(.8rem,1.8vw,1.6rem);flex:1;min-height:0}
+.note{font-size:clamp(.54rem,.74vw,.62rem);color:var(--dim);font-style:italic;line-height:1.6;margin-top:auto;padding-top:.5rem}
+.tag{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:.12rem .38rem;border-radius:3px;margin-right:.25rem;background:var(--gd);color:var(--gold);border:1px solid rgba(201,163,71,.28)}
+
+/* ── COMPANY TABLE ── */
+.ctbl{width:100%;border-collapse:separate;border-spacing:0 .3rem}
+.ctbl th{font-size:clamp(.55rem,.78vw,.65rem);color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.3rem .5rem;text-align:center}
+.ctbl th:first-child{text-align:left}
+.ctbl td{padding:clamp(.35rem,.7vh,.55rem) .5rem;font-size:clamp(.62rem,.88vw,.75rem);background:var(--surface);vertical-align:middle;text-align:center}
+.ctbl tr td:first-child{border-radius:6px 0 0 6px;text-align:left;padding-left:.7rem}
+.ctbl tr td:last-child{border-radius:0 6px 6px 0}
+.ctbl tr.highlight td{background:rgba(201,163,71,.06);border-top:1px solid rgba(201,163,71,.15);border-bottom:1px solid rgba(201,163,71,.15)}
+.ctbl tr.highlight td:first-child{border-left:2px solid var(--gold);border-radius:6px 0 0 6px}
+.ctbl tr.highlight td:last-child{border-radius:0 6px 6px 0;border-right:1px solid rgba(201,163,71,.1)}
+
+/* ── SCORE DOTS ── */
+.sdots{display:flex;gap:3px;justify-content:center;align-items:center}
+.dot{width:9px;height:9px;border-radius:2px;opacity:.18}
+.dot.g{background:var(--bull);opacity:1}
+.dot.r{background:var(--bear);opacity:1}
+.dot.y{background:var(--amber);opacity:1}
+.dot.b{background:var(--gold);opacity:1}
+
+/* ── RADAR/BAR ── */
+.hbar-wrap{position:relative;height:14px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.hbar{height:100%;border-radius:3px}
+
+/* ── REASON ROWS ── */
+.rrow{display:grid;grid-template-columns:2.5rem 1fr auto;align-items:center;gap:.8rem;
+  padding:clamp(.5rem,1vh,.75rem) clamp(.7rem,1.2vw,1rem);border-radius:7px;margin-bottom:.4rem;
+  border:1px solid transparent;background:var(--surface);transition:background .2s,transform .2s,border-color .2s;
+  animation:fadeSlide .4s ease both}
+.rrow.bull-r{border-color:rgba(21,183,125,.1)}
+.rrow.bull-r:hover{background:var(--bd);transform:translateX(4px);border-color:rgba(21,183,125,.28)}
+.rrow.bear-r{border-color:rgba(224,68,85,.1)}
+.rrow.bear-r:hover{background:var(--rd);transform:translateX(4px);border-color:rgba(224,68,85,.28)}
+.rnum{font-family:var(--mono);font-size:clamp(.9rem,1.6vw,1.3rem);font-weight:600;text-align:center}
+.rtitle{font-size:clamp(.72rem,1vw,.85rem);font-weight:500}
+.rsub{font-size:clamp(.58rem,.8vw,.68rem);color:var(--muted);margin-top:.12rem}
+.badge{font-family:var(--mono);font-size:.6rem;padding:.18rem .45rem;border-radius:4px;font-weight:600;white-space:nowrap}
+.badge.b{background:var(--bd);color:var(--bull);border:1px solid rgba(21,183,125,.28)}
+.badge.r{background:var(--rd);color:var(--bear);border:1px solid rgba(224,68,85,.28)}
+.badge.g{background:var(--gd);color:var(--gold);border:1px solid rgba(201,163,71,.28)}
+.badge.w{background:rgba(255,184,0,.1);color:#FFB800;border:1px solid rgba(255,184,0,.28)}
+
+@keyframes fadeSlide{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+
+/* ── PORTFOLIO BOX ── */
+.pbox{border:1px solid var(--b);border-radius:10px;padding:clamp(.8rem,1.5vw,1.3rem);background:var(--surface)}
+.prow{display:flex;justify-content:space-between;align-items:center;padding:.45rem 0;border-bottom:1px solid var(--bs);font-size:clamp(.65rem,.9vw,.78rem)}
+.prow:last-child{border-bottom:none}
+.pkey{color:var(--muted)} .pval{font-family:var(--mono);font-weight:600}
+.pval.gold{color:var(--gold)} .pval.bull{color:var(--bull)} .pval.bear{color:var(--bear)}
+
+/* ── COVER ── */
+#s0{justify-content:center}
+.c-eye{font-family:var(--mono);font-size:clamp(.6rem,.85vw,.72rem);color:var(--gold);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:.7rem}
+.c-eye::before{content:'';width:1.8rem;height:1px;background:var(--gold);display:block}
+.c-hl{font-family:var(--serif);font-size:clamp(1.8rem,4vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:.5rem;
+  background:linear-gradient(135deg,#E8C76A 0%,#C9A347 40%,#E2D9CC 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.c-sub{font-size:clamp(.8rem,1.2vw,.98rem);color:var(--muted);margin-bottom:clamp(1.2rem,2.5vh,2rem);font-weight:300;letter-spacing:.04em}
+.c-stats{display:flex;gap:clamp(1.2rem,2.5vw,2.5rem);flex-wrap:wrap;padding:clamp(.7rem,1.3vw,1.1rem) clamp(.9rem,1.8vw,1.6rem);
+  border:1px solid var(--b);border-radius:8px;background:var(--surface);margin-bottom:1.2rem;max-width:40rem}
+.csi .csl{font-size:clamp(.52rem,.7vw,.62rem);color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
+.csi .csv{font-family:var(--mono);font-size:clamp(.85rem,1.4vw,1.05rem);font-weight:600;margin-top:.2rem}
+.c-date{font-family:var(--mono);font-size:clamp(.57rem,.78vw,.67rem);color:var(--dim);letter-spacing:.08em}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- ══════ S0: COVER ══════ -->
+<section class="slide active" id="s0">
+  <div class="c-eye">竞争对手横向比较 &amp; 投资建议</div>
+  <div class="c-hl">金信诺 vs 五大对手<br>谁值得买？</div>
+  <div class="c-sub">信号互联 · 高速铜缆 · 军工连接器赛道 · 综合评分选股</div>
+  <div class="c-stats">
+    <div class="csi"><div class="csl">标的数量</div><div class="csv" style="color:var(--gold)">6 家</div></div>
+    <div class="csi"><div class="csl">对比维度</div><div class="csv">6 个维度</div></div>
+    <div class="csi"><div class="csl">投入金额</div><div class="csv" style="color:var(--bull)">20万 RMB</div></div>
+    <div class="csi"><div class="csl">持仓周期</div><div class="csv">120天</div></div>
+    <div class="csi"><div class="csl">目标收益</div><div class="csv" style="color:var(--gold)">+8%</div></div>
+    <div class="csi"><div class="csl">推荐标的</div><div class="csv" style="color:var(--bull)">立讯精密</div></div>
+  </div>
+  <div class="c-date">2026年05月20日 | 基于公开数据 | 不构成投资建议，风险自担</div>
+</section>
+
+<!-- ══════ S1: 五大对手速览 ══════ -->
+<section class="slide" id="s1">
+  <div class="lbl">01 — Competitor Landscape</div>
+  <div class="ttl">五大竞争对手<span>速览</span></div>
+  <div class="div"></div>
+
+  <div style="flex:1;overflow:hidden;">
+    <table class="ctbl">
+      <thead>
+        <tr>
+          <th style="width:7.5rem;">公司</th>
+          <th>主营赛道</th>
+          <th style="width:5.5rem;">2025营收</th>
+          <th style="width:5.5rem;">2025净利</th>
+          <th style="width:4.5rem;">净利增速</th>
+          <th style="width:4rem;">PE估值</th>
+          <th style="width:4rem;">评分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight">
+          <td><strong style="color:var(--gold)">金信诺 300252</strong><br><span style="font-size:.6rem;color:var(--muted)">基准标的</span></td>
+          <td>射频线缆·高速铜缆·卫星互联</td>
+          <td><span style="font-family:var(--mono);color:var(--gold)">24.99亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">0.14亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bull)">+14.7%</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">~494x</span></td>
+          <td><span class="badge w">16/30</span></td>
+        </tr>
+        <tr>
+          <td><strong>沃尔核材 002130</strong></td>
+          <td>高速铜缆DAC·热缩材料·AI线缆</td>
+          <td><span style="font-family:var(--mono);">~86亿E</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bull)">~11.6亿E</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bull)">+36%E</span></td>
+          <td><span style="font-family:var(--mono);">~18x(26E)</span></td>
+          <td><span class="badge g">21/30</span></td>
+        </tr>
+        <tr>
+          <td><strong>中航光电 002179</strong></td>
+          <td>军用连接器·液冷·光电组件</td>
+          <td><span style="font-family:var(--mono);">213.9亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">21.6亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">-35.6%</span></td>
+          <td><span style="font-family:var(--mono);">~23-28x</span></td>
+          <td><span class="badge g">19/30</span></td>
+        </tr>
+        <tr>
+          <td><strong>航天电器 002025</strong></td>
+          <td>宇航级连接器·军工·商业航天</td>
+          <td><span style="font-family:var(--mono);">58.2亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">1.83亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">-47.3%</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">~49x(26E)</span></td>
+          <td><span class="badge w">17/30</span></td>
+        </tr>
+        <tr style="background:rgba(21,183,125,.04);">
+          <td><strong style="color:var(--bull)">立讯精密 002475 ⭐</strong></td>
+          <td>高速连接器·消费电子·数据中心·汽车</td>
+          <td><span style="font-family:var(--mono);color:var(--bull)">3323亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bull)">166亿</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bull)">+24.2%</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bull)">~20x(26E)</span></td>
+          <td><span class="badge b">26/30</span></td>
+        </tr>
+        <tr>
+          <td><strong>通鼎互联 002491</strong></td>
+          <td>光电线缆·网络安全</td>
+          <td><span style="font-family:var(--mono);">~33亿E</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">亏损</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">-907%</span></td>
+          <td><span style="font-family:var(--mono);color:var(--bear)">N/A</span></td>
+          <td><span class="badge r">11/30</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top:clamp(.6rem,1.2vh,1rem);">
+      <div class="note">📊 数据来源：各公司年报/一季报（截至2026年5月）。净利增速为2025年全年同比。PE估值为2026年预测PE（含机构估算）。评分为综合六维评分（满分30分）。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ S2: 六维PK评分 ══════ -->
+<section class="slide" id="s2">
+  <div class="lbl">02 — Six-Dimension PK</div>
+  <div class="ttl">六维<span>PK</span>评分对比（满分30分）</div>
+  <div class="div"></div>
+
+  <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;gap:clamp(.5rem,1vh,.8rem);">
+
+    <!-- dimension header -->
+    <div style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;
+      font-family:var(--mono);font-size:.6rem;color:var(--dim);letter-spacing:.06em;padding:0 .3rem;">
+      <div></div>
+      <div style="text-align:center;">成长性</div>
+      <div style="text-align:center;">盈利质量</div>
+      <div style="text-align:center;">估值</div>
+      <div style="text-align:center;">竞争壁垒</div>
+      <div style="text-align:center;">AI布局</div>
+      <div style="text-align:center;">财务安全</div>
+    </div>
+
+    <!-- 金信诺 -->
+    <div class="card" style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;align-items:center;border-color:rgba(201,163,71,.2);">
+      <div style="font-size:.72rem;font-weight:500;color:var(--gold);">金信诺<br><span style="font-size:.6rem;color:var(--muted)">300252</span></div>
+      <div class="sdots"><div class="dot b"></div><div class="dot b"></div><div class="dot b"></div><div class="dot b"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot b"></div><div class="dot b"></div><div class="dot b"></div><div class="dot b"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot b"></div><div class="dot b"></div><div class="dot b"></div><div class="dot b"></div><div class="dot b"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+
+    <!-- 沃尔核材 -->
+    <div class="card" style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;align-items:center;">
+      <div style="font-size:.72rem;font-weight:500;">沃尔核材<br><span style="font-size:.6rem;color:var(--muted)">002130</span></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+
+    <!-- 中航光电 -->
+    <div class="card" style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;align-items:center;">
+      <div style="font-size:.72rem;font-weight:500;">中航光电<br><span style="font-size:.6rem;color:var(--muted)">002179</span></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+
+    <!-- 航天电器 -->
+    <div class="card" style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;align-items:center;">
+      <div style="font-size:.72rem;font-weight:500;">航天电器<br><span style="font-size:.6rem;color:var(--muted)">002025</span></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+
+    <!-- 立讯精密 - WINNER -->
+    <div class="card bull" style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;align-items:center;">
+      <div style="font-size:.72rem;font-weight:600;color:var(--bull);">立讯精密 ⭐<br><span style="font-size:.6rem;color:rgba(21,183,125,.7)">002475</span></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot g"></div><div class="dot"></div></div>
+    </div>
+
+    <!-- 通鼎互联 -->
+    <div class="card" style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;align-items:center;opacity:.7;">
+      <div style="font-size:.72rem;font-weight:500;color:var(--muted);">通鼎互联<br><span style="font-size:.6rem;color:var(--dim)">002491</span></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      <div class="sdots"><div class="dot r"></div><div class="dot r"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    </div>
+
+    <!-- total scores -->
+    <div style="display:grid;grid-template-columns:6.5rem repeat(6,1fr);gap:.4rem;padding:.2rem .3rem;
+      font-family:var(--mono);font-size:.62rem;color:var(--dim);">
+      <div style="font-size:.6rem;letter-spacing:.06em;color:var(--muted);">总分</div>
+      <div style="text-align:center;color:var(--bear)">16</div>
+      <div style="text-align:center;">21</div>
+      <div style="text-align:center;">19</div>
+      <div style="text-align:center;">17</div>
+      <div style="text-align:center;color:var(--bull);font-weight:600;">26 ⭐</div>
+      <div style="text-align:center;color:var(--bear)">11</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ S3: 投资推荐标题 ══════ -->
+<section class="slide" id="s3">
+  <div class="lbl">03 — Investment Pick</div>
+  <div class="ttl">最终<span>推荐</span> · 立讯精密（002475）</div>
+  <div class="div" style="background:linear-gradient(90deg,var(--bull),transparent);"></div>
+
+  <div class="gsp" style="flex:1;min-height:0;">
+    <div style="display:flex;flex-direction:column;gap:clamp(.5rem,1vh,.8rem);overflow:hidden;">
+
+      <div class="card bull">
+        <div class="ml" style="margin-bottom:.35rem;">综合评分最高</div>
+        <div style="display:flex;align-items:baseline;gap:.5rem;">
+          <div style="font-family:var(--mono);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--bull);">26</div>
+          <div style="font-family:var(--mono);font-size:clamp(.8rem,1.2vw,1rem);color:var(--muted);">/ 30分</div>
+          <div style="font-family:var(--mono);font-size:clamp(.65rem,.9vw,.78rem);color:var(--bull);padding:.2rem .5rem;background:rgba(21,183,125,.15);border-radius:4px;margin-left:.3rem;">六标的最高</div>
+        </div>
+        <div style="font-size:clamp(.65rem,.9vw,.75rem);color:var(--txt);margin-top:.4rem;line-height:1.7;">
+          成长/盈利/估值/壁垒/AI/财务六维全面领先，<br>唯一一家满足<strong style="color:var(--bull);">高增速 + 低PE + 高盈利质量</strong>三者同时成立的标的
+        </div>
+      </div>
+
+      <div class="card gold">
+        <div class="ml" style="margin-bottom:.3rem;">关键指标一览</div>
+        <div style="display:flex;flex-direction:column;gap:.4rem;">
+          <div style="display:flex;justify-content:space-between;font-size:clamp(.65rem,.9vw,.75rem);">
+            <span style="color:var(--muted);">2025全年营收</span><span style="font-family:var(--mono);color:var(--bull);">3323亿 (+23.6%)</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:clamp(.65rem,.9vw,.75rem);">
+            <span style="color:var(--muted);">2025归母净利润</span><span style="font-family:var(--mono);color:var(--bull);">166亿 (+24.2%)</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:clamp(.65rem,.9vw,.75rem);">
+            <span style="color:var(--muted);">2026 Q1净利润</span><span style="font-family:var(--mono);color:var(--bull);">36.6亿 (+20.2%)</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:clamp(.65rem,.9vw,.75rem);">
+            <span style="color:var(--muted);">扣非净利润</span><span style="font-family:var(--mono);color:var(--bull);">141亿 (+21.2%) ✓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:clamp(.65rem,.9vw,.75rem);">
+            <span style="color:var(--muted);">估值 PE 2026E</span><span style="font-family:var(--mono);color:var(--gold);">~20x (PEG&lt;1)</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:clamp(.65rem,.9vw,.75rem);">
+            <span style="color:var(--muted);">数据中心连接器</span><span style="font-family:var(--mono);color:var(--bull);">+33.81% YoY</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(.5rem,1vh,.8rem);overflow:hidden;">
+      <div class="ml" style="margin:0;">持仓方案</div>
+
+      <div class="pbox">
+        <div class="prow"><div class="pkey">推荐标的</div><div class="pval gold">立讯精密 002475</div></div>
+        <div class="prow"><div class="pkey">投入总额</div><div class="pval gold">200,000 元</div></div>
+        <div class="prow"><div class="pkey">建仓策略</div><div class="pval">分两批·各10万</div></div>
+        <div class="prow"><div class="pkey">第1批</div><div class="pval">现价附近买入 10万</div></div>
+        <div class="prow"><div class="pkey">第2批</div><div class="pval">回调3-5%时补仓 10万</div></div>
+        <div class="prow"><div class="pkey">目标收益率</div><div class="pval bull">+8%</div></div>
+        <div class="prow"><div class="pkey">目标盈利金额</div><div class="pval bull">+16,000 元</div></div>
+        <div class="prow"><div class="pkey">止损线</div><div class="pval bear">-5% → 止损减仓</div></div>
+        <div class="prow"><div class="pkey">持仓周期</div><div class="pval">120天（约4个月）</div></div>
+        <div class="prow"><div class="pkey">退出时间参考</div><div class="pval">2026年9月下旬前</div></div>
+      </div>
+
+      <div class="note">⚡ 分批建仓可降低择时风险。止损-5%=损失约10,000元，为可控损失。建议在Q2报出前（2026年8月前后）关注业绩兑现情况，适时止盈。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ S4: 推荐理由 ══════ -->
+<section class="slide" id="s4">
+  <div class="lbl">04 — Why Buy</div>
+  <div class="ttl">推荐立讯精密的<span>五大理由</span></div>
+  <div class="div" style="background:linear-gradient(90deg,var(--bull),transparent);"></div>
+
+  <div style="flex:1;overflow:hidden;">
+    <div class="rrow bull-r" style="animation-delay:.05s">
+      <div class="rnum" style="color:var(--bull)">01</div>
+      <div>
+        <div class="rtitle">六标的唯一真实高质量盈利增长 · 扣非净利润141亿</div>
+        <div class="rsub">2025净利+24.2%、扣非净利+21.2%，无须靠补贴撑业绩；Q1 2026延续+20.2%，趋势清晰</div>
+      </div>
+      <div class="badge b">质量最高</div>
+    </div>
+    <div class="rrow bull-r" style="animation-delay:.12s">
+      <div class="rnum" style="color:var(--bull)">02</div>
+      <div>
+        <div class="rtitle">估值最合理 · PE 2026E约20x · PEG &lt; 1</div>
+        <div class="rsub">以20-25%净利增速配20x PE，PEG&lt;1是成长股中的性价比标杆；相比航天电器(49x)极具优势</div>
+      </div>
+      <div class="badge b">PEG&lt;1</div>
+    </div>
+    <div class="rrow bull-r" style="animation-delay:.19s">
+      <div class="rnum" style="color:var(--bull)">03</div>
+      <div>
+        <div class="rtitle">AI数据中心连接器爆发 · 2025年通讯&数据中心业务+33.81%</div>
+        <div class="rsub">推出12.8Tbps超高密度互连全方案；1.6T LRO/LPO及3.2T NPO研发推进，卡位下一代AI基础设施</div>
+      </div>
+      <div class="badge b">+33.81%</div>
+    </div>
+    <div class="rrow bull-r" style="animation-delay:.26s">
+      <div class="rnum" style="color:var(--bull)">04</div>
+      <div>
+        <div class="rtitle">汽车电子超预期爆发 · 2025年+185.34%</div>
+        <div class="rsub">新能源汽车电子连接器第二增长极，与AI数据中心形成双轮驱动，降低单一苹果链依赖</div>
+      </div>
+      <div class="badge b">+185%</div>
+    </div>
+    <div class="rrow bull-r" style="animation-delay:.33s">
+      <div class="rnum" style="color:var(--bull)">05</div>
+      <div>
+        <div class="rtitle">首次推出中期分红 · 股东回报提升增加机构配置意愿</div>
+        <div class="rsub">分红政策改善提升机构持仓吸引力；苹果秋季新品发布（9月）可能带来阶段性催化，120天窗口内可覆盖</div>
+      </div>
+      <div class="badge b">分红利好</div>
+    </div>
+  </div>
+
+  <div class="note">💡 核心逻辑：六家中唯一同时满足"盈利质量好+估值合理+多条增长曲线"的标的，120天内基本面兑现可见度高。</div>
+</section>
+
+<!-- ══════ S5: 不推荐理由 ══════ -->
+<section class="slide" id="s5">
+  <div class="lbl">05 — Why NOT Buy</div>
+  <div class="ttl">不推荐立讯精密的<span style="color:var(--bear);">五大理由</span></div>
+  <div class="div" style="background:linear-gradient(90deg,var(--bear),transparent);"></div>
+
+  <div style="flex:1;overflow:hidden;">
+    <div class="rrow bear-r" style="animation-delay:.05s">
+      <div class="rnum" style="color:var(--bear)">01</div>
+      <div>
+        <div class="rtitle">苹果链单一集中风险 · 消费电子占营收80%</div>
+        <div class="rsub">苹果砍单/延迟/对华关税政策变化可在1天内引发10-20%股价回撤，与宏观政治高度联动</div>
+      </div>
+      <div class="badge r">最大风险</div>
+    </div>
+    <div class="rrow bear-r" style="animation-delay:.12s">
+      <div class="rnum" style="color:var(--bear)">02</div>
+      <div>
+        <div class="rtitle">体量太大 · 5000亿+市值，8%需要400亿增量资金</div>
+        <div class="rsub">大市值股需要全市场行情配合才能有效拉升；对比中小市值股，短期弹性更弱</div>
+      </div>
+      <div class="badge r">弹性偏低</div>
+    </div>
+    <div class="rrow bear-r" style="animation-delay:.19s">
+      <div class="rnum" style="color:var(--bear)">03</div>
+      <div>
+        <div class="rtitle">中美贸易摩擦/关税风险 · 大量产品出口美国</div>
+        <div class="rsub">外销占比高，若美国对中国电子零部件加征关税，立讯精密首当其冲，股价可能受压</div>
+      </div>
+      <div class="badge r">地缘风险</div>
+    </div>
+    <div class="rrow bear-r" style="animation-delay:.26s">
+      <div class="rnum" style="color:var(--bear)">04</div>
+      <div>
+        <div class="rtitle">120天催化剂窗口不确定 · 苹果新品9月发布稍晚</div>
+        <div class="rsub">苹果秋季发布会在9月，120天买入窗口（~9月下旬）可能刚好在市场消化预期阶段，信息差小</div>
+      </div>
+      <div class="badge r">时机偏晚</div>
+    </div>
+    <div class="rrow bear-r" style="animation-delay:.33s">
+      <div class="rnum" style="color:var(--bear)">05</div>
+      <div>
+        <div class="rtitle">Q1增速基数走高 · 后续超预期难度增加</div>
+        <div class="rsub">Q1 2026已+20%增速，若Q2/Q3不能维持或超越，市场预期差反转带来回调；高速成长的惯性预期压力</div>
+      </div>
+      <div class="badge r">预期压力</div>
+    </div>
+  </div>
+
+  <div class="note">⚠ 客观评估：立讯精密是六家中综合最优标的，但并非没有风险。8%目标在120天内属于中等难度，主要风险来自外部（贸易/地缘）而非基本面。</div>
+</section>
+
+<!-- ══════ S6: 淘汰分析 ══════ -->
+<section class="slide" id="s6">
+  <div class="lbl">06 — Why Others Were Eliminated</div>
+  <div class="ttl">其余五家<span>淘汰</span>理由简析</div>
+  <div class="div"></div>
+
+  <div style="flex:1;overflow:hidden;display:flex;flex-direction:column;gap:.4rem;">
+    <div class="card" style="flex:1;">
+      <div style="display:grid;grid-template-columns:5.5rem 1fr 5rem;gap:.7rem;align-items:center;height:100%;font-size:clamp(.65rem,.9vw,.78rem);">
+
+        <div style="display:flex;flex-direction:column;gap:1.2rem;justify-content:space-around;height:100%;padding:.3rem 0;">
+          <div style="color:var(--muted);">金信诺<br><span style="font-family:var(--mono);font-size:.62rem;">300252</span></div>
+          <div style="color:var(--muted);">沃尔核材<br><span style="font-family:var(--mono);font-size:.62rem;">002130</span></div>
+          <div style="color:var(--muted);">中航光电<br><span style="font-family:var(--mono);font-size:.62rem;">002179</span></div>
+          <div style="color:var(--muted);">航天电器<br><span style="font-family:var(--mono);font-size:.62rem;">002025</span></div>
+          <div style="color:var(--muted);">通鼎互联<br><span style="font-family:var(--mono);font-size:.62rem;">002491</span></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.2rem;justify-content:space-around;height:100%;padding:.3rem 0;border-left:1px solid var(--bs);padding-left:.8rem;">
+          <div>❌ <strong>估值泡沫494x</strong> + 扣非亏损 + 经营现金流恶化8倍，三重硬伤叠加，性价比最差</div>
+          <div>⚠ 赛道真实但<strong>Q1 2026净利-7.63%</strong>，现金流-63%，与金信诺同病相怜，高成长预期正在松动</div>
+          <div>⚠ 军工护城河极深但<strong>净利连续两年大跌</strong>（2025年-35.6%、Q1 2026年-37.8%），看不到拐点</div>
+          <div>⚠ 商业航天故事好，但<strong>2025年净利暴跌47%</strong>，PE 49x估值过高，Q1刚开始恢复但幅度太小</div>
+          <div>❌ <strong>前三季度净利亏损</strong>-6546万，扣非-35%，基本面最差，不适合作为120天持仓标的</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:1.2rem;justify-content:space-around;height:100%;padding:.3rem 0;text-align:center;">
+          <span class="badge r">淘汰</span>
+          <span class="badge w">观望</span>
+          <span class="badge w">观望</span>
+          <span class="badge w">观望</span>
+          <span class="badge r">淘汰</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="note">
+      📌 沃尔核材和航天电器列为"观望"——中长期逻辑成立，但短期（120天）基本面出现新问题，需等待Q2数据再确认。
+      中航光电护城河深但利润下滑短期难逆转，不适合短线持有。
+    </div>
+  </div>
+</section>
+
+<!-- ══════ S7: 结论 ══════ -->
+<section class="slide" id="s7">
+  <div class="lbl">07 — Final Verdict</div>
+  <div class="ttl">最终<span>结论</span></div>
+  <div class="div"></div>
+
+  <div class="gsp" style="flex:1;min-height:0;">
+    <div style="display:flex;flex-direction:column;gap:clamp(.5rem,1vh,.8rem);overflow:hidden;">
+
+      <div style="display:inline-flex;align-items:center;gap:.6rem;padding:.55rem 1rem;border-radius:8px;
+        border:1px solid rgba(21,183,125,.35);background:var(--bd);margin-bottom:.3rem;">
+        <div style="width:10px;height:10px;border-radius:50%;background:var(--bull);box-shadow:0 0 8px var(--bull);"></div>
+        <div style="font-family:var(--serif);font-size:clamp(.9rem,1.4vw,1.1rem);color:var(--bull);font-weight:600;">推荐买入 · 立讯精密 002475</div>
+      </div>
+
+      <div class="card" style="flex:none;">
+        <div class="ml" style="margin-bottom:.3rem;">一句话判断</div>
+        <div style="font-size:clamp(.68rem,.95vw,.82rem);color:var(--txt);line-height:1.75;">
+          六家标的中，<strong style="color:var(--bull);">立讯精密是唯一同时满足高质量盈利、合理估值、多条增长曲线</strong>三个条件的标的。
+          120天内AI数据中心+汽车电子的双轮催化可见度高，苹果秋季新品落地可作为阶段性止盈节点。
+          8%目标对应约16,000元收益，在当前市场环境下属于中等难度、可实现目标。
+        </div>
+      </div>
+
+      <div class="card" style="flex:none;">
+        <div class="ml" style="margin-bottom:.3rem;">预期最坏情形</div>
+        <div style="font-size:clamp(.65rem,.9vw,.78rem);color:var(--txt);line-height:1.7;">
+          若苹果链受关税冲击 → 止损-5%出场 → 最大损失 <strong style="color:var(--bear);">约-10,000元</strong>
+          <br>风险回报比 = 8% vs -5% = <strong style="color:var(--gold);">1.6:1</strong>，属于可接受范围。
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(.5rem,1vh,.8rem);overflow:hidden;">
+      <div class="ml" style="margin:0;">120天关键节点</div>
+      <div class="pbox" style="flex:1;">
+        <div class="prow"><div class="pkey">月 1-2</div><div class="pval">建仓期：分批买入，观察市场情绪</div></div>
+        <div class="prow"><div class="pkey">月 2</div><div class="pval gold">Q2报告前瞻：券商盈利预测更新</div></div>
+        <div class="prow"><div class="pkey">月 3</div><div class="pval bull">Q2业绩公告：验证Q1趋势延续</div></div>
+        <div class="prow"><div class="pkey">月 4 初</div><div class="pval gold">苹果秋季发布会预热（9月）</div></div>
+        <div class="prow"><div class="pkey">120天止盈</div><div class="pval bull">目标：+16,000元（+8%）</div></div>
+        <div class="prow"><div class="pkey">止损线</div><div class="pval bear">-5% 触发 → 立即减仓</div></div>
+      </div>
+
+      <div style="padding:clamp(.6rem,1.2vw,1rem);border:1px solid rgba(255,184,0,.2);border-radius:8px;background:rgba(255,184,0,.06);">
+        <div style="font-family:var(--mono);font-size:.6rem;color:#FFB800;letter-spacing:.1em;margin-bottom:.35rem;">⚠ 重要风险提示</div>
+        <div style="font-size:clamp(.58rem,.8vw,.68rem);color:var(--muted);line-height:1.65;">
+          本报告基于公开数据和主观分析，<strong style="color:var(--txt);">不构成任何投资建议</strong>。
+          A股受政策、资金、情绪、国际环境等复杂因素影响，
+          实际收益可能与预期方向相反。建议只用闲置资金，
+          不使用杠杆，严格执行止损纪律。股市有风险，入市需谨慎。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- deck -->
+
+<div id="pb" style="width:12.5%"></div>
+<nav>
+  <button class="nb" id="pb-btn">‹</button>
+  <span id="ctr">1 / 8</span>
+  <button class="nb" id="nb-btn">›</button>
+</nav>
+
+<script>
+class Deck{
+  constructor(){
+    this.slides=Array.from(document.querySelectorAll('.slide'));
+    this.n=this.slides.length;this.cur=0;this.busy=false;
+    this.tx=0;this.ty=0;this.init();
+  }
+  init(){
+    document.getElementById('pb-btn').onclick=()=>this.prev();
+    document.getElementById('nb-btn').onclick=()=>this.next();
+    document.addEventListener('keydown',e=>{
+      if(['ArrowRight','ArrowDown',' '].includes(e.key)){e.preventDefault();this.next();}
+      if(['ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();this.prev();}
+    });
+    document.addEventListener('wheel',e=>{if(this.busy)return;e.deltaY>40?this.next():e.deltaY<-40?this.prev():null},{passive:true});
+    document.addEventListener('touchstart',e=>{this.tx=e.touches[0].clientX;this.ty=e.touches[0].clientY;},{passive:true});
+    document.addEventListener('touchend',e=>{
+      const dx=e.changedTouches[0].clientX-this.tx,dy=e.changedTouches[0].clientY-this.ty;
+      if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>40){dx<0?this.next():this.prev();}
+    },{passive:true});
+    this.render();
+  }
+  go(i){
+    if(this.busy||i===this.cur||i<0||i>=this.n)return;
+    this.busy=true;
+    const from=this.slides[this.cur],to=this.slides[i];
+    from.classList.add('exit');from.classList.remove('active');
+    setTimeout(()=>{
+      from.classList.remove('exit');to.classList.add('active');
+      this.cur=i;this.render();
+      setTimeout(()=>{this.busy=false;},550);
+    },260);
+  }
+  next(){this.go(this.cur+1);}
+  prev(){this.go(this.cur-1);}
+  render(){
+    document.getElementById('pb').style.width=((this.cur+1)/this.n*100).toFixed(2)+'%';
+    document.getElementById('ctr').textContent=(this.cur+1)+' / '+this.n;
+    document.getElementById('pb-btn').style.opacity=this.cur===0?'.3':'1';
+    document.getElementById('nb-btn').style.opacity=this.cur===this.n-1?'.3':'1';
+  }
+}
+window.addEventListener('DOMContentLoaded',()=>new Deck());
+</script>
+</body>
+</html>
