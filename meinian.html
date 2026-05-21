@@ -3,741 +3,1185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美年健康 002044 | 多空PK深度研究 2026</title>
+<title>美年健康 002044.SZ | 深度研究报告 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#07080F;--surface:rgba(255,255,255,.042);--surface-h:rgba(255,255,255,.07);
-  --b:rgba(201,163,71,.18);--bs:rgba(255,255,255,.07);
-  --gold:#C9A347;--gl:#E8C76A;--gd:rgba(201,163,71,.22);
-  --bull:#15B77D;--bd:rgba(21,183,125,.14);
-  --bear:#E04455;--rd:rgba(224,68,85,.14);
-  --ice:#4A9EDB;--id:rgba(74,158,219,.14);
-  --amber:#F5A623;--ad:rgba(245,166,35,.14);
-  --txt:#E2D9CC;--muted:rgba(226,217,204,.55);--dim:rgba(226,217,204,.32);
-  --serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;--mono:'JetBrains Mono',monospace;
+:root {
+  --bg: #07080F;
+  --surface: rgba(255,255,255,0.042);
+  --surface-hover: rgba(255,255,255,0.07);
+  --border: rgba(201,163,71,0.18);
+  --border-subtle: rgba(255,255,255,0.07);
+  --gold: #C9A347;
+  --gold-light: #E8C76A;
+  --gold-dim: rgba(201,163,71,0.25);
+  --bull: #15B77D;
+  --bull-dim: rgba(21,183,125,0.15);
+  --bear: #E04455;
+  --bear-dim: rgba(224,68,85,0.15);
+  --ice: #4A9EDB;
+  --ice-dim: rgba(74,158,219,0.15);
+  --amber: #F5A623;
+  --text: #E2D9CC;
+  --text-muted: rgba(226,217,204,0.55);
+  --text-dim: rgba(226,217,204,0.35);
+  --serif: 'Noto Serif SC', serif;
+  --sans: 'Noto Sans SC', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html,body{width:100%;height:100%;background:var(--bg);color:var(--txt);font-family:var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased}
-body::before{content:'';position:fixed;inset:0;
-  background-image:linear-gradient(rgba(201,163,71,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(201,163,71,.03) 1px,transparent 1px);
-  background-size:60px 60px;pointer-events:none;z-index:0}
-.deck{width:100vw;height:100vh;position:relative;overflow:hidden}
-.slide{position:absolute;inset:0;width:100vw;height:100vh;display:flex;flex-direction:column;
-  padding:clamp(1.2rem,2.5vw,2.2rem) clamp(1.8rem,4.5vw,4.5rem);
-  opacity:0;transform:translateY(28px);pointer-events:none;z-index:1;overflow:hidden;
-  transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .5s cubic-bezier(.16,1,.3,1)}
-.slide.active{opacity:1;transform:translateY(0);pointer-events:all}
-.slide.exit{opacity:0;transform:translateY(-28px)}
-#pb{position:fixed;bottom:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gl));transition:width .4s ease;z-index:100}
-nav{position:fixed;bottom:1.2rem;right:1.8rem;display:flex;align-items:center;gap:.7rem;z-index:100}
-.nb{width:34px;height:34px;border-radius:50%;background:var(--surface);border:1px solid var(--b);
-  color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;
-  transition:background .2s,transform .2s;font-size:.95rem}
-.nb:hover{background:var(--gd);transform:scale(1.1)}
-#ctr{font-family:var(--mono);font-size:.7rem;color:var(--muted);letter-spacing:.08em}
-.home-btn{position:fixed;top:1.2rem;left:1.8rem;font-family:var(--mono);font-size:.65rem;
-  color:var(--muted);text-decoration:none;letter-spacing:.12em;text-transform:uppercase;
-  border:1px solid var(--bs);padding:.35rem .8rem;border-radius:4px;z-index:100;
-  transition:color .2s,border-color .2s}
-.home-btn:hover{color:var(--gold);border-color:var(--b)}
-.lbl{font-family:var(--mono);font-size:clamp(.58rem,.82vw,.7rem);color:var(--gold);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.35rem;opacity:.8}
-.ttl{font-family:var(--serif);font-size:clamp(1.3rem,2.3vw,2rem);font-weight:700;color:var(--txt);line-height:1.2;margin-bottom:clamp(.6rem,1.5vh,1.2rem)}
-.ttl span{color:var(--gold)}
-.ttl.hero{font-size:clamp(1.8rem,3.5vw,3rem)}
-.div{width:2.2rem;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:clamp(.6rem,1.5vh,1.2rem)}
-.card{background:var(--surface);border:1px solid var(--bs);border-radius:8px;padding:clamp(.7rem,1.3vw,1rem);transition:background .2s,border-color .2s}
-.card.gold{border-color:rgba(201,163,71,.28);background:var(--gd)}
-.card.bull{border-color:rgba(21,183,125,.28);background:var(--bd)}
-.card.bear{border-color:rgba(224,68,85,.28);background:var(--rd)}
-.card.ice{border-color:rgba(74,158,219,.28);background:var(--id)}
-.card.amber{border-color:rgba(245,166,35,.28);background:var(--ad)}
-.ml{font-size:clamp(.58rem,.8vw,.68rem);color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.25rem}
-.mv{font-family:var(--mono);font-size:clamp(1rem,1.8vw,1.5rem);font-weight:600}
-.mv.gold{color:var(--gold)}.mv.bull{color:var(--bull)}.mv.bear{color:var(--bear)}.mv.ice{color:var(--ice)}.mv.amber{color:var(--amber)}
-.mc{font-family:var(--mono);font-size:clamp(.58rem,.78vw,.68rem);margin-top:.2rem}
-.up{color:var(--bull)}.dn{color:var(--bear)}.ne{color:var(--amber)}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.5rem,1vw,.9rem)}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.5rem,1vw,.9rem)}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.8rem,1.5vw,1.4rem)}
-.gsp{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(.8rem,1.8vw,1.6rem);flex:1;min-height:0}
-.note{font-size:clamp(.54rem,.74vw,.62rem);color:var(--dim);font-style:italic;line-height:1.6;margin-top:auto;padding-top:.5rem}
-.tag{display:inline-block;font-family:var(--mono);font-size:.6rem;padding:.12rem .4rem;border-radius:3px;margin-right:.3rem;margin-bottom:.2rem}
-.tag.g{background:var(--bd);color:var(--bull);border:1px solid rgba(21,183,125,.3)}
-.tag.r{background:var(--rd);color:var(--bear);border:1px solid rgba(224,68,85,.3)}
-.tag.y{background:var(--gd);color:var(--gold);border:1px solid rgba(201,163,71,.3)}
-.tag.b{background:var(--id);color:var(--ice);border:1px solid rgba(74,158,219,.3)}
-/* reason list */
-.rlist{display:flex;flex-direction:column;gap:clamp(.4rem,.9vh,.7rem);flex:1;min-height:0;overflow:hidden}
-.ritem{display:flex;gap:.7rem;align-items:flex-start;background:var(--surface);border:1px solid var(--bs);border-radius:8px;padding:clamp(.55rem,.9vw,.8rem)}
-.ritem.bull{border-color:rgba(21,183,125,.25);background:rgba(21,183,125,.06)}
-.ritem.bear{border-color:rgba(224,68,85,.25);background:rgba(224,68,85,.06)}
-.rnum{font-family:var(--mono);font-size:clamp(.9rem,1.4vw,1.15rem);font-weight:700;min-width:1.6rem;line-height:1}
-.rnum.bull{color:var(--bull)}.rnum.bear{color:var(--bear)}
-.rtxt{flex:1;min-width:0}
-.rtitle{font-weight:600;font-size:clamp(.72rem,1.05vw,.9rem);margin-bottom:.2rem}
-.rdesc{font-size:clamp(.6rem,.84vw,.72rem);color:var(--muted);line-height:1.55}
-/* pk bar */
-.pk-wrap{display:flex;flex-direction:column;gap:clamp(.5rem,1vh,.8rem);flex:1;min-height:0}
-.pk-row{display:grid;grid-template-columns:1fr auto 1fr;gap:.5rem;align-items:center}
-.pk-label{font-size:clamp(.6rem,.85vw,.72rem);color:var(--muted);font-weight:500}
-.pk-label.l{text-align:right}
-.pk-center{font-family:var(--mono);font-size:.6rem;color:var(--dim);text-align:center;white-space:nowrap;min-width:5rem}
-.pk-bar-wrap{height:6px;border-radius:3px;background:rgba(255,255,255,.06);position:relative;overflow:visible}
-.pk-bar{height:100%;border-radius:3px;position:absolute;transition:width .8s cubic-bezier(.16,1,.3,1)}
-.pk-bar.bull{background:var(--bull);left:0}
-.pk-bar.bear{background:var(--bear);right:0}
-/* verdict */
-.verdict-box{background:var(--surface);border:1px solid rgba(245,166,35,.3);border-radius:12px;
-  padding:clamp(1rem,2vw,1.8rem);position:relative;overflow:hidden}
-.verdict-box::before{content:'';position:absolute;inset:0;border-radius:12px;
-  background:linear-gradient(135deg,rgba(245,166,35,.05),transparent 60%)}
-.verdict-score{font-family:var(--mono);font-size:clamp(2.5rem,5vw,4.5rem);font-weight:700;
-  background:linear-gradient(135deg,var(--amber),var(--gold));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-/* scrollable content */
-.scroll-inner{overflow-y:auto;flex:1;min-height:0;padding-right:.3rem}
-.scroll-inner::-webkit-scrollbar{width:3px}
-.scroll-inner::-webkit-scrollbar-track{background:transparent}
-.scroll-inner::-webkit-scrollbar-thumb{background:rgba(201,163,71,.3);border-radius:2px}
-/* orb */
-.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;opacity:.28}
-.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(21,183,125,.2),transparent 70%);top:-200px;right:-100px}
-.orb2{width:450px;height:450px;background:radial-gradient(circle,rgba(224,68,85,.15),transparent 70%);bottom:-150px;left:-100px}
-/* fund flow */
-.flow-row{display:flex;align-items:center;gap:.5rem;padding:.5rem 0;border-bottom:1px solid var(--bs)}
-.flow-row:last-child{border:none}
-.flow-date{font-family:var(--mono);font-size:.62rem;color:var(--dim);min-width:4rem}
-.flow-bar-wrap{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.06);overflow:hidden}
-.flow-bar{height:100%;border-radius:3px}
-.flow-val{font-family:var(--mono);font-size:.62rem;min-width:4.5rem;text-align:right}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%; height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,163,71,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,163,71,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none; z-index: 0;
+}
+
+.deck { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+
+.slide {
+  position: absolute; inset: 0;
+  width: 100vw; height: 100vh;
+  display: flex; flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 3rem) clamp(2rem, 5vw, 5rem);
+  opacity: 0; transform: translateY(30px);
+  transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1),
+              transform 0.55s cubic-bezier(0.16,1,0.3,1);
+  pointer-events: none; z-index: 1; overflow: hidden;
+}
+.slide.active { opacity: 1; transform: translateY(0); pointer-events: all; }
+.slide.exit { opacity: 0; transform: translateY(-30px); }
+
+#progress-bar {
+  position: fixed; bottom: 0; left: 0; height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition: width 0.4s ease; z-index: 100;
+}
+
+nav {
+  position: fixed; bottom: 1.4rem; right: 2rem;
+  display: flex; align-items: center; gap: 0.8rem; z-index: 100;
+}
+.nav-btn {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--gold); cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  transition: background 0.2s, transform 0.2s; font-size: 1rem;
+}
+.nav-btn:hover { background: var(--gold-dim); transform: scale(1.1); }
+#slide-counter { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.08em; }
+
+.home-link {
+  position: fixed; top: 1.2rem; left: 2rem; z-index: 100;
+  font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted);
+  text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase;
+  border: 1px solid var(--border-subtle); padding: 0.3rem 0.75rem; border-radius: 4px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.home-link:hover { color: var(--gold); border-color: var(--border); }
+
+.slide-label {
+  font-family: var(--mono); font-size: clamp(0.6rem, 0.9vw, 0.75rem);
+  color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 0.4rem; opacity: 0.8;
+}
+.slide-title {
+  font-family: var(--serif); font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 700; color: var(--text); line-height: 1.2;
+  margin-bottom: clamp(0.8rem, 2vh, 1.5rem);
+}
+.slide-title span { color: var(--gold); }
+.divider {
+  width: 2.5rem; height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: clamp(0.8rem, 2vh, 1.5rem);
+}
+
+.card {
+  background: var(--surface); border: 1px solid var(--border-subtle);
+  border-radius: 8px; padding: clamp(0.8rem, 1.5vw, 1.2rem);
+  transition: background 0.2s, border-color 0.2s;
+}
+.card:hover { background: var(--surface-hover); border-color: var(--border); }
+.card.gold { border-color: var(--gold-dim); }
+.card.bull { border-color: rgba(21,183,125,0.25); background: var(--bull-dim); }
+.card.bear { border-color: rgba(224,68,85,0.25); background: var(--bear-dim); }
+.card.ice  { border-color: rgba(74,158,219,0.25); background: var(--ice-dim); }
+
+.metric-label {
+  font-size: clamp(0.6rem, 0.85vw, 0.7rem); color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.3rem;
+}
+.metric-value {
+  font-family: var(--mono); font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  font-weight: 600; color: var(--text); line-height: 1;
+}
+.metric-value.gold  { color: var(--gold); }
+.metric-value.bull  { color: var(--bull); }
+.metric-value.bear  { color: var(--bear); }
+.metric-value.ice   { color: var(--ice); }
+.metric-value.amber { color: var(--amber); }
+.metric-change { font-family: var(--mono); font-size: clamp(0.65rem, 0.9vw, 0.72rem); margin-top: 0.3rem; }
+.metric-change.up   { color: var(--bull); }
+.metric-change.down { color: var(--bear); }
+.metric-change.flat { color: var(--amber); }
+
+/* ── REASON ROWS ── */
+.reason-row {
+  display: grid; grid-template-columns: 2.8rem 1fr auto;
+  align-items: center; gap: 1rem;
+  padding: clamp(0.6rem, 1.2vh, 0.9rem) clamp(0.8rem, 1.5vw, 1.2rem);
+  border-radius: 7px; margin-bottom: 0.45rem;
+  border: 1px solid transparent;
+  background: var(--surface);
+  transition: background 0.2s, transform 0.2s, border-color 0.2s;
+  animation: slideIn 0.4s ease both;
+}
+.reason-row.bull-row { border-color: rgba(21,183,125,0.12); }
+.reason-row.bull-row:hover { background: var(--bull-dim); transform: translateX(4px); border-color: rgba(21,183,125,0.3); }
+.reason-row.bear-row { border-color: rgba(224,68,85,0.12); }
+.reason-row.bear-row:hover { background: var(--bear-dim); transform: translateX(4px); border-color: rgba(224,68,85,0.3); }
+.reason-num { font-family: var(--mono); font-size: clamp(1rem, 1.8vw, 1.4rem); font-weight: 600; text-align: center; line-height: 1; }
+.reason-num.gold { color: var(--gold); }
+.reason-num.red  { color: var(--bear); }
+.reason-title { font-size: clamp(0.78rem, 1.1vw, 0.9rem); font-weight: 500; color: var(--text); }
+.reason-sub   { font-size: clamp(0.62rem, 0.85vw, 0.72rem); color: var(--text-muted); margin-top: 0.15rem; }
+.reason-badge { font-family: var(--mono); font-size: clamp(0.6rem, 0.8vw, 0.68rem); padding: 0.2rem 0.5rem; border-radius: 4px; white-space: nowrap; font-weight: 600; }
+.reason-badge.bull-badge { background: var(--bull-dim); color: var(--bull); border: 1px solid rgba(21,183,125,0.3); }
+.reason-badge.bear-badge { background: var(--bear-dim); color: var(--bear); border: 1px solid rgba(224,68,85,0.3); }
+.reason-badge.warn-badge { background: rgba(255,180,0,0.12); color: #FFB800; border: 1px solid rgba(255,180,0,0.3); }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ── PK TABLE ── */
+.pk-table { width: 100%; border-collapse: separate; border-spacing: 0 0.35rem; }
+.pk-table th {
+  font-size: clamp(0.6rem, 0.85vw, 0.7rem); color: var(--text-muted);
+  text-transform: uppercase; letter-spacing: 0.12em; font-weight: 500;
+  padding: 0.3rem 0.6rem; text-align: center;
+}
+.pk-table th:first-child { text-align: left; }
+.pk-table td {
+  padding: clamp(0.4rem, 0.8vh, 0.65rem) 0.6rem;
+  font-size: clamp(0.7rem, 0.95vw, 0.82rem); background: var(--surface);
+  vertical-align: middle;
+}
+.pk-table tr td:first-child { border-radius: 6px 0 0 6px; color: var(--text-muted); padding-left: 0.8rem; }
+.pk-table tr td:last-child  { border-radius: 0 6px 6px 0; }
+
+.star-bar { display: flex; gap: 3px; justify-content: center; }
+.star { width: 10px; height: 10px; border-radius: 2px; opacity: 0.2; background: rgba(255,255,255,0.3); }
+.star.lit-bull { background: var(--bull); opacity: 1; }
+.star.lit-bear { background: var(--bear); opacity: 1; }
+
+.pk-winner { font-family: var(--mono); font-size: 0.65rem; padding: 0.18rem 0.45rem; border-radius: 3px; font-weight: 600; }
+.pk-winner.bull { background: var(--bull-dim); color: var(--bull); }
+.pk-winner.bear { background: var(--bear-dim); color: var(--bear); }
+.pk-winner.tie  { background: rgba(74,158,219,0.15); color: var(--ice); }
+
+/* ── VALUATION BARS ── */
+.val-row {
+  display: grid; grid-template-columns: 4.5rem 1fr 5rem 3.5rem 3.5rem;
+  align-items: center; gap: 0.7rem;
+  padding: clamp(0.4rem, 0.8vh, 0.6rem) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: clamp(0.62rem, 0.88vw, 0.75rem);
+}
+.val-row:last-child { border-bottom: none; }
+.val-scenario { color: var(--text-muted); font-weight: 500; }
+.val-bar-wrap { position: relative; height: 16px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: visible; }
+.val-bar { height: 100%; border-radius: 3px; transition: width 1s cubic-bezier(0.16,1,0.3,1); }
+.val-price { font-family: var(--mono); font-weight: 600; text-align: right; }
+.val-pct   { font-family: var(--mono); text-align: right; }
+.current-line {
+  position: absolute; top: -6px; bottom: -6px; width: 2px;
+  background: rgba(255,255,255,0.6); border-radius: 1px; z-index: 5;
+}
+.current-line::after {
+  content: '当前 6.12';
+  position: absolute; top: -18px; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.7);
+  white-space: nowrap;
+}
+
+/* ── RATING BADGE ── */
+.rating-badge {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 0.6rem 1.2rem; border-radius: 8px;
+  margin-bottom: clamp(0.8rem, 2vh, 1.4rem);
+}
+.rating-badge.bear-rating { border: 1px solid rgba(224,68,85,0.35); background: var(--bear-dim); }
+.rating-badge.neutral-rating { border: 1px solid rgba(245,166,35,0.35); background: rgba(245,166,35,0.1); }
+.rating-dot { width: 10px; height: 10px; border-radius: 50%; }
+.rating-dot.bear { background: var(--bear); }
+.rating-dot.amber { background: var(--amber); }
+.rating-text { font-family: var(--serif); font-size: clamp(0.9rem, 1.4vw, 1.1rem); font-weight: 600; }
+.rating-text.bear  { color: var(--bear); }
+.rating-text.amber { color: var(--amber); }
+
+/* ── KPI ROWS ── */
+.kpi-row {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  padding: clamp(0.5rem, 1vh, 0.75rem) 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.kpi-row:last-child { border-bottom: none; }
+.kpi-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 0.3rem; flex-shrink: 0; }
+.kpi-dot.red   { background: var(--bear);  box-shadow: 0 0 6px var(--bear); }
+.kpi-dot.amber { background: #FFB800;      box-shadow: 0 0 6px #FFB800; }
+.kpi-dot.green { background: var(--bull);  box-shadow: 0 0 6px var(--bull); }
+.kpi-name   { font-size: clamp(0.72rem, 1vw, 0.82rem); font-weight: 500; color: var(--text); }
+.kpi-desc   { font-size: clamp(0.6rem, 0.82vw, 0.7rem); color: var(--text-muted); margin-top: 0.15rem; }
+.kpi-status { font-family: var(--mono); font-size: 0.6rem; padding: 0.15rem 0.4rem; border-radius: 3px; margin-top: 0.2rem; display: inline-block; }
+.kpi-status.pending { background: rgba(255,184,0,0.1); color: #FFB800; border: 1px solid rgba(255,184,0,0.25); }
+.kpi-status.watch   { background: rgba(74,158,219,0.1); color: var(--ice); border: 1px solid rgba(74,158,219,0.25); }
+
+/* ── ROI SCENARIO TABLE ── */
+.roi-table { width: 100%; border-collapse: separate; border-spacing: 0 0.3rem; }
+.roi-table th {
+  font-size: clamp(0.58rem, 0.82vw, 0.68rem); color: var(--text-dim);
+  text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;
+  padding: 0.2rem 0.5rem; text-align: center;
+}
+.roi-table th:first-child { text-align: left; }
+.roi-table td {
+  padding: clamp(0.35rem, 0.7vh, 0.55rem) 0.5rem;
+  font-size: clamp(0.65rem, 0.9vw, 0.75rem);
+  background: var(--surface); vertical-align: middle; text-align: center;
+}
+.roi-table tr td:first-child { border-radius: 5px 0 0 5px; text-align: left; padding-left: 0.7rem; font-weight: 600; }
+.roi-table tr td:last-child  { border-radius: 0 5px 5px 0; }
+.roi-table tr.bull-row td { background: rgba(21,183,125,0.07); }
+.roi-table tr.bull-row td:first-child { border-left: 2px solid var(--bull); }
+.roi-table tr.ice-row  td { background: rgba(74,158,219,0.07); }
+.roi-table tr.ice-row  td:first-child { border-left: 2px solid var(--ice); }
+.roi-table tr.amber-row td { background: rgba(245,166,35,0.07); }
+.roi-table tr.amber-row td:first-child { border-left: 2px solid var(--amber); }
+.roi-table tr.bear-row td { background: rgba(224,68,85,0.07); }
+.roi-table tr.bear-row td:first-child { border-left: 2px solid var(--bear); }
+
+/* ── GRID HELPERS ── */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.8rem, 1.5vw, 1.2rem); }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(0.7rem, 1.3vw, 1.1rem); }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(0.6rem, 1.2vw, 1rem); }
+.grid-split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(1rem, 2vw, 2rem); flex: 1; min-height: 0; }
+
+/* ── COVER ── */
+#slide-0 { justify-content: center; align-items: flex-start; }
+.cover-eyebrow {
+  font-family: var(--mono); font-size: clamp(0.62rem, 0.9vw, 0.75rem);
+  color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase;
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;
+}
+.cover-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--gold); display: block; }
+.cover-headline {
+  font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700; line-height: 1.1; margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, #E8C76A 0%, #C9A347 40%, #E2D9CC 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.cover-sub {
+  font-size: clamp(0.85rem, 1.3vw, 1.05rem); color: var(--text-muted);
+  margin-bottom: clamp(1.5rem, 3vh, 2.5rem); font-weight: 300; letter-spacing: 0.05em;
+}
+.cover-stats {
+  display: flex; gap: clamp(1.5rem, 3vw, 3rem); flex-wrap: wrap;
+  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(1rem, 2vw, 1.8rem);
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--surface); margin-bottom: 1.5rem; max-width: 44rem;
+}
+.cover-stat-label { font-size: clamp(0.55rem, 0.75vw, 0.65rem); color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; }
+.cover-stat-value { font-family: var(--mono); font-size: clamp(0.9rem, 1.5vw, 1.1rem); color: var(--text); font-weight: 600; margin-top: 0.2rem; }
+.cover-stat-value.bear  { color: var(--bear); }
+.cover-stat-value.gold  { color: var(--gold); }
+.cover-stat-value.bull  { color: var(--bull); }
+.cover-stat-value.amber { color: var(--amber); }
+.cover-date { font-family: var(--mono); font-size: clamp(0.6rem, 0.82vw, 0.7rem); color: var(--text-dim); letter-spacing: 0.1em; }
+
+.tag {
+  display: inline-block; font-family: var(--mono); font-size: 0.62rem;
+  padding: 0.15rem 0.45rem; border-radius: 3px; margin-right: 0.3rem;
+  background: var(--gold-dim); color: var(--gold);
+  border: 1px solid rgba(201,163,71,0.3);
+}
+.note { font-size: clamp(0.55rem, 0.75vw, 0.62rem); color: var(--text-dim); font-style: italic; line-height: 1.5; }
+.section-block { flex: 1; min-height: 0; overflow: hidden; }
+
+/* flow bars */
+.flow-row { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0; border-bottom: 1px solid var(--border-subtle); }
+.flow-row:last-child { border: none; }
+.flow-date { font-family: var(--mono); font-size: 0.62rem; color: var(--text-dim); min-width: 3.5rem; }
+.flow-bg   { flex: 1; height: 5px; border-radius: 3px; background: rgba(255,255,255,0.05); overflow: hidden; }
+.flow-fill { height: 100%; border-radius: 3px; background: var(--bear); }
+.flow-val  { font-family: var(--mono); font-size: 0.62rem; min-width: 4.2rem; text-align: right; color: var(--bear); }
+
+@media (prefers-reduced-motion: reduce) {
+  .slide, .reason-row, .val-bar { transition: none !important; animation: none !important; }
+}
 </style>
 </head>
 <body>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<a class="home-btn" href="index.html">← 返回首页</a>
-<div id="pb"></div>
+
+<a class="home-link" href="index.html">← 首页</a>
 
 <div class="deck">
 
-<!-- ══════════════════════════════════════════
-     SLIDE 1 · 封面 / 基本数据
-════════════════════════════════════════════ -->
-<div class="slide active" id="s1">
-  <div style="margin-bottom:clamp(.8rem,2vh,1.5rem)">
-    <div class="lbl" style="margin-bottom:.6rem">深度研究报告 · 2026.05</div>
-    <div class="ttl hero">美年健康 <span>002044</span></div>
-    <div class="div"></div>
-    <div style="font-size:clamp(.75rem,1.1vw,.92rem);color:var(--muted);max-width:36rem;line-height:1.7;margin-bottom:.9rem">
-      中国体检行业市场份额第一，深耕 AI 健康管理战略。营收承压但现金流稳健，
-      AI 业务高速增长，政策顺风与消费下行形成多空博弈。
+<!-- ══════════════ SLIDE 0: COVER ══════════════ -->
+<section class="slide active" id="slide-0">
+  <div class="cover-eyebrow">深度投资研究报告</div>
+  <div class="cover-headline">美年健康<br>002044.SZ</div>
+  <div class="cover-sub">大健康 · 体检龙头 · AI赋能 · 垄断格局</div>
+
+  <div class="cover-stats">
+    <div>
+      <div class="cover-stat-label">投资评级</div>
+      <div class="cover-stat-value amber">中性偏空</div>
     </div>
     <div>
-      <span class="tag b">医疗保健</span>
-      <span class="tag b">体检龙头</span>
-      <span class="tag g">AI 赋能</span>
-      <span class="tag r">营收承压</span>
-      <span class="tag y">6家机构买入</span>
+      <div class="cover-stat-label">当前股价</div>
+      <div class="cover-stat-value">6.12 元</div>
+    </div>
+    <div>
+      <div class="cover-stat-label">机构目标价</div>
+      <div class="cover-stat-value bull">7.06 元</div>
+    </div>
+    <div>
+      <div class="cover-stat-label">建议介入区间</div>
+      <div class="cover-stat-value gold">5.8 – 6.0 元</div>
+    </div>
+    <div>
+      <div class="cover-stat-label">核心矛盾</div>
+      <div class="cover-stat-value" style="font-size:0.85rem;">AI高增长 vs 主营持续下滑</div>
     </div>
   </div>
 
-  <div class="g4" style="margin-bottom:clamp(.8rem,1.8vh,1.4rem)">
-    <div class="card">
-      <div class="ml">当前股价</div>
-      <div class="mv gold">¥6.12</div>
-      <div class="mc ne">2026-05-18</div>
-    </div>
-    <div class="card">
-      <div class="ml">机构目标价</div>
-      <div class="mv bull">¥7.06</div>
-      <div class="mc up">上行空间 +15.4%</div>
-    </div>
-    <div class="card">
-      <div class="ml">2025 营收</div>
-      <div class="mv gold">103.6亿</div>
-      <div class="mc dn">同比 -3.2%</div>
-    </div>
-    <div class="card">
-      <div class="ml">2025 净利润</div>
-      <div class="mv amber">2.85亿</div>
-      <div class="mc up">同比 +1.09%</div>
-    </div>
-  </div>
+  <div class="cover-date">2026年05月21日 | 基于公开市场数据及机构研报整理 | 仅供参考，不构成投资建议</div>
+</section>
 
-  <div class="g4">
-    <div class="card">
-      <div class="ml">2026 Q1 营收</div>
-      <div class="mv bear">15.84亿</div>
-      <div class="mc dn">同比 -9.71%</div>
+<!-- ══════════════ SLIDE 1: OVERVIEW ══════════════ -->
+<section class="slide" id="slide-1">
+  <div class="slide-label">01 — Company Overview</div>
+  <div class="slide-title">公司<span>全景</span>一览</div>
+  <div class="divider"></div>
+
+  <div class="grid-4" style="margin-bottom: clamp(0.7rem,1.5vh,1.2rem);">
+    <div class="card gold">
+      <div class="metric-label">2025 全年营收</div>
+      <div class="metric-value gold">103.6亿</div>
+      <div class="metric-change down">▼ −3.20% YoY</div>
     </div>
     <div class="card">
-      <div class="ml">AI 业务收入</div>
-      <div class="mv bull">3.71亿</div>
-      <div class="mc up">2025年 +71.89%</div>
+      <div class="metric-label">2025 归母净利</div>
+      <div class="metric-value bull">2.85亿</div>
+      <div class="metric-change up">▲ +1.09% YoY</div>
     </div>
     <div class="card">
-      <div class="ml">经营现金流</div>
-      <div class="mv bull">18.0亿</div>
-      <div class="mc up">2025年 +8.31%</div>
+      <div class="metric-label">2026 Q1 营收</div>
+      <div class="metric-value bear">15.84亿</div>
+      <div class="metric-change down">▼ −9.71% YoY</div>
     </div>
-    <div class="card">
-      <div class="ml">机构评级</div>
-      <div class="mv gold">5买 1增持</div>
-      <div class="mc">近90天 共6家</div>
-    </div>
-  </div>
-
-  <div class="note" style="margin-top:.8rem">
-    数据来源：公司 2025 年年报、2026 年 Q1 季报、证券之星、东方财富、同花顺（截至 2026-05-18）
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     SLIDE 2 · 必涨 5 大理由
-════════════════════════════════════════════ -->
-<div class="slide" id="s2">
-  <div style="margin-bottom:clamp(.7rem,1.5vh,1.2rem)">
-    <div class="lbl">多头论证</div>
-    <div class="ttl">未来一个季度<span> 必涨的 5 个理由</span></div>
-    <div class="div"></div>
-  </div>
-  <div class="rlist">
-    <div class="ritem bull">
-      <div class="rnum bull">01</div>
-      <div class="rtxt">
-        <div class="rtitle">AI 飞轮效应加速，差异化护城河显现</div>
-        <div class="rdesc">2025 年 AI 业务收入 3.71 亿（+71.89%），Q1 2026 再增 60.1%；心肺联筛、脑睿佳、眼底 AI 等产品覆盖超 90% 体检影像项目。行业竞品难以复制千万级数据积累，AI 壁垒持续加深，市场给予高成长溢价预期。</div>
-      </div>
-    </div>
-    <div class="ritem bull">
-      <div class="rnum bull">02</div>
-      <div class="rtxt">
-        <div class="rtitle">行业格局定格，准垄断定价权逐步兑现</div>
-        <div class="rdesc">爱康国宾已从美股退市、慈铭体检并入美年，民营体检 CR1 超 20%。竞争格局优化后议价能力提升，企业团检续签时成本转嫁空间扩大，长期利润率修复逻辑清晰。</div>
-      </div>
-    </div>
-    <div class="ritem bull">
-      <div class="rnum bull">03</div>
-      <div class="rtxt">
-        <div class="rtitle">政策顺风口：癌症早筛 + 医保跨省共济</div>
-        <div class="rdesc">2026 年两会明确癌症防治关键在预防与早期筛查；医保个账资金跨省共济全面落地；影像数据跨省共认拓展——体检需求系统性提升，美年作为龙头直接受益。</div>
-      </div>
-    </div>
-    <div class="ritem bull">
-      <div class="rnum bull">04</div>
-      <div class="rtxt">
-        <div class="rtitle">下半年旺季反攻，Q1 淡季不代表全年</div>
-        <div class="rdesc">体检行业 Q1 受春节推迟影响显著偏弱，Q3-Q4 企业团检结算集中，历史上下半年占全年收入 55%~60%。当前低价位已反映了 Q1 弱势，若 Q2 数据改善则催化向上反弹。</div>
-      </div>
-    </div>
-    <div class="ritem bull">
-      <div class="rnum bull">05</div>
-      <div class="rtxt">
-        <div class="rtitle">估值折价 + 机构背书，具备修复空间</div>
-        <div class="rdesc">6 家机构评级全部为买入或增持，均价目标 7.06 较当前 6.12 有 +15.4% 空间；经营现金流 18 亿远超净利润，账面质量扎实，资产减值压力有限，支撑估值底部。</div>
-      </div>
+    <div class="card bull">
+      <div class="metric-label">AI业务收入</div>
+      <div class="metric-value bull">3.71亿</div>
+      <div class="metric-change up">▲ +71.89% YoY</div>
     </div>
   </div>
-  <div class="note">以上为多头角度推演，不构成投资建议</div>
-</div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 3 · 必跌 5 大理由
-════════════════════════════════════════════ -->
-<div class="slide" id="s3">
-  <div style="margin-bottom:clamp(.7rem,1.5vh,1.2rem)">
-    <div class="lbl">空头论证</div>
-    <div class="ttl">未来一个季度<span class="dn"> 必跌的 5 个理由</span></div>
-    <div class="div" style="background:linear-gradient(90deg,var(--bear),transparent)"></div>
-  </div>
-  <div class="rlist">
-    <div class="ritem bear">
-      <div class="rnum bear">01</div>
-      <div class="rtxt">
-        <div class="rtitle">营收连续下滑，增长失速证伪成长逻辑</div>
-        <div class="rdesc">2025 全年营收 -3.2%，Q1 2026 再度 -9.71%。当核心业务已连续下滑，AI 收入 3.71 亿（占总营收 3.6%）体量太小，无法对冲主营疲软。高 PE（2026E 约 59 倍）与低增速并存，估值严重透支。</div>
-      </div>
+  <div class="grid-split" style="flex:1; min-height:0;">
+    <div style="display:flex; flex-direction:column; gap: clamp(0.6rem,1.2vh,1rem); overflow:hidden;">
+      <div class="slide-label" style="margin:0;">营收 vs AI业务收入趋势（亿元）</div>
+      <svg viewBox="0 0 380 145" style="width:100%;flex:1;max-height:145px;" aria-label="营收趋势图">
+        <defs>
+          <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C9A347" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#C9A347" stop-opacity="0.3"/>
+          </linearGradient>
+          <linearGradient id="aiGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#15B77D" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#15B77D" stop-opacity="0.3"/>
+          </linearGradient>
+          <linearGradient id="foreGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4A9EDB" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#4A9EDB" stop-opacity="0.25"/>
+          </linearGradient>
+        </defs>
+        <line x1="44" y1="10" x2="44" y2="112" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="44" y1="112" x2="375" y2="112" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="44" y1="72"  x2="375" y2="72"  stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="44" y1="37"  x2="375" y2="37"  stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="38" y="116" text-anchor="end" font-size="9" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">0</text>
+        <text x="38" y="76"  text-anchor="end" font-size="9" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">80</text>
+        <text x="38" y="41"  text-anchor="end" font-size="9" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">140</text>
+        <!-- scale: max=140亿→75px, 0→0. y = 112 - val/140*75 -->
+        <!-- 2022: ~97亿 → h=52, y=60 -->
+        <rect x="62"  y="60" width="32" height="52" fill="url(#revGrad)" rx="3" opacity="0.55"/>
+        <text x="78"  y="56" text-anchor="middle" font-size="8.5" fill="rgba(201,163,71,0.65)" font-family="JetBrains Mono,monospace">97</text>
+        <text x="78"  y="124" text-anchor="middle" font-size="8.5" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">2022</text>
+        <!-- 2023: ~103亿 → h=55, y=57 -->
+        <rect x="112" y="57" width="32" height="55" fill="url(#revGrad)" rx="3" opacity="0.7"/>
+        <text x="128" y="53" text-anchor="middle" font-size="8.5" fill="rgba(201,163,71,0.75)" font-family="JetBrains Mono,monospace">103</text>
+        <text x="128" y="124" text-anchor="middle" font-size="8.5" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">2023</text>
+        <!-- 2024: ~107亿 → h=57, y=55 -->
+        <rect x="162" y="55" width="32" height="57" fill="url(#revGrad)" rx="3" opacity="0.85"/>
+        <text x="178" y="51" text-anchor="middle" font-size="8.5" fill="rgba(201,163,71,0.88)" font-family="JetBrains Mono,monospace">107</text>
+        <text x="178" y="124" text-anchor="middle" font-size="8.5" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">2024</text>
+        <!-- 2025A: 103.6亿 → h=55.5, y=56.5 -->
+        <rect x="212" y="56" width="32" height="56" fill="url(#revGrad)" rx="3"/>
+        <text x="228" y="52" text-anchor="middle" font-size="8.5" fill="#C9A347" font-family="JetBrains Mono,monospace" font-weight="600">103.6</text>
+        <text x="228" y="124" text-anchor="middle" font-size="8.5" fill="rgba(226,217,204,0.45)" font-family="JetBrains Mono,monospace">2025A</text>
+        <!-- 2026E: ~110亿 → h=59, y=53 -->
+        <rect x="262" y="53" width="32" height="59" fill="url(#foreGrad)" rx="3" stroke="rgba(74,158,219,0.4)" stroke-width="1"/>
+        <text x="278" y="49" text-anchor="middle" font-size="8.5" fill="#4A9EDB" font-family="JetBrains Mono,monospace">~110</text>
+        <text x="278" y="124" text-anchor="middle" font-size="8.5" fill="rgba(74,158,219,0.6)" font-family="JetBrains Mono,monospace">2026E</text>
+        <!-- AI revenue overlay bars (small, green) scale: max=8亿→43px -->
+        <!-- 2023 AI: ~1.6亿→8.7px -->
+        <rect x="118" y="103" width="20" height="9" fill="url(#aiGrad)" rx="2" opacity="0.8"/>
+        <!-- 2024 AI: ~2.16亿→11.7px -->
+        <rect x="168" y="100" width="20" height="12" fill="url(#aiGrad)" rx="2" opacity="0.85"/>
+        <!-- 2025 AI: 3.71亿→20px -->
+        <rect x="218" y="92" width="20" height="20" fill="url(#aiGrad)" rx="2"/>
+        <!-- 2026E AI: ~5.5亿→30px -->
+        <rect x="268" y="82" width="20" height="30" fill="url(#aiGrad)" rx="2" opacity="0.75"/>
+        <!-- Legend -->
+        <rect x="46" y="133" width="8" height="6" fill="url(#revGrad)" rx="1"/>
+        <text x="58" y="139" font-size="8" fill="rgba(226,217,204,0.5)" font-family="JetBrains Mono,monospace">营收</text>
+        <rect x="96" y="133" width="8" height="6" fill="url(#foreGrad)" rx="1"/>
+        <text x="108" y="139" font-size="8" fill="rgba(74,158,219,0.6)" font-family="JetBrains Mono,monospace">预测</text>
+        <rect x="140" y="133" width="8" height="6" fill="url(#aiGrad)" rx="1"/>
+        <text x="152" y="139" font-size="8" fill="rgba(21,183,125,0.8)" font-family="JetBrains Mono,monospace">AI收入</text>
+      </svg>
     </div>
-    <div class="ritem bear">
-      <div class="rnum bear">02</div>
-      <div class="rtxt">
-        <div class="rtitle">主力资金持续出逃，大钱用脚投票</div>
-        <div class="rdesc">5 月资金流向数据明确：5/7 净流出 783 万 → 5/13 净流出 9,773 万 → 5/18 净流出 1.39 亿，加速放大。散户接盘主力出货的经典形态，短期股价天花板承压明显。</div>
-      </div>
-    </div>
-    <div class="ritem bear">
-      <div class="rnum bear">03</div>
-      <div class="rtxt">
-        <div class="rtitle">应收账款膨胀，回款风险高悬</div>
-        <div class="rdesc">2026E 应收账款预计超 34 亿，是净利润的 10 倍以上。企业团检客户账期长、坏账风险集中，一旦宏观下行企业预算收缩，回款恶化将直接冲击报表，引发减值地雷。</div>
-      </div>
-    </div>
-    <div class="ritem bear">
-      <div class="rnum bear">04</div>
-      <div class="rtxt">
-        <div class="rtitle">消费降级压制行业天花板，获客成本居高</div>
-        <div class="rdesc">销售费用率高达 24%，毛利率仍低于瑞慈医疗 5 个百分点。重资产模式下固定成本刚性，营收下滑直接侵蚀利润。消费信心疲弱期个人体检属可选支出，量价双压。</div>
-      </div>
-    </div>
-    <div class="ritem bear">
-      <div class="rnum bear">05</div>
-      <div class="rtxt">
-        <div class="rtitle">历史诚信污点 + 公立医院竞争，品牌护城河脆弱</div>
-        <div class="rdesc">曾多次被曝医生无证上岗、冒用已故医师姓名等违规，舆情风险持续存在。公立医院加大体检中心投入，凭借医保资质和品牌背书抢夺高端客户，民营定位空间被进一步压缩。</div>
-      </div>
-    </div>
-  </div>
-  <div class="note">以上为空头角度推演，不构成投资建议</div>
-</div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 4 · 多空 PK 评分矩阵
-════════════════════════════════════════════ -->
-<div class="slide" id="s4">
-  <div style="margin-bottom:clamp(.7rem,1.5vh,1.1rem)">
-    <div class="lbl">多空对决</div>
-    <div class="ttl">六维度 <span>PK 评分矩阵</span></div>
-    <div class="div"></div>
-  </div>
-
-  <div class="g2" style="flex:1;min-height:0">
-    <div style="display:flex;flex-direction:column;gap:.5rem">
-      <!-- 维度说明 -->
-      <div class="card gold" style="padding:.7rem .9rem;margin-bottom:.2rem">
-        <div style="font-size:.68rem;color:var(--gold);font-weight:600;margin-bottom:.4rem">评分规则</div>
-        <div style="font-size:.62rem;color:var(--muted);line-height:1.6">
-          每维度满分 10 分，多头得分越高代表该维度支持上涨；空头得分越高代表该维度支持下跌。最终取多空总分对比。
-        </div>
-      </div>
-
-      <div class="pk-wrap">
-        <!-- 行 -->
-        <div>
-          <div class="pk-row" style="margin-bottom:.2rem">
-            <div class="pk-label l" style="color:var(--bull);font-weight:600">AI 成长性</div>
-            <div class="pk-center">vs</div>
-            <div class="pk-label" style="color:var(--bear);font-weight:600">主营下滑</div>
+    <div style="display:flex; flex-direction:column; gap: clamp(0.5rem,1vh,0.8rem); overflow:hidden;">
+      <div class="slide-label" style="margin:0;">业务矩阵与核心数据</div>
+      <div class="card" style="flex:1;">
+        <div style="display:flex; flex-direction:column; gap:0.5rem; height:100%;">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <div style="font-size:clamp(0.7rem,0.95vw,0.8rem); font-weight:500;">健康体检主业</div>
+            <div style="font-family:var(--mono); font-size:0.68rem; color:var(--bear);">承压下滑</div>
           </div>
-          <div class="pk-row">
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bull" style="width:80%"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bull);margin-top:.2rem">多 8 / 10</div>
-            </div>
-            <div class="pk-center"></div>
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bear" style="width:80%;right:0"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bear);margin-top:.2rem;text-align:right">空 8 / 10</div>
-            </div>
+          <div style="height:6px; background:rgba(255,255,255,0.06); border-radius:3px; overflow:hidden;">
+            <div style="width:68%; height:100%; background:linear-gradient(90deg,#C9A347,#E8C76A); border-radius:3px;"></div>
           </div>
-        </div>
-
-        <div>
-          <div class="pk-row" style="margin-bottom:.2rem">
-            <div class="pk-label l" style="color:var(--bull);font-weight:600">行业格局</div>
-            <div class="pk-center">vs</div>
-            <div class="pk-label" style="color:var(--bear);font-weight:600">竞争压力</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.3rem;">
+            <div style="font-size:clamp(0.7rem,0.95vw,0.8rem); font-weight:500;">AI健康管理</div>
+            <div style="font-family:var(--mono); font-size:0.68rem; color:var(--bull);">+71.89%</div>
           </div>
-          <div class="pk-row">
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bull" style="width:75%"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bull);margin-top:.2rem">多 7.5 / 10</div>
-            </div>
-            <div class="pk-center"></div>
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bear" style="width:55%;right:0"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bear);margin-top:.2rem;text-align:right">空 5.5 / 10</div>
-            </div>
+          <div style="height:6px; background:rgba(255,255,255,0.06); border-radius:3px; overflow:hidden;">
+            <div style="width:22%; height:100%; background:linear-gradient(90deg,#15B77D,#1DD6A0); border-radius:3px;"></div>
           </div>
-        </div>
-
-        <div>
-          <div class="pk-row" style="margin-bottom:.2rem">
-            <div class="pk-label l" style="color:var(--bull);font-weight:600">政策催化</div>
-            <div class="pk-center">vs</div>
-            <div class="pk-label" style="color:var(--bear);font-weight:600">消费降级</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.3rem;">
+            <div style="font-size:clamp(0.7rem,0.95vw,0.8rem); font-weight:500;">商保健康管理</div>
+            <div style="font-family:var(--mono); font-size:0.68rem; color:var(--ice);">拓展中</div>
           </div>
-          <div class="pk-row">
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bull" style="width:70%"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bull);margin-top:.2rem">多 7 / 10</div>
-            </div>
-            <div class="pk-center"></div>
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bear" style="width:75%;right:0"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bear);margin-top:.2rem;text-align:right">空 7.5 / 10</div>
-            </div>
+          <div style="height:6px; background:rgba(255,255,255,0.06); border-radius:3px; overflow:hidden;">
+            <div style="width:7%; height:100%; background:linear-gradient(90deg,#4A9EDB,#6BB3E8); border-radius:3px;"></div>
           </div>
-        </div>
-
-        <div>
-          <div class="pk-row" style="margin-bottom:.2rem">
-            <div class="pk-label l" style="color:var(--bull);font-weight:600">估值修复</div>
-            <div class="pk-center">vs</div>
-            <div class="pk-label" style="color:var(--bear);font-weight:600">资金出逃</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.3rem;">
+            <div style="font-size:clamp(0.7rem,0.95vw,0.8rem); font-weight:500;">长寿医学/血液时钟</div>
+            <div style="font-family:var(--mono); font-size:0.68rem; color:var(--text-muted);">新赛道</div>
           </div>
-          <div class="pk-row">
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bull" style="width:60%"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bull);margin-top:.2rem">多 6 / 10</div>
-            </div>
-            <div class="pk-center"></div>
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bear" style="width:85%;right:0"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bear);margin-top:.2rem;text-align:right">空 8.5 / 10</div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="pk-row" style="margin-bottom:.2rem">
-            <div class="pk-label l" style="color:var(--bull);font-weight:600">现金流质量</div>
-            <div class="pk-center">vs</div>
-            <div class="pk-label" style="color:var(--bear);font-weight:600">应收账款风险</div>
-          </div>
-          <div class="pk-row">
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bull" style="width:65%"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bull);margin-top:.2rem">多 6.5 / 10</div>
-            </div>
-            <div class="pk-center"></div>
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bear" style="width:70%;right:0"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bear);margin-top:.2rem;text-align:right">空 7 / 10</div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="pk-row" style="margin-bottom:.2rem">
-            <div class="pk-label l" style="color:var(--bull);font-weight:600">旺季反弹预期</div>
-            <div class="pk-center">vs</div>
-            <div class="pk-label" style="color:var(--bear);font-weight:600">品牌诚信风险</div>
-          </div>
-          <div class="pk-row">
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bull" style="width:68%"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bull);margin-top:.2rem">多 6.8 / 10</div>
-            </div>
-            <div class="pk-center"></div>
-            <div>
-              <div class="pk-bar-wrap"><div class="pk-bar bear" style="width:60%;right:0"></div></div>
-              <div style="font-family:var(--mono);font-size:.6rem;color:var(--bear);margin-top:.2rem;text-align:right">空 6 / 10</div>
-            </div>
+          <div style="height:6px; background:rgba(255,255,255,0.06); border-radius:3px; overflow:hidden;">
+            <div style="width:3%; height:100%; background:rgba(255,255,255,0.2); border-radius:3px;"></div>
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- 右侧总分汇总 -->
-    <div style="display:flex;flex-direction:column;gap:clamp(.5rem,1vh,.8rem)">
-      <div class="card bull" style="text-align:center;padding:1rem">
-        <div class="ml" style="color:var(--bull)">多头总分</div>
-        <div style="font-family:var(--mono);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:var(--bull);line-height:1">41.8</div>
-        <div style="font-family:var(--mono);font-size:.62rem;color:var(--muted);margin-top:.3rem">/ 60 分 &nbsp;占比 69.7%</div>
-      </div>
-      <div class="card bear" style="text-align:center;padding:1rem">
-        <div class="ml" style="color:var(--bear)">空头总分</div>
-        <div style="font-family:var(--mono);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:var(--bear);line-height:1">42.5</div>
-        <div style="font-family:var(--mono);font-size:.62rem;color:var(--muted);margin-top:.3rem">/ 60 分 &nbsp;占比 70.8%</div>
-      </div>
-      <div class="card amber" style="text-align:center;padding:.8rem">
-        <div class="ml" style="color:var(--amber)">多空差值</div>
-        <div style="font-family:var(--mono);font-size:clamp(1.2rem,2.5vw,2rem);font-weight:700;color:var(--amber);line-height:1">−0.7</div>
-        <div style="font-size:.6rem;color:var(--muted);margin-top:.3rem">空头微弱占优</div>
-      </div>
-      <div class="card" style="padding:.8rem;font-size:.65rem;color:var(--muted);line-height:1.7">
-        <span style="color:var(--gold);font-weight:600">关键分水岭：</span>资金动向（空 +8.5）与 AI 成长（多 +8）是博弈核心。
-        若 Q2 季报 AI 收入加速且主力回流，多头逆转可能性大幅提升。
+      <div class="card">
+        <div style="font-size:clamp(0.62rem,0.85vw,0.72rem); color:var(--text-muted); line-height:1.7;">
+          <span class="tag">市占</span>民营体检 CR1 &gt;20%，行业第一<br>
+          <span class="tag">数据</span>累计体检人次超 3亿，数据护城河<br>
+          <span class="tag">机构</span>596家体检中心，年服务约3000万人<br>
+          <span class="tag">现金流</span>经营现金流18亿，远超账面净利润
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 5 · 综合判断 & 投资策略
-════════════════════════════════════════════ -->
-<div class="slide" id="s5">
-  <div style="margin-bottom:clamp(.7rem,1.5vh,1.1rem)">
-    <div class="lbl">最终判断</div>
-    <div class="ttl">综合裁决 <span>与投资策略</span></div>
-    <div class="div"></div>
-  </div>
+<!-- ══════════════ SLIDE 2: BULL CASE ══════════════ -->
+<section class="slide" id="slide-2">
+  <div class="slide-label">02 — Bull Case</div>
+  <div class="slide-title">多头视角 | <span>必涨的五个理由</span></div>
+  <div class="divider" style="background:linear-gradient(90deg,var(--bull),transparent);"></div>
 
-  <div class="gsp">
-    <div style="display:flex;flex-direction:column;gap:.7rem">
-      <div class="verdict-box">
-        <div style="display:flex;align-items:baseline;gap:1rem;margin-bottom:.6rem">
-          <div class="verdict-score">中性偏空</div>
-          <div>
-            <div style="font-family:var(--mono);font-size:.68rem;color:var(--amber)">短期 1 季度评级</div>
-            <div style="font-size:.7rem;color:var(--muted)">NEUTRAL-BEARISH</div>
-          </div>
-        </div>
-        <div style="font-size:clamp(.68rem,1vw,.82rem);color:var(--txt);line-height:1.75">
-          多空得分差值仅 0.7 分，旗鼓相当。但当前主力资金持续净流出（5 月连续放量减仓）是最直接的短期压力信号，
-          叠加 Q1 营收创近年最大降幅，季度内下行概率略高于上行。
-          <br><br>
-          <strong style="color:var(--gold)">核心逻辑：</strong>
-          美年是一家基本面长期向好（AI 叙事 + 垄断格局）但短期财务恶化的标的，适合战略性耐心等待，
-          而非追涨博弈下一季度反弹。
-        </div>
+  <div class="section-block">
+    <div class="reason-row bull-row" style="animation-delay:0.05s;">
+      <div class="reason-num gold">01</div>
+      <div>
+        <div class="reason-title">AI飞轮加速 · 心肺联筛/脑睿佳覆盖超90%影像项目，差异化护城河</div>
+        <div class="reason-sub">AI收入2025年+71.89%至3.71亿 · Q1 2026再+60.1%至8,673万 · 行业壁垒快速升高，竞品数据积累难以复制</div>
       </div>
-
-      <div class="g2" style="gap:.6rem">
-        <div class="card bull" style="padding:.8rem">
-          <div class="ml" style="color:var(--bull)">可以做多的条件</div>
-          <ul style="font-size:.63rem;color:var(--muted);line-height:1.8;list-style:none;padding:0">
-            <li>✓ Q2 季报营收降幅收窄至 5% 以内</li>
-            <li>✓ 主力资金连续 3 日净流入</li>
-            <li>✓ AI 收入单季超 1.5 亿</li>
-            <li>✓ 医保政策落地超预期</li>
-          </ul>
-        </div>
-        <div class="card bear" style="padding:.8rem">
-          <div class="ml" style="color:var(--bear)">需要回避的信号</div>
-          <ul style="font-size:.63rem;color:var(--muted);line-height:1.8;list-style:none;padding:0">
-            <li>✗ 应收账款减值公告</li>
-            <li>✗ 营收降幅继续扩大</li>
-            <li>✗ 大股东减持预案</li>
-            <li>✗ 舆情/监管负面事件</li>
-          </ul>
-        </div>
-      </div>
+      <div class="reason-badge bull-badge">AI +71.9%</div>
     </div>
-
-    <!-- 右侧：资金流 + 策略建议 -->
-    <div style="display:flex;flex-direction:column;gap:.7rem">
-      <div class="card" style="padding:.9rem">
-        <div class="ml">5 月主力资金流向（净额）</div>
-        <div class="flow-row">
-          <div class="flow-date">5 / 07</div>
-          <div class="flow-bar-wrap">
-            <div class="flow-bar" style="width:10%;background:var(--bear)"></div>
-          </div>
-          <div class="flow-val dn">−783万</div>
-        </div>
-        <div class="flow-row">
-          <div class="flow-date">5 / 13</div>
-          <div class="flow-bar-wrap">
-            <div class="flow-bar" style="width:48%;background:var(--bear)"></div>
-          </div>
-          <div class="flow-val dn">−9,773万</div>
-        </div>
-        <div class="flow-row">
-          <div class="flow-date">5 / 18</div>
-          <div class="flow-bar-wrap">
-            <div class="flow-bar" style="width:100%;background:var(--bear)"></div>
-          </div>
-          <div class="flow-val dn" style="font-weight:700">−1.39亿</div>
-        </div>
-        <div style="font-size:.58rem;color:var(--dim);margin-top:.5rem;line-height:1.5">
-          主力加速出逃，散户接盘特征明显，短期承压
-        </div>
+    <div class="reason-row bull-row" style="animation-delay:0.12s;">
+      <div class="reason-num gold">02</div>
+      <div>
+        <div class="reason-title">行业格局定格 · 爱康退市+慈铭并入，准垄断定价权逐步兑现</div>
+        <div class="reason-sub">民营体检 CR1 超20%，竞争格局已固化 · 企业团检续签议价能力增强 · 长期利润率修复逻辑清晰</div>
       </div>
-
-      <div class="card gold" style="padding:.9rem">
-        <div class="ml">操作建议</div>
-        <div style="font-size:.7rem;color:var(--txt);line-height:1.75">
-          <span style="color:var(--gold);font-weight:600">短线（≤1 个月）：</span>
-          建议观望，等待主力资金企稳信号后再介入。<br>
-          <span style="color:var(--bull);font-weight:600">中线（3 个月）：</span>
-          若 Q2 旺季数据改善 + AI 收入加速，6 元附近分批建仓，目标 7.06。<br>
-          <span style="color:var(--bear);font-weight:600">止损位：</span>
-          5.20 元破位则减仓（跌幅约 -15%）。
-        </div>
+      <div class="reason-badge bull-badge">CR1 &gt;20%</div>
+    </div>
+    <div class="reason-row bull-row" style="animation-delay:0.19s;">
+      <div class="reason-num gold">03</div>
+      <div>
+        <div class="reason-title">政策三重顺风 · 癌症早筛+医保跨省共济+影像互认全面落地</div>
+        <div class="reason-sub">2026年两会明确癌症防治重在预防早筛 · 医保个账跨省共济全面实施 · 检查结果互认拓展，体检需求系统性提升</div>
       </div>
-
-      <div class="card ice" style="padding:.8rem">
-        <div class="ml">估值对标参考</div>
-        <div style="font-size:.63rem;color:var(--muted);line-height:1.7">
-          2026E PE：59× &nbsp;|&nbsp; 2027E PE：45× &nbsp;|&nbsp; 2028E PE：36×<br>
-          机构下调 2026 预测净利润：6.29亿 → <span style="color:var(--bear)">4.12亿</span><br>
-          经营现金流 18亿 远超净利润，反映真实盈利能力优于账面
-        </div>
+      <div class="reason-badge bull-badge">政策加码</div>
+    </div>
+    <div class="reason-row bull-row" style="animation-delay:0.26s;">
+      <div class="reason-num gold">04</div>
+      <div>
+        <div class="reason-title">旺季反攻效应 · Q1淡季不代表全年，Q3-Q4企业团检大规模结算</div>
+        <div class="reason-sub">体检行业Q1受春节扰动偏弱 · 历史上下半年占全年收入约55-60% · 当前低价已反映淡季，若Q2改善即催化反弹</div>
       </div>
-
-      <div class="note">
-        本报告综合公开市场数据与机构研报，仅供研究参考，不构成任何投资建议。
-        股市有风险，投资需谨慎。数据截至 2026-05-18。
+      <div class="reason-badge bull-badge">季节修复</div>
+    </div>
+    <div class="reason-row bull-row" style="animation-delay:0.33s;">
+      <div class="reason-num gold">05</div>
+      <div>
+        <div class="reason-title">机构一致看好 · 目标价7.06有15%空间，经营现金流18亿撑估值底</div>
+        <div class="reason-sub">近90天6家机构全部买入/增持，均价目标7.06 · 经营现金流18亿远超净利润2.85亿，账面质量健康 · 内生价值远高于市价</div>
       </div>
+      <div class="reason-badge bull-badge">6机构买入</div>
     </div>
   </div>
-</div>
 
-<!-- ══════════════════════════════════════════
-     SLIDE 6 · 投资机会 & 回报测算
-════════════════════════════════════════════ -->
-<div class="slide" id="s6">
-  <div style="margin-bottom:clamp(.6rem,1.3vh,1rem)">
-    <div class="lbl">投资机会与回报测算</div>
-    <div class="ttl">四情景模型 <span>· 20万持仓方案</span></div>
-    <div class="div"></div>
+  <div style="margin-top:auto; padding-top:0.6rem;">
+    <div class="note">💡 多头核心：AI业务是真实高速增长的第二曲线，行业垄断格局已固化，政策尾风强劲，下半年旺季反攻可期。</div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 3: BEAR CASE ══════════════ -->
+<section class="slide" id="slide-3">
+  <div class="slide-label">03 — Bear Case</div>
+  <div class="slide-title">空头视角 | <span style="color:var(--bear);">必跌的五个理由</span></div>
+  <div class="divider" style="background:linear-gradient(90deg,var(--bear),transparent);"></div>
+
+  <div class="section-block">
+    <div class="reason-row bear-row" style="animation-delay:0.05s;">
+      <div class="reason-num red">01</div>
+      <div>
+        <div class="reason-title">营收连续下滑 · 2025全年-3.2%，Q1 2026再度-9.71%，增长失速</div>
+        <div class="reason-sub">AI收入3.71亿仅占总营收3.6%，无法对冲主营疲软 · PE 2026E约59倍与低增速并存，估值严重透支</div>
+      </div>
+      <div class="reason-badge warn-badge">⚠ 核心硬伤</div>
+    </div>
+    <div class="reason-row bear-row" style="animation-delay:0.12s;">
+      <div class="reason-num red">02</div>
+      <div>
+        <div class="reason-title">主力资金加速出逃 · 大钱用脚投票，散户接盘特征显现</div>
+        <div class="reason-sub">5/7净流出783万 → 5/13净流出9,773万 → 5/18净流出1.39亿，加速放量 · 典型主力减仓散户接盘结构</div>
+      </div>
+      <div class="reason-badge bear-badge">连续净流出</div>
+    </div>
+    <div class="reason-row bear-row" style="animation-delay:0.19s;">
+      <div class="reason-num red">03</div>
+      <div>
+        <div class="reason-title">应收账款膨胀成炸弹 · 34亿+是净利润10倍，坏账风险高悬</div>
+        <div class="reason-sub">2026E应收账款超34亿，企业团检账期长 · 宏观下行致企业预算收缩，一旦集中减值将直接冲击报表</div>
+      </div>
+      <div class="reason-badge bear-badge">隐患巨大</div>
+    </div>
+    <div class="reason-row bear-row" style="animation-delay:0.26s;">
+      <div class="reason-num red">04</div>
+      <div>
+        <div class="reason-title">消费降级压制天花板 · 销售费用率24%，毛利率低于竞品5个百分点</div>
+        <div class="reason-sub">重资产重营销模式 · 体检属可选消费，个人支出收缩直接导致量价双跌 · 毛利率长期被瑞慈医疗压制</div>
+      </div>
+      <div class="reason-badge bear-badge">量价双压</div>
+    </div>
+    <div class="reason-row bear-row" style="animation-delay:0.33s;">
+      <div class="reason-num red">05</div>
+      <div>
+        <div class="reason-title">品牌污点+公立竞争 · 信任护城河比市场以为的更脆弱</div>
+        <div class="reason-sub">历史多次曝出无证上岗、冒用已故医师等丑闻 · 公立医院大力扩展体检中心，凭医保资质抢夺高净值客户</div>
+      </div>
+      <div class="reason-badge bear-badge">品牌风险</div>
+    </div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:clamp(.5rem,1.2vh,.9rem);flex:1;min-height:0">
+  <div style="margin-top:auto; padding-top:0.6rem;">
+    <div class="note">⚠ 空头核心：营收失速+应收账款地雷+主力出逃是三大结构性压力，短期内没有足够的催化剂来反转资金面。</div>
+  </div>
+</section>
 
-    <!-- 持仓假设 -->
-    <div class="g4">
-      <div class="card gold" style="padding:.7rem .9rem">
-        <div class="ml">持仓金额</div>
-        <div class="mv gold">¥200,000</div>
-        <div class="mc" style="color:var(--muted)">人民币</div>
-      </div>
-      <div class="card" style="padding:.7rem .9rem">
-        <div class="ml">建仓价格</div>
-        <div class="mv amber">¥6.12</div>
-        <div class="mc" style="color:var(--muted)">2026-05-18 收盘</div>
-      </div>
-      <div class="card" style="padding:.7rem .9rem">
-        <div class="ml">持股数量</div>
-        <div class="mv">32,680 股</div>
-        <div class="mc" style="color:var(--muted)">200,000 ÷ 6.12</div>
-      </div>
-      <div class="card" style="padding:.7rem .9rem">
-        <div class="ml">持仓周期</div>
-        <div class="mv ice">90 天</div>
-        <div class="mc" style="color:var(--muted)">覆盖 Q2 旺季</div>
-      </div>
-    </div>
+<!-- ══════════════ SLIDE 4: PK ══════════════ -->
+<section class="slide" id="slide-4">
+  <div class="slide-label">04 — Bull vs Bear PK</div>
+  <div class="slide-title">多空<span>对决</span> · PK评分表</div>
+  <div class="divider"></div>
 
-    <!-- 四情景表 -->
-    <div style="flex:1;min-height:0;overflow:hidden">
-      <table style="width:100%;border-collapse:separate;border-spacing:0 .28rem">
+  <div class="grid-split" style="flex:1; min-height:0;">
+    <div style="overflow:hidden;">
+      <table class="pk-table">
         <thead>
           <tr>
-            <th style="font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.25rem .6rem;text-align:left">情景</th>
-            <th style="font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.25rem .5rem;text-align:center">触发条件</th>
-            <th style="font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.25rem .5rem;text-align:center">目标价</th>
-            <th style="font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.25rem .5rem;text-align:center">涨跌幅</th>
-            <th style="font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.25rem .5rem;text-align:center">盈亏金额</th>
-            <th style="font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.25rem .5rem;text-align:center">概率估计</th>
-            <th style="font-family:var(--mono);font-size:.6rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;padding:.25rem .5rem;text-align:center">期望收益</th>
+            <th style="text-align:left; width:5.5rem;">维度</th>
+            <th style="width:7rem;">多头 🐂</th>
+            <th style="width:7rem;">空头 🐻</th>
+            <th>裁判</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="padding:.45rem .6rem;background:rgba(21,183,125,.08);border-left:2px solid var(--bull);border-radius:5px 0 0 5px;font-size:.68rem;font-weight:600;color:var(--bull)">🚀 强烈看涨</td>
-            <td style="padding:.45rem .5rem;background:rgba(21,183,125,.06);font-size:.62rem;color:var(--muted);text-align:center">AI收入Q2单季超1.5亿<br>营收降幅收窄至5%内</td>
-            <td style="padding:.45rem .5rem;background:rgba(21,183,125,.06);font-family:var(--mono);font-size:.75rem;color:var(--bull);text-align:center;font-weight:700">¥7.80</td>
-            <td style="padding:.45rem .5rem;background:rgba(21,183,125,.06);font-family:var(--mono);font-size:.75rem;color:var(--bull);text-align:center;font-weight:700">+27.5%</td>
-            <td style="padding:.45rem .5rem;background:rgba(21,183,125,.06);font-family:var(--mono);font-size:.75rem;color:var(--bull);text-align:center;font-weight:700">+¥55,000</td>
-            <td style="padding:.45rem .5rem;background:rgba(21,183,125,.06);font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:center">20%</td>
-            <td style="padding:.45rem .5rem;background:rgba(21,183,125,.06);border-radius:0 5px 5px 0;font-family:var(--mono);font-size:.7rem;color:var(--bull);text-align:center;font-weight:600">+¥11,000</td>
+            <td>成长性</td>
+            <td><div class="star-bar">
+              <div class="star lit-bull"></div><div class="star lit-bull"></div>
+              <div class="star lit-bull"></div><div class="star lit-bull"></div><div class="star"></div>
+            </div></td>
+            <td><div class="star-bar">
+              <div class="star lit-bear"></div><div class="star lit-bear"></div>
+              <div class="star"></div><div class="star"></div><div class="star"></div>
+            </div></td>
+            <td><span class="pk-winner bull">多头胜</span></td>
           </tr>
           <tr>
-            <td style="padding:.45rem .6rem;background:rgba(74,158,219,.08);border-left:2px solid var(--ice);border-radius:5px 0 0 5px;font-size:.68rem;font-weight:600;color:var(--ice)">📈 基准看涨</td>
-            <td style="padding:.45rem .5rem;background:rgba(74,158,219,.06);font-size:.62rem;color:var(--muted);text-align:center">机构目标价实现<br>主力资金回流</td>
-            <td style="padding:.45rem .5rem;background:rgba(74,158,219,.06);font-family:var(--mono);font-size:.75rem;color:var(--ice);text-align:center;font-weight:700">¥7.06</td>
-            <td style="padding:.45rem .5rem;background:rgba(74,158,219,.06);font-family:var(--mono);font-size:.75rem;color:var(--ice);text-align:center;font-weight:700">+15.4%</td>
-            <td style="padding:.45rem .5rem;background:rgba(74,158,219,.06);font-family:var(--mono);font-size:.75rem;color:var(--ice);text-align:center;font-weight:700">+¥30,720</td>
-            <td style="padding:.45rem .5rem;background:rgba(74,158,219,.06);font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:center">35%</td>
-            <td style="padding:.45rem .5rem;background:rgba(74,158,219,.06);border-radius:0 5px 5px 0;font-family:var(--mono);font-size:.7rem;color:var(--ice);text-align:center;font-weight:600">+¥10,752</td>
+            <td>盈利质量</td>
+            <td><div class="star-bar">
+              <div class="star lit-bull"></div><div class="star lit-bull"></div>
+              <div class="star"></div><div class="star"></div><div class="star"></div>
+            </div></td>
+            <td><div class="star-bar">
+              <div class="star lit-bear"></div><div class="star lit-bear"></div>
+              <div class="star lit-bear"></div><div class="star lit-bear"></div><div class="star"></div>
+            </div></td>
+            <td><span class="pk-winner bear">空头胜</span></td>
           </tr>
           <tr>
-            <td style="padding:.45rem .6rem;background:rgba(245,166,35,.08);border-left:2px solid var(--amber);border-radius:5px 0 0 5px;font-size:.68rem;font-weight:600;color:var(--amber)">➡️ 震荡横盘</td>
-            <td style="padding:.45rem .5rem;background:rgba(245,166,35,.06);font-size:.62rem;color:var(--muted);text-align:center">业绩无改善<br>维持现有估值</td>
-            <td style="padding:.45rem .5rem;background:rgba(245,166,35,.06);font-family:var(--mono);font-size:.75rem;color:var(--amber);text-align:center;font-weight:700">¥6.50</td>
-            <td style="padding:.45rem .5rem;background:rgba(245,166,35,.06);font-family:var(--mono);font-size:.75rem;color:var(--amber);text-align:center;font-weight:700">+6.2%</td>
-            <td style="padding:.45rem .5rem;background:rgba(245,166,35,.06);font-family:var(--mono);font-size:.75rem;color:var(--amber);text-align:center;font-weight:700">+¥12,418</td>
-            <td style="padding:.45rem .5rem;background:rgba(245,166,35,.06);font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:center">25%</td>
-            <td style="padding:.45rem .5rem;background:rgba(245,166,35,.06);border-radius:0 5px 5px 0;font-family:var(--mono);font-size:.7rem;color:var(--amber);text-align:center;font-weight:600">+¥3,105</td>
+            <td>估值合理性</td>
+            <td><div class="star-bar">
+              <div class="star lit-bull"></div><div class="star lit-bull"></div>
+              <div class="star lit-bull"></div><div class="star"></div><div class="star"></div>
+            </div></td>
+            <td><div class="star-bar">
+              <div class="star lit-bear"></div><div class="star lit-bear"></div>
+              <div class="star lit-bear"></div><div class="star"></div><div class="star"></div>
+            </div></td>
+            <td><span class="pk-winner tie">平局</span></td>
           </tr>
           <tr>
-            <td style="padding:.45rem .6rem;background:rgba(224,68,85,.08);border-left:2px solid var(--bear);border-radius:5px 0 0 5px;font-size:.68rem;font-weight:600;color:var(--bear)">📉 下行止损</td>
-            <td style="padding:.45rem .5rem;background:rgba(224,68,85,.06);font-size:.62rem;color:var(--muted);text-align:center">营收降幅扩大<br>减值/负面事件</td>
-            <td style="padding:.45rem .5rem;background:rgba(224,68,85,.06);font-family:var(--mono);font-size:.75rem;color:var(--bear);text-align:center;font-weight:700">¥5.20</td>
-            <td style="padding:.45rem .5rem;background:rgba(224,68,85,.06);font-family:var(--mono);font-size:.75rem;color:var(--bear);text-align:center;font-weight:700">−15.0%</td>
-            <td style="padding:.45rem .5rem;background:rgba(224,68,85,.06);font-family:var(--mono);font-size:.75rem;color:var(--bear);text-align:center;font-weight:700">−¥30,066</td>
-            <td style="padding:.45rem .5rem;background:rgba(224,68,85,.06);font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:center">20%</td>
-            <td style="padding:.45rem .5rem;background:rgba(224,68,85,.06);border-radius:0 5px 5px 0;font-family:var(--mono);font-size:.7rem;color:var(--bear);text-align:center;font-weight:600">−¥6,013</td>
+            <td>行业格局</td>
+            <td><div class="star-bar">
+              <div class="star lit-bull"></div><div class="star lit-bull"></div>
+              <div class="star lit-bull"></div><div class="star lit-bull"></div><div class="star"></div>
+            </div></td>
+            <td><div class="star-bar">
+              <div class="star lit-bear"></div><div class="star lit-bear"></div>
+              <div class="star lit-bear"></div><div class="star"></div><div class="star"></div>
+            </div></td>
+            <td><span class="pk-winner bull">多头胜</span></td>
+          </tr>
+          <tr>
+            <td>资金动向</td>
+            <td><div class="star-bar">
+              <div class="star lit-bull"></div><div class="star lit-bull"></div>
+              <div class="star"></div><div class="star"></div><div class="star"></div>
+            </div></td>
+            <td><div class="star-bar">
+              <div class="star lit-bear"></div><div class="star lit-bear"></div>
+              <div class="star lit-bear"></div><div class="star lit-bear"></div><div class="star lit-bear"></div>
+            </div></td>
+            <td><span class="pk-winner bear">空头胜</span></td>
+          </tr>
+          <tr>
+            <td>财务安全</td>
+            <td><div class="star-bar">
+              <div class="star lit-bull"></div><div class="star lit-bull"></div>
+              <div class="star lit-bull"></div><div class="star"></div><div class="star"></div>
+            </div></td>
+            <td><div class="star-bar">
+              <div class="star lit-bear"></div><div class="star lit-bear"></div>
+              <div class="star lit-bear"></div><div class="star lit-bear"></div><div class="star"></div>
+            </div></td>
+            <td><span class="pk-winner bear">空头胜</span></td>
           </tr>
         </tbody>
       </table>
+
+      <div style="display:flex; gap:1rem; margin-top:clamp(0.6rem,1.5vh,1.2rem); align-items:center;">
+        <div class="card" style="flex:1; text-align:center;">
+          <div class="metric-label">多头得分</div>
+          <div class="metric-value bull" style="font-size:2rem;">2</div>
+          <div class="metric-change" style="color:var(--text-muted);">成长+行业格局</div>
+        </div>
+        <div style="font-family:var(--serif); font-size:1.5rem; color:var(--text-dim);">VS</div>
+        <div class="card" style="flex:1; text-align:center;">
+          <div class="metric-label">空头得分</div>
+          <div class="metric-value bear" style="font-size:2rem;">3</div>
+          <div class="metric-change" style="color:var(--text-muted);">盈利+资金+财务</div>
+        </div>
+        <div style="font-family:var(--serif); font-size:1.5rem; color:var(--text-dim);">+</div>
+        <div class="card" style="flex:1; text-align:center;">
+          <div class="metric-label">平局</div>
+          <div class="metric-value ice" style="font-size:2rem;">1</div>
+          <div class="metric-change" style="color:var(--text-muted);">估值合理性</div>
+        </div>
+      </div>
     </div>
 
-    <!-- 底部汇总 -->
-    <div class="g3" style="gap:.6rem">
-      <div class="card" style="padding:.8rem;text-align:center;border-color:rgba(201,163,71,.28)">
-        <div class="ml">加权期望收益（EV）</div>
-        <div style="font-family:var(--mono);font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--bull)">+¥18,844</div>
-        <div style="font-family:var(--mono);font-size:.65rem;color:var(--bull);margin-top:.2rem">+9.4% / 90天</div>
-        <div style="font-size:.58rem;color:var(--dim);margin-top:.3rem">= 20%×55K + 35%×30.7K + 25%×12.4K − 20%×30K</div>
+    <div style="display:flex; flex-direction:column; gap:clamp(0.6rem,1.2vh,1rem); overflow:hidden;">
+      <div class="card" style="flex:none;">
+        <div class="metric-label" style="margin-bottom:0.4rem;">空头 3:2 领先，但差距有限</div>
+        <div style="font-size:clamp(0.68rem,0.95vw,0.8rem); color:var(--text); line-height:1.7;">
+          多头2胜集中在<strong style="color:var(--bull);">长期叙事</strong>（AI成长+垄断格局），
+          空头3胜集中在<strong style="color:var(--bear);">当下基本面</strong>（盈利/资金/财务）。
+          <br>短期内财务和资金面是<strong style="color:var(--bear);">直接压力</strong>，叙事需时间兑现。
+        </div>
       </div>
-      <div class="card" style="padding:.8rem;text-align:center;border-color:rgba(224,68,85,.25)">
-        <div class="ml">最大风险敞口</div>
-        <div style="font-family:var(--mono);font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--bear)">−¥30,066</div>
-        <div style="font-family:var(--mono);font-size:.65rem;color:var(--bear);margin-top:.2rem">−15.0% 止损触发</div>
-        <div style="font-size:.58rem;color:var(--dim);margin-top:.3rem">破 5.20 元即触发减仓纪律</div>
+      <div class="card bear" style="flex:none;">
+        <div class="metric-label" style="margin-bottom:0.3rem;">关键摆动因子</div>
+        <div style="font-size:clamp(0.65rem,0.9vw,0.75rem); line-height:1.8; color:var(--text);">
+          🔴 <strong>主力资金连续3日净流入</strong> → 多头确认信号<br>
+          🔴 <strong>Q2季报营收降幅收窄至5%内</strong> → 拐点初显<br>
+          🟡 <strong>AI收入Q2单季超1.5亿</strong> → 第二曲线成立<br>
+          🟡 <strong>医保政策超预期落地</strong> → 行业β催化
+        </div>
       </div>
-      <div class="card" style="padding:.8rem;text-align:center;border-color:rgba(74,158,219,.25)">
-        <div class="ml">风险回报比</div>
-        <div style="font-family:var(--mono);font-size:clamp(1.3rem,2.5vw,2rem);font-weight:700;color:var(--ice)">1.83 : 1</div>
-        <div style="font-family:var(--mono);font-size:.65rem;color:var(--ice);margin-top:.2rem">最佳收益 / 最大损失</div>
-        <div style="font-size:.58rem;color:var(--dim);margin-top:.3rem">55,000 ÷ 30,066 = 1.83，风报比尚可</div>
+      <div class="card">
+        <div class="metric-label" style="margin-bottom:0.3rem;">裁判结论</div>
+        <div style="font-size:clamp(0.65rem,0.9vw,0.75rem); line-height:1.8; color:var(--text);">
+          当前股价<strong style="color:var(--amber);">6.12元</strong>与目标价7.06的差距存在，
+          但短期资金面和财务面双重承压。
+          <strong>在Q2季报出炉前</strong>，建议观望，
+          维持<strong style="color:var(--amber);">中性偏空</strong>，等信号再行动。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 5: VALUATION ══════════════ -->
+<section class="slide" id="slide-5">
+  <div class="slide-label">05 — Valuation Model</div>
+  <div class="slide-title">估值<span>模型</span> · 多情景目标价</div>
+  <div class="divider"></div>
+
+  <div class="grid-split" style="flex:1;min-height:0;">
+    <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vh,0.8rem);overflow:hidden;">
+      <div class="slide-label" style="margin:0;">目标价区间 vs 当前价（6.12元）· 最大=10元</div>
+
+      <div style="display:flex;flex-direction:column;gap:0;flex:1;justify-content:center;">
+        <!-- Dream: 9.0元, 90% -->
+        <div class="val-row">
+          <div class="val-scenario" style="color:var(--bull);">梦想</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar" style="width:90%; background:linear-gradient(90deg,#15B77D,#1DD6A0);"></div>
+            <div class="current-line" style="left:61.2%;"></div>
+          </div>
+          <div class="val-price" style="color:var(--bull);">9.00元</div>
+          <div class="val-pct" style="color:var(--bull);">+47%</div>
+        </div>
+        <!-- Optimistic: 7.50元, 75% -->
+        <div class="val-row">
+          <div class="val-scenario">乐观</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar" style="width:75%; background:linear-gradient(90deg,#C9A347,#E8C76A);"></div>
+            <div class="current-line" style="left:61.2%;"></div>
+          </div>
+          <div class="val-price" style="color:var(--gold);">7.50元</div>
+          <div class="val-pct" style="color:var(--bull);">+22.5%</div>
+        </div>
+        <!-- Base: 7.06元, 70.6% -->
+        <div class="val-row">
+          <div class="val-scenario">基准</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar" style="width:70.6%; background:linear-gradient(90deg,#4A9EDB,#6BB3E8);"></div>
+            <div class="current-line" style="left:61.2%;"></div>
+          </div>
+          <div class="val-price" style="color:var(--ice);">7.06元</div>
+          <div class="val-pct" style="color:var(--bull);">+15.4%</div>
+        </div>
+        <!-- Conservative: 5.50元, 55% -->
+        <div class="val-row">
+          <div class="val-scenario" style="color:var(--amber);">保守</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar" style="width:55%; background:linear-gradient(90deg,#E8843A,#F5A060);"></div>
+            <div class="current-line" style="left:61.2%;"></div>
+          </div>
+          <div class="val-price" style="color:var(--amber);">5.50元</div>
+          <div class="val-pct" style="color:var(--bear);">-10.1%</div>
+        </div>
+        <!-- Pessimistic: 4.50元, 45% -->
+        <div class="val-row">
+          <div class="val-scenario" style="color:var(--bear);">悲观</div>
+          <div class="val-bar-wrap">
+            <div class="val-bar" style="width:45%; background:var(--bear);"></div>
+            <div class="current-line" style="left:61.2%;"></div>
+          </div>
+          <div class="val-price" style="color:var(--bear);">4.50元</div>
+          <div class="val-pct" style="color:var(--bear);">-26.5%</div>
+        </div>
+      </div>
+
+      <div class="note">当前6.12元（61%处）：基准/乐观/梦想均有上行空间，但需业绩验证；保守/悲观情景下有10-27%回撤。</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vh,0.8rem);overflow:hidden;">
+      <div class="slide-label" style="margin:0;">情景假设（2026-2028E）</div>
+
+      <div style="display:grid;grid-template-columns:3rem 4.5rem 3.5rem 3.5rem 3.5rem;gap:0.4rem;
+        font-family:var(--mono);font-size:0.62rem;color:var(--text-dim);padding:0 0.6rem;letter-spacing:0.06em;">
+        <div>场景</div><div>净利润</div><div>PE假设</div><div>目标价</div><div>空间</div>
+      </div>
+
+      <div class="card" style="padding:0.5rem 0.6rem;">
+        <div style="display:grid;grid-template-columns:3rem 4.5rem 3.5rem 3.5rem 3.5rem;
+          gap:0.4rem;font-family:var(--mono);font-size:clamp(0.62rem,0.85vw,0.72rem);
+          align-items:center;margin-bottom:0.45rem;">
+          <div style="color:var(--bull);">梦想</div>
+          <div>6.65亿</div><div>2028E/45x</div>
+          <div style="color:var(--bull);">9.00元</div>
+          <div style="color:var(--bull);">+47%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:3rem 4.5rem 3.5rem 3.5rem 3.5rem;
+          gap:0.4rem;font-family:var(--mono);font-size:clamp(0.62rem,0.85vw,0.72rem);
+          align-items:center;margin-bottom:0.45rem;">
+          <div style="color:var(--gold);">乐观</div>
+          <div>5.38亿</div><div>2027E/35x</div>
+          <div style="color:var(--gold);">7.50元</div>
+          <div style="color:var(--bull);">+22.5%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:3rem 4.5rem 3.5rem 3.5rem 3.5rem;
+          gap:0.4rem;font-family:var(--mono);font-size:clamp(0.62rem,0.85vw,0.72rem);
+          align-items:center;margin-bottom:0.45rem;">
+          <div style="color:var(--ice);">基准</div>
+          <div>4.12亿</div><div>2026E/59x</div>
+          <div style="color:var(--ice);">7.06元</div>
+          <div style="color:var(--bull);">+15.4%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:3rem 4.5rem 3.5rem 3.5rem 3.5rem;
+          gap:0.4rem;font-family:var(--mono);font-size:clamp(0.62rem,0.85vw,0.72rem);
+          align-items:center;margin-bottom:0.45rem;">
+          <div style="color:var(--amber);">保守</div>
+          <div>3.0亿</div><div>2026E/30x</div>
+          <div style="color:var(--amber);">5.50元</div>
+          <div style="color:var(--bear);">-10.1%</div>
+        </div>
+        <div style="display:grid;grid-template-columns:3rem 4.5rem 3.5rem 3.5rem 3.5rem;
+          gap:0.4rem;font-family:var(--mono);font-size:clamp(0.62rem,0.85vw,0.72rem);
+          align-items:center;">
+          <div style="color:var(--bear);">悲观</div>
+          <div>2.0亿</div><div>2026E/25x</div>
+          <div style="color:var(--bear);">4.50元</div>
+          <div style="color:var(--bear);">-26.5%</div>
+        </div>
+      </div>
+
+      <div class="card gold">
+        <div class="metric-label" style="margin-bottom:0.4rem;">建议介入区间</div>
+        <div style="display:flex;align-items:baseline;gap:0.5rem;">
+          <div style="font-family:var(--mono);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;color:var(--gold);">5.8 – 6.0元</div>
+          <div style="font-size:clamp(0.62rem,0.85vw,0.72rem);color:var(--text-muted);">等旺季信号确认后</div>
+        </div>
+        <div style="font-size:clamp(0.6rem,0.82vw,0.7rem);color:var(--text-muted);margin-top:0.3rem;line-height:1.5;">
+          Q2季报营收改善信号 + 主力资金连续净流入<br>
+          止损5.20元 → 最大回撤-15%
+        </div>
+      </div>
+
+      <div class="note">⚠ 模型结论：6.12元价位介于基准和保守之间，上有+15%~+47%的空间，下有-10%~-27%的风险。AI叙事兑现前，持仓需纪律严格。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 6: INVESTMENT CONCLUSION ══════════════ -->
+<section class="slide" id="slide-6">
+  <div class="slide-label">06 — Investment Thesis</div>
+  <div class="slide-title">投资<span>结论</span></div>
+  <div class="divider"></div>
+
+  <div class="grid-split" style="flex:1;min-height:0;">
+    <div style="display:flex;flex-direction:column;gap:clamp(0.6rem,1.2vh,1rem);overflow:hidden;">
+      <div class="rating-badge neutral-rating">
+        <div class="rating-dot amber"></div>
+        <div class="rating-text amber">中性偏空 · 等信号再入场</div>
+      </div>
+
+      <div class="card" style="flex:none;">
+        <div class="metric-label" style="margin-bottom:0.4rem;">核心判断</div>
+        <div style="font-size:clamp(0.7rem,1vw,0.85rem);color:var(--text);line-height:1.8;">
+          美年健康是<strong style="color:var(--gold);">真实的行业龙头</strong>——垄断格局已固化，AI业务高速增长，政策顺风明确。
+          但<strong style="color:var(--bear);">主营连续下滑+应收账款隐患+主力出逃</strong>是三重短期压力。
+          <br><br>
+          <strong>核心结论：</strong>好公司 ≠ 好时机，等Q2旺季数据验证后再行动，比追现价风险收益比更优。
+        </div>
+      </div>
+
+      <div class="card gold" style="flex:none;">
+        <div class="metric-label" style="margin-bottom:0.3rem;">建议操作策略</div>
+        <div style="font-size:clamp(0.68rem,0.95vw,0.8rem);color:var(--text);line-height:1.75;">
+          🔵 <strong>当前</strong>：观望，等待主力资金企稳和Q2数据<br>
+          🟡 <strong>Q2季报（7月底）后</strong>：若营收降幅收窄+AI加速 → 5.8-6.0元分批建仓<br>
+          🟢 <strong>止盈</strong>：7.06减半仓，7.50清仓<br>
+          🔴 <strong>止损</strong>：5.20元破位则减仓，严格执行
+        </div>
       </div>
     </div>
 
-    <!-- 建议入场窗口 -->
-    <div class="card gold" style="padding:.75rem 1rem">
-      <div style="display:flex;gap:1.5rem;align-items:flex-start;flex-wrap:wrap">
-        <div>
-          <div class="ml">最佳入场窗口</div>
-          <div style="font-size:.7rem;color:var(--txt);line-height:1.7;max-width:28rem">
-            <span style="color:var(--gold);font-weight:600">等待信号再入场：</span>Q2 季报（约 7 月底）公布后，若 AI 收入增速维持 50%+ 且营收降幅收窄，配合主力资金连续 3 日净流入，在 6.0~6.3 元区间分两批建仓。
+    <div style="display:flex;flex-direction:column;gap:clamp(0.6rem,1.2vh,1rem);overflow:hidden;">
+      <div class="slide-label" style="margin:0;">关键监控 KPI（Q2-Q3窗口）</div>
+      <div class="card" style="flex:1;">
+        <div class="kpi-row">
+          <div class="kpi-dot red"></div>
+          <div>
+            <div class="kpi-name">主力资金连续3日净流入</div>
+            <div class="kpi-desc">当前5月加速流出是最直接做空信号，资金面企稳是入场前提</div>
+            <div class="kpi-status pending">待观察 · 日频监控</div>
           </div>
         </div>
-        <div style="border-left:1px solid var(--bs);padding-left:1.5rem;flex:1;min-width:160px">
-          <div class="ml">分批策略</div>
-          <div style="font-size:.65rem;color:var(--muted);line-height:1.7">
-            第一批：触发信号后买入 <span style="color:var(--gold)">10万</span><br>
-            第二批：确认上涨趋势后再加 <span style="color:var(--gold)">10万</span><br>
-            止盈：7.06 减半仓，7.50 清仓
+        <div class="kpi-row">
+          <div class="kpi-dot red"></div>
+          <div>
+            <div class="kpi-name">Q2营收同比降幅收窄至5%内</div>
+            <div class="kpi-desc">连续两季-9%以上则主营失速风险坐实，需下调预期</div>
+            <div class="kpi-status pending">待验证 · Q2季报</div>
           </div>
         </div>
+        <div class="kpi-row">
+          <div class="kpi-dot amber"></div>
+          <div>
+            <div class="kpi-name">AI收入Q2单季突破1.5亿</div>
+            <div class="kpi-desc">占总营收超5%，证明第二曲线体量足以支撑成长估值溢价</div>
+            <div class="kpi-status pending">催化剂 · Q2季报</div>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-dot amber"></div>
+          <div>
+            <div class="kpi-name">应收账款无大额减值公告</div>
+            <div class="kpi-desc">账期34亿+是悬而未决的风险，需持续监控坏账拨备率</div>
+            <div class="kpi-status watch">持续监控 · 公告</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note" style="line-height:1.7;">
+        ⚠ <strong>风险提示：</strong>本报告基于公开信息整理，所有判断为独立分析观点，
+        不构成任何投资建议。A股受情绪、政策、资金博弈多重影响，
+        实际走势可能与分析方向相反。股市有风险，投资须谨慎，
+        请以自身风险承受能力为最终决策依据。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 7: ROI & SCENARIOS ══════════════ -->
+<section class="slide" id="slide-7">
+  <div class="slide-label">07 — Investment Return Calculator</div>
+  <div class="slide-title">投资机会 <span>&amp; 回报测算</span></div>
+  <div class="divider"></div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vh,0.9rem);flex:1;min-height:0;">
+
+    <div class="grid-4">
+      <div class="card gold">
+        <div class="metric-label">持仓金额</div>
+        <div class="metric-value gold">¥200,000</div>
+        <div class="metric-change flat">人民币</div>
+      </div>
+      <div class="card">
+        <div class="metric-label">建仓均价</div>
+        <div class="metric-value amber">¥6.12</div>
+        <div class="metric-change flat">2026-05-18 收盘</div>
+      </div>
+      <div class="card">
+        <div class="metric-label">持股数量</div>
+        <div class="metric-value">32,680 股</div>
+        <div class="metric-change flat">200,000 ÷ 6.12</div>
+      </div>
+      <div class="card ice">
+        <div class="metric-label">持仓周期</div>
+        <div class="metric-value ice">90 天</div>
+        <div class="metric-change flat">覆盖 Q2 旺季</div>
+      </div>
+    </div>
+
+    <!-- ROI 情景表 -->
+    <table class="roi-table" style="flex:1;">
+      <thead>
+        <tr>
+          <th style="text-align:left;">情景</th>
+          <th>触发条件</th>
+          <th>目标价</th>
+          <th>涨跌幅</th>
+          <th>盈亏金额</th>
+          <th>概率估计</th>
+          <th>期望收益</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bull-row">
+          <td style="color:var(--bull);">🚀 强烈看涨</td>
+          <td>AI Q2单季超1.5亿<br><span style="font-size:.6rem;color:var(--text-dim);">营收降幅&lt;5%</span></td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:700;">¥7.80</td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:700;">+27.5%</td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:700;">+¥55,000</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">20%</td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:600;">+¥11,000</td>
+        </tr>
+        <tr class="ice-row">
+          <td style="color:var(--ice);">📈 基准看涨</td>
+          <td>机构目标价实现<br><span style="font-size:.6rem;color:var(--text-dim);">主力资金回流</span></td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:700;">¥7.06</td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:700;">+15.4%</td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:700;">+¥30,720</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">35%</td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:600;">+¥10,752</td>
+        </tr>
+        <tr class="amber-row">
+          <td style="color:var(--amber);">➡️ 震荡横盘</td>
+          <td>业绩无明显改善<br><span style="font-size:.6rem;color:var(--text-dim);">维持现有估值</span></td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:700;">¥6.50</td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:700;">+6.2%</td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:700;">+¥12,418</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">25%</td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:600;">+¥3,105</td>
+        </tr>
+        <tr class="bear-row">
+          <td style="color:var(--bear);">📉 下行止损</td>
+          <td>营收降幅扩大<br><span style="font-size:.6rem;color:var(--text-dim);">减值/负面事件</span></td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:700;">¥5.20</td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:700;">−15.0%</td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:700;">−¥30,066</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">20%</td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:600;">−¥6,013</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 底部三格汇总 -->
+    <div class="grid-3">
+      <div class="card" style="text-align:center; border-color:var(--gold-dim);">
+        <div class="metric-label">加权期望收益（EV）</div>
+        <div class="metric-value bull" style="font-size:clamp(1.2rem,2.2vw,1.8rem);">+¥18,844</div>
+        <div class="metric-change up">+9.4% / 90天</div>
+        <div style="font-size:.58rem;color:var(--text-dim);margin-top:.3rem;">20%×5.5万+35%×3.1万+25%×1.2万−20%×3万</div>
+      </div>
+      <div class="card" style="text-align:center; border-color:rgba(224,68,85,.25);">
+        <div class="metric-label">最大风险敞口</div>
+        <div class="metric-value bear" style="font-size:clamp(1.2rem,2.2vw,1.8rem);">−¥30,066</div>
+        <div class="metric-change down">−15.0% 止损触发</div>
+        <div style="font-size:.58rem;color:var(--text-dim);margin-top:.3rem;">破 5.20元 即触发减仓纪律</div>
+      </div>
+      <div class="card" style="text-align:center; border-color:rgba(74,158,219,.25);">
+        <div class="metric-label">风险回报比</div>
+        <div class="metric-value ice" style="font-size:clamp(1.2rem,2.2vw,1.8rem);">1.83 : 1</div>
+        <div class="metric-change flat">最优收益 ÷ 最大损失</div>
+        <div style="font-size:.58rem;color:var(--text-dim);margin-top:.3rem;">分批策略：触信号入10万 → 确认趋势再加10万</div>
       </div>
     </div>
 
   </div>
-  <div class="note" style="padding-top:.3rem">以上测算基于假设情景，不构成投资建议。股市有风险，入市需谨慎。</div>
-</div>
+  <div class="note" style="margin-top:0.3rem;">以上测算基于情景假设，不构成投资建议。股市有风险，入市需谨慎。</div>
+</section>
 
 </div><!-- /deck -->
 
-<nav>
-  <button class="nb" onclick="move(-1)">‹</button>
-  <span id="ctr">1 / 6</span>
-  <button class="nb" onclick="move(1)">›</button>
+<div id="progress-bar" style="width:12.5%;"></div>
+<nav aria-label="幻灯片导航">
+  <button class="nav-btn" id="prev-btn" aria-label="上一页">‹</button>
+  <span id="slide-counter">1 / 8</span>
+  <button class="nav-btn" id="next-btn" aria-label="下一页">›</button>
 </nav>
 
 <script>
-const slides=document.querySelectorAll('.slide');
-const pb=document.getElementById('pb');
-const ctr=document.getElementById('ctr');
-let cur=0,tot=slides.length;
-function go(n){
-  const old=slides[cur];
-  cur=(n+tot)%tot;
-  old.classList.add('exit');
-  setTimeout(()=>{old.classList.remove('active','exit')},450);
-  slides[cur].classList.add('active');
-  pb.style.width=((cur+1)/tot*100)+'%';
-  ctr.textContent=(cur+1)+' / '+tot;
+class PresentationController {
+  constructor() {
+    this.slides = Array.from(document.querySelectorAll('.slide'));
+    this.total = this.slides.length;
+    this.current = 0;
+    this.animating = false;
+    this.touchStartX = 0;
+    this.touchStartY = 0;
+    this.init();
+  }
+
+  init() {
+    document.getElementById('prev-btn').addEventListener('click', () => this.prev());
+    document.getElementById('next-btn').addEventListener('click', () => this.next());
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+        e.preventDefault(); this.next();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault(); this.prev();
+      }
+    });
+
+    document.addEventListener('wheel', e => {
+      if (this.animating) return;
+      if (e.deltaY > 40) this.next();
+      else if (e.deltaY < -40) this.prev();
+    }, { passive: true });
+
+    document.addEventListener('touchstart', e => {
+      this.touchStartX = e.touches[0].clientX;
+      this.touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - this.touchStartX;
+      const dy = e.changedTouches[0].clientY - this.touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+        dx < 0 ? this.next() : this.prev();
+      }
+    }, { passive: true });
+
+    this.updateUI();
+  }
+
+  goTo(index) {
+    if (this.animating || index === this.current) return;
+    if (index < 0 || index >= this.total) return;
+    this.animating = true;
+    const from = this.slides[this.current];
+    const to   = this.slides[index];
+    from.classList.add('exit');
+    from.classList.remove('active');
+    setTimeout(() => {
+      from.classList.remove('exit');
+      to.classList.add('active');
+      this.current = index;
+      this.updateUI();
+      setTimeout(() => { this.animating = false; }, 600);
+    }, 280);
+  }
+
+  next() { this.goTo(this.current + 1); }
+  prev() { this.goTo(this.current - 1); }
+
+  updateUI() {
+    const pct = ((this.current + 1) / this.total * 100).toFixed(2);
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('slide-counter').textContent = (this.current + 1) + ' / ' + this.total;
+    document.getElementById('prev-btn').style.opacity = this.current === 0 ? '0.3' : '1';
+    document.getElementById('next-btn').style.opacity = this.current === this.total - 1 ? '0.3' : '1';
+  }
 }
-function move(d){go(cur+d)}
-document.addEventListener('keydown',e=>{
-  if(e.key==='ArrowRight'||e.key==='ArrowDown')move(1);
-  if(e.key==='ArrowLeft'||e.key==='ArrowUp')move(-1);
-});
-let tx=0;
-document.addEventListener('touchstart',e=>{tx=e.touches[0].clientX});
-document.addEventListener('touchend',e=>{
-  const dx=e.changedTouches[0].clientX-tx;
-  if(Math.abs(dx)>40)move(dx<0?1:-1);
-});
-pb.style.width=(1/tot*100)+'%';
+
+window.addEventListener('DOMContentLoaded', () => { new PresentationController(); });
 </script>
 </body>
 </html>
