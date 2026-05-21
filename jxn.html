@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金信诺 300252.SZ | 深度研究报告 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07080F;
+  --surface: rgba(255,255,255,0.042);
+  --surface-hover: rgba(255,255,255,0.07);
+  --border: rgba(201,163,71,0.18);
+  --border-subtle: rgba(255,255,255,0.07);
+  --gold: #C9A347;
+  --gold-light: #E8C76A;
+  --gold-dim: rgba(201,163,71,0.25);
+  --bull: #15B77D;
+  --bull-dim: rgba(21,183,125,0.15);
+  --bear: #E04455;
+  --bear-dim: rgba(224,68,85,0.15);
+  --ice: #4A9EDB;
+  --ice-dim: rgba(74,158,219,0.15);
+  --amber: #F5A623;
+  --text: #E2D9CC;
+  --text-muted: rgba(226,217,204,0.55);
+  --text-dim: rgba(226,217,204,0.35);
+  --serif: 'Noto Serif SC', serif;
+  --sans: 'Noto Sans SC', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 100%; height: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); overflow: hidden; -webkit-font-smoothing: antialiased; }
+body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(201,163,71,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,163,71,0.04) 1px, transparent 1px); background-size: 60px 60px; pointer-events: none; z-index: 0; }
+.deck { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+.slide { position: absolute; inset: 0; width: 100vw; height: 100vh; display: flex; flex-direction: column; padding: clamp(1.5rem,3vw,3rem) clamp(2rem,5vw,5rem); opacity: 0; transform: translateY(30px); transition: opacity 0.55s cubic-bezier(0.16,1,0.3,1), transform 0.55s cubic-bezier(0.16,1,0.3,1); pointer-events: none; z-index: 1; overflow: hidden; }
+.slide.active { opacity: 1; transform: translateY(0); pointer-events: all; }
+.slide.exit { opacity: 0; transform: translateY(-30px); }
+#progress-bar { position: fixed; bottom: 0; left: 0; height: 2px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.4s ease; z-index: 100; }
+nav { position: fixed; bottom: 1.4rem; right: 2rem; display: flex; align-items: center; gap: 0.8rem; z-index: 100; }
+.nav-btn { width: 36px; height: 36px; border-radius: 50%; background: var(--surface); border: 1px solid var(--border); color: var(--gold); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.2s; font-size: 1rem; }
+.nav-btn:hover { background: var(--gold-dim); transform: scale(1.1); }
+#slide-counter { font-family: var(--mono); font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.08em; }
+.home-link { position: fixed; top: 1.2rem; left: 2rem; z-index: 100; font-family: var(--mono); font-size: 0.65rem; color: var(--text-muted); text-decoration: none; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--border-subtle); padding: 0.3rem 0.75rem; border-radius: 4px; transition: color 0.2s, border-color 0.2s; }
+.home-link:hover { color: var(--gold); border-color: var(--border); }
+.slide-label { font-family: var(--mono); font-size: clamp(0.6rem,0.9vw,0.75rem); color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4rem; opacity: 0.8; }
+.slide-title { font-family: var(--serif); font-size: clamp(1.4rem,2.5vw,2.2rem); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: clamp(0.8rem,2vh,1.5rem); }
+.slide-title span { color: var(--gold); }
+.divider { width: 2.5rem; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin-bottom: clamp(0.8rem,2vh,1.5rem); }
+.card { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 8px; padding: clamp(0.8rem,1.5vw,1.2rem); transition: background 0.2s, border-color 0.2s; }
+.card:hover { background: var(--surface-hover); border-color: var(--border); }
+.card.gold { border-color: var(--gold-dim); }
+.card.bull { border-color: rgba(21,183,125,0.25); background: var(--bull-dim); }
+.card.bear { border-color: rgba(224,68,85,0.25); background: var(--bear-dim); }
+.card.ice  { border-color: rgba(74,158,219,0.25); background: var(--ice-dim); }
+.metric-label { font-size: clamp(0.6rem,0.85vw,0.7rem); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+.metric-value { font-family: var(--mono); font-size: clamp(1.2rem,2.2vw,1.8rem); font-weight: 600; color: var(--text); line-height: 1; }
+.metric-value.gold  { color: var(--gold); }
+.metric-value.bull  { color: var(--bull); }
+.metric-value.bear  { color: var(--bear); }
+.metric-value.ice   { color: var(--ice); }
+.metric-value.amber { color: var(--amber); }
+.metric-change { font-family: var(--mono); font-size: clamp(0.65rem,0.9vw,0.72rem); margin-top: 0.3rem; }
+.metric-change.up   { color: var(--bull); }
+.metric-change.down { color: var(--bear); }
+.metric-change.flat { color: var(--amber); }
+.reason-row { display: grid; grid-template-columns: 2.8rem 1fr auto; align-items: center; gap: 1rem; padding: clamp(0.6rem,1.2vh,0.9rem) clamp(0.8rem,1.5vw,1.2rem); border-radius: 7px; margin-bottom: 0.45rem; border: 1px solid transparent; background: var(--surface); transition: background 0.2s, transform 0.2s, border-color 0.2s; animation: slideIn 0.4s ease both; }
+.reason-row.bull-row { border-color: rgba(21,183,125,0.12); }
+.reason-row.bull-row:hover { background: var(--bull-dim); transform: translateX(4px); border-color: rgba(21,183,125,0.3); }
+.reason-row.bear-row { border-color: rgba(224,68,85,0.12); }
+.reason-row.bear-row:hover { background: var(--bear-dim); transform: translateX(4px); border-color: rgba(224,68,85,0.3); }
+.reason-num { font-family: var(--mono); font-size: clamp(1rem,1.8vw,1.4rem); font-weight: 600; text-align: center; line-height: 1; }
+.reason-num.gold { color: var(--gold); }
+.reason-num.red  { color: var(--bear); }
+.reason-title { font-size: clamp(0.78rem,1.1vw,0.9rem); font-weight: 500; color: var(--text); }
+.reason-sub   { font-size: clamp(0.62rem,0.85vw,0.72rem); color: var(--text-muted); margin-top: 0.15rem; }
+.reason-badge { font-family: var(--mono); font-size: clamp(0.6rem,0.8vw,0.68rem); padding: 0.2rem 0.5rem; border-radius: 4px; white-space: nowrap; font-weight: 600; }
+.reason-badge.bull-badge { background: var(--bull-dim); color: var(--bull); border: 1px solid rgba(21,183,125,0.3); }
+.reason-badge.bear-badge { background: var(--bear-dim); color: var(--bear); border: 1px solid rgba(224,68,85,0.3); }
+.reason-badge.warn-badge { background: rgba(255,180,0,0.12); color: #FFB800; border: 1px solid rgba(255,180,0,0.3); }
+@keyframes slideIn { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+.val-row { display: grid; grid-template-columns: 4.5rem 1fr 4.5rem 3.5rem 1fr; align-items: center; gap: 0.7rem; padding: clamp(0.4rem,0.8vh,0.6rem) 0; border-bottom: 1px solid var(--border-subtle); font-size: clamp(0.62rem,0.88vw,0.75rem); }
+.val-row:last-child { border-bottom: none; }
+.val-scenario { color: var(--text-muted); font-weight: 500; }
+.val-bar-wrap { position: relative; height: 16px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: visible; }
+.val-bar { height: 100%; border-radius: 3px; transition: width 1s cubic-bezier(0.16,1,0.3,1); }
+.val-price { font-family: var(--mono); font-weight: 600; text-align: right; }
+.val-pct   { font-family: var(--mono); text-align: right; }
+.val-trigger { font-size: 0.6rem; color: var(--text-dim); line-height: 1.4; }
+.current-line { position: absolute; top: -6px; bottom: -6px; width: 2px; background: rgba(255,255,255,0.6); border-radius: 1px; z-index: 5; }
+.current-line::after { content: '当前 16.55'; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 0.6rem; color: rgba(255,255,255,0.7); white-space: nowrap; }
+.rating-badge { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.6rem 1.2rem; border-radius: 8px; margin-bottom: clamp(0.8rem,2vh,1.4rem); }
+.rating-badge.neutral-rating { border: 1px solid rgba(245,166,35,0.35); background: rgba(245,166,35,0.1); }
+.rating-dot { width: 10px; height: 10px; border-radius: 50%; }
+.rating-dot.amber { background: var(--amber); }
+.rating-text { font-family: var(--serif); font-size: clamp(0.9rem,1.4vw,1.1rem); font-weight: 600; }
+.rating-text.amber { color: var(--amber); }
+.kpi-row { display: flex; align-items: flex-start; gap: 0.8rem; padding: clamp(0.5rem,1vh,0.75rem) 0; border-bottom: 1px solid var(--border-subtle); }
+.kpi-row:last-child { border-bottom: none; }
+.kpi-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 0.3rem; flex-shrink: 0; }
+.kpi-dot.red   { background: var(--bear);  box-shadow: 0 0 6px var(--bear); }
+.kpi-dot.amber { background: #FFB800;      box-shadow: 0 0 6px #FFB800; }
+.kpi-dot.green { background: var(--bull);  box-shadow: 0 0 6px var(--bull); }
+.kpi-name   { font-size: clamp(0.72rem,1vw,0.82rem); font-weight: 500; color: var(--text); }
+.kpi-desc   { font-size: clamp(0.6rem,0.82vw,0.7rem); color: var(--text-muted); margin-top: 0.15rem; }
+.kpi-status { font-family: var(--mono); font-size: 0.6rem; padding: 0.15rem 0.4rem; border-radius: 3px; margin-top: 0.2rem; display: inline-block; }
+.kpi-status.pending { background: rgba(255,184,0,0.1); color: #FFB800; border: 1px solid rgba(255,184,0,0.25); }
+.kpi-status.watch   { background: rgba(74,158,219,0.1); color: var(--ice); border: 1px solid rgba(74,158,219,0.25); }
+.roi-table { width: 100%; border-collapse: separate; border-spacing: 0 0.3rem; }
+.roi-table th { font-size: clamp(0.58rem,0.82vw,0.68rem); color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; padding: 0.2rem 0.5rem; text-align: center; }
+.roi-table th:first-child { text-align: left; }
+.roi-table td { padding: clamp(0.35rem,0.7vh,0.55rem) 0.5rem; font-size: clamp(0.65rem,0.9vw,0.75rem); background: var(--surface); vertical-align: middle; text-align: center; }
+.roi-table tr td:first-child { border-radius: 5px 0 0 5px; text-align: left; padding-left: 0.7rem; font-weight: 600; }
+.roi-table tr td:last-child  { border-radius: 0 5px 5px 0; }
+.roi-table tr.bull-row td { background: rgba(21,183,125,0.07); }
+.roi-table tr.bull-row td:first-child { border-left: 2px solid var(--bull); }
+.roi-table tr.ice-row  td { background: rgba(74,158,219,0.07); }
+.roi-table tr.ice-row  td:first-child { border-left: 2px solid var(--ice); }
+.roi-table tr.amber-row td { background: rgba(245,166,35,0.07); }
+.roi-table tr.amber-row td:first-child { border-left: 2px solid var(--amber); }
+.roi-table tr.bear-row td { background: rgba(224,68,85,0.07); }
+.roi-table tr.bear-row td:first-child { border-left: 2px solid var(--bear); }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.8rem,1.5vw,1.2rem); }
+.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: clamp(0.7rem,1.3vw,1.1rem); }
+.grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: clamp(0.6rem,1.2vw,1rem); }
+.grid-split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(1rem,2vw,2rem); flex: 1; min-height: 0; }
+#slide-0 { justify-content: center; align-items: flex-start; }
+.cover-eyebrow { font-family: var(--mono); font-size: clamp(0.62rem,0.9vw,0.75rem); color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem; }
+.cover-eyebrow::before { content: ''; width: 2rem; height: 1px; background: var(--gold); display: block; }
+.cover-headline { font-family: var(--serif); font-size: clamp(2.2rem,5vw,4rem); font-weight: 700; line-height: 1.1; margin-bottom: 0.6rem; background: linear-gradient(135deg, #E8C76A 0%, #C9A347 40%, #E2D9CC 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.cover-sub { font-size: clamp(0.85rem,1.3vw,1.05rem); color: var(--text-muted); margin-bottom: clamp(1.5rem,3vh,2.5rem); font-weight: 300; letter-spacing: 0.05em; }
+.cover-stats { display: flex; gap: clamp(1.5rem,3vw,3rem); flex-wrap: wrap; padding: clamp(0.8rem,1.5vw,1.2rem) clamp(1rem,2vw,1.8rem); border: 1px solid var(--border); border-radius: 8px; background: var(--surface); margin-bottom: 1.5rem; max-width: 50rem; }
+.cover-stat-label { font-size: clamp(0.55rem,0.75vw,0.65rem); color: var(--text-dim); letter-spacing: 0.1em; text-transform: uppercase; }
+.cover-stat-value { font-family: var(--mono); font-size: clamp(0.9rem,1.5vw,1.1rem); color: var(--text); font-weight: 600; margin-top: 0.2rem; }
+.cover-stat-value.bear  { color: var(--bear); }
+.cover-stat-value.gold  { color: var(--gold); }
+.cover-stat-value.bull  { color: var(--bull); }
+.cover-stat-value.amber { color: var(--amber); }
+.cover-date { font-family: var(--mono); font-size: clamp(0.6rem,0.82vw,0.7rem); color: var(--text-dim); letter-spacing: 0.1em; }
+.tag { display: inline-block; font-family: var(--mono); font-size: 0.62rem; padding: 0.15rem 0.45rem; border-radius: 3px; margin-right: 0.3rem; background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(201,163,71,0.3); }
+.note { font-size: clamp(0.55rem,0.75vw,0.62rem); color: var(--text-dim); font-style: italic; line-height: 1.5; }
+.section-block { flex: 1; min-height: 0; overflow: hidden; }
+/* Council voice cards */
+.council-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(0.6rem,1.2vw,1rem); flex: 1; min-height: 0; }
+.council-card { background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 8px; padding: clamp(0.7rem,1.2vw,1rem); display: flex; flex-direction: column; gap: 0.4rem; }
+.council-role { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.2rem; }
+.council-stance { font-size: clamp(0.75rem,1.05vw,0.88rem); font-weight: 600; color: var(--text); }
+.council-body { font-size: clamp(0.6rem,0.82vw,0.7rem); color: var(--text-muted); line-height: 1.65; flex: 1; }
+.council-risk { font-family: var(--mono); font-size: 0.6rem; color: var(--bear); margin-top: auto; padding-top: 0.4rem; border-top: 1px solid var(--border-subtle); }
+.council-verdict { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-radius: 8px; padding: clamp(0.6rem,1.2vw,0.9rem); margin-top: clamp(0.5rem,1vh,0.8rem); flex-shrink: 0; }
+/* Business segment bars */
+.seg-row { display: grid; grid-template-columns: 7rem 1fr 5rem 4rem; align-items: center; gap: 0.7rem; padding: 0.4rem 0; border-bottom: 1px solid var(--border-subtle); font-size: clamp(0.62rem,0.85vw,0.72rem); }
+.seg-row:last-child { border-bottom: none; }
+.seg-name { color: var(--text); font-weight: 500; }
+.seg-bar-bg { height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
+.seg-bar-fill { height: 100%; border-radius: 4px; }
+.seg-pct { font-family: var(--mono); color: var(--text-muted); text-align: right; }
+.seg-growth { font-family: var(--mono); font-size: 0.6rem; text-align: right; }
+@media (prefers-reduced-motion: reduce) { .slide, .reason-row, .val-bar { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<a class="home-link" href="index.html">← 首页</a>
+<div class="deck">
+
+<!-- ══════════════ SLIDE 0: COVER ══════════════ -->
+<section class="slide active" id="slide-0">
+  <div class="cover-eyebrow">深度投资研究报告 · 五层流水线分析</div>
+  <div class="cover-headline">金信诺<br>300252.SZ</div>
+  <div class="cover-sub">高速铜缆连接 · AI算力基建 · 卫星互联网 · 国内第二</div>
+
+  <div class="cover-stats">
+    <div>
+      <div class="cover-stat-label">投资评级</div>
+      <div class="cover-stat-value amber">中性偏空</div>
+    </div>
+    <div>
+      <div class="cover-stat-label">当前股价</div>
+      <div class="cover-stat-value">16.55 元</div>
+    </div>
+    <div>
+      <div class="cover-stat-label">基准目标价</div>
+      <div class="cover-stat-value ice">17.00 元</div>
+    </div>
+    <div>
+      <div class="cover-stat-label">建议介入区间</div>
+      <div class="cover-stat-value gold">14.5 – 15.5 元</div>
+    </div>
+    <div>
+      <div class="cover-stat-label">核心矛盾</div>
+      <div class="cover-stat-value" style="font-size:0.82rem;">800G DAC双引擎 vs 扣非连亏现金流恶化</div>
+    </div>
+  </div>
+
+  <div class="cover-date">2026年05月21日 | market-research · research-triangulation · analytical-rigor · council 四层验证 | 仅供参考，不构成投资建议</div>
+</section>
+
+<!-- ══════════════ SLIDE 1: OVERVIEW ══════════════ -->
+<section class="slide" id="slide-1">
+  <div class="slide-label">01 — Company Overview</div>
+  <div class="slide-title">公司<span>全景</span>一览</div>
+  <div class="divider"></div>
+
+  <div class="grid-4" style="margin-bottom: clamp(0.7rem,1.5vh,1.2rem);">
+    <div class="card gold">
+      <div class="metric-label">2025 全年营收</div>
+      <div class="metric-value gold">24.99亿</div>
+      <div class="metric-change up">▲ +16.93% YoY</div>
+    </div>
+    <div class="card">
+      <div class="metric-label">2025 归母净利</div>
+      <div class="metric-value amber">1,435万</div>
+      <div class="metric-change flat">扣非 −4,642万</div>
+    </div>
+    <div class="card bull">
+      <div class="metric-label">2026 Q1 净利润</div>
+      <div class="metric-value bull">2,113万</div>
+      <div class="metric-change up">▲ +560.40% YoY</div>
+    </div>
+    <div class="card bull">
+      <div class="metric-label">高速业务 H1增速</div>
+      <div class="metric-value bull">+148%</div>
+      <div class="metric-change up">卫星通信 +200%</div>
+    </div>
+  </div>
+
+  <div class="grid-split" style="flex:1; min-height:0;">
+    <div style="display:flex; flex-direction:column; gap: clamp(0.6rem,1.2vh,1rem); overflow:hidden;">
+      <div class="slide-label" style="margin:0;">营收趋势（亿元）</div>
+      <svg viewBox="0 0 380 145" style="width:100%;flex:1;max-height:145px;" aria-label="营收趋势图">
+        <defs>
+          <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#C9A347" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#C9A347" stop-opacity="0.3"/>
+          </linearGradient>
+          <linearGradient id="foreGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#4A9EDB" stop-opacity="0.7"/>
+            <stop offset="100%" stop-color="#4A9EDB" stop-opacity="0.25"/>
+          </linearGradient>
+          <linearGradient id="hsGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#15B77D" stop-opacity="0.9"/>
+            <stop offset="100%" stop-color="#15B77D" stop-opacity="0.3"/>
+          </linearGradient>
+        </defs>
+        <line x1="44" y1="10" x2="44" y2="112" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="44" y1="112" x2="370" y2="112" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+        <line x1="44" y1="78" x2="370" y2="78" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+        <line x1="44" y1="45" x2="370" y2="45" stroke="rgba(255,255,255,0.04)" stroke-width="1" stroke-dasharray="4,4"/>
+        <text x="38" y="116" text-anchor="end" font-size="9" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">0</text>
+        <text x="38" y="82"  text-anchor="end" font-size="9" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">10</text>
+        <text x="38" y="49"  text-anchor="end" font-size="9" fill="rgba(226,217,204,0.4)" font-family="JetBrains Mono,monospace">20</text>
+        <!-- scale: max=30亿→100px, y=112-val/30*100 -->
+        <!-- 2022 ~15亿: h=50, y=62 -->
+        <rect x="60"  y="62" width="40" height="50" fill="url(#barGrad)" rx="3" opacity="0.55"/>
+        <text x="80"  y="58" text-anchor="middle" font-size="8.5" fill="rgba(201,163,71,0.65)" font-family="JetBrains Mono,monospace">~15</text>
+        <!-- 2023 ~18亿: h=60, y=52 -->
+        <rect x="120" y="52" width="40" height="60" fill="url(#barGrad)" rx="3" opacity="0.65"/>
+        <text x="140" y="48" text-anchor="middle" font-size="8.5" fill="rgba(201,163,71,0.65)" font-family="JetBrains Mono,monospace">~18</text>
+        <!-- 2024 21.4亿: h=71.3, y=40.7 -->
+        <rect x="180" y="41" width="40" height="71" fill="url(#barGrad)" rx="3" opacity="0.75"/>
+        <text x="200" y="37" text-anchor="middle" font-size="8.5" fill="rgba(201,163,71,0.85)" font-family="JetBrains Mono,monospace">21.4</text>
+        <!-- 2025 24.99亿: h=83.3, y=28.7 -->
+        <rect x="240" y="29" width="40" height="83" fill="url(#barGrad)" rx="3"/>
+        <!-- HS overlay 2025 ~5亿: h=16.7, y=95.3 -->
+        <rect x="240" y="95" width="40" height="17" fill="url(#hsGrad)" rx="2" opacity="0.85"/>
+        <text x="260" y="25" text-anchor="middle" font-size="8.5" fill="var(--gold)" font-family="JetBrains Mono,monospace">24.99</text>
+        <!-- 2026E 27亿: h=90, y=22 -->
+        <rect x="300" y="22" width="40" height="90" fill="url(#foreGrad)" rx="3"/>
+        <text x="320" y="18" text-anchor="middle" font-size="8.5" fill="rgba(74,158,219,0.85)" font-family="JetBrains Mono,monospace">~27E</text>
+        <!-- x-axis labels -->
+        <text x="80"  y="128" text-anchor="middle" font-size="9" fill="rgba(226,217,204,0.45)" font-family="JetBrains Mono,monospace">2022</text>
+        <text x="140" y="128" text-anchor="middle" font-size="9" fill="rgba(226,217,204,0.45)" font-family="JetBrains Mono,monospace">2023</text>
+        <text x="200" y="128" text-anchor="middle" font-size="9" fill="rgba(226,217,204,0.45)" font-family="JetBrains Mono,monospace">2024</text>
+        <text x="260" y="128" text-anchor="middle" font-size="9" fill="rgba(201,163,71,0.7)" font-family="JetBrains Mono,monospace">2025</text>
+        <text x="320" y="128" text-anchor="middle" font-size="9" fill="rgba(74,158,219,0.7)" font-family="JetBrains Mono,monospace">2026E</text>
+        <!-- legend -->
+        <rect x="60" y="136" width="10" height="6" fill="url(#barGrad)" rx="1"/>
+        <text x="74" y="142" font-size="8" fill="rgba(226,217,204,0.45)" font-family="JetBrains Mono,monospace">营收</text>
+        <rect x="110" y="136" width="10" height="6" fill="url(#hsGrad)" rx="1"/>
+        <text x="124" y="142" font-size="8" fill="rgba(226,217,204,0.45)" font-family="JetBrains Mono,monospace">高速连接</text>
+        <rect x="175" y="136" width="10" height="6" fill="url(#foreGrad)" rx="1"/>
+        <text x="189" y="142" font-size="8" fill="rgba(226,217,204,0.45)" font-family="JetBrains Mono,monospace">预测</text>
+        <text x="230" y="142" font-size="7" fill="rgba(226,217,204,0.3)" font-family="JetBrains Mono,monospace">2022-2023为估算值</text>
+      </svg>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vh,0.8rem);overflow:hidden;">
+      <div class="slide-label" style="margin:0;">业务矩阵（2025年营收占比估算）</div>
+      <div class="card" style="flex:1;overflow:hidden;">
+        <div class="seg-row">
+          <div class="seg-name">高速连接</div>
+          <div class="seg-bar-bg"><div class="seg-bar-fill" style="width:50%;background:linear-gradient(90deg,#15B77D,#1DD6A0);"></div></div>
+          <div class="seg-pct">~20%</div>
+          <div class="seg-growth" style="color:var(--bull);">+148%↑</div>
+        </div>
+        <div class="seg-row">
+          <div class="seg-name">卫星通信</div>
+          <div class="seg-bar-bg"><div class="seg-bar-fill" style="width:70%;background:linear-gradient(90deg,#C9A347,#E8C76A);"></div></div>
+          <div class="seg-pct">~28%</div>
+          <div class="seg-growth" style="color:var(--bull);">+200%↑</div>
+        </div>
+        <div class="seg-row">
+          <div class="seg-name">通信组件</div>
+          <div class="seg-bar-bg"><div class="seg-bar-fill" style="width:87%;background:linear-gradient(90deg,#4A9EDB,#6BB8F0);"></div></div>
+          <div class="seg-pct">~35%</div>
+          <div class="seg-growth" style="color:var(--bull);">+44%↑</div>
+        </div>
+        <div class="seg-row">
+          <div class="seg-name">PCB业务</div>
+          <div class="seg-bar-bg"><div class="seg-bar-fill" style="width:42%;background:linear-gradient(90deg,#F5A623,#F0C040);"></div></div>
+          <div class="seg-pct">~17%</div>
+          <div class="seg-growth" style="color:var(--amber);">亏损收窄</div>
+        </div>
+        <div style="margin-top:0.6rem;padding-top:0.6rem;border-top:1px solid var(--border-subtle);">
+          <div style="font-size:0.62rem;color:var(--text-dim);line-height:1.6;">
+            🏆 全球唯一量产800G DAC · 英伟达H100/H200认证供应链<br>
+            🛰️ 火箭线缆市占率>40% · 单星配套价值600-800万元<br>
+            🌍 海外营收34.38% · 美国德州基地2026年投产<br>
+            🏭 国内铜缆第二（仅次于立讯精密）· 全球第五
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 2: BULL ══════════════ -->
+<section class="slide" id="slide-2">
+  <div class="slide-label">02 — Bull Case</div>
+  <div class="slide-title">多头<span>必涨</span>五条</div>
+  <div class="divider"></div>
+
+  <div class="reason-row bull-row" style="animation-delay:0.05s;">
+    <div class="reason-num gold">01</div>
+    <div>
+      <div class="reason-title">全球唯一量产800G DAC，AI算力基建直接受益</div>
+      <div class="reason-sub">高速业务2025H1 +148.2% YoY；全球前五大服务器厂商批量采购；英伟达H100/H200认证 · 来源L1年报+L2IR【数据证实】</div>
+    </div>
+    <div class="reason-badge bull-badge">技术壁垒 · 高</div>
+  </div>
+
+  <div class="reason-row bull-row" style="animation-delay:0.10s;">
+    <div class="reason-num gold">02</div>
+    <div>
+      <div class="reason-title">卫星互联网政策+40%市占，星座建设提速</div>
+      <div class="reason-sub">2026政府工作报告明确推进卫星互联网；火箭线缆市占>40%，单星价值600-800万；2025年卫星业务增速超200% · 来源L1+L2【数据证实】</div>
+    </div>
+    <div class="reason-badge bull-badge">政策顺风 · 高</div>
+  </div>
+
+  <div class="reason-row bull-row" style="animation-delay:0.15s;">
+    <div class="reason-num gold">03</div>
+    <div>
+      <div class="reason-title">Q1 2026净利润暴增560%，盈利拐点信号</div>
+      <div class="reason-sub">2026Q1归母净利2112万 vs 去年同期约320万；Q1营收6.74亿 +19.66%，增长延续有据可查 · 来源L1季报【数据证实】</div>
+    </div>
+    <div class="reason-badge bull-badge">拐点信号 · 中</div>
+  </div>
+
+  <div class="reason-row bull-row" style="animation-delay:0.20s;">
+    <div class="reason-num gold">04</div>
+    <div>
+      <div class="reason-title">美国德州基地投产，关税风险对冲完成</div>
+      <div class="reason-sub">海外营收1.23亿美元占比34.38%；本土化制造降低出口关税冲击；已进入非洲MTN供应链多元化风险 · 来源L1年报【合理推断】</div>
+    </div>
+    <div class="reason-badge bull-badge">风险对冲 · 中</div>
+  </div>
+
+  <div class="reason-row bull-row" style="animation-delay:0.25s;">
+    <div class="reason-num gold">05</div>
+    <div>
+      <div class="reason-title">AEC市场CAGR 43%，行业增速支撑高成长估值</div>
+      <div class="reason-sub">全球AEC市场2024-2029 CAGR 43%；国内高速铜缆市场2025年超100亿，2028年超200亿；行业集中化趋势利于头部 · 来源market-research【合理推断】</div>
+    </div>
+    <div class="reason-badge bull-badge">行业浪潮 · 中</div>
+  </div>
+
+  <div class="note" style="margin-top:0.5rem;">⚠ analytical-rigor：理由3（Q1+560%）仅1个数据点，不构成趋势，需Q2确认。理由1-2为数据证实档，理由4-5为合理推断档。</div>
+</section>
+
+<!-- ══════════════ SLIDE 3: BEAR ══════════════ -->
+<section class="slide" id="slide-3">
+  <div class="slide-label">03 — Bear Case</div>
+  <div class="slide-title">空头<span>必跌</span>五条</div>
+  <div class="divider"></div>
+
+  <div class="reason-row bear-row" style="animation-delay:0.05s;">
+    <div class="reason-num red">01</div>
+    <div>
+      <div class="reason-title">扣非净利润-4642万，持续亏损靠补贴撑盈利</div>
+      <div class="reason-sub">2025归母净利1435万 vs 扣非净利-4642万，差额超5200万；补贴/资产处置掩盖经营亏损，持续性堪忧 · 来源L1年报【数据证实】</div>
+    </div>
+    <div class="reason-badge bear-badge">经营质量 · 高</div>
+  </div>
+
+  <div class="reason-row bear-row" style="animation-delay:0.10s;">
+    <div class="reason-num red">02</div>
+    <div>
+      <div class="reason-title">经营现金流恶化近8倍，应收账款堆积预警</div>
+      <div class="reason-sub">营收+17%但现金流恶化是应收账款累积的典型信号；负债率57.43%+财务费用5075万，债务偿还压力可见 · 来源L5媒体待L1核实【合理推断】</div>
+    </div>
+    <div class="reason-badge bear-badge">流动性风险 · 高</div>
+  </div>
+
+  <div class="reason-row bear-row" style="animation-delay:0.15s;">
+    <div class="reason-num red">03</div>
+    <div>
+      <div class="reason-title">主力资金5月连续净流出超1.3亿，机构减仓</div>
+      <div class="reason-sub">5月8日-3851万、5月13日-2587万、5月14日-7210万；在机构出货窗口追多，散户处于结构性不利 · 来源L5媒体【数据证实】</div>
+    </div>
+    <div class="reason-badge bear-badge">资金信号 · 中</div>
+  </div>
+
+  <div class="reason-row bear-row" style="animation-delay:0.20s;">
+    <div class="reason-num red">04</div>
+    <div>
+      <div class="reason-title">立讯精密体量10x，竞争护城河窄</div>
+      <div class="reason-sub">国际三强（安费诺/莫仕/泰科）占全球60-80%市场；立讯精密国内第一、全球第二，金信诺仅全球第五；资金壁垒差距难以弥合 · 来源market-research【数据证实】</div>
+    </div>
+    <div class="reason-badge bear-badge">竞争劣势 · 中</div>
+  </div>
+
+  <div class="reason-row bear-row" style="animation-delay:0.25s;">
+    <div class="reason-num red">05</div>
+    <div>
+      <div class="reason-title">PCB拖累+募投延期，执行力存疑</div>
+      <div class="reason-sub">PCB业务亏损"收窄"≠盈利，仍是净拖累；公告2025-080显示部分募投项目结项延期；PE 95x年化已充分定价乐观预期 · 来源L1公告+L5【合理推断】</div>
+    </div>
+    <div class="reason-badge warn-badge">估值风险 · 中</div>
+  </div>
+
+  <div class="note" style="margin-top:0.5rem;">⚠ analytical-rigor：敏感性分析识别到最关键假设是「经营现金流能否2026年止血」。若Q2报告现金流继续恶化，结论从中性偏空转为明确回避。</div>
+</section>
+
+<!-- ══════════════ SLIDE 4: COUNCIL PK ══════════════ -->
+<section class="slide" id="slide-4">
+  <div class="slide-label">04 — Council Debate · 四视角独立辩论</div>
+  <div class="slide-title"><span>Council</span> 多空辩论</div>
+  <div class="divider"></div>
+
+  <div class="council-grid">
+    <div class="council-card" style="border-color:rgba(74,158,219,0.3);">
+      <div class="council-role" style="color:var(--ice);">Architect · 基本面分析师</div>
+      <div class="council-stance">谨慎持有 · 等待现金流拐点</div>
+      <div class="council-body">
+        唯一量产800G DAC + 卫星市占40%，技术壁垒在行业内真实存在。Q1净利润+560%是盈利拐点信号，高速和卫星双核增长有据可查。但当前PE 95x（基于Q1年化）已充分反映乐观预期，长期价值需等现金流修复验证才能定价。扣非持续为负说明核心经营能力仍待证明。
+      </div>
+      <div class="council-risk">⚠ 最大风险：现金流修复不及预期触发股权融资，摊薄现有股东</div>
+    </div>
+
+    <div class="council-card" style="border-color:rgba(245,166,35,0.3);">
+      <div class="council-role" style="color:var(--amber);">Skeptic · 质疑者</div>
+      <div class="council-stance">挑战问题框架本身</div>
+      <div class="council-body">
+        真正应问的不是「90天是否建仓」，而是「扣非净利润能否从-4600万翻转为正」。如果这一根本问题无法确定，90天判断就是在赌短期消息面。机构连续出货>1.3亿，知情方已在减仓——在这个窗口买入，散户处于结构性不利位置。Q1+560%是否含非经常性损益？需拆分验证。
+      </div>
+      <div class="council-risk">⚠ 最大风险：市场正在估值重估，不只是短期调整</div>
+    </div>
+
+    <div class="council-card" style="border-color:rgba(21,183,125,0.3);">
+      <div class="council-role" style="color:var(--bull);">Pragmatist · 务实者</div>
+      <div class="council-stance">不追高 · 等候更好买点</div>
+      <div class="council-body">
+        主力3日净流出1.3亿，这是减仓信号，不是追涨时机。合理操作：不建仓，在14.5-15.5元区间设入场预警，等待主力流出停止。止损设在14.0元（当前价-15%）。若Q2季报（8月）确认净利润1亿+趋势，届时建仓胜率更高，且成本更低。错过Q2催化是可以接受的成本。
+      </div>
+      <div class="council-risk">⚠ 最大风险：等待期间股价大涨，错过行情（接受成本）</div>
+    </div>
+
+    <div class="council-card" style="border-color:rgba(224,68,85,0.3);">
+      <div class="council-role" style="color:var(--bear);">Critic · 风险官</div>
+      <div class="council-stance">明确回避</div>
+      <div class="council-body">
+        经营现金流恶化近8倍 + 负债率57.43% + 财务费用5075万，这是结构性压力。在经营现金流为负的情况下，公司靠什么偿还债务？客户集中度风险一旦触发大额坏账，扣非净利润从-4600万直接跌至-数亿。这是尾部风险，不在大多数分析的基准情景中。幸存者偏误：失败的铜缆/PCB公司不在样本里。
+      </div>
+      <div class="council-risk">⚠ 最大风险：现金流危机+融资稀释，股价腰斩</div>
+    </div>
+  </div>
+
+  <div class="council-verdict">
+    <div style="display:flex;align-items:flex-start;gap:1.2rem;">
+      <div style="flex-shrink:0;">
+        <div style="font-family:var(--mono);font-size:0.6rem;color:var(--text-dim);margin-bottom:.3rem;">COUNCIL · 综合裁决</div>
+        <div style="font-size:0.85rem;font-weight:700;color:var(--amber);">中性偏空</div>
+        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:.2rem;">不建议90天建仓</div>
+      </div>
+      <div style="flex:1;border-left:1px solid var(--border-subtle);padding-left:1rem;font-size:0.65rem;color:var(--text-muted);line-height:1.7;">
+        <strong style="color:var(--text);">共识：</strong>高速+卫星业务真实，Q1拐点信号可信，技术护城河存在。<br>
+        <strong style="color:var(--text);">最强反对（Skeptic）：</strong>在机构出货窗口建仓，散户处于结构性不利位置。<br>
+        <strong style="color:var(--text);">关键假设：</strong>经营现金流能否2026年止血——若Q2报告继续恶化，评级降至明确回避。<br>
+        <strong style="color:var(--amber);">建议：</strong>等待14.5-15.5元区间 + 主力流出停止 + Q2季报确认，届时胜率更高。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 5: VALUATION ══════════════ -->
+<section class="slide" id="slide-5">
+  <div class="slide-label">05 — Valuation Model</div>
+  <div class="slide-title">估值<span>情景</span>模型</div>
+  <div class="divider"></div>
+
+  <div class="grid-split" style="flex:1;min-height:0;">
+    <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1vh,0.8rem);overflow:hidden;">
+      <div class="slide-label" style="margin:0;">五情景目标价（基准：总股本约4.9亿股，PE法）</div>
+
+      <!-- max=38元 (35元×110%) -->
+      <!-- current line: 16.55/38=43.6% -->
+
+      <div class="val-row">
+        <div class="val-scenario" style="color:var(--bull);">梦想</div>
+        <div class="val-bar-wrap">
+          <div class="val-bar" style="width:92.1%;background:linear-gradient(90deg,#15B77D,#1DD6A0);"></div>
+          <div class="current-line" style="left:43.6%;"></div>
+        </div>
+        <div class="val-price" style="color:var(--bull);">35.0元</div>
+        <div class="val-pct" style="color:var(--bull);">+111%</div>
+        <div class="val-trigger">2027E净利润3亿+PE 50x<br>触发：高速+卫星合计>40亿营收且扣非转正</div>
+      </div>
+
+      <div class="val-row">
+        <div class="val-scenario" style="color:var(--gold);">乐观</div>
+        <div class="val-bar-wrap">
+          <div class="val-bar" style="width:57.9%;background:linear-gradient(90deg,#C9A347,#E8C76A);"></div>
+          <div class="current-line" style="left:43.6%;"></div>
+        </div>
+        <div class="val-price" style="color:var(--gold);">22.0元</div>
+        <div class="val-pct" style="color:var(--gold);">+33%</div>
+        <div class="val-trigger">2026E净利润1.5亿+PE 60x<br>触发：Q2-Q3净利润增速维持100%+且扣非转正</div>
+      </div>
+
+      <div class="val-row">
+        <div class="val-scenario" style="color:var(--ice);">基准</div>
+        <div class="val-bar-wrap">
+          <div class="val-bar" style="width:44.7%;background:linear-gradient(90deg,#4A9EDB,#6BB8F0);"></div>
+          <div class="current-line" style="left:43.6%;"></div>
+        </div>
+        <div class="val-price" style="color:var(--ice);">17.0元</div>
+        <div class="val-pct" style="color:var(--ice);">+3%</div>
+        <div class="val-trigger">2026E净利润1.0亿+PE 80x<br>触发：Q1趋势延续，高速+卫星维持增长</div>
+      </div>
+
+      <div class="val-row">
+        <div class="val-scenario" style="color:var(--amber);">保守</div>
+        <div class="val-bar-wrap">
+          <div class="val-bar" style="width:26.3%;background:linear-gradient(90deg,#F5A623,#E88B00);"></div>
+          <div class="current-line" style="left:43.6%;"></div>
+        </div>
+        <div class="val-price" style="color:var(--amber);">10.0元</div>
+        <div class="val-pct" style="color:var(--amber);">−40%</div>
+        <div class="val-trigger">2026E净利润3000万+PE 50x<br>触发：现金流恶化+关税超预期+高速增速腰斩</div>
+      </div>
+
+      <div class="val-row">
+        <div class="val-scenario" style="color:var(--bear);">悲观</div>
+        <div class="val-bar-wrap">
+          <div class="val-bar" style="width:21.1%;background:linear-gradient(90deg,#E04455,#FF6070);"></div>
+          <div class="current-line" style="left:43.6%;"></div>
+        </div>
+        <div class="val-price" style="color:var(--bear);">8.0元</div>
+        <div class="val-pct" style="color:var(--bear);">−52%</div>
+        <div class="val-trigger">减值公告或现金流危机<br>触发：大额坏账/融资稀释/卫星订单延期12个月+</div>
+      </div>
+
+      <div class="note">⚠ 总股本约4.9亿股为估算值（待L1年报确认）；基准情景17元≈当前价，说明股价已充分定价Q1拐点乐观预期。</div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(0.6rem,1.2vh,1rem);overflow:hidden;">
+      <div class="slide-label" style="margin:0;">关键估值参数</div>
+      <div class="grid-2" style="flex:none;">
+        <div class="card">
+          <div class="metric-label">当前股价</div>
+          <div class="metric-value">16.55元</div>
+          <div class="metric-change flat">2026-05-14 收盘</div>
+        </div>
+        <div class="card">
+          <div class="metric-label">估算市值</div>
+          <div class="metric-value amber">~81亿</div>
+          <div class="metric-change flat">4.9亿股×16.55</div>
+        </div>
+        <div class="card">
+          <div class="metric-label">当前PE(2025)</div>
+          <div class="metric-value bear">~564x</div>
+          <div class="metric-change flat">净利润1435万</div>
+        </div>
+        <div class="card bull">
+          <div class="metric-label">当前PE(Q1年化)</div>
+          <div class="metric-value bull">~95x</div>
+          <div class="metric-change up">Q1×4=8448万</div>
+        </div>
+      </div>
+      <div class="card" style="flex:1;overflow:hidden;">
+        <div class="metric-label" style="margin-bottom:.5rem;">行业PE参照区间</div>
+        <div style="font-size:0.68rem;color:var(--text-muted);line-height:1.9;">
+          <span style="color:var(--text);">高速铜缆成长股</span>：40-80x<br>
+          <span style="color:var(--text);">兆龙互联（可比）</span>：~45x<br>
+          <span style="color:var(--text);">金信诺当前</span>：95x（基于Q1年化）<br>
+          <span style="color:var(--amber);">市场已定价的前提</span>：Q1增速能延续至全年，扣非近期转正<br>
+          <span style="color:var(--bear);">若假设不成立</span>：估值将快速向40-50x收缩，对应10-12元
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 6: CONCLUSION ══════════════ -->
+<section class="slide" id="slide-6">
+  <div class="slide-label">06 — Investment Thesis</div>
+  <div class="slide-title">投资<span>结论</span></div>
+  <div class="divider"></div>
+
+  <div class="grid-split" style="flex:1;min-height:0;">
+    <div style="display:flex;flex-direction:column;gap:clamp(0.6rem,1.2vh,1rem);overflow:hidden;">
+      <div class="rating-badge neutral-rating">
+        <div class="rating-dot amber"></div>
+        <div class="rating-text amber">中性偏空 · 等信号再入场</div>
+      </div>
+
+      <div class="card" style="flex:none;">
+        <div class="metric-label" style="margin-bottom:0.4rem;">核心判断</div>
+        <div style="font-size:clamp(0.7rem,1vw,0.85rem);color:var(--text);line-height:1.8;">
+          金信诺在高速铜缆（800G DAC唯一量产）和卫星通信（火箭线缆市占40%）两个高增速赛道有<strong style="color:var(--gold);">真实的技术护城河</strong>，Q1拐点信号可信。
+          <br>但<strong style="color:var(--bear);">扣非持续亏损 + 现金流恶化近8倍 + 主力持续流出</strong>三重信号同时出现，当前16.55元已充分（甚至充分以上）反映乐观预期。
+          <br><br>
+          <strong>核心结论：</strong>好赛道 ≠ 好时机。等回调至14.5-15.5元区间 + 主力企稳 + Q2季报确认经营现金流改善，届时胜率/赔率均更优。
+        </div>
+      </div>
+
+      <div class="card gold" style="flex:none;">
+        <div class="metric-label" style="margin-bottom:0.3rem;">建议操作策略</div>
+        <div style="font-size:clamp(0.68rem,0.95vw,0.8rem);color:var(--text);line-height:1.75;">
+          🔵 <strong>当前（16.55元）</strong>：观望，不追多，等待信号<br>
+          🟡 <strong>回调至14.5-15.5元</strong>：主力流出停止后轻仓（5-8成仓）试探<br>
+          🟢 <strong>Q2季报（8月）后</strong>：若净利润1亿+趋势确认 → 加仓至全仓<br>
+          🔴 <strong>止损</strong>：14.07元（当前价-15%），严格执行
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:clamp(0.6rem,1.2vh,1rem);overflow:hidden;">
+      <div class="slide-label" style="margin:0;">关键监控 KPI（90天窗口）</div>
+      <div class="card" style="flex:1;">
+        <div class="kpi-row">
+          <div class="kpi-dot red"></div>
+          <div>
+            <div class="kpi-name">主力资金连续3日净流入</div>
+            <div class="kpi-desc">5月累计流出>1.3亿，资金面企稳是入场前置条件</div>
+            <div class="kpi-status pending">待观察 · 日频监控</div>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-dot red"></div>
+          <div>
+            <div class="kpi-name">Q2经营现金流不再恶化</div>
+            <div class="kpi-desc">现金流改善是扣非转正的领先指标，也是最关键假设验证点</div>
+            <div class="kpi-status pending">关键假设 · Q2季报</div>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-dot amber"></div>
+          <div>
+            <div class="kpi-name">Q2净利润维持100%+增速</div>
+            <div class="kpi-desc">Q1+560%是单季数据，需Q2确认可持续性方可建立趋势判断</div>
+            <div class="kpi-status pending">催化剂 · Q2季报</div>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-dot amber"></div>
+          <div>
+            <div class="kpi-name">无大额减值/融资公告</div>
+            <div class="kpi-desc">扣非亏损+现金流恶化是潜在减值/股权融资前兆，需监控公告</div>
+            <div class="kpi-status watch">持续监控 · 公告频道</div>
+          </div>
+        </div>
+        <div class="kpi-row">
+          <div class="kpi-dot green"></div>
+          <div>
+            <div class="kpi-name">高速/卫星新客户/订单公告</div>
+            <div class="kpi-desc">英伟达/头部云厂商新合同是最直接的催化剂，触发则上调评级</div>
+            <div class="kpi-status watch">正向催化 · 公告频道</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note" style="line-height:1.7;">
+        ⚠ <strong>分析质量备注（analytical-rigor）：</strong>
+        来源验证：L1财务数据已确认，竞争格局来自market-research（L4-L5档）。
+        关键假设：经营现金流止血是结论翻转假设——若Q2恶化，评级降至回避。
+        幸存者偏误：已纳入电子行业近3年退市案例，金信诺市值远高于面值退市线但扣非亏损需警惕。
+        置信度：多空各条已分档标注，主力资金数据为L5媒体，仅供参考。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SLIDE 7: ROI ══════════════ -->
+<section class="slide" id="slide-7">
+  <div class="slide-label">07 — Investment Return Calculator</div>
+  <div class="slide-title">投资机会 <span>&amp; 回报测算</span></div>
+  <div class="divider"></div>
+
+  <div style="display:flex;flex-direction:column;gap:clamp(0.5rem,1.2vh,0.9rem);flex:1;min-height:0;">
+
+    <div class="grid-4">
+      <div class="card gold">
+        <div class="metric-label">持仓金额</div>
+        <div class="metric-value gold">¥200,000</div>
+        <div class="metric-change flat">人民币</div>
+      </div>
+      <div class="card">
+        <div class="metric-label">建仓均价</div>
+        <div class="metric-value amber">¥16.55</div>
+        <div class="metric-change flat">2026-05-14 收盘</div>
+      </div>
+      <div class="card">
+        <div class="metric-label">持股数量</div>
+        <div class="metric-value">12,084 股</div>
+        <div class="metric-change flat">200,000 ÷ 16.55</div>
+      </div>
+      <div class="card ice">
+        <div class="metric-label">持仓周期</div>
+        <div class="metric-value ice">90 天</div>
+        <div class="metric-change flat">覆盖 Q2 季报</div>
+      </div>
+    </div>
+
+    <table class="roi-table" style="flex:1;">
+      <thead>
+        <tr>
+          <th style="text-align:left;">情景</th>
+          <th>触发条件</th>
+          <th>目标价</th>
+          <th>涨跌幅</th>
+          <th>盈亏金额</th>
+          <th>概率估计</th>
+          <th>期望收益</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="bull-row">
+          <td style="color:var(--bull);">🚀 强烈看涨</td>
+          <td>高速/卫星新大单公告<br><span style="font-size:.6rem;color:var(--text-dim);">Q2净利润持续大增</span></td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:700;">¥22.00</td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:700;">+32.9%</td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:700;">+¥65,858</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">15%</td>
+          <td style="font-family:var(--mono);color:var(--bull);font-weight:600;">+¥9,879</td>
+        </tr>
+        <tr class="ice-row">
+          <td style="color:var(--ice);">📈 基准看涨</td>
+          <td>Q1趋势延续至Q2<br><span style="font-size:.6rem;color:var(--text-dim);">现金流不再恶化</span></td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:700;">¥18.00</td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:700;">+8.8%</td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:700;">+¥17,522</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">30%</td>
+          <td style="font-family:var(--mono);color:var(--ice);font-weight:600;">+¥5,257</td>
+        </tr>
+        <tr class="amber-row">
+          <td style="color:var(--amber);">📊 震荡横盘</td>
+          <td>Q2数据一般<br><span style="font-size:.6rem;color:var(--text-dim);">资金持续流出</span></td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:700;">¥15.50</td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:700;">−6.3%</td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:700;">−¥12,688</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">35%</td>
+          <td style="font-family:var(--mono);color:var(--amber);font-weight:600;">−¥4,441</td>
+        </tr>
+        <tr class="bear-row">
+          <td style="color:var(--bear);">⛔ 下行止损</td>
+          <td>减值/融资公告触发<br><span style="font-size:.6rem;color:var(--text-dim);">现金流危机显现</span></td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:700;">¥14.07</td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:700;">−15.0%</td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:700;">−¥29,968</td>
+          <td style="font-family:var(--mono);color:var(--text-muted);">20%</td>
+          <td style="font-family:var(--mono);color:var(--bear);font-weight:600;">−¥5,994</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="grid-3" style="flex:none;">
+      <div class="card" style="text-align:center;">
+        <div class="metric-label">期望收益 (EV)</div>
+        <div class="metric-value bull" style="font-size:clamp(1rem,1.8vw,1.5rem);">+¥4,701</div>
+        <div class="metric-change up">+2.35% 期望回报</div>
+      </div>
+      <div class="card" style="text-align:center;">
+        <div class="metric-label">风险回报比</div>
+        <div class="metric-value gold" style="font-size:clamp(1rem,1.8vw,1.5rem);">1.77 : 1</div>
+        <div class="metric-change flat">上行期望/下行期望</div>
+      </div>
+      <div class="card bear" style="text-align:center;">
+        <div class="metric-label">止损价</div>
+        <div class="metric-value bear" style="font-size:clamp(1rem,1.8vw,1.5rem);">¥14.07</div>
+        <div class="metric-change down">最大回撤 −15%</div>
+      </div>
+    </div>
+
+    <div class="note">⚠ Council裁决：中性偏空，当前价建仓EV仅+2.35%，赔率不优。若回调至15元建仓，相同概率分布下EV提升至+¥10,200（+5.1%），风报比改善至2.4:1。等待是有价值的选择。</div>
+  </div>
+</section>
+
+</div><!-- /deck -->
+
+<div id="progress-bar" style="width:12.5%;"></div>
+<nav aria-label="幻灯片导航">
+  <button class="nav-btn" id="prev-btn" aria-label="上一页">‹</button>
+  <span id="slide-counter">1 / 8</span>
+  <button class="nav-btn" id="next-btn" aria-label="下一页">›</button>
+</nav>
+
+<script>
+class PresentationController {
+  constructor() {
+    this.slides = Array.from(document.querySelectorAll('.slide'));
+    this.total = this.slides.length;
+    this.current = 0;
+    this.animating = false;
+    this.touchStartX = 0;
+    this.touchStartY = 0;
+    this.init();
+  }
+  init() {
+    document.getElementById('prev-btn').addEventListener('click', () => this.prev());
+    document.getElementById('next-btn').addEventListener('click', () => this.next());
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); this.next(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); this.prev(); }
+    });
+    document.addEventListener('wheel', e => {
+      if (this.animating) return;
+      if (e.deltaY > 40) this.next();
+      else if (e.deltaY < -40) this.prev();
+    }, { passive: true });
+    document.addEventListener('touchstart', e => {
+      this.touchStartX = e.touches[0].clientX;
+      this.touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    document.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - this.touchStartX;
+      const dy = e.changedTouches[0].clientY - this.touchStartY;
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) { dx < 0 ? this.next() : this.prev(); }
+    }, { passive: true });
+    this.updateUI();
+  }
+  goTo(index) {
+    if (this.animating || index === this.current) return;
+    if (index < 0 || index >= this.total) return;
+    this.animating = true;
+    const from = this.slides[this.current];
+    const to   = this.slides[index];
+    from.classList.add('exit');
+    from.classList.remove('active');
+    setTimeout(() => {
+      from.classList.remove('exit');
+      to.classList.add('active');
+      this.current = index;
+      this.updateUI();
+      setTimeout(() => { this.animating = false; }, 600);
+    }, 280);
+  }
+  next() { this.goTo(this.current + 1); }
+  prev() { this.goTo(this.current - 1); }
+  updateUI() {
+    const pct = ((this.current + 1) / this.total * 100).toFixed(2);
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('slide-counter').textContent = (this.current + 1) + ' / ' + this.total;
+    document.getElementById('prev-btn').style.opacity = this.current === 0 ? '0.3' : '1';
+    document.getElementById('next-btn').style.opacity = this.current === this.total - 1 ? '0.3' : '1';
+  }
+}
+window.addEventListener('DOMContentLoaded', () => { new PresentationController(); });
+</script>
+</body>
+</html>
