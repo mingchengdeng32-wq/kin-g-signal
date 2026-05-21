@@ -189,34 +189,50 @@ git config --global user.email "你的邮箱@example.com"
 
 ## 第四步：Fork 并克隆本仓库
 
-1. 登录 GitHub，打开本项目页面：  
+### 为什么要先 Fork 再 Clone？
+
+这是两个不同的操作，缺一不可：
+
+```
+Fork  = 在 GitHub 云端，把别人的仓库复制一份到你自己账号下
+Clone = 把你自己账号下的仓库，下载到本地电脑
+```
+
+**为什么不能直接 Clone 原仓库？**
+
+可以 Clone，但之后 `git push` 会报错"没有权限"——你无法往别人的仓库里写文件。  
+Fork 之后，`yourname/kin-g-signal` 完全属于你，可以随意推送报告文件，GitHub Pages 也是你自己的地址。
+
+### 操作步骤
+
+**① Fork（在 GitHub 网页上，点一次按钮）**
+
+1. 登录 GitHub，打开原仓库：  
    `https://github.com/mingchengdeng32-wq/kin-g-signal`
+2. 点右上角 **Fork** 按钮
+3. 点 **Create fork**，等几秒
+4. 页面跳转到 `github.com/你的用户名/kin-g-signal`，Fork 完成
 
-2. 点击右上角 **Fork** 按钮 → **Create fork**  
-   这会在你自己的 GitHub 账号下创建一份副本
+**② Clone（在终端里，把云端仓库下载到本地）**
 
-3. 进入你 fork 后的仓库（地址变成 `github.com/你的用户名/kin-g-signal`）
+进入你 Fork 后的仓库，点绿色 **Code** 按钮，复制 HTTPS 地址，然后：
 
-4. 点绿色 **Code** 按钮 → 复制 HTTPS 地址
+**Windows（PowerShell）：**
+```powershell
+# 进入你想存放项目的目录
+cd D:\Users\你的用户名\Documents
 
-5. 在终端里克隆到本地：
+# 克隆（注意：是你自己 Fork 后的地址，不是原作者的）
+git clone https://github.com/你的用户名/kin-g-signal.git
+cd kin-g-signal
+```
 
-   **Windows（PowerShell）：**
-   ```powershell
-   # 先进入你想存放项目的目录，例如：
-   cd D:\Users\你的用户名\Documents
-
-   # 克隆
-   git clone https://github.com/你的用户名/kin-g-signal.git
-   cd kin-g-signal
-   ```
-
-   **Mac（Terminal）：**
-   ```bash
-   cd ~/Documents
-   git clone https://github.com/你的用户名/kin-g-signal.git
-   cd kin-g-signal
-   ```
+**Mac（Terminal）：**
+```bash
+cd ~/Documents
+git clone https://github.com/你的用户名/kin-g-signal.git
+cd kin-g-signal
+```
 
 ---
 
