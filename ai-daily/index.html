@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 归档</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080F;--surface:rgba(255,255,255,.042);--surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18);--border-subtle:rgba(255,255,255,.07);--gold:#C9A347;--gold-light:#E8C76A;--gold-dim:rgba(201,163,71,.25);
+  --text:#E2D9CC;--text-muted:rgba(226,217,204,.55);--text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;--mono:'JetBrains Mono',monospace;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:720px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,2.8rem);margin:.5rem 0 .5rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.9rem;font-family:var(--mono);margin-bottom:2.4rem;}
+/* ARCHIVE_LIST：新条目由 daily-ai-brief 自动插入到本注释下方 */
+.day{display:flex;align-items:center;gap:.9rem;text-decoration:none;color:inherit;background:var(--surface);
+  border:1px solid var(--border-subtle);border-left:2px solid var(--gold-dim);border-radius:8px;
+  padding:.9rem 1.1rem;margin-bottom:.6rem;transition:background .18s,border-color .18s,transform .18s;}
+.day:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.day-date{font-family:var(--mono);font-size:1rem;color:var(--gold-light);}
+.day-meta{color:var(--text-muted);font-size:.85rem;margin-left:auto;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Daily AI Digest · Archive</div>
+  <h1>每日 AI 速览 · 归档</h1>
+  <div class="sub">海外头部 · 中国 AI 团队 · GitHub 好项目 · 峰会演讲 —— 四板块等权，每日更新</div>
+
+  <!-- ARCHIVE_LIST -->
+  <a class="day" href="./2026-07-27.html"><span class="day-date">2026-07-27</span><span class="day-meta">周一 · 四板块速览</span></a>
+</div>
+</body>
+</html>

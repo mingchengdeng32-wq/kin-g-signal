@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-07-27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Daily AI Digest · 每日速览</div>
+  <h1>今日 AI 速览</h1>
+  <div class="sub">2026-07-27 · 周一 · 四板块等权 · 标题流</div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 AI 公司</span><span class="sec-tag">OpenAI · Anthropic · Google · xAI · Meta</span></div>
+
+  <a class="item" href="https://thursdai.news/releases/2026-07" target="_blank" rel="noopener">
+    <div class="item-title">Anthropic 发布 <span class="cn">Claude Opus 5</span>，登顶智能与 Agentic 双榜</div>
+    <div class="item-note">7/24 上线，Artificial Analysis 智能指数 61 / Agentic 指数 55.3 双第一；定价 $5/$25 每百万 token，仅为 Fable 5 半价。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">thursdai.news</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">OpenAI <span class="cn">GPT-5.6 家族（Sol/Terra/Luna）</span>全面开放，成 ChatGPT 默认</div>
+    <div class="item-note">7/9 GA；GPT-5.6 Sol 登顶 LiveBench 数学 96.2、推理 91.7，ARC-AGI-2 93%。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">llm-stats.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.axios.com/2026/07/23/googles-deep-mind-ai-model-race" target="_blank" rel="noopener">
+    <div class="item-title">Google DeepMind <span class="cn">Gemini 3.5 Pro 推迟</span>，架构从头重构</div>
+    <div class="item-note">放弃 2.5 Pro 架构、整体重设计，Pro 版跳票到 7/17；但 3.6 Flash 与 3.5 Flash Lite 已于 7/21 发布。</div>
+    <div class="badges"><span class="b b-src">axios.com</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">xAI <span class="cn">Grok 4.5</span> 公开，主打便宜编码模型</div>
+    <div class="item-note">7/8 上线，Cursor 训练，$2/$6 每百万 token。</div>
+    <div class="badges"><span class="b b-src">llm-stats.com</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">Meta 发布首个付费模型 <span class="cn">Muse Spark 1.1</span></div>
+    <div class="item-note">7/9 上线，定价 $1.25/$4.25 每百万 token。</div>
+    <div class="badges"><span class="b b-src">llm-stats.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 AI 团队</span><span class="sec-tag">Moonshot · 阿里 · DeepSeek · 字节 · 智谱</span></div>
+
+  <a class="item" href="https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/" target="_blank" rel="noopener">
+    <div class="item-title">月之暗面 <span class="cn">Kimi K3</span> 发布，2.8 万亿参数开源 MoE</div>
+    <div class="item-note">WAIC 上海 7/17 亮相；Arena 文本第 9、编码榜第一；48 小时内因硬件过载暂停新订阅——又一次"DeepSeek 时刻"。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-hot">重磅</span><span class="b b-src">fortune.com</span></div>
+  </a>
+
+  <a class="item" href="https://foreignpolicy.com/2026/07/23/china-ai-race-moonshot-kimi-k3-alibaba-qwen-deepseek-openai-anthropic/" target="_blank" rel="noopener">
+    <div class="item-title">阿里预告 <span class="cn">Qwen 3.8</span>，紧追 Kimi K3</div>
+    <div class="item-note">7/19 放出，宣称性能对标最新一线模型；中美 AI 差距被进一步收窄。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">foreignpolicy.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.mexc.co/learn/article/chinas-top-ai-models-in-2026-deepseek-qwen-kimi-doubao-and-the-new-ai-race/1" target="_blank" rel="noopener">
+    <div class="item-title">中国第一梯队格局：<span class="cn">DeepSeek / Qwen / Kimi / 豆包 / GLM / 文心</span></div>
+    <div class="item-note">"无单一王者"的六方混战；开源 + 低推理成本是中国队的共同打法。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">mexc.co</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub 每日好项目</span><span class="sec-tag">近期高星 · agent / harness / 工具</span></div>
+
+  <a class="item" href="https://github.com/DietrichGebert/ponytail" target="_blank" rel="noopener">
+    <div class="item-title">ponytail <span class="cn">— 让 AI agent 像最懒的资深开发一样思考</span></div>
+    <div class="item-note">强制最省实现、YAGNI 优先。（你此刻正跑着它）</div>
+    <div class="badges"><span class="b b-star">★ 90k</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/h4ckf0r0day/obscura" target="_blank" rel="noopener">
+    <div class="item-title">obscura <span class="cn">— 给 AI agent 和爬虫用的 headless 浏览器</span></div>
+    <div class="item-note">专为 agent 抓取场景设计的无头浏览器。</div>
+    <div class="badges"><span class="b b-star">★ 19.7k</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/TencentCloud/CubeSandbox" target="_blank" rel="noopener">
+    <div class="item-title">TencentCloud/CubeSandbox <span class="cn">— AI agent 安全沙箱</span></div>
+    <div class="item-note">即时、并发、安全、轻量的 agent 代码执行沙箱。</div>
+    <div class="badges"><span class="b b-cn">腾讯</span><span class="b b-star">★ 10.7k</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank" rel="noopener">
+    <div class="item-title">TencentCloud/TencentDB-Agent-Memory <span class="cn">— 团队级 agent 记忆中枢</span></div>
+    <div class="item-note">把数据库变成多 agent 共享的记忆层。</div>
+    <div class="badges"><span class="b b-cn">腾讯</span><span class="b b-star">★ 9.3k</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/omnigent-ai/omnigent" target="_blank" rel="noopener">
+    <div class="item-title">omnigent <span class="cn">— 开源 agent 框架 + meta-harness</span></div>
+    <div class="item-note">编排多 agent 的开源框架，主打"harness 的 harness"。</div>
+    <div class="badges"><span class="b b-star">★ 7.8k</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/cloudflare/agentic-inbox" target="_blank" rel="noopener">
+    <div class="item-title">cloudflare/agentic-inbox <span class="cn">— 带 AI agent 的自托管邮件客户端</span></div>
+    <div class="item-note">完全跑在 Cloudflare 上的 agentic 邮箱。</div>
+    <div class="badges"><span class="b b-star">★ 6.6k</span><span class="b b-src">github</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · 演讲</span><span class="sec-tag">WAIC · AWS Summit · AI Conference</span></div>
+
+  <a class="item" href="https://www.aboutamazon.com/news/aws/aws-summit-nyc-2026-ai-agents" target="_blank" rel="noopener">
+    <div class="item-title">AWS Summit NY 2026：<span class="cn">Continuum + Context</span> 让 agent 更能干活</div>
+    <div class="item-note">AWS Continuum（AI 原生安全服务）与 AWS Context（给 agent 供上下文的知识图谱）双发布。</div>
+    <div class="badges"><span class="b b-src">aboutamazon.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.mainfactor.com/insights/key-takeaways-from-the-2026-ai-agent-conference-in-nyc" target="_blank" rel="noopener">
+    <div class="item-title">行业主线：<span class="cn">从"谈 agent"到"用 agent 干活"</span></div>
+    <div class="item-note">近半年拐点——agent 开始真正建 app、保安全、答复杂客服、自主决策，从 PoC 转向规模化部署。</div>
+    <div class="badges"><span class="b b-src">mainfactor.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiconference.london/news/speaker-spotlight-top-voices-at-ai-world-congress-2026-july-2026-20260715-12" target="_blank" rel="noopener">
+    <div class="item-title">AI World Congress 2026 <span class="cn">主题演讲阵容</span>公布</div>
+    <div class="item-note">聚焦"国家创新 vs 全球协作"的平衡，及多语种（德语法律/医疗文本）落地实测。</div>
+    <div class="badges"><span class="b b-src">aiconference.london</span></div>
+  </a>
+</section>
+
+<footer>
+  <div>生成时间：2026-07-27 · 自动汇编 by daily-ai-brief</div>
+  <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源。</div>
+  <div>信息源：WebSearch · GitHub CLI · agent-reach（bilibili / twitter）</div>
+  <div><a href="./index.html">← 返回归档</a></div>
+</footer>
+</div>
+</body>
+</html>
