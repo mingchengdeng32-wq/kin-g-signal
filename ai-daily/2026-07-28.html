@@ -6,107 +6,140 @@
 <title>每日 AI 速览 · 2026-07-28</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
-  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
-  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
-  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
-  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --bg:#06070D; --bg2:#0B0D18;
+  --surface:rgba(255,255,255,.038); --surface-hi:rgba(255,255,255,.07);
+  --border-subtle:rgba(255,255,255,.08);
+  --gold:#C9A347; --gold-light:#E8C76A;
+  --text:#ECE5D8; --text-muted:rgba(236,229,216,.56); --text-dim:rgba(236,229,216,.34);
   --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
-  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
-.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
-header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
-.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
-h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
-  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
-.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
-section{margin-top:2.6rem;}
-.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
-.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
-  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
-.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
-.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
-.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
-  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
-  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
-.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
-.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
-.item-title .cn{color:var(--gold-light);}
-.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
-.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
-.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
-.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
-.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
-.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
-.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
-footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
-  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
-footer a{color:var(--text-muted);}
-.disc{color:var(--amber);}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.62;
+  background-image:
+    radial-gradient(ellipse 70% 42% at 50% -8%, rgba(201,163,71,.10), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 100% 100%, rgba(74,110,220,.06), transparent 60%);
+  background-attachment:fixed;
+}
+.wrap{max-width:880px; margin:0 auto; padding:clamp(1.8rem,5vw,4.2rem) clamp(1.1rem,4vw,2.2rem) 5rem;}
+
+/* ---------- 报头 ---------- */
+.masthead-top{display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding-bottom:.5rem; border-bottom:1px solid rgba(201,163,71,.3);}
+.kicker{font-family:var(--mono); font-size:.7rem; font-weight:700; letter-spacing:.4em; color:var(--gold); text-transform:uppercase;}
+.issue{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; color:var(--text-dim);}
+h1.title{font-family:var(--serif); font-weight:900; font-size:clamp(2.4rem,8vw,4.2rem); line-height:1.02;
+  letter-spacing:-.01em; margin:1.1rem 0 .5rem;
+  background:linear-gradient(160deg,#FBEFCE 0%,var(--gold-light) 45%,var(--gold) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;}
+.dateline{font-family:var(--mono); font-size:.82rem; letter-spacing:.06em; color:var(--text-muted);}
+.masthead-rule{height:2px; margin-top:1.4rem;
+  background:linear-gradient(90deg,var(--gold) 0%,rgba(201,163,71,.25) 30%,transparent 72%);}
+
+/* ---------- 板块（每块一种语义色，用 --accent 驱动） ---------- */
+section{margin-top:3rem;}
+.s1{--accent:#D8B24E; --accent-soft:rgba(216,178,78,.13);}   /* 海外·金 */
+.s2{--accent:#E85D74; --accent-soft:rgba(232,93,116,.13);}   /* 中国·绯 */
+.s3{--accent:#22C08A; --accent-soft:rgba(34,192,138,.13);}   /* Trending·上升绿 */
+.s4{--accent:#5AA7E6; --accent-soft:rgba(90,167,230,.13);}   /* 峰会·冰蓝 */
+.s5{--accent:#F0A83C; --accent-soft:rgba(240,168,60,.13);}   /* 监管·琥珀 */
+.s6{--accent:#A98BEA; --accent-soft:rgba(169,139,234,.15);}  /* 商业·紫 */
+
+.sec-head{display:flex; align-items:center; gap:.75rem; margin-bottom:1.2rem;}
+.sec-num{font-family:var(--mono); font-size:.78rem; font-weight:700; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--accent); border-radius:6px; padding:.14rem .5rem; line-height:1;}
+.sec-title{font-family:var(--serif); font-weight:700; font-size:clamp(1.28rem,3.4vw,1.55rem); color:var(--text); white-space:nowrap;}
+.sec-title b{color:var(--accent);}
+.sec-rule{flex:1; height:1px; background:linear-gradient(90deg,var(--accent) 0%,transparent 90%); opacity:.5; margin:0 .3rem;}
+.sec-tag{font-family:var(--mono); font-size:.64rem; letter-spacing:.05em; color:var(--text-dim); text-align:right; white-space:nowrap;}
+.group-label{font-family:var(--mono); font-size:.68rem; letter-spacing:.18em; color:var(--accent); text-transform:uppercase;
+  margin:.2rem 0 .6rem; opacity:.85;}
+
+/* ---------- 条目卡 ---------- */
+.item{display:block; text-decoration:none; color:inherit; position:relative;
+  background:var(--surface); border:1px solid var(--border-subtle); border-left:3px solid var(--accent);
+  border-radius:10px; padding:.9rem 1.1rem .95rem; margin-bottom:.62rem;
+  transition:background .2s ease, transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s ease;}
+.item:hover{background:var(--surface-hi); transform:translateX(4px);
+  box-shadow:-6px 0 22px -14px var(--accent);}
+.item-title{font-weight:500; font-size:1.03rem; line-height:1.45; color:var(--text);}
+.item-title .cn{color:var(--accent); font-weight:700;}
+.item-note{color:var(--text-muted); font-size:.855rem; line-height:1.58; margin-top:.3rem;}
+.badges{margin-top:.5rem; display:flex; gap:.42rem; flex-wrap:wrap; align-items:center;}
+.b{font-family:var(--mono); font-size:.64rem; font-weight:500; padding:.1rem .44rem; border-radius:5px; letter-spacing:.02em; line-height:1.5;}
+.b-src{background:rgba(255,255,255,.05); color:var(--text-dim);}
+.b-cn{background:rgba(232,93,116,.15); color:#FF8A9A;}
+.b-hot{background:linear-gradient(135deg,#E0455533,#E0455511); color:#FF6B7A; border:1px solid rgba(224,69,85,.4);}
+.b-read{background:linear-gradient(135deg,var(--gold) ,#B8923A); color:#1A140A; font-weight:700;}
+/* trending 排名 + 涨星 */
+.item.rank{padding-left:3.2rem;}
+.rank-no{position:absolute; left:.85rem; top:50%; transform:translateY(-50%);
+  font-family:var(--serif); font-weight:900; font-size:1.5rem; color:var(--accent); opacity:.85; width:1.4rem; text-align:center;}
+.b-up{background:rgba(34,192,138,.16); color:#4FE0AC; font-weight:700;}
+.b-lang{background:rgba(255,255,255,.05); color:var(--text-muted);}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--border-subtle);
+  color:var(--text-dim); font-size:.76rem; font-family:var(--mono); line-height:1.85;}
+footer a{color:var(--text-muted); text-decoration:none; border-bottom:1px solid rgba(201,163,71,.3);}
+footer a:hover{color:var(--gold-light);}
+.disc{color:#D89A3C; opacity:.85;}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
-  <div class="eyebrow">Daily AI Digest · 每日速览</div>
-  <h1>今日 AI 速览</h1>
-  <div class="sub">2026-07-28 · 周二 · 六板块等权 · 标题流</div>
+  <div class="masthead-top">
+    <span class="kicker">Daily&nbsp;AI&nbsp;Digest</span>
+    <span class="issue">六板块等权 · 速览标题流</span>
+  </div>
+  <h1 class="title">今日 AI 速览</h1>
+  <div class="dateline">2026 年 7 月 28 日 · 周二</div>
+  <div class="masthead-rule"></div>
 </header>
 
-<section>
-  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 AI 公司</span><span class="sec-tag">OpenAI · Anthropic · Google · xAI · Meta</span></div>
+<section class="s1">
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 <b>AI 公司</b></span><span class="sec-rule"></span><span class="sec-tag">OpenAI·Anthropic·Google·xAI·Meta</span></div>
 
   <a class="item" href="https://thursdai.news/releases/2026-07" target="_blank" rel="noopener">
-    <div class="item-title">7 月一个月 <span class="cn">27 场 AI 发布</span>，四巨头全线开火</div>
+    <div class="item-title">7 月单月 <span class="cn">27 场 AI 发布</span>，四巨头全线开火</div>
     <div class="item-note">ThursdAI 统计：OpenAI / Anthropic / Google DeepMind / Meta AI 领跑，覆盖 agent、前沿模型、开源与编码——月度密度创新高。</div>
     <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">thursdai.news</span></div>
   </a>
-
   <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
     <div class="item-title">Anthropic <span class="cn">Claude Opus 5</span> 领跑 Intelligence Index（61 分）</div>
     <div class="item-note">7/24 上线后仍居 Artificial Analysis 智能指数榜首；本周成开发者迁移主力，编码 agent 场景增速最快。</div>
     <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">llm-stats.com</span></div>
   </a>
-
   <a class="item" href="https://felloai.com/best-ai-models/" target="_blank" rel="noopener">
     <div class="item-title">OpenAI <span class="cn">GPT-5.6（Sol/Terra/Luna）</span> 稳坐 ChatGPT 默认</div>
     <div class="item-note">7/9 GA 后成默认模型；Sol 主打推理与数学，Terra/Luna 分走速度与成本档位。</div>
     <div class="badges"><span class="b b-src">felloai.com</span></div>
   </a>
-
   <a class="item" href="https://aireleasetracker.com/latest" target="_blank" rel="noopener">
     <div class="item-title">xAI <span class="cn">Grok 4.5</span> 与 Meta <span class="cn">Muse Spark 1.1</span> 抢低价编码位</div>
     <div class="item-note">Grok 4.5（$2/$6）主打便宜编码；Meta 首个付费模型 Muse Spark 1.1 配 100 万 token 上下文窗口。</div>
     <div class="badges"><span class="b b-src">aireleasetracker.com</span></div>
   </a>
-
-  <a class="item" href="https://thursdai.news/releases/2026-07" target="_blank" rel="noopener">
-    <div class="item-title">Anthropic <span class="cn">Claude Fable 5</span> 7/1 复线</div>
-    <div class="item-note">美国政府解除出口管制令后，被下架近三周的 Fable 5 重新部署上线。</div>
-    <div class="badges"><span class="b b-src">thursdai.news</span></div>
-  </a>
 </section>
 
-<section>
-  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 AI 团队</span><span class="sec-tag">DeepSeek · 豆包 · Kimi · Qwen · 智谱</span></div>
+<section class="s2">
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 <b>AI 团队</b></span><span class="sec-rule"></span><span class="sec-tag">DeepSeek·豆包·Kimi·Qwen·智谱</span></div>
 
   <a class="item" href="https://www.mexc.com/zh-MY/learn/article/chinas-top-ai-models-in-2026-deepseek-qwen-kimi-doubao-and-the-new-ai-race/1" target="_blank" rel="noopener">
-    <div class="item-title">熊猫榜 7 月第 3 周：<span class="cn">DeepSeek-V4-Pro / 豆包 Seed-2.0-Pro / Kimi-K2.6 / Qwen3.6-Max</span> 领跑</div>
+    <div class="item-title">熊猫榜 7 月第 3 周：<span class="cn">DeepSeek-V4-Pro / 豆包 Seed-2.0 / Kimi-K2.6 / Qwen3.6-Max</span> 领跑</div>
     <div class="item-note">四强并列国产最强梯队；竞争主线集中在长上下文、代码优化与多模态。</div>
     <div class="badges"><span class="b b-cn">中国</span><span class="b b-hot">重磅</span><span class="b b-src">mexc.com</span></div>
   </a>
-
   <a class="item" href="https://ofox.ai/zh/blog/open-source-llm-china-roundup-2026/" target="_blank" rel="noopener">
     <div class="item-title">国产开源"五雄并起"：<span class="cn">Qwen3.6 / GLM-5.1 / Kimi K2.6 / DeepSeek V4 / MiniMax M2.7</span></div>
     <div class="item-note">从"跟随模仿"转向"本土领先"，开源 + 低推理成本成中国队统一打法。</div>
     <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">ofox.ai</span></div>
   </a>
-
   <a class="item" href="https://zhuanlan.zhihu.com/p/2048464721083470807" target="_blank" rel="noopener">
     <div class="item-title">生态全景对比：<span class="cn">Kimi K2.6 / GLM-5 / Qwen / DeepSeek</span> 技术路线分野</div>
     <div class="item-note">四家已形成各自的技术路线与生态壁垒，不再是单点参数竞赛。</div>
@@ -114,61 +147,63 @@ footer a{color:var(--text-muted);}
   </a>
 </section>
 
-<section>
-  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub 每日好项目</span><span class="sec-tag">近 3 月高星 · agent / harness / skill</span></div>
+<section class="s3">
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub <b>Trending</b></span><span class="sec-rule"></span><span class="sec-tag">当日上升 · 本周热门</span></div>
 
-  <a class="item" href="https://github.com/nexu-io/html-anything" target="_blank" rel="noopener">
-    <div class="item-title">html-anything <span class="cn">— agentic HTML 编辑器，75 Skills × 9 Surfaces</span></div>
-    <div class="item-note">本地 AI agent 写 HTML，一键导出到微信/X/知乎/PNG；零 API key，适配 Claude Code / Cursor / Codex 等。</div>
-    <div class="badges"><span class="b b-star">★ 8.0k</span><span class="b b-src">github</span></div>
+  <div class="group-label">▲ 当日上升 · Trending Today</div>
+  <a class="item rank" href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">pbakaus/impeccable <span class="cn">— 让 AI harness 更会做设计的设计语言</span></div>
+    <div class="item-note">给 coding agent 补上"审美"的一套设计语言规范。</div>
+    <div class="badges"><span class="b b-up">▲ 847 today</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/moeru-ai/airi" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">moeru-ai/airi <span class="cn">— 自托管 AI 伴侣，会语音、能打游戏</span></div>
+    <div class="item-note">带语音对话与游戏能力的自部署 AI 数字伙伴。</div>
+    <div class="badges"><span class="b b-up">▲ 572 today</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/NanmiCoder/MediaCrawler" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">NanmiCoder/MediaCrawler <span class="cn">— 多平台中文社媒爬虫</span></div>
+    <div class="item-note">小红书/抖音/B站/微博等一网打尽，数据采集利器。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-up">▲ 362 today</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
   </a>
 
-  <a class="item" href="https://github.com/omnigent-ai/omnigent" target="_blank" rel="noopener">
-    <div class="item-title">omnigent <span class="cn">— 开源 agent 框架 + meta-harness</span></div>
-    <div class="item-note">编排 Claude Code / Codex / Cursor / Pi，换 harness 不用重写，内建策略与沙箱。</div>
-    <div class="badges"><span class="b b-star">★ 7.8k</span><span class="b b-src">github</span></div>
+  <div class="group-label" style="margin-top:1.1rem">★ 本周热门 · Trending This Week</div>
+  <a class="item rank" href="https://github.com/bojieli/ai-agent-book" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">bojieli/ai-agent-book <span class="cn">— AI Agent 设计原理与工程实践（中文书）</span></div>
+    <div class="item-note">系统讲 agent 设计与工程的开源中文书，本周暴涨。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-up">▲ 13.6k this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
   </a>
-
-  <a class="item" href="https://github.com/opensquilla/opensquilla" target="_blank" rel="noopener">
-    <div class="item-title">OpenSquilla <span class="cn">— 同等预算下"智能密度"更高的 token 高效 agent</span></div>
-    <div class="item-note">主打在相同 token 预算内榨出更高智能表现。</div>
-    <div class="badges"><span class="b b-star">★ 6.4k</span><span class="b b-src">github</span></div>
+  <a class="item rank" href="https://github.com/koala73/worldmonitor" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">koala73/worldmonitor <span class="cn">— AI 新闻聚合的实时全球情报仪表盘</span></div>
+    <div class="item-note">和你这个"每日速览"同类思路，做成了实时地缘情报大屏。</div>
+    <div class="badges"><span class="b b-up">▲ 13.2k this week</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
   </a>
-
-  <a class="item" href="https://github.com/datawhalechina/Agent-Learning-Hub" target="_blank" rel="noopener">
-    <div class="item-title">datawhalechina/Agent-Learning-Hub <span class="cn">— AI Agent 学习路线与资料库</span></div>
-    <div class="item-note">Datawhale 出品的中文 agent 学习地图与资料合集。</div>
-    <div class="badges"><span class="b b-cn">中国</span><span class="b b-star">★ 5.9k</span><span class="b b-src">github</span></div>
-  </a>
-
-  <a class="item" href="https://github.com/oomol-lab/open-connector" target="_blank" rel="noopener">
-    <div class="item-title">open-connector <span class="cn">— 连接 1000+ SaaS 的开源 auth 网关</span></div>
-    <div class="item-note">通过 SDK / CLI / MCP / HTTP / OpenAPI 把上千 SaaS 接给 AI agent。</div>
-    <div class="badges"><span class="b b-star">★ 3.4k</span><span class="b b-src">github</span></div>
-  </a>
-
-  <a class="item" href="https://github.com/strukto-ai/mirage" target="_blank" rel="noopener">
-    <div class="item-title">strukto-ai/mirage <span class="cn">— 面向 AI agent 的统一虚拟文件系统</span></div>
-    <div class="item-note">号称"全球首个"给 agent 用的统一虚拟文件系统。</div>
-    <div class="badges"><span class="b b-star">★ 3.4k</span><span class="b b-src">github</span></div>
+  <a class="item rank" href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">diegosouzapw/OmniRoute <span class="cn">— 免费 AI 网关，290+ 供应商 / 500+ 模型</span></div>
+    <div class="item-note">MIT 许可的多模型网关，一个接口打通几乎所有厂商。</div>
+    <div class="badges"><span class="b b-up">▲ 11.1k this week</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
   </a>
 </section>
 
-<section>
-  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · 演讲</span><span class="sec-tag">RAISE · ICSE AGENT · AI World Congress</span></div>
+<section class="s4">
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · <b>演讲</b></span><span class="sec-rule"></span><span class="sec-tag">RAISE·ICSE AGENT·AI World Congress</span></div>
 
   <a class="item" href="https://www.crossmint.com/learn/ai-agent-conference-calendar" target="_blank" rel="noopener">
     <div class="item-title">RAISE Summit 2026（巴黎 7/8-9）：<span class="cn">9000+ 到场、80% C-level</span></div>
     <div class="item-note">聚焦 agentic 系统、主权 AI 与企业 ROI；Eric Schmidt 称其为"欧洲增长最快的 AI 大会"。</div>
     <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">crossmint.com</span></div>
   </a>
-
   <a class="item" href="https://conf.researchr.org/details/icse-2026/agent-2026-papers/29/Keynote-AI-in-SE-The-Era-of-Coding-Agents" target="_blank" rel="noopener">
     <div class="item-title">ICSE 2026 · AGENT 研讨会 keynote：<span class="cn">《编码 Agent 的时代》</span></div>
     <div class="item-note">软件工程学界主线：从辅助补全到自主编码 agent，工程范式转向。</div>
     <div class="badges"><span class="b b-src">researchr.org</span></div>
   </a>
-
   <a class="item" href="https://aiconference.london/news/speaker-spotlight-top-voices-at-ai-world-congress-2026-july-2026-20260715-12" target="_blank" rel="noopener">
     <div class="item-title">AI World Congress 2026 <span class="cn">演讲阵容更新</span></div>
     <div class="item-note">议题聚焦"国家创新 vs 全球协作"的平衡，及企业规模化部署的扩展性挑战。</div>
@@ -176,55 +211,39 @@ footer a{color:var(--text-muted);}
   </a>
 </section>
 
-<section>
-  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · 监管</span><span class="sec-tag">对齐 · 治理 · 法规</span></div>
+<section class="s5">
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · <b>监管</b></span><span class="sec-rule"></span><span class="sec-tag">对齐·治理·法规</span></div>
 
   <a class="item" href="https://www.techtimes.com/articles/321681/20260727/eu-ai-act-omnibus-law-six-days-transparency-deadline-nudifier-apps-banned-december.htm" target="_blank" rel="noopener">
-    <div class="item-title">EU AI Act <span class="cn">Digital Omnibus（2026/1744）7/27 生效</span>——六天倒计时</div>
+    <div class="item-title">EU AI Act <span class="cn">Digital Omnibus 7/27 生效</span>——六天透明度倒计时</div>
     <div class="item-note">部署方距首个可强制的透明度义务仅 6 天；12/2 前须从产品中移除"nudifier"/CSAM 生成能力，否则硬性禁用。</div>
     <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">techtimes.com</span></div>
   </a>
-
   <a class="item" href="https://teachaitools.blog/blog/eu-ai-act-enforcement-begins-july-2026" target="_blank" rel="noopener">
     <div class="item-title">聊天机器人 <span class="cn">强制身份披露</span> 已上线可执行</div>
     <div class="item-note">面向 EU 用户的 AI 对话系统须明示"你在与 AI 交互"；违反 Art.50 最高罚 1500 万欧元或全球营收 3%。</div>
     <div class="badges"><span class="b b-src">teachaitools.blog</span></div>
   </a>
-
   <a class="item" href="https://digital-strategy.ec.europa.eu/en/policies/ai-act-governance-and-enforcement" target="_blank" rel="noopener">
     <div class="item-title">AI Act <span class="cn">治理三层架构</span> 正式运转</div>
     <div class="item-note">European AI Office + 各国市场监管机构执法；欧洲 AI 理事会、科学小组、咨询论坛三大顾问机构护航。</div>
     <div class="badges"><span class="b b-src">europa.eu</span></div>
   </a>
-
-  <a class="item" href="https://cubbbix.com/blog/ai-regulation-july-2026-global-update/" target="_blank" rel="noopener">
-    <div class="item-title">全球监管同频：<span class="cn">EU 8/2 大限、美国联邦优先权之争、15 国更新</span></div>
-    <div class="item-note">EU 8/2 迎又一节点；美国就联邦对州法优先权博弈，15 国同步推进 AI 立法。</div>
-    <div class="badges"><span class="b b-src">cubbbix.com</span></div>
-  </a>
 </section>
 
-<section>
-  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · 顶级战略思维</span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
+<section class="s6">
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · <b>顶级战略思维</b></span><span class="sec-rule"></span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
 
   <a class="item" href="https://stratechery.com/company/nvidia/" target="_blank" rel="noopener">
     <div class="item-title">Ben Thompson × 黄仁勋：<span class="cn">GTC 2026 是 Nvidia 的拐点</span></div>
     <div class="item-note">Stratechery 独家访谈——Nvidia 从"押注单一 GPU"转向"同时卖多架构"，产品战略重大转向。</div>
-    <div class="badges"><span class="b b-hot">必读</span><span class="b b-src">stratechery.com</span></div>
+    <div class="badges"><span class="b b-read">必读</span><span class="b b-src">stratechery.com</span></div>
   </a>
-
   <a class="item" href="https://stratechery.com/" target="_blank" rel="noopener">
     <div class="item-title">Stratechery 本周三题：<span class="cn">大型机的终结 · OpenAI 续章 · "Netflix 过气了吗？"</span></div>
-    <div class="item-note">7/13 一周精选——从计算范式更替到内容平台竞争格局的再判断。</div>
+    <div class="item-note">一周精选——从计算范式更替到内容平台竞争格局的再判断。</div>
     <div class="badges"><span class="b b-src">stratechery.com</span></div>
   </a>
-
-  <a class="item" href="https://www.joinbyline.com/writers/ben-thompson" target="_blank" rel="noopener">
-    <div class="item-title">Apple <span class="cn">起诉前员工窃取商业机密</span> 涉 AI</div>
-    <div class="item-note">Ben Thompson 解读：一名员工确有过错，但更像 Apple 在 AI 焦虑下的"对外出击"。</div>
-    <div class="badges"><span class="b b-src">byline</span></div>
-  </a>
-
   <a class="item" href="https://www.acquired.fm/episodes/stratechery-with-ben-thompson" target="_blank" rel="noopener">
     <div class="item-title">Acquired × Stratechery：<span class="cn">科技分析如何影响行业最高层决策</span></div>
     <div class="item-note">Stratechery 已成塑造全球科技界最高层对话的"内容飞轮"样本，聚合者逻辑的现实注脚。</div>
@@ -233,9 +252,9 @@ footer a{color:var(--text-muted);}
 </section>
 
 <footer>
-  <div>生成时间：2026-07-28 · 自动汇编 by daily-ai-brief</div>
+  <div>生成时间：2026-07-28 · 自动汇编 by <b>daily-ai-brief</b></div>
   <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源。</div>
-  <div>信息源：WebSearch · GitHub CLI</div>
+  <div>信息源：WebSearch · GitHub Trending · GitHub CLI</div>
   <div><a href="./index.html">← 返回归档</a></div>
 </footer>
 </div>
