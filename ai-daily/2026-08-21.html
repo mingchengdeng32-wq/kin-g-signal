@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-08-21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070D; --bg2:#0B0D18;
+  --surface:rgba(255,255,255,.038); --surface-hi:rgba(255,255,255,.07);
+  --border-subtle:rgba(255,255,255,.08);
+  --gold:#C9A347; --gold-light:#E8C76A;
+  --text:#ECE5D8; --text-muted:rgba(236,229,216,.56); --text-dim:rgba(236,229,216,.34);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.62;
+  background-image:
+    radial-gradient(ellipse 70% 42% at 50% -8%, rgba(201,163,71,.10), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 100% 100%, rgba(74,110,220,.06), transparent 60%);
+  background-attachment:fixed;
+}
+.wrap{max-width:880px; margin:0 auto; padding:clamp(1.8rem,5vw,4.2rem) clamp(1.1rem,4vw,2.2rem) 5rem;}
+
+/* ---------- 报头 ---------- */
+.masthead-top{display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding-bottom:.5rem; border-bottom:1px solid rgba(201,163,71,.3);}
+.kicker{font-family:var(--mono); font-size:.7rem; font-weight:700; letter-spacing:.4em; color:var(--gold); text-transform:uppercase;}
+.issue{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; color:var(--text-dim);}
+h1.title{font-family:var(--serif); font-weight:900; font-size:clamp(2.4rem,8vw,4.2rem); line-height:1.02;
+  letter-spacing:-.01em; margin:1.1rem 0 .5rem;
+  background:linear-gradient(160deg,#FBEFCE 0%,var(--gold-light) 45%,var(--gold) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;}
+.dateline{font-family:var(--mono); font-size:.82rem; letter-spacing:.06em; color:var(--text-muted);}
+.masthead-rule{height:2px; margin-top:1.4rem;
+  background:linear-gradient(90deg,var(--gold) 0%,rgba(201,163,71,.25) 30%,transparent 72%);}
+
+/* ---------- 板块（每块一种语义色，用 --accent 驱动） ---------- */
+section{margin-top:3rem;}
+.s1{--accent:#D8B24E; --accent-soft:rgba(216,178,78,.13);}   /* 海外·金 */
+.s2{--accent:#E85D74; --accent-soft:rgba(232,93,116,.13);}   /* 中国·绯 */
+.s3{--accent:#22C08A; --accent-soft:rgba(34,192,138,.13);}   /* Trending·上升绿 */
+.s4{--accent:#5AA7E6; --accent-soft:rgba(90,167,230,.13);}   /* 峰会·冰蓝 */
+.s5{--accent:#F0A83C; --accent-soft:rgba(240,168,60,.13);}   /* 监管·琥珀 */
+.s6{--accent:#A98BEA; --accent-soft:rgba(169,139,234,.15);}  /* 商业·紫 */
+
+.sec-head{display:flex; align-items:center; gap:.75rem; margin-bottom:1.2rem;}
+.sec-num{font-family:var(--mono); font-size:.78rem; font-weight:700; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--accent); border-radius:6px; padding:.14rem .5rem; line-height:1;}
+.sec-title{font-family:var(--serif); font-weight:700; font-size:clamp(1.28rem,3.4vw,1.55rem); color:var(--text); white-space:nowrap;}
+.sec-title b{color:var(--accent);}
+.sec-rule{flex:1; height:1px; background:linear-gradient(90deg,var(--accent) 0%,transparent 90%); opacity:.5; margin:0 .3rem;}
+.sec-tag{font-family:var(--mono); font-size:.64rem; letter-spacing:.05em; color:var(--text-dim); text-align:right; white-space:nowrap;}
+.group-label{font-family:var(--mono); font-size:.68rem; letter-spacing:.18em; color:var(--accent); text-transform:uppercase;
+  margin:.2rem 0 .6rem; opacity:.85;}
+
+/* ---------- 条目卡 ---------- */
+.item{display:block; text-decoration:none; color:inherit; position:relative;
+  background:var(--surface); border:1px solid var(--border-subtle); border-left:3px solid var(--accent);
+  border-radius:10px; padding:.9rem 1.1rem .95rem; margin-bottom:.62rem;
+  transition:background .2s ease, transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s ease;}
+.item:hover{background:var(--surface-hi); transform:translateX(4px);
+  box-shadow:-6px 0 22px -14px var(--accent);}
+.item-title{font-weight:500; font-size:1.03rem; line-height:1.45; color:var(--text);}
+.item-title .cn{color:var(--accent); font-weight:700;}
+.item-note{color:var(--text-muted); font-size:.855rem; line-height:1.58; margin-top:.3rem;}
+.badges{margin-top:.5rem; display:flex; gap:.42rem; flex-wrap:wrap; align-items:center;}
+.b{font-family:var(--mono); font-size:.64rem; font-weight:500; padding:.1rem .44rem; border-radius:5px; letter-spacing:.02em; line-height:1.5;}
+.b-src{background:rgba(255,255,255,.05); color:var(--text-dim);}
+.b-cn{background:rgba(232,93,116,.15); color:#FF8A9A;}
+.b-hot{background:linear-gradient(135deg,#E0455533,#E0455511); color:#FF6B7A; border:1px solid rgba(224,69,85,.4);}
+.b-read{background:linear-gradient(135deg,var(--gold) ,#B8923A); color:#1A140A; font-weight:700;}
+/* trending 排名 + 涨星 */
+.item.rank{padding-left:3.2rem;}
+.rank-no{position:absolute; left:.85rem; top:50%; transform:translateY(-50%);
+  font-family:var(--serif); font-weight:900; font-size:1.5rem; color:var(--accent); opacity:.85; width:1.4rem; text-align:center;}
+.b-up{background:rgba(34,192,138,.16); color:#4FE0AC; font-weight:700;}
+.b-lang{background:rgba(255,255,255,.05); color:var(--text-muted);}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--border-subtle);
+  color:var(--text-dim); font-size:.76rem; font-family:var(--mono); line-height:1.85;}
+footer a{color:var(--text-muted); text-decoration:none; border-bottom:1px solid rgba(201,163,71,.3);}
+footer a:hover{color:var(--gold-light);}
+.disc{color:#D89A3C; opacity:.85;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="masthead-top">
+    <span class="kicker">Daily&nbsp;AI&nbsp;Digest</span>
+    <span class="issue">六板块等权 · 速览标题流</span>
+  </div>
+  <h1 class="title">今日 AI 速览</h1>
+  <div class="dateline">2026 年 8 月 21 日 · 周五</div>
+  <div class="masthead-rule"></div>
+</header>
+
+<section class="s1">
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 <b>AI 公司</b></span><span class="sec-rule"></span><span class="sec-tag">OpenAI·Anthropic·Google·xAI·Meta</span></div>
+
+  <a class="item" href="https://aitoolsrecap.com/Blog/AINewsAugust2026.aspx" target="_blank" rel="noopener">
+    <div class="item-title">Anthropic 锁定超级算力：<span class="cn">拿下 SpaceX/xAI 田纳西 Colossus 1 数据中心全部产能，逾 300MW、22 万张英伟达 GPU</span></div>
+    <div class="item-note">继上周 15 亿美元企业服务合资，Anthropic 直接把对手 xAI 的自建算力包下——前沿竞争的瓶颈已从模型算法前移到电力与 GPU，谁先锁定兆瓦级产能，谁才有资格训下一代模型。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">AIToolsRecap</span></div>
+  </a>
+  <a class="item" href="https://news.emory.edu/stories/2026/04/er_aih_2026_conf_recap_26-04-07/story.html" target="_blank" rel="noopener">
+    <div class="item-title">Meta 抢人补短板：<span class="cn">挖角 ChatGPT 共同创造者赵晟佳（Shengjia Zhao）执掌超级智能实验室</span></div>
+    <div class="item-note">在 Gemini 破十亿月活、模型竞赛白热化的当口，Meta 用顶级研究员回填技术领导层的空缺；人才而非算力，仍是这轮追赶战里最稀缺、也最难用钱直接买到的筹码。</div>
+    <div class="badges"><span class="b b-src">路透/多源</span></div>
+  </a>
+  <a class="item" href="https://aireleasetracker.com/latest" target="_blank" rel="noopener">
+    <div class="item-title">xAI 迭代提速：<span class="cn">8/12 上线 Grok 4.6，8/8 发布 Grok Imagine Image 2.0</span></div>
+    <div class="item-note">语言与图像双线一周内连更，xAI 把发布节奏拉到与 OpenAI／Google 同频；在收编 Cursor 补上编码入口后，模型—工具—分发的闭环开始成型。</div>
+    <div class="badges"><span class="b b-src">AI Release Tracker</span></div>
+  </a>
+  <a class="item" href="https://aitoolsrecap.com/Blog/AINewsAugust2026.aspx" target="_blank" rel="noopener">
+    <div class="item-title">DeepMind 让 AlphaEvolve 出圈：<span class="cn">Gemini 驱动的进化式编码 Agent 扩展到基因组学、量子物理与数学</span></div>
+    <div class="item-note">把 DNA 测序错误检测降 30%、Willow 量子电路误差降一个数量级——AlphaEvolve 从"写代码"走向"做科学"，Google 押注 AI 不只是产品，更是加速基础研究的通用引擎。</div>
+    <div class="badges"><span class="b b-src">AIToolsRecap</span></div>
+  </a>
+</section>
+
+<section class="s2">
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 <b>AI 团队</b></span><span class="sec-rule"></span><span class="sec-tag">Qwen·豆包·DeepSeek·Kimi·智谱</span></div>
+
+  <a class="item" href="https://www.aitoollab.cn/articles/qwen38-max-open-source-long-horizon-agent-2026/" target="_blank" rel="noopener">
+    <div class="item-title">阿里放大招：<span class="cn">Qwen3.8-Max 开源"超大杯"——2.4 万亿参数 MoE、单次激活 95B、百万上下文、原生视觉</span></div>
+    <div class="item-note">2.4T 稀疏 MoE 首次开源，官方展示"16 天自主写出一个 Agent 框架"的长程任务能力；阿里把参数、开源、Agent、视觉四张牌一次打出，直接对标海外前沿闭源旗舰。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-hot">重磅</span><span class="b b-src">AIToolLab</span></div>
+  </a>
+  <a class="item" href="https://finance.sina.com.cn/roll/2026-08-03/doc-inikzeav2883105.shtml" target="_blank" rel="noopener">
+    <div class="item-title">Agent 落地办公：<span class="cn">阿里企业级 Agent 产品「千问办公」QwenWork 同日开启公测</span></div>
+    <div class="item-note">模型发布与落地产品捆绑推出——阿里不满足于刷榜，直接把大模型能力封成面向企业的办公智能体；国产厂商的比拼正从"模型分数"转向"谁能把 Agent 送进真实工作流"。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">新浪财经</span></div>
+  </a>
+  <a class="item" href="https://juejin.cn/post/7669935311557083163" target="_blank" rel="noopener">
+    <div class="item-title">字节补视频短板：<span class="cn">豆包 Seedance 2.5 把单次视频生成拉长到 30 秒</span></div>
+    <div class="item-note">在国产厂商三天连发的密集期，字节以视频生成时长突破切入差异化赛道；文生视频从"几秒 demo"迈向"可用片段"，内容生产工具链的国产化又下一城。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">掘金</span></div>
+  </a>
+  <a class="item" href="https://zhuanlan.zhihu.com/p/670574382" target="_blank" rel="noopener">
+    <div class="item-title">国产格局速写（8/18）：<span class="cn">Qwen3.8、GLM-5.3、DeepSeek-V4-Pro、Kimi-K3 四强并立</span></div>
+    <div class="item-note">第三方按"模型/应用"两维梳理国产阵营，结论指向多强分赛道——编码看 GLM/Kimi、性价比看 DeepSeek、超大杯与视觉看 Qwen；密集发布之后，选型逻辑从"追新"回到"配任务"。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">知乎</span></div>
+  </a>
+</section>
+
+<section class="s3">
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub <b>Trending</b></span><span class="sec-rule"></span><span class="sec-tag">当日上升 · 本周热门</span></div>
+
+  <div class="group-label">▲ 当日上升 · Trending Today</div>
+  <a class="item rank" href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">harry0703/MoneyPrinterTurbo <span class="cn">— 一句主题词，AI 全自动出高清短视频</span></div>
+    <div class="item-note">从关键词到文案、配音、素材、字幕一条龙生成 HD 短视频——"内容工厂"叙事持续吸星，今日以 2,761 涨幅稳居日榜前列。</div>
+    <div class="badges"><span class="b b-up">▲ 2,761 today</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">mattpocock/skills <span class="cn">— 给真实工程师用的 Agent skills 合集（.agents 目录）</span></div>
+    <div class="item-note">把日常工程实践沉淀成可喂给编码 Agent 的 skills——"技能即接口"继续升温，今日再涨 2,192 星强势冲榜。</div>
+    <div class="badges"><span class="b b-up">▲ 2,192 today</span><span class="b b-lang">Shell</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/AprilNEA/OpenLogi" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">AprilNEA/OpenLogi <span class="cn">— 本地优先的 Logitech Options+ 原生替代，Rust 实现</span></div>
+    <div class="item-note">用 Rust 重写罗技外设配置软件，主打本地优先与轻量——非 AI 但社区呼声高，今日新面孔直冲日榜前三。</div>
+    <div class="badges"><span class="b b-up">▲ 1,545 today</span><span class="b b-lang">Rust</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/santifer/career-ops" target="_blank" rel="noopener">
+    <span class="rank-no">4</span>
+    <div class="item-title">santifer/career-ops <span class="cn">— 开源 AI 求职工具：简历定制 + 投递追踪</span></div>
+    <div class="item-note">把找工作做成 AI 流水线——按岗位自动改简历、跟进投递状态；"Agent 帮你打工"的实用件，今日强势上榜。</div>
+    <div class="badges"><span class="b b-up">▲ 816 today</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/obra/superpowers" target="_blank" rel="noopener">
+    <span class="rank-no">5</span>
+    <div class="item-title">obra/superpowers <span class="cn">— 一套能落地的 Agent 技能框架与软件开发方法论</span></div>
+    <div class="item-note">把"怎么让编码 Agent 干好活"沉淀成方法论 + 技能框架——Agent 工程化的元工具，今日续居日榜前列。</div>
+    <div class="badges"><span class="b b-up">▲ 727 today</span><span class="b b-lang">Shell</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/akitaonrails/ai-memory" target="_blank" rel="noopener">
+    <span class="rank-no">6</span>
+    <div class="item-title">akitaonrails/ai-memory <span class="cn">— 给编码 CLI Agent 的长期记忆方案，Rust 实现</span></div>
+    <div class="item-note">解决 Agent"失忆"痛点，把长期记忆做成可插拔组件——"记忆即基建"继续热，今日新星上榜。</div>
+    <div class="badges"><span class="b b-up">▲ 332 today</span><span class="b b-lang">Rust</span><span class="b b-src">github</span></div>
+  </a>
+
+  <div class="group-label" style="margin-top:1.1rem">★ 本周热门 · Trending This Week</div>
+  <a class="item rank" href="https://github.com/cathrynlavery/diagram-design" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">cathrynlavery/diagram-design <span class="cn">— 给 Claude Code／Codex／Pi 用的 38 种编辑级图表</span></div>
+    <div class="item-note">自包含 HTML + SVG 的编辑风图表模板集，直接喂给编码 Agent 出图——"给 Agent 配美术"的实用件，本周以 1.1 万+ 星霸榜。</div>
+    <div class="badges"><span class="b b-up">▲ 11,325 this week</span><span class="b b-lang">HTML</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/volcengine/OpenViking" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">volcengine/OpenViking <span class="cn">— 统一 Agent 记忆、知识 RAG 与技能的自演化上下文库</span></div>
+    <div class="item-note">火山引擎出品，把记忆、检索、技能收进一个可自我演化的上下文数据库——大厂做 Agent 底座，本周稳居次席。</div>
+    <div class="badges"><span class="b b-up">▲ 2,444 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/cactus-compute/needle" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">cactus-compute/needle <span class="cn">— 14MB 微型基座模型，塞进手机／穿戴／机器人</span></div>
+    <div class="item-note">把基座模型压到 14MB 在极小设备上跑——端侧 AI 的极限压缩路线，本周持续高位，边缘推理想象空间被重新打开。</div>
+    <div class="badges"><span class="b b-up">▲ 3,409 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/semantica-agi/semantica" target="_blank" rel="noopener">
+    <span class="rank-no">4</span>
+    <div class="item-title">semantica-agi/semantica <span class="cn">— 图原生的上下文与可问责 AI 基础设施</span></div>
+    <div class="item-note">把上下文与可追责性做进底座的 graph-native 基建——"可问责 AI"叙事持续吸金，本周稳居前列。</div>
+    <div class="badges"><span class="b b-up">▲ 3,674 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/unslothai/unsloth" target="_blank" rel="noopener">
+    <span class="rank-no">5</span>
+    <div class="item-title">unslothai/unsloth <span class="cn">— 本地跑与微调 LLM／扩散模型的工具</span></div>
+    <div class="item-note">把高效微调做成本地可视化工具，覆盖训练与推理——"人人可训"路线的老牌爆款，本周强势在榜。</div>
+    <div class="badges"><span class="b b-up">▲ 3,300 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/AlexsJones/llmfit" target="_blank" rel="noopener">
+    <span class="rank-no">6</span>
+    <div class="item-title">AlexsJones/llmfit <span class="cn">— 一条命令，测出你硬件能跑哪些模型</span></div>
+    <div class="item-note">覆盖数百个模型与供应商，本地探测硬件适配——降低自部署门槛的实用件，本周以 1,842 星入榜。</div>
+    <div class="badges"><span class="b b-up">▲ 1,842 this week</span><span class="b b-lang">Rust</span><span class="b b-src">github</span></div>
+  </a>
+</section>
+
+<section class="s4">
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · <b>演讲</b></span><span class="sec-rule"></span><span class="sec-tag">RAISE·AI.Humanity·AIConf</span></div>
+
+  <a class="item" href="https://www.raisesummit.com/speakers-2026" target="_blank" rel="noopener">
+    <div class="item-title">欧洲重头：<span class="cn">RAISE Summit 2026 汇聚前沿研究者与产业领袖，聚焦 AI 从研究走向落地</span></div>
+    <div class="item-note">巴黎举办的高规格峰会把学界前沿与企业部署拉到同一舞台——在模型能力趋同的当下，议题重心明显移向"如何把 AI 真正用进生产"，是从业者把握行业风向的年度场。</div>
+    <div class="badges"><span class="b b-read">必读</span><span class="b b-src">RAISE Summit</span></div>
+  </a>
+  <a class="item" href="https://news.emory.edu/stories/2026/04/er_aih_2026_conf_recap_26-04-07/story.html" target="_blank" rel="noopener">
+    <div class="item-title">冷静之声：<span class="cn">Emory AI.Humanity 大会，社会学者 Zeynep Tufekci 主旨演讲谈 AI 的社会效应</span></div>
+    <div class="item-note">在厂商军备竞赛的喧嚣里，这场大会请来长期研究新技术社会影响的 Tufekci——把讨论从"能力炫技"拉回"AI 如何改变人与制度"，为过热的叙事提供一份必要的冷思考。</div>
+    <div class="badges"><span class="b b-src">Emory News</span></div>
+  </a>
+  <a class="item" href="https://aiconference.com/speakers/" target="_blank" rel="noopener">
+    <div class="item-title">下一站预告：<span class="cn">The AI Conference 2026（旧金山）120+ 讲者，覆盖 AGI／LLM／Agentic AI</span></div>
+    <div class="item-note">五大 track 横跨 AGI、大模型、智能体、基础设施与落地应用，聚合高管圆桌与技术深潜——面向从业者的重头戏，值得提前排期。</div>
+    <div class="badges"><span class="b b-src">AI Conference</span></div>
+  </a>
+</section>
+
+<section class="s5">
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · <b>监管</b></span><span class="sec-rule"></span><span class="sec-tag">对齐·治理·法规</span></div>
+
+  <a class="item" href="https://www.softwareimprovementgroup.com/blog/eu-ai-act-summary/" target="_blank" rel="noopener">
+    <div class="item-title">透明义务成硬红线：<span class="cn">EU AI Act 第 50 条自 8/2 起可强制执行，违规最高罚 1500 万欧元或全球营收 3%</span></div>
+    <div class="item-note">凡与 AI 聊天机器人对话、或浏览 AI 生成内容，企业必须即时告知用户——合成媒体标注不再是建议而是法律义务；这是本轮 EU AI Act 里对普通产品最直接、也最容易踩雷的一条。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">SIG</span></div>
+  </a>
+  <a class="item" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">
+    <div class="item-title">执法机构开机：<span class="cn">8/2 起 AI Office 与成员国主管机关正式承担监督执法，握有对 GPAI 的评估与罚款权</span></div>
+    <div class="item-note">AI Office 可调取技术文档、评估模型、要求整改并开罚单——从立法条文走向真实执法的关键转折；通用大模型厂商第一次面对一个有牙齿的欧盟监管者。</div>
+    <div class="badges"><span class="b b-src">European Commission</span></div>
+  </a>
+  <a class="item" href="https://www.hklaw.com/en/insights/publications/2026/04/us-companies-face-eu-ai-acts-possible-august-2026-compliance-deadline" target="_blank" rel="noopener">
+    <div class="item-title">长臂管辖压向美企：<span class="cn">Holland &amp; Knight 提示美国公司同样面临 8 月合规大限</span></div>
+    <div class="item-note">只要产品或输出触达欧盟市场，AI Act 的义务就适用——美企不能以"注册在境外"为由豁免；Digital Omnibus 虽把独立高风险系统合规推迟到 2027-12，但透明与 GPAI 义务仍即刻生效。</div>
+    <div class="badges"><span class="b b-src">Holland &amp; Knight</span></div>
+  </a>
+</section>
+
+<section class="s6">
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · <b>顶级战略思维</b></span><span class="sec-rule"></span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
+
+  <a class="item" href="https://www.forbes.com/sites/sandycarter/2026/06/16/spacex-buys-cursor-in-largest-startup-acquisition-ever-at-60-billion/" target="_blank" rel="noopener">
+    <div class="item-title">史上最大创业公司并购：<span class="cn">SpaceX 以 600 亿美元全股票收购 Cursor 母公司 Anysphere，8 月完成交割</span></div>
+    <div class="item-note">Cursor 年化营收约 26 亿、四位 MIT 同窗 2022 年创立——马斯克把编码入口收进 xAI 版图，赌的是 Agentic Coding 的开发者心智比模型本身更值钱；模型—工具—分发的整合战，正式改写行业并购的量级。</div>
+    <div class="badges"><span class="b b-read">必读</span><span class="b b-hot">重磅</span><span class="b b-src">Forbes</span></div>
+  </a>
+  <a class="item" href="https://stratechery.com/" target="_blank" rel="noopener">
+    <div class="item-title">Ben Thompson 的铁路镜像：<span class="cn">2026 年约 6000 亿美元 AI capex，被类比 1870 年代铁路豪赌</span></div>
+    <div class="item-note">Stratechery 追问天量资本开支如何在毛利被压薄的前沿竞争里变现，并援引 Nadella 对 1873 年的类比、微软上季 196 亿自由现金流为锚——铁路狂潮里赢家未必修最多铁轨，而是活到网络效应兑现的那家。</div>
+    <div class="badges"><span class="b b-read">必读</span><span class="b b-src">Stratechery</span></div>
+  </a>
+  <a class="item" href="https://aitoolsrecap.com/Blog/AINewsAugust2026.aspx" target="_blank" rel="noopener">
+    <div class="item-title">算力成新战略资产：<span class="cn">Anthropic 包下 xAI 自建的 Colossus 1 全部产能，算力争夺进入"军备"阶段</span></div>
+    <div class="item-note">当竞争对手的数据中心也能被整包租下，算力从工程细节升级为可交易的战略筹码——前沿实验室的护城河正从算法与人才，扩展到"谁能先锁定电力与 GPU"的资本与供应链博弈。</div>
+    <div class="badges"><span class="b b-src">AIToolsRecap</span></div>
+  </a>
+</section>
+
+<footer>
+  <div>生成时间：2026-08-21 · 自动汇编 by <b>daily-ai-brief</b></div>
+  <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源；部分资讯源为聚合站，已尽量回溯一手出处。</div>
+  <div>信息源：WebSearch · GitHub Trending</div>
+  <div><a href="./index.html">← 返回归档</a></div>
+</footer>
+</div>
+</body>
+</html>
