@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-09-08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070D; --bg2:#0B0D18;
+  --surface:rgba(255,255,255,.038); --surface-hi:rgba(255,255,255,.07);
+  --border-subtle:rgba(255,255,255,.08);
+  --gold:#C9A347; --gold-light:#E8C76A;
+  --text:#ECE5D8; --text-muted:rgba(236,229,216,.56); --text-dim:rgba(236,229,216,.34);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.62;
+  background-image:
+    radial-gradient(ellipse 70% 42% at 50% -8%, rgba(201,163,71,.10), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 100% 100%, rgba(74,110,220,.06), transparent 60%);
+  background-attachment:fixed;
+}
+.wrap{max-width:880px; margin:0 auto; padding:clamp(1.8rem,5vw,4.2rem) clamp(1.1rem,4vw,2.2rem) 5rem;}
+
+/* ---------- 报头 ---------- */
+.masthead-top{display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding-bottom:.5rem; border-bottom:1px solid rgba(201,163,71,.3);}
+.kicker{font-family:var(--mono); font-size:.7rem; font-weight:700; letter-spacing:.4em; color:var(--gold); text-transform:uppercase;}
+.issue{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; color:var(--text-dim);}
+h1.title{font-family:var(--serif); font-weight:900; font-size:clamp(2.4rem,8vw,4.2rem); line-height:1.02;
+  letter-spacing:-.01em; margin:1.1rem 0 .5rem;
+  background:linear-gradient(160deg,#FBEFCE 0%,var(--gold-light) 45%,var(--gold) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;}
+.dateline{font-family:var(--mono); font-size:.82rem; letter-spacing:.06em; color:var(--text-muted);}
+.masthead-rule{height:2px; margin-top:1.4rem;
+  background:linear-gradient(90deg,var(--gold) 0%,rgba(201,163,71,.25) 30%,transparent 72%);}
+
+/* ---------- 板块（每块一种语义色，用 --accent 驱动） ---------- */
+section{margin-top:3rem;}
+.s1{--accent:#D8B24E; --accent-soft:rgba(216,178,78,.13);}   /* 海外·金 */
+.s2{--accent:#E85D74; --accent-soft:rgba(232,93,116,.13);}   /* 中国·绯 */
+.s3{--accent:#22C08A; --accent-soft:rgba(34,192,138,.13);}   /* Trending·上升绿 */
+.s4{--accent:#5AA7E6; --accent-soft:rgba(90,167,230,.13);}   /* 峰会·冰蓝 */
+.s5{--accent:#F0A83C; --accent-soft:rgba(240,168,60,.13);}   /* 监管·琥珀 */
+.s6{--accent:#A98BEA; --accent-soft:rgba(169,139,234,.15);}  /* 商业·紫 */
+
+.sec-head{display:flex; align-items:center; gap:.75rem; margin-bottom:1.2rem;}
+.sec-num{font-family:var(--mono); font-size:.78rem; font-weight:700; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--accent); border-radius:6px; padding:.14rem .5rem; line-height:1;}
+.sec-title{font-family:var(--serif); font-weight:700; font-size:clamp(1.28rem,3.4vw,1.55rem); color:var(--text); white-space:nowrap;}
+.sec-title b{color:var(--accent);}
+.sec-rule{flex:1; height:1px; background:linear-gradient(90deg,var(--accent) 0%,transparent 90%); opacity:.5; margin:0 .3rem;}
+.sec-tag{font-family:var(--mono); font-size:.64rem; letter-spacing:.05em; color:var(--text-dim); text-align:right; white-space:nowrap;}
+.group-label{font-family:var(--mono); font-size:.68rem; letter-spacing:.18em; color:var(--accent); text-transform:uppercase;
+  margin:.2rem 0 .6rem; opacity:.85;}
+
+/* ---------- 条目卡 ---------- */
+.item{display:block; text-decoration:none; color:inherit; position:relative;
+  background:var(--surface); border:1px solid var(--border-subtle); border-left:3px solid var(--accent);
+  border-radius:10px; padding:.9rem 1.1rem .95rem; margin-bottom:.62rem;
+  transition:background .2s ease, transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s ease;}
+.item:hover{background:var(--surface-hi); transform:translateX(4px);
+  box-shadow:-6px 0 22px -14px var(--accent);}
+.item-title{font-weight:500; font-size:1.03rem; line-height:1.45; color:var(--text);}
+.item-title .cn{color:var(--accent); font-weight:700;}
+.item-note{color:var(--text-muted); font-size:.855rem; line-height:1.58; margin-top:.3rem;}
+.badges{margin-top:.5rem; display:flex; gap:.42rem; flex-wrap:wrap; align-items:center;}
+.b{font-family:var(--mono); font-size:.64rem; font-weight:500; padding:.1rem .44rem; border-radius:5px; letter-spacing:.02em; line-height:1.5;}
+.b-src{background:rgba(255,255,255,.05); color:var(--text-dim);}
+.b-cn{background:rgba(232,93,116,.15); color:#FF8A9A;}
+.b-hot{background:linear-gradient(135deg,#E0455533,#E0455511); color:#FF6B7A; border:1px solid rgba(224,69,85,.4);}
+.b-read{background:linear-gradient(135deg,var(--gold) ,#B8923A); color:#1A140A; font-weight:700;}
+/* trending 排名 + 涨星 */
+.item.rank{padding-left:3.2rem;}
+.rank-no{position:absolute; left:.85rem; top:50%; transform:translateY(-50%);
+  font-family:var(--serif); font-weight:900; font-size:1.5rem; color:var(--accent); opacity:.85; width:1.4rem; text-align:center;}
+.b-up{background:rgba(34,192,138,.16); color:#4FE0AC; font-weight:700;}
+.b-lang{background:rgba(255,255,255,.05); color:var(--text-muted);}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--border-subtle);
+  color:var(--text-dim); font-size:.76rem; font-family:var(--mono); line-height:1.85;}
+footer a{color:var(--text-muted); text-decoration:none; border-bottom:1px solid rgba(201,163,71,.3);}
+footer a:hover{color:var(--gold-light);}
+.disc{color:#D89A3C; opacity:.85;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="masthead-top">
+    <span class="kicker">Daily&nbsp;AI&nbsp;Digest</span>
+    <span class="issue">六板块等权 · 速览标题流</span>
+  </div>
+  <h1 class="title">今日 AI 速览</h1>
+  <div class="dateline">2026 年 9 月 8 日 · 周二</div>
+  <div class="masthead-rule"></div>
+</header>
+
+<section class="s1">
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 <b>AI 公司</b></span><span class="sec-rule"></span><span class="sec-tag">OpenAI·Anthropic·Google·Meta·xAI</span></div>
+
+  <a class="item" href="https://thehackernews.com/2026/09/google-anthropic-and-openai-unveil.html" target="_blank" rel="noopener">
+    <div class="item-title">三大实验室同一天亮出"网安 AI"，各建门控准入项目：<span class="cn">Google 用 Fairwind、Anthropic 用 EFS、OpenAI 用 Daybreak Blue，把最强网络安全能力只放给受审的防守方（政府/医疗/电信），普通用户拿不到</span></div>
+    <div class="item-note">当模型强到"既能防守也能进攻"，三家不约而同选择了同一种发货语法:不是全公开、也不是全封存，而是"按身份门控"——把能力和责任在准入环节就绑死;这标志前沿实验室已默认接受"某些能力天生危险"，竞争焦点从"敢不敢发"转向"谁的门控更可信"。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">The Hacker News</span></div>
+  </a>
+  <a class="item" href="https://thehackernews.com/2026/09/google-anthropic-and-openai-unveil.html" target="_blank" rel="noopener">
+    <div class="item-title">OpenAI Astra 首次触发"关键网络能力阈值"：<span class="cn">能自主发现并利用 0day、ExploitBench 拿满分，同时把越狱拒绝率从 59% 拉到 91.5%，进阶能力经 Daybreak Blue 项目才开放</span></div>
+    <div class="item-note">同一个模型，一边把攻击能力做到基准满分、一边把防越狱做到九成——这正是"网安 AI"最尖锐的悖论:能力越强,滥用与防御就越是同一枚硬币的两面;OpenAI 用"阈值+门控"承认了这一点,也把"什么能力必须锁"从伦理讨论变成了可量化的红线。</div>
+    <div class="badges"><span class="b b-src">The Hacker News</span></div>
+  </a>
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">Anthropic 把 cache-read 价格直降 75%，配套上线企业前沿护栏 EFS：<span class="cn">Claude Fable 5.1 / Mythos 5.1 之外，Anthropic 把缓存读取成本砍掉四分之三，并推出"零数据留存 + 顶配滥用检测"的 Enterprise Frontier Safeguards</span></div>
+    <div class="item-note">一手大幅降本、一手加码合规护栏——Anthropic 正把"便宜的长上下文"和"企业敢用的安全底座"打成一个组合;当能力趋同,真正决定企业采购的不是跑分,而是"单位成本+可审计的安全",谁把这两条线同时压住,谁就锁住 B 端的确定性收入。</div>
+    <div class="badges"><span class="b b-src">LLM-Stats</span></div>
+  </a>
+  <a class="item" href="https://thehackernews.com/2026/09/google-anthropic-and-openai-unveil.html" target="_blank" rel="noopener">
+    <div class="item-title">Google Gemini 3.8 Flash Cyber 携 650+ 机构落地防守方：<span class="cn">在自主漏洞发现上超越更大的对手旗舰，通过 Fairwind 计划优先开放给高价值防守者，已联手 CrowdStrike、Palo Alto 等 650 多家组织</span></div>
+    <div class="item-note">Google 没有停在"我们模型更强",而是直接把它接进 650 家安全厂商与关键设施的防线——这是把"前沿能力"翻译成"生态防御网"的一步;当巨头开始用合作伙伴数量而非跑分来定义领先,说明网安 AI 的胜负手正从模型本身,转向谁能先把它嵌进真实世界的防守分工。</div>
+    <div class="badges"><span class="b b-src">The Hacker News</span></div>
+  </a>
+</section>
+
+<section class="s2">
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 <b>AI 团队</b></span><span class="sec-rule"></span><span class="sec-tag">Kimi·GLM·Qwen·DeepSeek·豆包</span></div>
+
+  <a class="item" href="https://zhuanlan.zhihu.com/p/2048464721083470807" target="_blank" rel="noopener">
+    <div class="item-title">国产四强定型："一模型一路线"，生态壁垒各自成形：<span class="cn">最新盘点显示 Kimi K2.6、GLM-5、Qwen、DeepSeek V4 已分别在超长上下文、Agent 多模态、开源生态、极致性价比四条路线上筑起各自的护城河</span></div>
+    <div class="item-note">从"你追我赶发新模型"到"各占一条赛道守自己的地"——国产大模型的竞争正在从同质化混战进入分化定型期;当每家都不再什么都做、而是把一件事做到别人绕不开,说明这个市场已经足够大,大到能同时养活四种截然不同的活法。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">知乎</span></div>
+  </a>
+  <a class="item" href="https://adg.csdn.net/6a392d27662f9a54cb82beb5.html" target="_blank" rel="noopener">
+    <div class="item-title">DeepSeek V4-Flash-Vision 把"低成本"优势推进多模态：<span class="cn">在以极低训练成本闻名的路线上，DeepSeek 补上带视觉的 Flash 体验版，向多模态与 Agent 场景延伸，继续压住调用价格</span></div>
+    <div class="item-note">DeepSeek 的杀手锏始终是"同样能力、更低成本",如今把这套效率优势从纯文本推向视觉——当性价比标签叠上多模态,国产开源模型在海外开发者管线里的价格竞争力还会再上一个台阶,这是最难被巨头用补贴抹平的护城河。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">CSDN</span></div>
+  </a>
+  <a class="item" href="https://zhuanlan.zhihu.com/p/670574382" target="_blank" rel="noopener">
+    <div class="item-title">Kimi K2.6 死磕"超长上下文 + 深度研究"：<span class="cn">月之暗面延续差异化定位，把长文档理解与多步研究做成核心卖点，在 Agent 时代抢"读得更多、想得更深"的场景</span></div>
+    <div class="item-note">当别家在拼参数与价格,Kimi 选择在"上下文长度"这一根轴上做到极致——差异化不是全能,而是把一个维度打穿;在深度研究、长报告这类高价值场景里,"能一次读完并推理"本身就是别人短期难以复制的产品壁垒。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">知乎</span></div>
+  </a>
+  <a class="item" href="https://zhuanlan.zhihu.com/p/670574382" target="_blank" rel="noopener">
+    <div class="item-title">Qwen3.7 定位"智能体时代旗舰"，字节豆包稳守 C 端第一：<span class="cn">阿里通义千问以开源生态路线推进 Qwen3.7 面向 Agent，字节豆包则继续以用户体量领跑国内 C 端 AI 助手</span></div>
+    <div class="item-note">阿里用开源权重换开发者信任、字节用超级 App 筑消费级壁垒——国产两条最重的护城河一条向下(开发者生态)、一条向上(C 端日活);这两块阵地加起来,才是中国 AI 真正难被单点技术优势绕开的底盘。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">知乎</span></div>
+  </a>
+</section>
+
+<section class="s3">
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub <b>Trending</b></span><span class="sec-rule"></span><span class="sec-tag">当日上升 · 本周热门</span></div>
+
+  <div class="group-label">▲ 当日上升 · Trending Today</div>
+  <a class="item rank" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">affaan-m/ECC <span class="cn">— 面向 Claude Code 等 Agent 的 harness 性能优化系统，一站集成技能、记忆与安全</span></div>
+    <div class="item-note">"把整套 Agent harness 调到最优"成了新刚需——继昨日之后 ECC 继续霸榜，今日再涨 1,897 星，Agent 配置本身正被产品化。</div>
+    <div class="badges"><span class="b b-up">▲ 1,897 today</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">microsoft/markitdown <span class="cn">— 把各类文件与 Office 文档一键转成 Markdown，专为喂给 Agent 设计</span></div>
+    <div class="item-note">Agent 时代最朴素的刚需是"把任何格式变成模型能读的干净文本"——微软这把老工具重回热榜，今日 886 星，数据预处理仍是绕不开的苦活。</div>
+    <div class="badges"><span class="b b-up">▲ 886 today</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">heygen-com/hyperframes <span class="cn">— "写 HTML，渲染视频"，为 Agent 打造的可编程视频生成框架</span></div>
+    <div class="item-note">让 Agent 用熟悉的 HTML 直接产出视频——把视频生成变成"写代码"这件事持续吸引开发者，今日 474 星，多模态产出正在被工程化。</div>
+    <div class="badges"><span class="b b-up">▲ 474 today</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/ruvnet/ruflo" target="_blank" rel="noopener">
+    <span class="rank-no">4</span>
+    <div class="item-title">ruvnet/ruflo <span class="cn">— Agent 元框架，用来部署智能体集群、自主工作流与对话式 AI 系统</span></div>
+    <div class="item-note">"部署一群 Agent 而不是一个"的元框架继续吸粉——多智能体编排从论文走向可落地工具，今日 394 星。</div>
+    <div class="badges"><span class="b b-up">▲ 394 today</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/bytedance/deer-flow" target="_blank" rel="noopener">
+    <span class="rank-no">5</span>
+    <div class="item-title">bytedance/deer-flow <span class="cn">— 字节开源的长时程 SuperAgent harness，集研究、编码、创作于一体</span></div>
+    <div class="item-note">大厂亲自下场做"长时程超级 Agent"——用沙箱+子智能体扛住长任务，字节这套开源 harness 今日 195 星，验证了 SuperAgent 路线的工程可行性。</div>
+    <div class="badges"><span class="b b-up">▲ 195 today</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/jo-inc/camofox-browser" target="_blank" rel="noopener">
+    <span class="rank-no">6</span>
+    <div class="item-title">jo-inc/camofox-browser <span class="cn">— 为 AI Agent 打造的隐身无头浏览器，绕过反爬检测，可替代 Puppeteer/Playwright</span></div>
+    <div class="item-note">当 Agent 需要"像人一样上网"，反反爬的隐身浏览器成了刚需配件——今日 135 星，Agent 与网站的攻防正催生一整条工具链。</div>
+    <div class="badges"><span class="b b-up">▲ 135 today</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+
+  <div class="group-label" style="margin-top:1.1rem">★ 本周热门 · Trending This Week</div>
+  <a class="item rank" href="https://github.com/tt-a1i/archify" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">tt-a1i/archify <span class="cn">— 生成可验证的架构/流程/数据流图的 Agent 技能，产出自包含 HTML</span></div>
+    <div class="item-note">"让 Agent 产出可交付图表"稳坐周榜第一，本周累计 14,946 星——把画图这件苦活自动化的需求持续爆发。</div>
+    <div class="badges"><span class="b b-up">▲ 14,946 this week</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">debpalash/VoiceStudio <span class="cn">— 全本地的语音克隆/配音/视频转录方案，支持 646 种语言</span></div>
+    <div class="item-note">"隐私敏感的语音活儿全在本地跑"击中痛点——支持 646 语言的开源语音套件本周狂揽 7,916 星，本地化多模态正成新热点。</div>
+    <div class="badges"><span class="b b-up">▲ 7,916 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/THU-MAIC/OpenMAIC" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">THU-MAIC/OpenMAIC <span class="cn">— 一键开启的开源多智能体互动课堂，主打沉浸式学习</span></div>
+    <div class="item-note">清华团队的"沉浸式多 Agent 教学"本周累计 6,934 星——AI 进课堂稳居本周最热落地方向之一。</div>
+    <div class="badges"><span class="b b-up">▲ 6,934 this week</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/jingyaogong/minimind" target="_blank" rel="noopener">
+    <span class="rank-no">4</span>
+    <div class="item-title">jingyaogong/minimind <span class="cn">— 约 2 小时从零训练一个小型 LLM</span></div>
+    <div class="item-note">把"从头训 LLM"压到普通机器两小时——教学向常青项目，本周 3,633 星，仍在源源不断造"看懂大模型"的人。</div>
+    <div class="badges"><span class="b b-up">▲ 3,633 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/google-research/timesfm" target="_blank" rel="noopener">
+    <span class="rank-no">5</span>
+    <div class="item-title">google-research/timesfm <span class="cn">— Google 预训练的时间序列基础模型，专做时序预测</span></div>
+    <div class="item-note">把"基础模型"范式迁进时序预测这块传统机器学习腹地——大模型向更多垂直数据形态渗透，本周 3,506 星。</div>
+    <div class="badges"><span class="b b-up">▲ 3,506 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/magnitudedev/magnitude" target="_blank" rel="noopener">
+    <span class="rank-no">6</span>
+    <div class="item-title">magnitudedev/magnitude <span class="cn">— 为你的硬件跑最好本地模型的开源推理服务器</span></div>
+    <div class="item-note">"把推理搬回本地"从边缘玩法变成稳定诉求——既登日榜又稳周榜，本周累计 2,430 星。</div>
+    <div class="badges"><span class="b b-up">▲ 2,430 this week</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
+  </a>
+</section>
+
+<section class="s4">
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · <b>演讲</b></span><span class="sec-rule"></span><span class="sec-tag">前沿·对话·治理</span></div>
+
+  <a class="item" href="https://tech.cornell.edu/frontiers-of-ai-summit/frontiers-of-ai-summit-2026-program-details/" target="_blank" rel="noopener">
+    <div class="item-title">Cornell "Frontiers of AI Summit 2026"：Sanjeev Arora 主讲"AI 自我改进"：<span class="cn">普林斯顿语言与智能中心主任 Arora 拆解 AI 靠合成数据、强化学习与"工具增强推理 + 形式化验证闭环"实现自我提升的假说</span></div>
+    <div class="item-note">当业界忙着堆参数、抢发布,顶级学者把话题拉回一个更根本的问题:模型能不能自己教自己变强,以及靠什么机制;"工具增强推理 + 形式化验证闭环"这类思路,正是让自我改进不失控的关键——峰会的价值,在于给被算力叙事淹没的机制研究留一个发声位。</div>
+    <div class="badges"><span class="b b-src">Cornell Tech</span></div>
+  </a>
+  <a class="item" href="https://partiful.com/e/yFLBq1ig9Mu3UXvAAc1X" target="_blank" rel="noopener">
+    <div class="item-title">SF Tech Week "AI Frontier Summit" 聚焦"规模化智能"：<span class="cn">主题锁定 Agents、Physical AI 与芯片，聚集 AI 创始人、研究者与投资人，探讨下一代智能系统如何从自主 Agent 走向物理世界</span></div>
+    <div class="item-note">议程把"Agent + 物理 AI + 芯片"三件事并置,恰恰是当下最真实的产业地图:软件智能已过剩,真正的下一战场在"让智能落进机器人与物理世界",而这一切又被底层芯片供给卡着脖子;一场会的选题,往往比任何模型发布更能说明资本在往哪儿看。</div>
+    <div class="badges"><span class="b b-src">SF Tech Week</span></div>
+  </a>
+  <a class="item" href="https://stratechery.com/2026/nvidias-risky-business/" target="_blank" rel="noopener">
+    <div class="item-title">Ben Thompson 对话黄仁勋：GTC 2026 主题演讲、穿行中美之间：<span class="cn">Stratechery 放出与 Nvidia CEO 的长访谈，谈其 GTC 2026 keynote、如何在中国与华盛顿之间周旋，以及"记住 Nvidia 的本来面目"</span></div>
+    <div class="item-note">当一家公司同时被资本市场当成 AI 的全部、又被地缘政治当成筹码,创始人怎么想比财报更重要;黄仁勋反复强调"别忘了 Nvidia 究竟是什么"——这句话既是对市场狂热的降温,也是在提醒:当外界把你捧成或看成某种符号时,守住自我认知本身就是一种战略。</div>
+    <div class="badges"><span class="b b-src">Stratechery</span></div>
+  </a>
+</section>
+
+<section class="s5">
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · <b>监管</b></span><span class="sec-rule"></span><span class="sec-tag">法规·治理·合规</span></div>
+
+  <a class="item" href="https://www.aljazeera.com/news/2026/8/6/what-came-into-force-with-the-eus-ai-act-this-week-and-what-didnt" target="_blank" rel="noopener">
+    <div class="item-title">欧盟 AI 法案第 50 条透明度义务正式生效：<span class="cn">自 8 月 2 日起，聊天机器人等直接与人交互的 AI 系统必须主动披露"你正在与 AI 对话"，除非情境已足够明显</span></div>
+    <div class="item-note">监管把最基础的一条落成硬法:AI 不得再冒充人类;这看似朴素,却是所有下游治理的地基——只有先保证"人知道自己在跟机器说话",知情同意、责任归属、合成内容标注才谈得上;欧盟选择从"披露身份"这个最小公约数切入,是把治理做成可执行、可追责的第一步。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">Al Jazeera</span></div>
+  </a>
+  <a class="item" href="https://artificialintelligenceact.eu/implementation-timeline/" target="_blank" rel="noopener">
+    <div class="item-title">每个欧盟成员国须至少设一个"AI 监管沙盒"：<span class="cn">同样自 8 月 2 日起，各成员国被要求在国家层面建立至少一个 AI 监管沙盒，让企业在受控环境中合规试验前沿系统</span></div>
+    <div class="item-note">沙盒是监管难得的"柔性一面":与其一刀切禁止,不如划出受控试验田,让创新和合规在同一张桌子上磨合;这透露欧盟并非只想设卡,而是想在"不扼杀创新"与"守住底线"之间找可操作的中间态——监管科学化的标志,是它开始提供实验环境,而不只是罚则。</div>
+    <div class="badges"><span class="b b-src">EU AI Act</span></div>
+  </a>
+  <a class="item" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener">
+    <div class="item-title">欧盟《网络安全与 AI 行动计划》要建独立评估能力：<span class="cn">7 月出台的行动计划提出协调应对高级 AI 带来的网安与韧性挑战，并发起"提升欧盟对入市 AI 模型评估能力"的招标，目标 2027 年前投入运行</span></div>
+    <div class="item-note">欧盟要建自己的"AI 模型体检站",不再只信厂商自述——这与三大厂用门控发布网安 AI 形成对照:一边是企业自我治理,一边是监管方要拿到独立评估权;当"谁来验证前沿模型安全"成为公私博弈的焦点,治理正从信任声明走向可核查的第三方能力建设。</div>
+    <div class="badges"><span class="b b-src">European Commission</span></div>
+  </a>
+  <a class="item" href="https://thehackernews.com/2026/09/google-anthropic-and-openai-unveil.html" target="_blank" rel="noopener">
+    <div class="item-title">"门控准入"成前沿实验室的自我治理新范式：<span class="cn">Fairwind / EFS / Daybreak Blue 三套准入项目，把最危险的网安能力与"被审查过的身份"绑定，形成事实上的能力分级发放</span></div>
+    <div class="item-note">在法律尚未追上能力的空窗期,厂商用"按身份发能力"给自己立规矩——这既是负责任、也是抢在监管定义之前先占住"什么该锁"的话语权;门控准入究竟是真治理还是软性护城河,取决于谁来审、审得透不透明,这恰恰是下一轮监管必须盯住的灰区。</div>
+    <div class="badges"><span class="b b-src">The Hacker News</span></div>
+  </a>
+</section>
+
+<section class="s6">
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · <b>顶级战略思维</b></span><span class="sec-rule"></span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
+
+  <a class="item" href="https://stratechery.com/2026/nvidia-earnings-the-ai-stack-nvidias-new-reporting/" target="_blank" rel="noopener">
+    <div class="item-title">Ben Thompson：Nvidia 改财报口径，把"超大规模客户"单独列报：<span class="cn">Nvidia 新的财报把面向 hyperscaler（自研芯片、正与 Nvidia 争夺商品化空间）的销售，与"其余所有人（Nvidia 通吃整条栈）"分开披露</span></div>
+    <div class="item-note">财报口径的改动往往藏着最诚实的战略自白:Nvidia 主动承认自己在头号大客户那里正被商品化挤压,却在长尾市场独揽整条 AI 栈;这背后是它一以贯之的执念——不惜一切避免世界被少数几家整合;一家公司如何切分自己的收入,比它说什么都更能暴露它真正怕什么。</div>
+    <div class="badges"><span class="b b-read">必读</span><span class="b b-src">Stratechery</span></div>
+  </a>
+  <a class="item" href="https://stratechery.com/2026/nvidia-earnings-dollars-per-gigawatt-open-and-hugging-face/" target="_blank" rel="noopener">
+    <div class="item-title">"每吉瓦多少美元"：Nvidia 把 AI 经济学重述为能源单位：<span class="cn">Thompson 分析 Nvidia 正用"dollars per gigawatt"这类新度量,把算力竞争的叙事从芯片数量转向单位电力产出的价值</span></div>
+    <div class="item-note">谁定义了度量单位,谁就定义了竞争规则:把话语从"卖了多少卡"换成"每吉瓦能产出多少智能",Nvidia 是在把行业焦点引向它最擅长的效率维度,同时悄悄把 AI 的天花板重新锚定到电力供给上;这提醒所有人,AI 的下一道约束不是模型,而是能源。</div>
+    <div class="badges"><span class="b b-src">Stratechery</span></div>
+  </a>
+  <a class="item" href="https://stratechery.com/2026/nvidias-risky-business/" target="_blank" rel="noopener">
+    <div class="item-title">《Nvidia 的高风险生意》：给客户融资买自家卡，风险正被放大：<span class="cn">Thompson 警告 Nvidia 一边帮客户筹钱扩建 AI 基建、把需求撑到极致，一边这些最大客户却在偷偷绕开它的 CUDA 软件护城河</span></div>
+    <div class="item-note">这门生意最大的风险恰恰藏在它最亮眼的增长里:当"卖铲人"要亲自借钱给买家买铲、而头号买家又在造自己的铲,繁荣与脆弱就成了同一条曲线的两端;Thompson 的锋利在于提醒——需求若是自己融资撑起来的,那它究竟是真实的,还是被杠杆放大的幻觉。</div>
+    <div class="badges"><span class="b b-src">Stratechery</span></div>
+  </a>
+  <a class="item" href="https://stratechery.com/2026/nvidia-backs-openai-data-center-anthropic-news-google-buys-spirit-airlines-data/" target="_blank" rel="noopener">
+    <div class="item-title">Nvidia 兜底 OpenAI 数据中心、Anthropic 营收猛增、Google 买航司数据：<span class="cn">同一周三条线索交织：Nvidia 为 OpenAI 数据中心背书、Anthropic 收入强劲、Google 收购 Spirit 航空的数据资产</span></div>
+    <div class="item-note">把三件事放在一起看,AI 竞赛的稀缺品清单已经清晰:算力靠融资兜底、收入靠企业买单、护城河靠独家数据;当巨头开始为一家破产廉航的数据专门出手,说明战略重心正从"训得更大"转向"占住别人拿不到的数据井"——谁握住无法被开源抹平的专有数据,谁就握住下一层护城河。</div>
+    <div class="badges"><span class="b b-src">Stratechery</span></div>
+  </a>
+</section>
+
+<footer>
+  <div>生成时间：2026-09-08 · 自动汇编 by <b>daily-ai-brief</b></div>
+  <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源；部分资讯源为聚合站，已尽量回溯一手出处。</div>
+  <div>信息源：WebSearch · GitHub Trending · The Hacker News · Stratechery · LLM-Stats · 知乎 · CSDN · Cornell Tech · Al Jazeera · EU AI Act</div>
+  <div><a href="./index.html">← 返回归档</a></div>
+</footer>
+</div>
+</body>
+</html>
