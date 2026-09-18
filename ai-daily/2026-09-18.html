@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-09-18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Daily AI Digest · 每日速览</div>
+  <h1>今日 AI 速览</h1>
+  <div class="sub">2026-09-18 · 周五 · 六板块等权 · 标题流</div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 AI 公司</span><span class="sec-tag">OpenAI · Anthropic · Google · xAI · Meta</span></div>
+
+  <a class="item" href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">
+    <div class="item-title">Anthropic <span class="cn">claude-code 空降 GitHub 单日榜</span>，agent 编码工具持续加热</div>
+    <div class="item-note">终端里理解代码库、用自然语言执行任务的 agentic 编码工具，今日新增 +538 星再上 trending；配合 Fable 5.1 缓存读价砍 75%，agent 密集型工作流成本继续压低。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">github.com</span></div>
+  </a>
+
+  <a class="item" href="https://llmgateway.io/timeline" target="_blank" rel="noopener">
+    <div class="item-title">9 月发版潮回顾：<span class="cn">GPT-6 Astra、Gemini 3.8 Flash、Claude Fable 5.1 同窗挤发</span></div>
+    <div class="item-note">OpenAI GPT-6 Astra（9/3 限量、9/4 转 GA）、Google Gemini 3.8 Flash（9/2）、Anthropic Claude Fable 5.1（9/1）在同一周落地，前沿代差窗口被压到数周。</div>
+    <div class="badges"><span class="b b-src">llmgateway.io</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">OpenAI <span class="cn">GPT-6 Astra</span>：主打网络安全与"计算机操作"</div>
+    <div class="item-note">先向少量组织放量、次日普遍可用；OpenAI 称能力源自多年研究与豪赌，重点押注 cyber 与 computer-use 场景。</div>
+    <div class="badges"><span class="b b-src">llm-stats.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.evertune.ai/resources/ai-model-tracker" target="_blank" rel="noopener">
+    <div class="item-title">Meta <span class="cn">Muse Spark 1.3</span> 9/2 上线，xAI 本轮按兵不动</div>
+    <div class="item-note">Meta 同时放出 Muse Spark 1.3 与 Contributor 版；xAI 在 Grok 4.6（8/12）抢跑后本轮未上新，五强节奏错位。</div>
+    <div class="badges"><span class="b b-src">evertune.ai</span></div>
+  </a>
+
+  <a class="item" href="https://stratechery.com/" target="_blank" rel="noopener">
+    <div class="item-title">叙事之争：<span class="cn">黄仁勋"AGI 已至" vs Thompson 的持续学习定义</span></div>
+    <div class="item-note">Nvidia CEO 9/6 发推称 AGI 已到来；Ben Thompson 反驳——真正 AGI 应能持续学习，当前 LLM 并不具备，营销语言与技术现实拉开差距。</div>
+    <div class="badges"><span class="b b-src">stratechery.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 AI 团队</span><span class="sec-tag">DeepSeek · 阿里 Qwen · 字节豆包 · 智谱 GLM · 文心</span></div>
+
+  <a class="item" href="https://github.com/Tencent/BrowserSkill" target="_blank" rel="noopener">
+    <div class="item-title">腾讯 <span class="cn">BrowserSkill 登上 GitHub 单日榜</span>，让 agent 接管已登录浏览器</div>
+    <div class="item-note">通过 CLI + 扩展让 AI agent 直接操作已登录的浏览器、不打断你的工作流，TypeScript 实现；今日 +1.3k 星，国产 agent 工具出海。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-star">★ +1.3k/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://zhuanlan.zhihu.com/p/670574382" target="_blank" rel="noopener">
+    <div class="item-title">生态盘点（9/9 更新）：<span class="cn">Qwen 3.8-Flash-Next、GLM-5.3-Flash 齐上"Agent 版"</span></div>
+    <div class="item-note">知乎持续更新的国内外模型/应用维度盘点显示，9 月国产厂商密集迭代，几乎都在补 agent 与轻量 Flash 档能力。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">zhihu</span></div>
+  </a>
+
+  <a class="item" href="https://www.qiniu.com/ai/models" target="_blank" rel="noopener">
+    <div class="item-title">DeepSeek <span class="cn">V4 Flash Vision Exp</span>：实验多模态视觉入场</div>
+    <div class="item-note">8/21 放出的实验视觉版接受图像输入，做图像描述、截图文字识别与图表分析；在旗舰 V4-Pro 之外补齐多模态短板。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">qiniu.com</span></div>
+  </a>
+
+  <a class="item" href="https://help.aliyun.com/zh/model-studio/newly-released-models" target="_blank" rel="noopener">
+    <div class="item-title">阿里 <span class="cn">Qwen3.7-Max</span>：万亿 MoE + 100 万 token 上下文</div>
+    <div class="item-note">定位"Agent 时代的推理基座"，上下文从 256K 扩到 1M（4 倍）；百炼平台持续上下架，国产在长上下文与 agent 基座上贴身缠斗。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">aliyun.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub 每日好项目</span><span class="sec-tag">trending · daily 真实榜</span></div>
+
+  <a class="item" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">
+    <div class="item-title">cloudflare/security-audit-skill <span class="cn">— 给 coding agent 装上多阶段安全审计</span></div>
+    <div class="item-note">Cloudflare 开源的 agent skill，让编码智能体做分阶段安全审计并输出可验证的发现；今日 trending 榜首级热度，+3.6k 星。</div>
+    <div class="badges"><span class="b b-star">★ +3.6k/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">
+    <div class="item-title">alibaba/open-code-review <span class="cn">— 阿里规模验证过的代码审查流水线</span></div>
+    <div class="item-note">确定性检查 + LLM agent 的混合架构，行级评论、多语言规则集；Go 实现，今日 +3.3k 星，连日在榜。</div>
+    <div class="badges"><span class="b b-star">★ +3.3k/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/Tencent/BrowserSkill" target="_blank" rel="noopener">
+    <div class="item-title">Tencent/BrowserSkill <span class="cn">— agent 无痕接管你已登录的浏览器</span></div>
+    <div class="item-note">CLI + 浏览器扩展，让 AI agent 复用现有登录态操作网页而不打断人；TypeScript，今日 +1.3k 星。</div>
+    <div class="badges"><span class="b b-star">★ +1.3k/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/alphaXiv/OpenResearch" target="_blank" rel="noopener">
+    <div class="item-title">alphaXiv/OpenResearch <span class="cn">— 把 coding agent 改造成研究 agent</span></div>
+    <div class="item-note">一个用 Rust 写的框架，让编码智能体转向文献检索与研究工作流；今日 +939 星，"agent 换赛道"新范式。</div>
+    <div class="badges"><span class="b b-star">★ +939/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">
+    <div class="item-title">addyosmani/agent-skills <span class="cn">— 给 AI 编码 agent 的生产级工程能力集</span></div>
+    <div class="item-note">Addy Osmani 汇编的一套面向 coding agent 的工程 skill；JavaScript，今日 +680 星，skill 生态继续扩张。</div>
+    <div class="badges"><span class="b b-star">★ +680/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/NationalSecurityAgency/ghidra" target="_blank" rel="noopener">
+    <div class="item-title">NationalSecurityAgency/ghidra <span class="cn">— NSA 维护的逆向工程框架又上榜</span></div>
+    <div class="item-note">经典软件逆向工程套件，安全研究长青项目；Java，今日 +912 星，安全议题持续升温带动回流。</div>
+    <div class="badges"><span class="b b-star">★ +912/日</span><span class="b b-src">github</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · 演讲</span><span class="sec-tag">AGNTCon · Lisbon AI · The AI Conference</span></div>
+
+  <a class="item" href="https://www.crossmint.com/learn/ai-agent-conference-calendar" target="_blank" rel="noopener">
+    <div class="item-title">AGNTCon + MCPCon Europe <span class="cn">9/17-18 阿姆斯特丹刚落幕</span></div>
+    <div class="item-note">AAIF 旗舰会的欧洲版，两天密集聚焦 MCP、agent 架构与生态协作，与 10 月圣何塞主会同一批人；开放 agent 生态本周欧洲收官。</div>
+    <div class="badges"><span class="b b-hot">刚结束</span><span class="b b-src">crossmint.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiconference.com/" target="_blank" rel="noopener">
+    <div class="item-title">The AI Conference <span class="cn">9/29-10/1 旧金山 Pier 48（下周开幕）</span></div>
+    <div class="item-note">5500+ 建设者、研究者与决策者，120+ 讲者、五大 track 覆盖 AGI、LLM、agentic AI、基础设施与应用 AI；本月末重头戏。</div>
+    <div class="badges"><span class="b b-src">aiconference.com</span></div>
+  </a>
+
+  <a class="item" href="https://pytorch.org/blog/agentic-ai-and-next-gen-intelligence-sessions-at-pytorch-conference-north-america-2026/" target="_blank" rel="noopener">
+    <div class="item-title">PyTorch Conference NA <span class="cn">10/20-21 圣何塞，主打 agentic AI 场次</span></div>
+    <div class="item-note">Linux 基金会旗下 Agentic AI Foundation 的 Mazin Gilbert 将于 10/21 发表 keynote；框架层视角看下一代智能。</div>
+    <div class="badges"><span class="b b-src">pytorch.org</span></div>
+  </a>
+
+  <a class="item" href="https://gotoagentic.ai/" target="_blank" rel="noopener">
+    <div class="item-title">AGENTIC AI <span class="cn">10/7 弗吉尼亚 Reston，Carahsoft 主场</span></div>
+    <div class="item-note">聚焦 agentic AI、physical AI 与 sovereign AI，面向政企采用方；"数据中心走廊"上的落地导向会议。</div>
+    <div class="badges"><span class="b b-src">gotoagentic.ai</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · 监管</span><span class="sec-tag">对齐 · 治理 · 法规</span></div>
+
+  <a class="item" href="https://cubbbix.com/blog/ai-regulation-september-2026-global-update" target="_blank" rel="noopener">
+    <div class="item-title">全球转向"执法期"：<span class="cn">欧盟、美、中、印、巴同步进入审计与立法节点</span></div>
+    <div class="item-note">9 月监管从行政筹备转入实质执法——欧盟 AI Office 与各国机构对 8/2 后部署的高风险系统启动 Article 11 技术文件审计，多国同步投票落地法案。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">cubbbix.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.legalnodes.com/article/eu-ai-act-2026-updates-compliance-requirements-and-business-risks" target="_blank" rel="noopener">
+    <div class="item-title">范围扩大：<span class="cn">法案打击对象不止模型厂，还含"套壳 SaaS"</span></div>
+    <div class="item-note">deployer、provider、importer、distributor 及把他人模型包成成品 SaaS 的公司都在射程内；合规责任沿供应链层层压实。</div>
+    <div class="badges"><span class="b b-src">legalnodes.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.regulation-ai.eu/en/ai-act/" target="_blank" rel="noopener">
+    <div class="item-title">时间表松动：<span class="cn">Digital Omnibus 把两条高风险大限各延 16 / 24 个月</span></div>
+    <div class="item-note">AI Omnibus 于 2025/11/19 通过、2026/7/27 生效，2026 Digital Omnibus 延后两个高风险截止日；企业获得缓冲，但透明度义务已在跑。</div>
+    <div class="badges"><span class="b b-src">regulation-ai.eu</span></div>
+  </a>
+
+  <a class="item" href="https://blog.mean.ceo/eu-ai-act-news-september-2026/" target="_blank" rel="noopener">
+    <div class="item-title">经营现实：<span class="cn">法案把公司分成"赢家、掉队者、未来负债"</span></div>
+    <div class="item-note">治理、文档与角色分类已成硬性经营门槛——你用了哪些 AI、如何影响个人、谁审核输出、出事怎么办，都要拿得出证据。</div>
+    <div class="badges"><span class="b b-src">mean.ceo</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · 顶级战略思维</span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
+
+  <a class="item" href="https://stratechery.com/" target="_blank" rel="noopener">
+    <div class="item-title">Ben Thompson：<span class="cn">"AGI 已至"是营销，护城河问题才是战略核心</span></div>
+    <div class="item-note">借黄仁勋 9/6 的 AGI 宣言，Stratechery 重申——真正该问的是持续学习与分发控制，而非口号，聚合理论仍是理解平台竞争的主框架。</div>
+    <div class="badges"><span class="b b-hot">必读</span><span class="b b-src">stratechery.com</span></div>
+  </a>
+
+  <a class="item" href="https://stratechery.com/company/andreesen-horowitz/" target="_blank" rel="noopener">
+    <div class="item-title">资本视角：<span class="cn">a16z 的"软件吞噬世界"下一章</span></div>
+    <div class="item-note">从 Andreessen 关于 AI 机会与风险的对谈看顶级 VC 押注逻辑——基建先行、应用层跟进的老剧本，在 agent 时代再演一遍。</div>
+    <div class="badges"><span class="b b-src">stratechery.com</span></div>
+  </a>
+
+  <a class="item" href="https://a16z.com/what-is-new-media/" target="_blank" rel="noopener">
+    <div class="item-title">新媒体经济学：<span class="cn">a16z 拆解"品牌即习惯"的分发权</span></div>
+    <div class="item-note">以 Stratechery 为样本，a16z 论证在信息过载时代，能建立"习惯"的独立媒体/产品才握住真正的分发议价权。</div>
+    <div class="badges"><span class="b b-src">a16z.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.acquired.fm/episodes/stratechery-with-ben-thompson" target="_blank" rel="noopener">
+    <div class="item-title">大思维长谈：<span class="cn">Acquired × Ben Thompson 复盘 Stratechery 方法论</span></div>
+    <div class="item-note">从订阅制独立分析到聚合理论的形成，这期长播客是理解"如何把战略思考做成生意"的最佳一手材料。</div>
+    <div class="badges"><span class="b b-src">acquired.fm</span></div>
+  </a>
+</section>
+
+<footer>
+  <div>生成时间：2026-09-18 · 自动汇编 by daily-ai-brief</div>
+  <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源。</div>
+  <div>信息源：WebSearch · GitHub Trending · Stratechery · a16z · Cubbbix · PyTorch 等</div>
+  <div><a href="./index.html">← 返回归档</a></div>
+</footer>
+</div>
+</body>
+</html>
