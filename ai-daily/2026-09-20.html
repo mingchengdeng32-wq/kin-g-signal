@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-09-20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070D; --bg2:#0B0D18;
+  --surface:rgba(255,255,255,.038); --surface-hi:rgba(255,255,255,.07);
+  --border-subtle:rgba(255,255,255,.08);
+  --gold:#C9A347; --gold-light:#E8C76A;
+  --text:#ECE5D8; --text-muted:rgba(236,229,216,.56); --text-dim:rgba(236,229,216,.34);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg); color:var(--text); font-family:var(--sans); font-weight:300; line-height:1.62;
+  background-image:
+    radial-gradient(ellipse 70% 42% at 50% -8%, rgba(201,163,71,.10), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 100% 100%, rgba(74,110,220,.06), transparent 60%);
+  background-attachment:fixed;
+}
+.wrap{max-width:880px; margin:0 auto; padding:clamp(1.8rem,5vw,4.2rem) clamp(1.1rem,4vw,2.2rem) 5rem;}
+
+/* ---------- 报头 ---------- */
+.masthead-top{display:flex; align-items:center; justify-content:space-between; gap:1rem;
+  padding-bottom:.5rem; border-bottom:1px solid rgba(201,163,71,.3);}
+.kicker{font-family:var(--mono); font-size:.7rem; font-weight:700; letter-spacing:.4em; color:var(--gold); text-transform:uppercase;}
+.issue{font-family:var(--mono); font-size:.66rem; letter-spacing:.12em; color:var(--text-dim);}
+h1.title{font-family:var(--serif); font-weight:900; font-size:clamp(2.4rem,8vw,4.2rem); line-height:1.02;
+  letter-spacing:-.01em; margin:1.1rem 0 .5rem;
+  background:linear-gradient(160deg,#FBEFCE 0%,var(--gold-light) 45%,var(--gold) 100%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;}
+.dateline{font-family:var(--mono); font-size:.82rem; letter-spacing:.06em; color:var(--text-muted);}
+.masthead-rule{height:2px; margin-top:1.4rem;
+  background:linear-gradient(90deg,var(--gold) 0%,rgba(201,163,71,.25) 30%,transparent 72%);}
+
+/* ---------- 板块（每块一种语义色，用 --accent 驱动） ---------- */
+section{margin-top:3rem;}
+.s1{--accent:#D8B24E; --accent-soft:rgba(216,178,78,.13);}   /* 海外·金 */
+.s2{--accent:#E85D74; --accent-soft:rgba(232,93,116,.13);}   /* 中国·绯 */
+.s3{--accent:#22C08A; --accent-soft:rgba(34,192,138,.13);}   /* Trending·上升绿 */
+.s4{--accent:#5AA7E6; --accent-soft:rgba(90,167,230,.13);}   /* 峰会·冰蓝 */
+.s5{--accent:#F0A83C; --accent-soft:rgba(240,168,60,.13);}   /* 监管·琥珀 */
+.s6{--accent:#A98BEA; --accent-soft:rgba(169,139,234,.15);}  /* 商业·紫 */
+
+.sec-head{display:flex; align-items:center; gap:.75rem; margin-bottom:1.2rem;}
+.sec-num{font-family:var(--mono); font-size:.78rem; font-weight:700; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--accent); border-radius:6px; padding:.14rem .5rem; line-height:1;}
+.sec-title{font-family:var(--serif); font-weight:700; font-size:clamp(1.28rem,3.4vw,1.55rem); color:var(--text); white-space:nowrap;}
+.sec-title b{color:var(--accent);}
+.sec-rule{flex:1; height:1px; background:linear-gradient(90deg,var(--accent) 0%,transparent 90%); opacity:.5; margin:0 .3rem;}
+.sec-tag{font-family:var(--mono); font-size:.64rem; letter-spacing:.05em; color:var(--text-dim); text-align:right; white-space:nowrap;}
+.group-label{font-family:var(--mono); font-size:.68rem; letter-spacing:.18em; color:var(--accent); text-transform:uppercase;
+  margin:.2rem 0 .6rem; opacity:.85;}
+
+/* ---------- 条目卡 ---------- */
+.item{display:block; text-decoration:none; color:inherit; position:relative;
+  background:var(--surface); border:1px solid var(--border-subtle); border-left:3px solid var(--accent);
+  border-radius:10px; padding:.9rem 1.1rem .95rem; margin-bottom:.62rem;
+  transition:background .2s ease, transform .2s cubic-bezier(.16,1,.3,1), box-shadow .2s ease;}
+.item:hover{background:var(--surface-hi); transform:translateX(4px);
+  box-shadow:-6px 0 22px -14px var(--accent);}
+.item-title{font-weight:500; font-size:1.03rem; line-height:1.45; color:var(--text);}
+.item-title .cn{color:var(--accent); font-weight:700;}
+.item-note{color:var(--text-muted); font-size:.855rem; line-height:1.58; margin-top:.3rem;}
+.badges{margin-top:.5rem; display:flex; gap:.42rem; flex-wrap:wrap; align-items:center;}
+.b{font-family:var(--mono); font-size:.64rem; font-weight:500; padding:.1rem .44rem; border-radius:5px; letter-spacing:.02em; line-height:1.5;}
+.b-src{background:rgba(255,255,255,.05); color:var(--text-dim);}
+.b-cn{background:rgba(232,93,116,.15); color:#FF8A9A;}
+.b-hot{background:linear-gradient(135deg,#E0455533,#E0455511); color:#FF6B7A; border:1px solid rgba(224,69,85,.4);}
+.b-read{background:linear-gradient(135deg,var(--gold) ,#B8923A); color:#1A140A; font-weight:700;}
+/* trending 排名 + 涨星 */
+.item.rank{padding-left:3.2rem;}
+.rank-no{position:absolute; left:.85rem; top:50%; transform:translateY(-50%);
+  font-family:var(--serif); font-weight:900; font-size:1.5rem; color:var(--accent); opacity:.85; width:1.4rem; text-align:center;}
+.b-up{background:rgba(34,192,138,.16); color:#4FE0AC; font-weight:700;}
+.b-lang{background:rgba(255,255,255,.05); color:var(--text-muted);}
+
+/* ---------- 页脚 ---------- */
+footer{margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--border-subtle);
+  color:var(--text-dim); font-size:.76rem; font-family:var(--mono); line-height:1.85;}
+footer a{color:var(--text-muted); text-decoration:none; border-bottom:1px solid rgba(201,163,71,.3);}
+footer a:hover{color:var(--gold-light);}
+.disc{color:#D89A3C; opacity:.85;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="masthead-top">
+    <span class="kicker">Daily&nbsp;AI&nbsp;Digest</span>
+    <span class="issue">六板块等权 · 速览标题流</span>
+  </div>
+  <h1 class="title">今日 AI 速览</h1>
+  <div class="dateline">2026 年 9 月 20 日 · 周日</div>
+  <div class="masthead-rule"></div>
+</header>
+
+<section class="s1">
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 <b>AI 公司</b></span><span class="sec-rule"></span><span class="sec-tag">OpenAI·Google·Meta·Anthropic·xAI</span></div>
+
+  <a class="item" href="https://www.cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html" target="_blank" rel="noopener">
+    <div class="item-title">"模型疲劳"来袭：一周内四大实验室连发旗舰，用户开始跟不上：<span class="cn">CNBC 报道，Anthropic 周二发 Claude Fable 5.1/Mythos 5.1，周三 Meta 发 Muse Spark 1.3、Google 发 Gemini 3.8 Flash，周四 OpenAI 发主打网安的 GPT-6 Astra——发布节奏快到业界出现"model fatigue"</div>
+    <div class="item-note">当旗舰模型以"周更"速度轰炸市场,连专业用户都记不住谁又更新了什么,这本身就是一个信号:能力提升的边际感知在下降,而注意力成了比参数更稀缺的资源;前沿竞争正从"谁更强"悄悄转向"谁能让用户真正用起来、并记住你",发布疲劳的另一面,是分发与心智之战的开始。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">CNBC</span></div>
+  </a>
+  <a class="item" href="https://www.bighatgroup.com/blog/xai-weekly-2026-09-13/" target="_blank" rel="noopener">
+    <div class="item-title">xAI Grok 4.7 再度跳票，马斯克称"还需几天火候"：<span class="cn">原定 9 月 12 日发布的 Grok 4.7 推迟，马斯克 9 月 11 日发帖称模型在响应长度与任务处理上仍需打磨；新模型据称 2.1 万亿参数（较 4.6 增约 40%），并喂入 SpaceX 工程记录与 Starlink 遥测数据</div>
+    <div class="item-note">在对手一周连发四款旗舰的压力下,xAI 选择跳票而非硬推,某种程度上是一种克制:与其发一个半成品去凑热闹,不如把响应质量磨到位;而"用 SpaceX 与 Starlink 独家数据训练"这条路,才是 xAI 真正的差异化底牌——当通用能力趋同,谁手里握着别人拿不到的数据,谁就有别人抄不走的护城河。</div>
+    <div class="badges"><span class="b b-src">Big Hat Group</span></div>
+  </a>
+  <a class="item" href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">
+    <div class="item-title">OpenAI GPT-6 Astra（9/4）押注"网络安全 + 计算机操作"：<span class="cn">OpenAI 称新模型是"多年研究与大手笔押注"的成果，主打网络安全能力与计算机操作技能，把重心从纯对话推向能真正操控电脑、处理安全任务的智能体方向</span></div>
+    <div class="item-note">当头部模型不再拿"更聪明的聊天"当卖点,而是强调"会用电脑、懂网安",说明产品定义正在从"回答问题"转向"完成工作";能操控计算机的模型意味着 Agent 从演示走向生产,而把网安放在首位,则是提前给这份"动手能力"套上安全缰绳——能力越接近真实操作,厂商越要抢先证明它可控。</div>
+    <div class="badges"><span class="b b-src">Digital Applied</span></div>
+  </a>
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">Google Gemini 3.8 Flash / Flash Cyber 与 Meta Muse Spark 1.3 同期上新（9/2）：<span class="cn">谷歌放出轻量版 Gemini 3.8 Flash 及网安专精的 Flash Cyber，Meta 同日发布 Muse Spark 1.3，两家均主打编码与 agentic 任务上的进步</span></div>
+    <div class="item-note">巨头们不约而同把"轻量 + 快 + 专精"作为主战场,而不是一味堆大模型:Flash 系列压成本、Cyber 变体切网安、Muse 主攻创意生成——这说明市场需求已经分层,通用大模型负责撑门面,真正跑量的是这些便宜、够快、场景明确的小模型;规模竞赛的下半场,拼的是把能力切成用户买得起、用得顺的形状。</div>
+    <div class="badges"><span class="b b-src">LLM-Stats</span></div>
+  </a>
+</section>
+
+<section class="s2">
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 <b>AI 团队</b></span><span class="sec-rule"></span><span class="sec-tag">DeepSeek·Kimi·Qwen·GLM·上海AI Lab</span></div>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">DeepSeek-V4.1-Flash 上线（9/10），主打推理提速的开源版：<span class="cn">DeepSeek 9 月 10 日放出 V4.1-Flash 开源模型，围绕速度做优化，延续其"高效率、低成本"一贯路线，把最新一代能力用更省的形态开放给开发者</span></div>
+    <div class="item-note">当 DeepSeek 把每一代旗舰都紧跟着补一个"Flash 提速开源版",它传递的策略非常清晰:先证明能力、再用便宜快速的形态铺开生态;这种"能力打样 + 效率下沉"的组合拳,正是国产开源阵营最擅长的打法——用同样好用、便宜一大截的东西,去啃海外闭源模型最赚钱的市场。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">LLM-Stats</span></div>
+  </a>
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">月之暗面 Kimi K2.8 Preview 亮相（9/11）：<span class="cn">Moonshot 9 月 11 日放出 Kimi K2.8 预览版，延续其超长上下文与深度研究的招牌能力，在中文长文本与研究型任务上继续加深护城河</span></div>
+    <div class="item-note">Kimi 每一步都咬着"超长上下文 + 深度研究"这根轴往下打,不追大而全、只把一个维度做到别人短期抄不动;当竞争进入"按场景选型"的阶段,这种"专精到极致"反而是最稳的生态壁垒——用户要读长文档、做深研究时会第一个想到你,这种心智占位比一次跑分领先值钱得多。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">LLM-Stats</span></div>
+  </a>
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">上海 AI 实验室开源 Atria Dawn Preview（9/11）：<span class="cn">上海人工智能实验室 9 月 11 日放出 Atria Dawn 预览版，采用开源发布，为国产开源模型阵营再添一支来自研究机构的力量</span></div>
+    <div class="item-note">当发布方从互联网大厂扩展到国家级研究机构,说明中国开源大模型的供给正在多元化:企业追产品与商业化,研究院所则更敢在架构与前沿方向上做长线探索;两条腿走路的开源生态,既有落地的紧迫感,又有不为短期 KPI 所困的耐心,这种结构本身就是抗风险的护城河。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">LLM-Stats</span></div>
+  </a>
+  <a class="item" href="https://blog.csdn.net/weixin_48534929/article/details/160827484" target="_blank" rel="noopener">
+    <div class="item-title">阿里云 PAI 支持 Qwen3.6 / Kimi-K2.6 / MiniMax-M2.7 / GLM-5.1 一键部署：<span class="cn">阿里云机器学习平台 PAI 宣布海量模型一键部署，把多家最新旗舰（含自家 Qwen3.6 与友商 Kimi、MiniMax、GLM）整合进同一部署入口，降低企业自建模型服务的门槛</span></div>
+    <div class="item-note">当云厂商把自家和友商的旗舰模型摆进同一个"一键部署"货架,竞争的重心就从"谁的模型强"上移到了"谁的云更好用":对企业而言,模型正在变成可随时替换的组件,而真正黏住客户的是部署、调度与成本这层基础设施;得平台者,才可能在模型快速迭代的乱局里稳收过路费。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">CSDN</span></div>
+  </a>
+</section>
+
+<section class="s3">
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub <b>Trending</b></span><span class="sec-rule"></span><span class="sec-tag">当日上升 · 本周热门</span></div>
+
+  <div class="group-label">▲ 当日上升 · Trending Today</div>
+  <a class="item rank" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">cloudflare/security-audit-skill <span class="cn">— Cloudflare 官方 skill：多阶段安全审计，产出独立验证、机器可读的发现</span></div>
+    <div class="item-note">连续霸榜、今日再收 3,155 星——当 Agent 开始写生产代码,"让它同时会自查漏洞"成了刚需,大厂正把安全能力沉淀成可安装的标准件。</div>
+    <div class="badges"><span class="b b-up">▲ 3,155 today</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/trycua/cua" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">trycua/cua <span class="cn">— 开源 computer-use 2.0：跨系统驱动 + 集群 + 训练/评测/数据生成基准</span></div>
+    <div class="item-note">今日 859 星——"让 AI 真正会用电脑"从演示走向工程化,这类给 computer-use 提供驱动与评测底座的项目,正是 Agent 落地真实操作的关键基建。</div>
+    <div class="badges"><span class="b b-up">▲ 859 today</span><span class="b b-lang">HTML</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">addyosmani/agent-skills <span class="cn">— 面向 AI 编码 Agent 的生产级工程技能集</span></div>
+    <div class="item-note">今日 556 星——"把老手的工程习惯打包成 Agent 能力"仍是最热范式,Google 名工程师 Addy Osmani 的合集热度不减。</div>
+    <div class="badges"><span class="b b-up">▲ 556 today</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener">
+    <span class="rank-no">4</span>
+    <div class="item-title">anthropics/claude-code <span class="cn">— 终端里的 agentic 编码工具，用自然语言理解代码库并执行任务</span></div>
+    <div class="item-note">今日 483 星——官方旗舰编码 Agent 长期在榜,说明"在终端里直接指挥 Agent 干活"已成开发者日常工作流的默认选项。</div>
+    <div class="badges"><span class="b b-up">▲ 483 today</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/Open-Dev-Society/OpenStock" target="_blank" rel="noopener">
+    <span class="rank-no">5</span>
+    <div class="item-title">Open-Dev-Society/OpenStock <span class="cn">— 开源的市场行情平台替代品，实时价格与公司洞察</span></div>
+    <div class="item-note">今日 472 星——把付费金融数据平台开源化的尝试再获关注,"开源替代闭源 SaaS"依旧是能快速点燃开发者的经典品类。</div>
+    <div class="badges"><span class="b b-up">▲ 472 today</span><span class="b b-lang">TypeScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/coder/coder" target="_blank" rel="noopener">
+    <span class="rank-no">6</span>
+    <div class="item-title">coder/coder <span class="cn">— 为开发者及其 Agent 提供安全的云端开发环境</span></div>
+    <div class="item-note">今日 402 星——当 Agent 成为团队的"新同事",给它一个隔离、安全、可控的运行环境就成了刚需,开发环境即服务这条老赛道被 Agent 重新点燃。</div>
+    <div class="badges"><span class="b b-up">▲ 402 today</span><span class="b b-lang">Go</span><span class="b b-src">github</span></div>
+  </a>
+
+  <div class="group-label" style="margin-top:1.1rem">★ 本周热门 · Trending This Week</div>
+  <a class="item rank" href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">
+    <span class="rank-no">1</span>
+    <div class="item-title">alibaba/open-code-review <span class="cn">— 阿里规模实战验证的混合式 AI 代码评审：确定性流水线 + LLM Agent</span></div>
+    <div class="item-note">本周 15,028 星继续登顶——大厂把内部级别的代码评审能力开源，"AI 进研发流程"这条主线热度不退，稳坐本周爆款。</div>
+    <div class="badges"><span class="b b-up">▲ 15,028 this week</span><span class="b b-lang">Go</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" rel="noopener">
+    <span class="rank-no">2</span>
+    <div class="item-title">bilawalsidhu/gods-eye-view <span class="cn">— 浏览器里的侦察卫星模拟器，在 3D 地球上叠加逼真空间情报</span></div>
+    <div class="item-note">本周 10,207 星——地理空间 + 可视化的酷炫演示依旧是最容易点燃开发者的爆款品类，霸榜多日热度不退。</div>
+    <div class="badges"><span class="b b-up">▲ 10,207 this week</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">
+    <span class="rank-no">3</span>
+    <div class="item-title">affaan-m/ECC <span class="cn">— 面向 AI 编码助手的性能优化系统，强调 skill、记忆、安全与研究先行</span></div>
+    <div class="item-note">本周 6,265 星——把整套 Agent 配置调到最优的需求持续走高，Agent harness 优化已成一条稳定主线。</div>
+    <div class="badges"><span class="b b-up">▲ 6,265 this week</span><span class="b b-lang">JavaScript</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/ayghri/i-have-adhd" target="_blank" rel="noopener">
+    <span class="rank-no">4</span>
+    <div class="item-title">ayghri/i-have-adhd <span class="cn">— 专治 coding agent"把答案埋在废话里"，逼它输出更清晰</span></div>
+    <div class="item-note">本周 5,589 星——"治 Agent 啰嗦"是被反复验证的真需求，提示词工程正被产品化成一个个可安装的小技能。</div>
+    <div class="badges"><span class="b b-up">▲ 5,589 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/Tencent/WeKnora" target="_blank" rel="noopener">
+    <span class="rank-no">5</span>
+    <div class="item-title">Tencent/WeKnora <span class="cn">— 把原始文档变成可查询知识库、推理 Agent 与自维护 wiki 的开源平台</span></div>
+    <div class="item-note">本周 4,867 星——腾讯把"文档 → 知识库 → 推理 Agent"做成一条龙，企业知识管理正是 RAG 与 Agent 落地最实在的场景。</div>
+    <div class="badges"><span class="b b-up">▲ 4,867 this week</span><span class="b b-lang">Go</span><span class="b b-src">github</span></div>
+  </a>
+  <a class="item rank" href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" rel="noopener">
+    <span class="rank-no">6</span>
+    <div class="item-title">anthropics/knowledge-work-plugins <span class="cn">— 面向知识工作者的 Claude 开源插件仓库</span></div>
+    <div class="item-note">本周 1,034 星——Agent 的战场正从写代码扩展到通用知识工作,官方把"给白领打包插件"做成开放仓库,是把 Agent 推向更广职场的一步。</div>
+    <div class="badges"><span class="b b-up">▲ 1,034 this week</span><span class="b b-lang">Python</span><span class="b b-src">github</span></div>
+  </a>
+</section>
+
+<section class="s4">
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · <b>演讲</b></span><span class="sec-rule"></span><span class="sec-tag">前沿·对话·治理</span></div>
+
+  <a class="item" href="https://aiconference.com/" target="_blank" rel="noopener">
+    <div class="item-title">The AI Conference 2026 下周开幕（9/29–10/1，旧金山 Pier 48）：<span class="cn">5,500+ 构建者与研究者、120+ 讲者、五大轨道覆盖 AGI、LLM、agentic AI、基础设施与应用 AI，把研究、创业与工程一次聚齐</span></div>
+    <div class="item-note">一场把 AGI、Agent、基础设施并列成独立轨道的大会,恰是当下产业地图的缩影:话题重心已从"模型能做什么"转向"如何把它工程化、规模化地落地";当上百位讲者围绕这几条轴排开,说明 AI 的中心已彻底从论文会场移到了产品与基建的现场。</div>
+    <div class="badges"><span class="b b-src">The AI Conference</span></div>
+  </a>
+  <a class="item" href="https://www.oracle.com/ai-world/keynotes/" target="_blank" rel="noopener">
+    <div class="item-title">Oracle AI World 2026 主旨阵容公布：<span class="cn">甲骨文年度大会亮出 keynote 讲者名单，聚焦企业级 AI、数据库与云基础设施如何承接生成式 AI 的落地需求</span></div>
+    <div class="item-note">当一家以数据库和企业软件立身的老牌厂商把 AI 摆上大会 C 位,信号很明确:AI 的下一波价值不在消费级尝鲜,而在把它接进企业最核心的数据与流程里;传统 IT 巨头的机会,恰恰是它们手里那些别人短期进不去的企业数据与合规通道。</div>
+    <div class="badges"><span class="b b-src">Oracle</span></div>
+  </a>
+  <a class="item" href="https://www.raisesummit.com/speakers-2026" target="_blank" rel="noopener">
+    <div class="item-title">RAISE Summit 2026 讲者阵容成型：<span class="cn">这一聚焦前沿 AI 的国际峰会公布 2026 讲者名单，汇集研究者、创始人与投资人，围绕大模型能力边界与产业化路径展开对话</span></div>
+    <div class="item-note">当越来越多的国际峰会把"研究 + 创业 + 资本"三方拉到同一张桌上,说明 AI 已经过了各说各话的阶段:科学家谈能力、创始人谈落地、投资人谈回报,三种语言必须在同一场对话里对齐;真正推动行业前进的,往往不是某一场 keynote,而是这种把不同视角逼到一起碰撞的场域。</div>
+    <div class="badges"><span class="b b-src">RAISE Summit</span></div>
+  </a>
+</section>
+
+<section class="s5">
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · <b>监管</b></span><span class="sec-rule"></span><span class="sec-tag">法规·治理·合规</span></div>
+
+  <a class="item" href="https://cubbbix.com/blog/ai-regulation-september-2026-global-update" target="_blank" rel="noopener">
+    <div class="item-title">全球 AI 监管 9 月从"筹备"转入"正式执法"：<span class="cn">分析指出，欧盟、美国、中国、印度、巴西的监管机构本月将执行审计令、就里程碑式法案投票、发布正式技术指引；欧盟 AI Office 与各国数据保护机构启动对 8 月 2 日后部署的高风险系统的 Article 11 技术文件审计</span></div>
+    <div class="item-note">监管从"发文件"进入"上门查"的阶段,意味着合规不再是纸面承诺,而是随时可能被抽查的实操义务;当五大经济体同期动作、把审计与技术文件当成执法抓手,全球厂商真正该盘算的,是"我的技术文档经不经得起审"——迟早要做的功课,现在变成了现在就查的考卷。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">Cubbbix</span></div>
+  </a>
+  <a class="item" href="https://www.softwareimprovementgroup.com/blog/eu-ai-act-summary/" target="_blank" rel="noopener">
+    <div class="item-title">"数字综合法案"给缓冲：高风险条款推迟，GPAI 执法 8/2 已生效：<span class="cn">Digital Omnibus（Reg EU 2026/1744，7 月 27 日生效）把独立高风险系统适用期推迟至 2027 年 12 月、嵌入受监管产品的推迟至 2028 年 8 月；而通用模型（GPAI）的透明度义务与执法权已自 8 月 2 日起落地</span></div>
+    <div class="item-note">监管在"收紧"与"松绑"间做了精细平衡:对最难落地的高风险场景留出缓冲,对影响面最广的通用模型先行开闸执法;这说明成熟治理不是一刀切,而是按风险和可行性分层施压;企业该读懂的是哪些义务已经生效、哪些还有时间窗,把合规工程按截止期精确排进路线图。</div>
+    <div class="badges"><span class="b b-src">SIG</span></div>
+  </a>
+  <a class="item" href="https://analysis-atlas.com/research/ai-governance-safety-regulation-landscape/" target="_blank" rel="noopener">
+    <div class="item-title">EU / US / China 三地 AI 治理 2026 全景对比：<span class="cn">研究梳理欧盟的风险分级立法、美国的行业自律加州级监管、中国的备案与算法治理三条路径，指出全球正形成"多极且互不完全兼容"的监管格局</span></div>
+    <div class="item-note">当三大经济体走出三条不同的治理路线,跨国厂商面对的就不是"一套合规",而是"多套并行且时有冲突"的规则拼图;这既抬高了出海门槛,也意味着"合规能力"本身正在变成一种竞争壁垒——谁能把多地规则同时吃透,谁就在全球市场里多一层别人难以复制的通行证。</div>
+    <div class="badges"><span class="b b-src">Analysis Atlas</span></div>
+  </a>
+  <a class="item" href="https://sombrainc.com/blog/ai-regulations-2026-eu-ai-act" target="_blank" rel="noopener">
+    <div class="item-title">《2026 AI 监管与治理终极指南》：<span class="cn">面向企业的实操指南，拆解 EU AI Act 各阶段义务、风险分级与落地清单，帮团队把"合规"从法律术语翻译成可执行的工程与流程动作</span></div>
+    <div class="item-note">当市面上开始出现"把法条翻译成工程清单"的实操指南,说明 AI 合规正从法务部门的专利,变成产研团队日常要背的需求;真正的护城河不在于读懂法条,而在于能不能把治理要求提前做进产品架构——把合规当功能来设计的团队,才不会在执法上门时手忙脚乱。</div>
+    <div class="badges"><span class="b b-src">Sombra</span></div>
+  </a>
+</section>
+
+<section class="s6">
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · <b>顶级战略思维</b></span><span class="sec-rule"></span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
+
+  <a class="item" href="https://techstartups.com/2026/09/15/top-tech-news-today-september-154-2026-apple-gates-foundation-google-microsoft-nvidia-openai-more/" target="_blank" rel="noopener">
+    <div class="item-title">英伟达首破 5 万亿美元市值、超越苹果，黄仁勋称明年芯片出货翻倍：<span class="cn">受 AI 芯片需求激增推动，Nvidia 成为首家市值达 5 万亿美元的公司，超过 Apple 成为美股第二大公司（仅次于微软）；黄仁勋放话明年芯片销量将是今年两倍</span></div>
+    <div class="item-note">当一家卖"铲子"的公司市值反超造"金矿"的苹果,说明这轮 AI 淘金潮里最确定的赢家不是应用层,而是底层算力;英伟达用市值给整个行业标了价:只要企业还在把钱源源不断变成算力,卖芯片的就稳收过路费——真正的战略问题已不是"AI 有没有泡沫",而是"泡沫破之前,谁攒下了别人拿不走的产能与生态"。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">Tech Startups</span></div>
+  </a>
+  <a class="item" href="https://techstartups.com/2026/09/10/top-tech-news-today-september-10-2026-apple-anthropic-ibm-meta-openai-spacex-more/" target="_blank" rel="noopener">
+    <div class="item-title">AI 上市潮酝酿：OpenAI IPO 推迟至 2027、洽谈 1.2 万亿估值，Anthropic 定 10 月登陆 Nasdaq：<span class="cn">OpenAI 把 IPO 推到 2027 年或更晚，并在早期洽谈以约 1.2 万亿美元估值融资；Anthropic 选择 Nasdaq、目标 10 月上市；算力商 Nscale 以约 350 亿美元估值递表</span></div>
+    <div class="item-note">当前沿实验室开始排队走向公开市场,AI 的叙事就从"技术故事"切换到"资本故事":上市意味着要向季度报表负责、要给出可持续的商业模型,而万亿级估值背后,是投资人对"谁能把烧钱变成印钱"的豪赌;IPO 时点与估值本身,就是这些公司对自己商业化底气的公开定价。</div>
+    <div class="badges"><span class="b b-src">Tech Startups</span></div>
+  </a>
+  <a class="item" href="https://blog.mean.ceo/a16z-news-september-2026/" target="_blank" rel="noopener">
+    <div class="item-title">a16z：American Dynamism 进入新纪元，资本转向"重建物理系统"：<span class="cn">9 月动向显示，a16z 把重心投向国防、制造、能源、基建与太空等硬科技——国家安全、产业政策与技术进步正在汇合，资本要为"把物理世界重新造一遍"下注，而非又一个套壳应用</span></div>
+    <div class="item-note">当最顶级的风投把叙事从"软件吃掉世界"转向"重建物理世界",说明科技投资的重心正在从比特回到原子:软件的边际成本趋近于零、护城河越来越薄,而能源、制造、国防这些又重又难的领域,恰恰是资本与技术护城河能真正沉淀的地方;看懂钱从虚拟往实体流,就看懂了下一个十年硬科技的主战场。</div>
+    <div class="badges"><span class="b b-read">必读</span><span class="b b-src">a16z · mean.ceo</span></div>
+  </a>
+  <a class="item" href="https://stratechery.com/" target="_blank" rel="noopener">
+    <div class="item-title">Stratechery：企业把 AI 铺进每个部门，"算力变业务成果"需求无上限：<span class="cn">Ben Thompson 的分析指出，企业正在组织的每一环节部署 AI 工具，把算力转化为业务成果的需求几乎没有上限——这也是支撑整条算力与基础设施投资曲线的底层逻辑</span></div>
+    <div class="item-note">Thompson 点破了这轮资本狂热的底层假设:只要企业真能持续把算力变成利润,那对芯片、云与模型的需求就没有天花板;但这句话的另一面也值得警惕——一旦"算力→业务成果"的转化率被证伪,整条投资曲线的估值逻辑就会松动;真正的战略判断,不在跟风买算力,而在冷静评估这条转化链到底有多稳。</div>
+    <div class="badges"><span class="b b-src">Stratechery</span></div>
+  </a>
+</section>
+
+<footer>
+  <div>生成时间：2026-09-20 · 自动汇编 by <b>daily-ai-brief</b></div>
+  <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源；部分资讯源为聚合站（如 LLM-Stats、Tech Startups），已尽量回溯一手出处。</div>
+  <div>信息源：WebSearch · GitHub Trending · CNBC · Big Hat Group · Digital Applied · LLM-Stats · CSDN · The AI Conference · Oracle · RAISE Summit · Cubbbix · SIG · Analysis Atlas · Sombra · Tech Startups · a16z · mean.ceo · Stratechery</div>
+  <div><a href="./index.html">← 返回归档</a></div>
+</footer>
+</div>
+</body>
+</html>
