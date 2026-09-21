@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-09-21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Daily AI Digest · 每日速览</div>
+  <h1>今日 AI 速览</h1>
+  <div class="sub">2026-09-21 · 周一 · 六板块等权 · 标题流</div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 AI 公司</span><span class="sec-tag">OpenAI · Anthropic · Google · xAI · Meta</span></div>
+
+  <a class="item" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">
+    <div class="item-title">Anthropic 年化营收冲上 <span class="cn">$100B</span>，较 7 月增 50%，IPO 推迟至 11 月</div>
+    <div class="item-note">增速刷新一线厂商纪录；同时官宣与埃森哲 Faculty 结为首个"嵌入式评估方"，双方各承诺五年投入 $10 亿。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">aiweekly.co</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">Dario Amodei <span class="cn">《Pace the Frontier》</span>引爆争议，Altman/Musk/Hassabis 同日背书</div>
+    <div class="item-note">9/12 发文主张"审慎推进前沿"；9/13 四名订户随即提起全国性反垄断集体诉讼，指控几家实验室合谋放缓 AI 研发。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">llm-stats.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">
+    <div class="item-title">Google <span class="cn">Gemini 3.8 Flash</span> 上线，价格与 3.7 Flash 持平</div>
+    <div class="item-note">9/2 发布；OpenAI 9/18 在 ChatGPT 桌面内置浏览器中开放 Chrome 扩展支持，agent 生态继续外扩。</div>
+    <div class="badges"><span class="b b-src">digitalapplied.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">
+    <div class="item-title">马斯克：<span class="cn">人类"逐步越来越少地介入回路"</span>，目标 2027 年底全自动化</div>
+    <div class="item-note">xAI 掌门人重申激进自动化路线，把"人在环内"定位为过渡态。</div>
+    <div class="badges"><span class="b b-src">Fortune</span></div>
+  </a>
+
+  <a class="item" href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">
+    <div class="item-title">Meta <span class="cn">Muse Spark 1.3</span> 发布，新增 contributor 贡献者层级</div>
+    <div class="item-note">9/2 上线，维持前代定价，调整缓存费率与 token 消耗机制。</div>
+    <div class="badges"><span class="b b-src">digitalapplied.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 AI 团队</span><span class="sec-tag">阿里 · StepFun · DeepSeek · Kimi · 智谱</span></div>
+
+  <a class="item" href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">
+    <div class="item-title">阿里 <span class="cn">Qwen3.8-Omni-Flash</span> 发布，原生多模态 + 100 万 token 上下文</div>
+    <div class="item-note">9/18 上线，支持文/图/音/视频输入，阿里云定价 $0.15/$0.47 每百万 token；30 项评测较前代提升 26%+。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-hot">重磅</span><span class="b b-src">digitalapplied.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">
+    <div class="item-title">StepFun <span class="cn">Step 5 Preview</span>（600B 稀疏 MoE）发布，价格约 GPT-5.6 的 1/7</div>
+    <div class="item-note">定价 $1 输入 / $2.70 输出每百万 token；中国队"低成本冲击"的老剧本再度上演。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">artificialanalysis.ai</span></div>
+  </a>
+
+  <a class="item" href="https://pasqualepillitteri.it/en/news/16873/best-chinese-ai-coding-models-2026" target="_blank" rel="noopener">
+    <div class="item-title">中国编码模型第一梯队：<span class="cn">Kimi K3 / Qwen3.8-Max / DeepSeek 4.1 Flash / GLM-5.3 / MiniMax M3</span></div>
+    <div class="item-note">9 月榜单：五款国产模型在代码写作上与 Claude、GPT 掰手腕；开源 + 低推理成本仍是共同打法。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">pasqualepillitteri.it</span></div>
+  </a>
+
+  <a class="item" href="https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker" target="_blank" rel="noopener">
+    <div class="item-title">PrismML <span class="cn">Ternary Bonsai 2 27B</span>——三值权重压缩的 Qwen 3.8 变体</div>
+    <div class="item-note">9/17 以 Apache 2.0 开源，宣称保留基座模型 98.2% 的综合基准分。</div>
+    <div class="badges"><span class="b b-src">digitalapplied.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub 每日好项目</span><span class="sec-tag">trending · 当日 / 本周</span></div>
+
+  <a class="item" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener">
+    <div class="item-title">cloudflare/security-audit-skill <span class="cn">— 多阶段安全审计的 coding-agent skill</span></div>
+    <div class="item-note">产出可独立验证、机器可读的审计结论。今日 trending 榜首。</div>
+    <div class="badges"><span class="b b-star">★ +2,428/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/trycua/cua" target="_blank" rel="noopener">
+    <div class="item-title">trycua/cua <span class="cn">— computer-use 平台</span></div>
+    <div class="item-note">开源驱动 + 跨系统机群 + 训练/数据生成基准，主打计算机操控 agent。</div>
+    <div class="badges"><span class="b b-star">★ +1,018/日</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">
+    <div class="item-title">alibaba/open-code-review <span class="cn">— 阿里规模实战的混合架构代码审查工具</span></div>
+    <div class="item-note">Go 编写，主打安全、快、省。本周 trending 冠军。</div>
+    <div class="badges"><span class="b b-cn">阿里</span><span class="b b-star">★ +15.5k/周</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/Tencent/WeKnora" target="_blank" rel="noopener">
+    <div class="item-title">Tencent/WeKnora <span class="cn">— 开源 LLM 知识平台</span></div>
+    <div class="item-note">把原始文档变成可查询的 RAG 与自主推理 agent。Go 编写。</div>
+    <div class="badges"><span class="b b-cn">腾讯</span><span class="b b-star">★ +5.2k/周</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank" rel="noopener">
+    <div class="item-title">bilawalsidhu/gods-eye-view <span class="cn">— 浏览器里的间谍卫星模拟器（数据真实）</span></div>
+    <div class="item-note">开源实时空间情报，本周 trending 亮眼黑马。</div>
+    <div class="badges"><span class="b b-star">★ +8.1k/周</span><span class="b b-src">github</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/addyosmani/agent-skills" target="_blank" rel="noopener">
+    <div class="item-title">addyosmani/agent-skills <span class="cn">— 面向 AI coding agent 的生产级工程 skills</span></div>
+    <div class="item-note">当日 + 本周双榜在列，agent skill 生态持续升温。</div>
+    <div class="badges"><span class="b b-star">★ +736/日</span><span class="b b-src">github</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · 演讲</span><span class="sec-tag">NVIDIA · The AI Conference · GTC</span></div>
+
+  <a class="item" href="https://www.nvidia.com/en-us/events/ai-infra-summit/" target="_blank" rel="noopener">
+    <div class="item-title">NVIDIA <span class="cn">AI Infra Summit</span>（9/15-17）：Ian Buck 主题演讲</div>
+    <div class="item-note">聚焦 AI 基础设施、每瓦性能与规模化网络；八大内容舞台横跨算力、数据搬运、Physical AI 等全栈。</div>
+    <div class="badges"><span class="b b-src">nvidia.com</span></div>
+  </a>
+
+  <a class="item" href="https://stratechery.com/" target="_blank" rel="noopener">
+    <div class="item-title">黄仁勋：<span class="cn">"AGI 已至，下一步 40 万块 GPU 上线"</span></div>
+    <div class="item-note">9/6 发声；配合 GTC 2026 keynote 访谈，谈中国与华盛顿之间的平衡、以及 Nvidia 的"本色"。</div>
+    <div class="badges"><span class="b b-hot">必看</span><span class="b b-src">stratechery.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiconference.com/" target="_blank" rel="noopener">
+    <div class="item-title">The AI Conference 2026（旧金山 Pier 48，9/29-10/1）<span class="cn">阵容公布</span></div>
+    <div class="item-note">5500+ 建设者与研究者、120+ 讲者、5 大主线：AGI / LLM / agentic AI / 基础设施 / 应用。</div>
+    <div class="badges"><span class="b b-src">aiconference.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiwhatson.com/conferences" target="_blank" rel="noopener">
+    <div class="item-title">学术侧：<span class="cn">ICANN 2026</span>（帕多瓦，9/14-17）第 35 届国际神经网络大会</div>
+    <div class="item-note">同期伦敦 9/15-16 有智能医疗系统两日会议，产学两端同时开跑。</div>
+    <div class="badges"><span class="b b-src">aiwhatson.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · 监管</span><span class="sec-tag">对齐 · 治理 · 法规</span></div>
+
+  <a class="item" href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener">
+    <div class="item-title">EU AI Act <span class="cn">8/2 正式适用</span>，进入实质执法期</div>
+    <div class="item-note">欧盟 AI Office 与各国 DPA 已对 8/2 后部署的高风险系统启动 Article 11 技术文档审计；各成员国须至少设一个监管沙箱。</div>
+    <div class="badges"><span class="b b-src">artificialintelligenceact.eu</span></div>
+  </a>
+
+  <a class="item" href="https://www.legalnodes.com/article/eu-ai-act-2026-updates-compliance-requirements-and-business-risks" target="_blank" rel="noopener">
+    <div class="item-title">EU <span class="cn">AI Omnibus</span> 落地：小企业合规简化，最高风险系统延期至 2027-2028</div>
+    <div class="item-note">7 月入法，引入全欧监管沙箱、澄清部分安全保护，同时推迟部分高风险类别的截止期。</div>
+    <div class="badges"><span class="b b-src">legalnodes.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">
+    <div class="item-title">安全事件：<span class="cn">Claude Code 等 AI 编码 agent 曝零点击 RCE 漏洞</span>（Plugin4Shell）</div>
+    <div class="item-note">插件机制被曝可零点击远程执行代码；同期 Google 内部红队评测显示 Gemini 曾自主"黑入"三家公司（含密码爆破）。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">helpnetsecurity / spokesman</span></div>
+  </a>
+
+  <a class="item" href="https://arxiv.org/pdf/2602.21012" target="_blank" rel="noopener">
+    <div class="item-title"><span class="cn">《国际 AI 安全报告 2026》</span>发布</div>
+    <div class="item-note">全球监管从筹备转向实质执法：欧盟、美、中、印、巴同步推进审计强制与技术指引。</div>
+    <div class="badges"><span class="b b-src">arxiv.org</span></div>
+  </a>
+
+  <a class="item" href="https://cubbbix.com/blog/ai-regulation-september-2026-global-update" target="_blank" rel="noopener">
+    <div class="item-title">全球监管日历：<span class="cn">2026 年 9 月各国 AI 法规与截止期</span></div>
+    <div class="item-note">多辖区的审计强制、技术指引与备案要求密集落地，合规窗口收紧。</div>
+    <div class="badges"><span class="b b-src">cubbbix.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · 顶级战略思维</span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
+
+  <a class="item" href="https://stratechery.com/" target="_blank" rel="noopener">
+    <div class="item-title">Ben Thompson × 黄仁勋：<span class="cn">"AGI 已至"背后的算力资本论</span></div>
+    <div class="item-note">Stratechery 聚合理论视角解读 Nvidia 的算力护城河；黄 9/6 宣称"40 万块 GPU 即将上线"。</div>
+    <div class="badges"><span class="b b-hot">必读</span><span class="b b-src">stratechery.com</span></div>
+  </a>
+
+  <a class="item" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">
+    <div class="item-title">资本信号：<span class="cn">Anthropic 年化营收 $100B、IPO 延至 11 月</span></div>
+    <div class="item-note">增速 50% 环比；一线模型厂商的商业化拐点，也是二级市场对 AI 估值锚点的重新校准。</div>
+    <div class="badges"><span class="b b-src">Yahoo / NYT</span></div>
+  </a>
+
+  <a class="item" href="https://aiweekly.co/ai-news-today" target="_blank" rel="noopener">
+    <div class="item-title">成本战升级：<span class="cn">StepFun Step 5 定价约 GPT-5.6 的 1/7</span></div>
+    <div class="item-note">中国队用"性能对标 + 价格腰斩再腰斩"持续压低推理成本，改写全球 API 竞价曲线。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">artificialanalysis.ai</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">反垄断新战线：<span class="cn">订户诉四大 AI 实验室"合谋放缓研发"</span></div>
+    <div class="item-note">9/13 集体诉讼把 Amodei《Pace the Frontier》与 Altman/Musk/Hassabis 的同日背书当作"协同"证据——安全叙事与竞争法的正面碰撞。</div>
+    <div class="badges"><span class="b b-hot">必读</span><span class="b b-src">llm-stats.com</span></div>
+  </a>
+
+  <a class="item" href="https://stratechery.com/concept/strategy/" target="_blank" rel="noopener">
+    <div class="item-title">框架回炉：<span class="cn">聚合理论（Aggregation Theory）</span>如何解释 AI 平台之争</div>
+    <div class="item-note">Ben Thompson 近 20 年最重要的商业框架，正被反复用来拆解 OpenAI / Nvidia / Apple 的平台位势。</div>
+    <div class="badges"><span class="b b-src">stratechery.com</span></div>
+  </a>
+</section>
+
+<footer>
+  <div>生成时间：2026-09-21 · 自动汇编 by daily-ai-brief</div>
+  <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源。</div>
+  <div>信息源：WebSearch · GitHub Trending · WebFetch（aiweekly / llm-stats / digitalapplied）</div>
+  <div><a href="./index.html">← 返回归档</a></div>
+</footer>
+</div>
+</body>
+</html>
