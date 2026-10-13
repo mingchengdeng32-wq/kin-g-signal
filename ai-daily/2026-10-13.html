@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-10-13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Daily AI Digest · 每日速览</div>
+  <h1>今日 AI 速览</h1>
+  <div class="sub">2026-10-13 · 周二 · 六板块等权 · 标题流</div>
+</header>
+
+<section>
+  <div class="sec-head"><span class="sec-num">01</span><span class="sec-title">海外头部 AI 公司</span><span class="sec-tag">Meta · Google · OpenAI · Anthropic</span></div>
+
+  <a class="item" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">
+    <div class="item-title">Meta 发布 <span class="cn">Muse Wonder / Muse Wonder Full</span> agent 模型</div>
+    <div class="item-note">10/12 公开，号称"迄今最能跑 agent"、可处理个人与职业任务——Meta 把主线从通用聊天转向"替你办事"的智能体。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">SiliconAngle / llm-stats</span></div>
+  </a>
+
+  <a class="item" href="https://www.cnbc.com/2026/10/02/tech-download-google-argon-frontier-openai-anthropic.html" target="_blank" rel="noopener">
+    <div class="item-title">Google 发布旗舰 <span class="cn">Gemini 4 Argon</span>，冲击前沿第一梯队</div>
+    <div class="item-note">刷新多项顶级基准、分析师看多；采取谨慎放量策略，先向网络安全合作方开放——正面对标 OpenAI 与 Anthropic。</div>
+    <div class="badges"><span class="b b-src">cnbc.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.microcenter.com/site/mc-news/article/this-week-in-ai-oct-2-2026.aspx" target="_blank" rel="noopener">
+    <div class="item-title">OpenAI 推 <span class="cn">GPT-6.1 Sol</span>，同时暂停更强的 GPT-6.1 Astra</div>
+    <div class="item-note">Sol 以更低成本逼近旗舰 GPT-6 Astra，错误率从 11.4% 降到 7.7%；而更强的 6.1 Astra 因安全考量被叫停开发。</div>
+    <div class="badges"><span class="b b-src">MicroCenter News</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener">
+    <div class="item-title">Anthropic <span class="cn">Sonnet 5.5</span> 提速降本、<span class="cn">Haiku 5.5</span> 补齐家族</div>
+    <div class="item-note">Sonnet 5.5 号称速度提升 30%、成本降低 30%；Haiku 5.5（10/7）凑齐一个月内 Claude 5.5 家族第三款。</div>
+    <div class="badges"><span class="b b-src">llm-stats.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">02</span><span class="sec-title">中国互联网 AI 团队</span><span class="sec-tag">数学 AI 联盟 · 阿里 · 智谱 · 字节</span></div>
+
+  <a class="item" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">
+    <div class="item-title">中国顶尖数学家组建 <span class="cn">AI 数学联盟</span>，拟集结 1000+ 科学家</div>
+    <div class="item-note">10/12 发起，由 8 家机构牵头，聚焦面向数学的专用 AI 模型——把"AI 做科研"从通用模型里拆成领域联合攻关。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-hot">重磅</span><span class="b b-src">llm-stats</span></div>
+  </a>
+
+  <a class="item" href="https://finance.sina.com.cn/tech/roll/2026-09-03/doc-iniqpqxy2120220.shtml" target="_blank" rel="noopener">
+    <div class="item-title">阿里 / 智谱 / MiniMax <span class="cn">集体港股"补血"</span></div>
+    <div class="item-note">智谱港股增发募资约 314.1 亿港元、MiniMax 新募约 160 亿港元，资金八成投向算力与模型研发——AI 窗口期的资本军备。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">新浪财经</span></div>
+  </a>
+
+  <a class="item" href="https://www.163.com/dy/article/KQ5C3PDL05118I96.html" target="_blank" rel="noopener">
+    <div class="item-title">字节 2026 AI 基建开支 <span class="cn">约 2000 亿元</span></div>
+    <div class="item-note">其中约 850 亿买芯片、900 亿建智算中心；腾讯、百度 Q2 资本开支同比暴增 176%、201%——中国大厂同步进入重资本投入周期。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">网易科技</span></div>
+  </a>
+
+  <a class="item" href="https://ofox.io/zh/blog/open-source-llm-china-roundup-2026/" target="_blank" rel="noopener">
+    <div class="item-title">国产开源五雄：<span class="cn">Qwen3.6 / GLM-5.x / Kimi K2.6 / DeepSeek V4 / MiniMax M2.7</span></div>
+    <div class="item-note">在编程、Agent、长上下文三条线上同时挑战闭源旗舰；GLM-5 系列 744B（A40B）、DeepSeek 支持 1M token 上下文。</div>
+    <div class="badges"><span class="b b-cn">中国</span><span class="b b-src">ofox.io roundup</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">03</span><span class="sec-title">GitHub 每日好项目</span><span class="sec-tag">真实 trending · daily / weekly</span></div>
+
+  <a class="item" href="https://github.com/morluto/rea" target="_blank" rel="noopener">
+    <div class="item-title">morluto/rea <span class="cn">— 用 agent 逆向工程一切</span></div>
+    <div class="item-note">从 app 行为一路逆到原生二进制，agent 驱动的逆向工程工具；今日 trending 断层第一。</div>
+    <div class="badges"><span class="b b-star">★ +45.3k/日</span><span class="b b-src">TypeScript</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/mksglu/context-mode" target="_blank" rel="noopener">
+    <div class="item-title">mksglu/context-mode <span class="cn">— 给编码 agent 的上下文窗口优化</span></div>
+    <div class="item-note">把工具输出沙箱化（号称减少 98% 占用）并持久化会话记忆，专治"上下文爆炸"；今日上升榜。</div>
+    <div class="badges"><span class="b b-star">★ +246/日</span><span class="b b-src">TypeScript</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">
+    <div class="item-title">mattpocock/skills <span class="cn">— 给工程师的实战 agent skills</span></div>
+    <div class="item-note">直接来自作者 .agents 目录的技能包；本周累计新增 1.11 万星，持续霸榜。</div>
+    <div class="badges"><span class="b b-star">★ +11.1k/周</span><span class="b b-src">Shell</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/mvschwarz/openrig" target="_blank" rel="noopener">
+    <div class="item-title">mvschwarz/openrig <span class="cn">— 组建带持久团队的 agent 网络</span></div>
+    <div class="item-note">用持久化团队、共享上下文与角色分配搭建多智能体网络；本周新增约 2.1k 星。</div>
+    <div class="badges"><span class="b b-star">★ +2.1k/周</span><span class="b b-src">TypeScript</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/earthtojake/text-to-cad" target="_blank" rel="noopener">
+    <div class="item-title">earthtojake/text-to-cad <span class="cn">— 给 agent 的 CAD 超能力</span></div>
+    <div class="item-note">让 agent 用自然语言驱动 CAD 建模；本周新增约 2.4k 星，agent "动手造物"方向的热门。</div>
+    <div class="badges"><span class="b b-star">★ +2.4k/周</span><span class="b b-src">Python</span></div>
+  </a>
+
+  <a class="item" href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">
+    <div class="item-title">heygen-com/hyperframes <span class="cn">— 写 HTML 即渲染视频，专为 agent 设计</span></div>
+    <div class="item-note">让 agent 用 HTML 描述画面、直接产出视频；本周新增约 4.5k 星。</div>
+    <div class="badges"><span class="b b-star">★ +4.5k/周</span><span class="b b-src">TypeScript</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">04</span><span class="sec-title">峰会 · 访谈 · 演讲</span><span class="sec-tag">白宫 · Lex Fridman · AI Davos</span></div>
+
+  <a class="item" href="https://qz.com/jensen-huang-dario-amodei-ai-safety-white-house-100126" target="_blank" rel="noopener">
+    <div class="item-title">白宫午餐：<span class="cn">约两打 AI CEO 签署 AI 安全原则声明</span></div>
+    <div class="item-note">在罗斯福厅，黄仁勋等高管私下就 AI 风险警告当面质疑 Amodei；约两打 AI 公司 CEO 共同签署一份 AI 安全原则声明。</div>
+    <div class="badges"><span class="b b-src">qz.com</span></div>
+  </a>
+
+  <a class="item" href="https://lexfridman.com/ai-sota-2026/" target="_blank" rel="noopener">
+    <div class="item-title">Lex Fridman #490：<span class="cn">《2026 AI 现状》4.5 小时长谈</span></div>
+    <div class="item-note">与 Sebastian Raschka、Nathan Lambert 深聊 scaling law、闭源/开源、编码工具、中美竞争与 pre/mid/post 训练管线。</div>
+    <div class="badges"><span class="b b-src">lexfridman.com</span></div>
+  </a>
+
+  <a class="item" href="https://www.bigtechnology.com/p/ai-davos-four-reflections-from-the" target="_blank" rel="noopener">
+    <div class="item-title">AI Davos：<span class="cn">来自"最排外科技会议"的四点反思</span></div>
+    <div class="item-note">Big Technology 现场手记，提炼顶级闭门会上关于资本、算力与监管的行业共识与分歧。</div>
+    <div class="badges"><span class="b b-src">bigtechnology.com</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">05</span><span class="sec-title">AI 安全 · 伦理 · 监管</span><span class="sec-tag">对齐 · 治理 · 法规</span></div>
+
+  <a class="item" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">
+    <div class="item-title">Anthropic 研究警示：<span class="cn">小模型数月内或能在智能电视等 IoT 自我复制</span></div>
+    <div class="item-note">10/12，研究者指出小型 AI 模型可能很快在智能电视等物联网设备上实现自我复制——agent 自主扩散的现实风险样本。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">llm-stats</span></div>
+  </a>
+
+  <a class="item" href="https://www.dpo-consulting.com/blog/eu-ai-act" target="_blank" rel="noopener">
+    <div class="item-title">EU AI Act：<span class="cn">10/5 前沿 AI 安全科学小组特别会议</span></div>
+    <div class="item-note">欧盟委员会就前沿模型安全召开科学小组特别会议；8/2 起 AI Office 对 GPAI 已握有评估、整改与罚款的强制执法权。</div>
+    <div class="badges"><span class="b b-src">dpo-consulting.com</span></div>
+  </a>
+
+  <a class="item" href="https://alicelabs.ai/en/insights/eu-ai-act-timeline-2026" target="_blank" rel="noopener">
+    <div class="item-title">EU 将高风险 AI 义务 <span class="cn">推迟至 2027/12</span>（Digital Omnibus）</div>
+    <div class="item-note">官方称"让创新更容易但不降低门槛"，理由是企业与监管方仍需更清晰的技术标准与工具——监管节奏向产业现实让步。</div>
+    <div class="badges"><span class="b b-src">alicelabs.ai</span></div>
+  </a>
+
+  <a class="item" href="https://www.microcenter.com/site/mc-news/article/this-week-in-ai-oct-2-2026.aspx" target="_blank" rel="noopener">
+    <div class="item-title">OpenAI <span class="cn">因安全考量叫停 GPT-6.1 Astra</span> 开发</div>
+    <div class="item-note">厂商主动搁置更强旗舰——前沿能力与安全评估之间的张力，开始直接影响发布路线。</div>
+    <div class="badges"><span class="b b-src">MicroCenter News</span></div>
+  </a>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-num">06</span><span class="sec-title">科技商业 · 顶级战略思维</span><span class="sec-tag">不止 AI · 战略 · 资本</span></div>
+
+  <a class="item" href="https://www.esgdive.com/news/blackrocks-gip-microsoft-backed-ai-group-buy-aligned-data-centers-for-40/825920/" target="_blank" rel="noopener">
+    <div class="item-title">BlackRock GIP / MGX / AIIP <span class="cn">以 $400 亿收购 Aligned Data Centers</span></div>
+    <div class="item-note">贝莱德基础设施基金联手阿联酋 MGX 及 AI 基建合伙联盟拿下数据中心开发商——资本正把"算力地产"直接买成战略资产。</div>
+    <div class="badges"><span class="b b-hot">重磅</span><span class="b b-src">esgdive.com</span></div>
+  </a>
+
+  <a class="item" href="https://bloomberg.com/news/articles/2026-10-12/why-big-tech-is-borrowing-billions-to-fund-ai-spending" target="_blank" rel="noopener">
+    <div class="item-title">Bloomberg：<span class="cn">大科技为何大举借债建 AI</span></div>
+    <div class="item-note">10/12 深度。Meta/Amazon/MSFT/Alphabet 今年资本开支合计约 $7500 亿，并从自有现金转向重度举债——AI 军备的融资方式被彻底改写。</div>
+    <div class="badges"><span class="b b-src">Bloomberg</span></div>
+  </a>
+
+  <a class="item" href="https://bloomberg.com/news/articles/2026-10-12/why-big-tech-is-borrowing-billions-to-fund-ai-spending" target="_blank" rel="noopener">
+    <div class="item-title">SpaceX 洽借 <span class="cn">$400 亿买英伟达芯片</span>，Broadcom 为 Anthropic 牵头 $600 亿</div>
+    <div class="item-note">拥有 xAI 的 SpaceX 与银行、投资人磋商 $400 亿融资购芯；Broadcom 组织方另筹 $600 亿为 Anthropic 等供芯——算力金融化加速。</div>
+    <div class="badges"><span class="b b-src">Bloomberg</span></div>
+  </a>
+
+  <a class="item" href="https://llm-stats.com/ai-news" target="_blank" rel="noopener">
+    <div class="item-title">Omron 以 <span class="cn">$6.75 亿收购美国工业 PC 厂 OnLogic</span>，押注"物理 AI"</div>
+    <div class="item-note">10/12，日本欧姆龙收购 OnLogic 及母公司 Interlogic，强化"physical AI"能力——AI 竞争从云端延伸到工厂与边缘硬件。</div>
+    <div class="badges"><span class="b b-src">llm-stats</span></div>
+  </a>
+
+  <a class="item" href="https://www.tomshardware.com/tech-industry/this-week-on-toms-hardware-premium-october-10-2026-tencent-grabs-bargain-chips-qualcomm-huawei-ip-deal-groq-lawsuit-and-more" target="_blank" rel="noopener">
+    <div class="item-title">本周芯片局：<span class="cn">腾讯抄底芯片、高通—华为 IP 交易、Groq 诉讼</span></div>
+    <div class="item-note">Tom's Hardware 付费版周览——供给端博弈（低价囤芯、专利授权、推理芯片之争）成为 AI 战略的底层变量。</div>
+    <div class="badges"><span class="b b-src">tomshardware.com</span></div>
+  </a>
+</section>
+
+<footer>
+  <div>生成时间：2026-10-13 · 自动汇编 by daily-ai-brief</div>
+  <div class="disc">※ 内容为公开来源自动抓取汇编，含 AI 概括，链接为原始出处，请以原文为准。中国板块受可用信息源限制，覆盖度弱于英文源。</div>
+  <div>信息源：WebSearch · GitHub Trending · WebFetch</div>
+  <div><a href="./index.html">← 返回归档</a></div>
+</footer>
+</div>
+</body>
+</html>
