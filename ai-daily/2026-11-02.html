@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-11-02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+.coverage{color:var(--text-muted);font-size:.82rem;margin:.65rem 0 1rem;}
+.coverage a{color:var(--gold-light)}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+<header>
+<div class="eyebrow">Daily AI Digest · 每日速览</div><h1>今日 AI 速览</h1>
+<div class="sub">2026-11-02 · 周一 · 六板块等权 · 标题流</div>
+<p class="coverage">检索截至北京时间 2026-11-02 09:47；以近 24–48 小时的新发布、新报道与新评述为主。原始事件和新刊发日分别标注；仅有日期的 10/31 来源不精确声称在 48 小时内。GitHub 周榜使用独立一周窗口。</p></header>
+<section aria-label="海外头部 AI 公司"><div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">海外头部 AI 公司</h2><span class="sec-tag">开发工具 · 产品边界 · 政策动向</span></div>
+<p class="coverage">本窗口未核验到更多海外头部公司的正式新模型发布；不纳入模型泄露、代号截图或未经官宣的发布日期。</p>
+<a class="item" href="https://github.com/openai/openai-java/releases/tag/v4.96.0" target="_blank" rel="noopener noreferrer"><div class="item-title">OpenAI Java SDK 4.96.0：加入 Responses WebSocket 预热支持</div><div class="item-note">11/1 官方发布记录列出 WebSocket warmup，并补充实时翻译临时密钥示例；这是 SDK 能力更新，不是新模型发布。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">OpenAI · 官方 GitHub Release</span></div></a>
+<a class="item" href="https://www.qbitai.com/2026/11/507038.html" target="_blank" rel="noopener noreferrer"><div class="item-title">Claude Code 限制复刻特定现有游戏，原创创作仍被允许</div><div class="item-note">量子位 11/1 报道系统提示词新增游戏复刻边界。这里按媒体观察记录，不把提示词限制写成已解决版权问题或所有逆向行为都被禁止。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">量子位 · 原始报道</span></div></a>
+<a class="item" href="https://www.axios.com/newsletters/axios-am-c36b525d-34d3-426e-8b48-156dc3db6173" target="_blank" rel="noopener noreferrer"><div class="item-title">OpenAI 拟在美国中期选举后推动前沿 AI 强制安全措施</div><div class="item-note">Axios 11/1 采访其全球事务负责人：拟推动“速度限制”等提案。尚非已通过的法律。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">Axios AM · 原始采访</span></div></a>
+</section>
+<section aria-label="中国互联网 AI 团队"><div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">中国互联网 AI 团队</h2><span class="sec-tag">DeepSeek · 阿里千问 · 百度</span></div>
+<p class="coverage">中文公开信息覆盖不完全。Apple 与 DeepSeek 的原始发布标注为 10/31；仅有日期的来源无法精确到小时，不冒充今天发生。未把目录页面的动态日期当新发布。</p>
+<a class="item" href="https://github.com/deepseek-ai/dsh-superagent-prototype" target="_blank" rel="noopener noreferrer"><div class="item-title">DeepSeek 开源 Super-agent 研究原型：请求路由与任务执行分层</div><div class="item-note">10/31 晚间公开、11/1 持续讨论。原型面向单个 GitHub 仓库，可选接入飞书，将请求交给独立任务会话。README 明示：非官方生产产品，需审查适配。</div><div class="badges"><span class="b b-cn">10/31–11/1</span><span class="b b-src">DeepSeek Harness Team · 官方仓库</span></div></a>
+<a class="item" href="https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/" target="_blank" rel="noopener noreferrer"><div class="item-title">千问接入中国版 Apple 智能：11/4 开测，12 月随 iOS 27.3 推出</div><div class="item-note">Apple 10/31 新闻稿确认 Siri、写作工具与视觉智能将加入千问支持；这是将来的分阶段开放，不是今日全面上线，也不包含下一代 Siri AI。</div><div class="badges"><span class="b b-cn">10/31</span><span class="b b-src">Apple 中国 · 官方新闻稿</span></div></a>
+<a class="item" href="https://www.thepaper.cn/newsDetail_forward_34370307" target="_blank" rel="noopener noreferrer"><div class="item-title">百度 AI 研发管理调整：吴甜离职，孙天祥此前已接掌基础模型部门</div><div class="item-note">11/1 澎湃号报道转述百度公关确认离职；孙天祥接掌 BMU 的时间为今年 7 月，不能写成今天换帅。“下周文心新进展”仍属预告。</div><div class="badges"><span class="b b-cn">11/1</span><span class="b b-src">澎湃号·湃客 · 公司回应报道</span></div></a>
+</section>
+<section aria-label="GitHub 每日好项目"><div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">GitHub 每日好项目</h2><span class="sec-tag">真实 daily / weekly Trending</span></div>
+<p class="coverage">以下摘自本次直接获取的 GitHub 日榜与周榜 HTML 快照；星数为榜单显示的当日／本周新增，不是历史总星数。周榜为一周窗口，不代表今天新建或发布。</p>
+<a class="item" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener noreferrer"><div class="item-title">thedotmack/claude-mem · 当日新增 1,526 星</div><div class="item-note">跨会话压缩与保留 Agent 上下文；仓库描述覆盖多种编码助手，部署时仍须核对记忆保存范围。</div><div class="badges"><span class="b b-star">当日 +1,526</span><span class="b b-src">GitHub daily Trending · TypeScript</span></div></a>
+<a class="item" href="https://github.com/lightpanda-io/browser" target="_blank" rel="noopener noreferrer"><div class="item-title">lightpanda-io/browser · 当日新增 825 星</div><div class="item-note">面向 AI 与自动化的轻量无头浏览器；适合作为浏览器执行层候选，不把榜单热度当兼容性或安全性验证。</div><div class="badges"><span class="b b-star">当日 +825</span><span class="b b-src">GitHub daily Trending · Zig</span></div></a>
+<a class="item" href="https://github.com/beenuar/AiSOC" target="_blank" rel="noopener noreferrer"><div class="item-title">beenuar/AiSOC · 当日新增 446 星</div><div class="item-note">开源安全运营中心：告警融合、LLM 分诊与可回放决策记录；功能为仓库自述，未做生产测评。</div><div class="badges"><span class="b b-star">当日 +446</span><span class="b b-src">GitHub daily Trending · Python</span></div></a>
+<a class="item" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer"><div class="item-title">cloudflare/security-audit-skill · 本周新增 10,069 星</div><div class="item-note">分阶段安全审计技能，强调独立核验与机器可读发现；入选周榜，不等于能替代人工安全审查。</div><div class="badges"><span class="b b-star">本周 +10,069</span><span class="b b-src">GitHub weekly Trending · JavaScript</span></div></a>
+<a class="item" href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener noreferrer"><div class="item-title">pbakaus/impeccable · 本周新增 12,017 星</div><div class="item-note">为编码 Agent 提供设计表达、精修与审视指令；关注界面质量，非通用模型能力排行榜。</div><div class="badges"><span class="b b-star">本周 +12,017</span><span class="b b-src">GitHub weekly Trending · Rust</span></div></a>
+<a class="item" href="https://github.com/JetBrains/thinkrail" target="_blank" rel="noopener noreferrer"><div class="item-title">JetBrains/thinkrail · 本周新增 5,760 星</div><div class="item-note">基于 pi 的轻量 IDE，尝试把 Agent 编码与真实开发环境结合；实际可用性仍须按项目试用。</div><div class="badges"><span class="b b-star">本周 +5,760</span><span class="b b-src">GitHub weekly Trending · TypeScript</span></div></a>
+<p class="coverage">榜单原页：<a href="https://github.com/trending?since=daily">Daily Trending</a> · <a href="https://github.com/trending?since=weekly">Weekly Trending</a>。增量为抓取时快照，随后可能变化。</p>
+</section>
+<section aria-label="峰会 · 访谈 · 演讲"><div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">峰会 · 访谈 · 演讲</h2><span class="sec-tag">顶科论坛 · 三组独立观点</span></div>
+<p class="coverage">本期三条均来自同一届顶科论坛的不同采访／发言，不代表三场独立大会；按新刊发日入选，现场日期另列。</p>
+<a class="item" href="https://www.thepaper.cn/newsDetail_forward_34381980" target="_blank" rel="noopener noreferrer"><div class="item-title">多贝西谈 AI 与数学：高效检索、重组成果，仍需数学家协作</div><div class="item-note">澎湃 11/1 刊发 10/31 现场专访。她承认数学界的不安，同时认为 AI 可改变研究流程；这是受访者对能力与职业分工的判断，不是自动证明正确性的背书。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">澎湃新闻 · 记者专访</span></div></a>
+<a class="item" href="https://www.chinanews.com/cj/2026/11-01/10724181.shtml" target="_blank" rel="noopener noreferrer"><div class="item-title">盖姆与斯威廷谈 AI 风险：工具使用与长期演进需分开讨论</div><div class="item-note">中新网 11/1 在世界顶尖科学家论坛采访两位科学家：盖姆强调使用方式，斯威廷认为短期仍需人类引导、长期可能挑战思考能力。意见不等于安全共识。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">中国新闻网 · 现场专访</span></div></a>
+<a class="item" href="https://www.jwview.com/jingwei/html/11-01/695055.shtml" target="_blank" rel="noopener noreferrer"><div class="item-title">谢克曼谈 AI for Science：科学发现仍要由人类引导</div><div class="item-note">11/1 刊发顶科论坛发言：AI 可用于分析脑结构与神经网络，但不会降低人类在科研引导中的重要性。区分工具愿景与已完成的实验成果。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">中国新闻网 · 中新经纬刊载</span></div></a>
+</section>
+<section aria-label="AI 安全 · 伦理 · 监管"><div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">AI 安全 · 伦理 · 监管</h2><span class="sec-tag">模型来源 · 意识伦理 · 软件可信度</span></div>
+<p class="coverage">本窗口未核验到足够的新生效 AI 法规原文，故保留安全与伦理的新讨论；不将厂商提案、客户邮件转述或观点文章写成已生效监管。X 原帖可能需要登录，可同时查阅转录。</p>
+<a class="item" href="https://huggingface.co/burner22/numbat/discussions/13" target="_blank" rel="noopener noreferrer"><div class="item-title">所谓 Anthropic “泄露权重”遭可复现质疑：张量可由名字生成</div><div class="item-note">Hugging Face 11/1 社区分析报告称，43 个完整张量的数值与名称种子驱动的 NumPy 随机序列逐位一致，削弱“真实训练检查点”说法。系社区实验，非 Anthropic 官方鉴定。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">Hugging Face · 原始分析与复现步骤</span></div></a>
+<a class="item" href="https://x.com/mustafasuleyman/status/2116913722878820528" target="_blank" rel="noopener noreferrer"><div class="item-title">Suleyman 主张不要开发有意识的超级智能</div><div class="item-note">11/1 原帖强调“目前没有意识”的判断不等于“永远不可能”；若出现意识证据，应公开讨论并重新评估开发。这是个人伦理立场，不是微软产品政策变更。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">Mustafa Suleyman · 原帖</span></div></a>
+<p class="coverage"><a href="https://badinfluence.news/items/t6v6b9aoul5rbcpsfvwdp9kh4" target="_blank" rel="noopener noreferrer">原帖受限时可读转录</a></p>
+<a class="item" href="https://simonwillison.net/2026/Nov/1/kyle-kingsbury/" target="_blank" rel="noopener noreferrer"><div class="item-title">Jepsen 引发新的软件可信度讨论：像成熟系统，不等于通过验证</div><div class="item-note">Simon Willison 11/1 引述 Kyle Kingsbury，讨论 LLM 生成文档如何影响质量信号。10/31 原测评记录 ParticleDB 多类问题；受测厂商资助，后续修复声明不能视为已独立复测。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">Simon Willison · 新评述／Jepsen 原报告</span></div></a>
+<p class="coverage"><a href="https://jepsen.io/analyses/particledb-1.1.4" target="_blank" rel="noopener noreferrer">Jepsen 原始测评与版本边界</a></p>
+</section>
+<section aria-label="科技商业 · 战略思维"><div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">科技商业 · 战略思维</h2><span class="sec-tag">算力资本 · 产业周期 · 应用价值</span></div>
+<a class="item" href="https://www.aramco.com/en/news-media/news/2026/pif-and-aramco-close-humain-transaction-to-accelerate-humains-global-growth" target="_blank" rel="noopener noreferrer"><div class="item-title">PIF 与沙特阿美完成 HUMAIN 股权交易：阿美持股 49%</div><div class="item-note">11/1 官方公告：PIF 保留 51%，阿美转入 AI 资产并于 2026 年投入约 99 亿沙特里亚尔现金。2030 年 3GW 数据中心容量是计划，不是已投产规模。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">Saudi Aramco · 官方公告</span></div></a>
+<a class="item" href="https://www.chinatalk.media/p/koreas-stock-market-crashed-1-trillion" target="_blank" rel="noopener noreferrer"><div class="item-title">ChinaTalk：韩国存储产业集中度，如何放大 AI 资本周期波动</div><div class="item-note">Richard Gray 11/1 分析韩国市场与三星、SK hynix 的集中暴露，关注存储周期、融资结构和杠杆的叠加。这是新发表的历史回顾，不是“今天暴跌一万亿美元”。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">ChinaTalk · Richard Gray 原文</span></div></a>
+<a class="item" href="https://finance.eastmoney.com/a/202611013917720661.html" target="_blank" rel="noopener noreferrer"><div class="item-title">武超则谈 AI 定价分歧：技术进展与资产价格不能简单线性外推</div><div class="item-note">11/1 专访区分产业进步与拥挤定价，并用场景复杂度、可靠性要求划分应用阶段。“产业无泡沫”是受访者观点，不是本报的事实结论或投资建议。</div><div class="badges"><span class="b b-src">11/1</span><span class="b b-src">券商中国 · 东方财富全文刊载</span></div></a>
+</section>
+<footer>每日 AI 速览 · 2026-11-02 · Asia/Shanghai<br>来源：各条原始链接及注明的全文刊载站。报道、观点、计划与验证结果分别标注。中文信息覆盖存在缺口；不构成全面监测或投资建议。<br><a href="./index.html">← 返回历史归档</a></footer></div></body></html>
