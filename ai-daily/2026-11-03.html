@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-11-03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+.coverage{color:var(--text-muted);font-size:.82rem;margin:.65rem 0 1rem;}
+.coverage a{color:var(--gold-light)}
+
+.item,.coverage{overflow-wrap:anywhere}
+@media(max-width:600px){.sec-head{flex-wrap:wrap;gap:.4rem .65rem}.sec-tag{width:100%;margin-left:0;padding-left:2.6rem}.item:hover{transform:none}}
+</style>
+</head>
+
+
+<body><div class="wrap"><header><div class="eyebrow">Daily AI Digest · 每日速览</div><h1>今日 AI 速览</h1>
+<div class="sub">2026-11-03 · 周二 · 六板块等权 · 标题流</div>
+<p class="coverage">检索截至北京时间 2026-11-03 09:46；以近 24–48 小时的新发布、原始报道和新评述为主。区分原始事件、刊发日期与未来计划；美团技术博客仅标 11/1，无法精确到小时。GitHub 周榜为独立一周窗口。</p></header>
+<section aria-label="海外头部 AI 公司"><div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">海外头部 AI 公司</h2><span class="sec-tag">产业部署 · 云开发 · 算力编排</span></div>
+<p class="coverage">本窗口重点是部署和开发基础设施更新，未核验到足够的头部公司全新旗舰模型发布；不把周报回顾或传闻当作今日模型官宣。</p>
+<a class="item" href="https://www.mediaoffice.abudhabi/en/crown-prince-news/khaled-bin-mohamed-bin-zayed-meets-sam-altman-and-witnesses-signing-of-agreements-with-openai/" target="_blank" rel="noopener noreferrer"><div class="item-title">阿布扎比与 OpenAI 签署四项合作，覆盖能源、政府和投资</div><div class="item-note">11/2 政府公告：ADNOC 将在阿联酋境内推理基础设施上部署 GPT；机器可读政府首个食品进口试点已投产，最终决定仍由官员负责。其余合作不等于均已上线。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">Abu Dhabi Media Office · 政府公告</span></div></a>
+<a class="item" href="https://cloud.google.com/blog/topics/developers-practitioners/google-cloud-developer-plugin-now-available-in-antigravity-marketplace" target="_blank" rel="noopener noreferrer"><div class="item-title">Google Cloud 开发插件进入 Antigravity：把实时文档和操作边界装在一起</div><div class="item-note">11/2 官方博客：插件集成 Developer Knowledge MCP、技能路由与云操作指导；启用计费服务、修改基础设施前要求同意。文档连接的预授权，不等于云资源写权限已获授权。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">Google Cloud · 官方博客</span></div></a>
+<a class="item" href="https://developer.nvidia.com/blog/support-new-ai-frameworks-faster-using-nvidia-workload-map/" target="_blank" rel="noopener noreferrer"><div class="item-title">NVIDIA Workload Map：让不同 AI 框架共享 Kubernetes 工作负载描述</div><div class="item-note">11/2 官方技术文：将组件、Pod 模板、副本和状态抽成统一描述，供检查工具、调度器与平台复用，减少逐框架适配代码；不是新的大模型，也非自动提升吞吐的测评结论。</div><div class="badges"><span class="b b-src">11/2 UTC · 11/3 北京</span><span class="b b-src">NVIDIA · 官方开发者博客</span></div></a>
+</section>
+<section aria-label="中国互联网 AI 团队"><div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">中国互联网 AI 团队</h2><span class="sec-tag">腾讯混元 · 美团龙猫 · 阿里千问</span></div>
+<p class="coverage">中文公开信息覆盖不完全。腾讯以官方仓库的 11/2 News 记录为准；美团新闻中心 11/2 刊载，技术博客标注 11/1，分别保留日期，不把二次报道日当首次发布日。</p>
+<a class="item" href="https://github.com/Tencent-Hunyuan/Hyra-results" target="_blank" rel="noopener noreferrer"><div class="item-title">腾讯混元开放 Hyra 科研产物：蛋白质模型、力场与复现材料</div><div class="item-note">官方仓库 11/2 更新：发布 HyInv、HyPLM-Flash 的权重与代码，并开放五个 HyFF 分子力场。仓库还公布数学论文；这些是团队发布的产物和结果，不代表均已获独立复现或同行评议。</div><div class="badges"><span class="b b-cn">11/2</span><span class="b b-src">Tencent Hunyuan · 官方仓库</span></div></a>
+<a class="item" href="https://www.meituan.com/news/NN261102280001343" target="_blank" rel="noopener noreferrer"><div class="item-title">美团 LongCat-2.5 强化原生多模态和长程智能体编程</div><div class="item-note">美团 11/2 刊载：总参数 1.6 万亿，面向复杂工程与商业分析，API 同步提供；训练使用国产算力。性能、吞吐和业务案例均为公司披露，不视为本报独立测试。</div><div class="badges"><span class="b b-cn">11/2 刊载 · 技术博客 11/1</span><span class="b b-src">美团新闻中心 · 刊载经济观察报</span></div></a>
+<p class="coverage"><a href="https://longcat.ai/blog/longcat-2.5" target="_blank" rel="noopener noreferrer">LongCat 原始技术博客（11/1）</a></p>
+<a class="item" href="https://news.mydrivers.com/1/1162/1162289.htm" target="_blank" rel="noopener noreferrer"><div class="item-title">千问 AI 眼镜 OTA 新增通话与媒体翻译</div><div class="item-note">快科技 11/2 报道：电话、线上会议和外语媒体支持实时翻译，千问 AI 穿戴 App 同步显示译文，并优化嘈杂环境识别。按报道记录功能变化，不推定所有设备已经收到更新。</div><div class="badges"><span class="b b-cn">11/2</span><span class="b b-src">快科技 · 原始报道</span></div></a>
+</section>
+<section aria-label="GitHub 每日好项目"><div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">GitHub 每日好项目</h2><span class="sec-tag">真实 daily / weekly Trending</span></div>
+<p class="coverage">直接抓取今日 GitHub 日榜、周榜 HTML；以下为榜单显示的新增星数，不是历史总星数。周榜使用一周窗口；入榜不等于新发布，热度不代表质量认证。</p>
+<a class="item" href="https://github.com/vercel-labs/agent-desktop" target="_blank" rel="noopener noreferrer"><div class="item-title">vercel-labs/agent-desktop · 当日新增 2,275 星</div><div class="item-note">面向 AI Agent 的电脑操作 CLI，提供计算机交互执行层；仓库能力为自述，本期未安装或运行。</div><div class="badges"><span class="b b-star">当日 +2,275</span><span class="b b-src">GitHub daily Trending · Rust</span></div></a>
+<a class="item" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener noreferrer"><div class="item-title">thedotmack/claude-mem · 当日新增 1,803 星</div><div class="item-note">捕获、压缩会话活动并在后续会话注入上下文，支持多种编码助手；需要核对记忆存储与敏感内容保留范围。</div><div class="badges"><span class="b b-star">当日 +1,803</span><span class="b b-src">GitHub daily Trending · TypeScript</span></div></a>
+<a class="item" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer"><div class="item-title">cloudflare/security-audit-skill · 本周新增 9,155 星</div><div class="item-note">多阶段安全审计技能，强调独立核验和机器可读发现；是周榜热度，不等于审计覆盖率或生产效果。</div><div class="badges"><span class="b b-star">本周 +9,155</span><span class="b b-src">GitHub weekly Trending · JavaScript</span></div></a>
+<p class="coverage">榜单原页：<a href="https://github.com/trending?since=daily">Daily Trending</a> · <a href="https://github.com/trending?since=weekly">Weekly Trending</a>。新增星数为本次抓取快照，随后可能变化。</p>
+</section>
+<section aria-label="峰会 · 访谈 · 演讲"><div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">峰会 · 访谈 · 演讲</h2><span class="sec-tag">ADIPEC · 数学研究 · 医疗边界</span></div>
+<p class="coverage">三条按 11/2 新刊发材料入选。ADIPEC 发言为当日现场；田野专访关联 10/31 讲座，陆林采访仅注明“近日”，不冒充三场当天新发生的会议。</p>
+<a class="item" href="https://finance.yahoo.com/video/altman-says-ai-transform-economics-092830958.html" target="_blank" rel="noopener noreferrer"><div class="item-title">Altman 在 ADIPEC 谈 AI 与能源：从单向索取算力到改善行业能力</div><div class="item-note">Bloomberg 11/2 现场视频及转录：他认为 AI 既依赖能源，也能帮助能源行业，并把人机协作描述为扩大个人创新能力的机会。这是演讲判断，不是已兑现的成本或效率指标。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">Bloomberg · Yahoo 现场视频与转录</span></div></a>
+<a class="item" href="https://www.thecover.cn/news/o6q7J2yUnYGH90qSdq8Jkw==" target="_blank" rel="noopener noreferrer"><div class="item-title">田野谈人机数学研究：使用 AI，也要说明贡献并核验论证</div><div class="item-note">封面新闻 11/2 刊发专访，关联 10/31 成都讲座。他介绍用 AI 讨论研究想法，并明确应在论文中说明使用环节；AI 手稿公开，不意味着结论已获得独立确认。</div><div class="badges"><span class="b b-src">11/2 刊发 · 10/31 讲座</span><span class="b b-src">封面新闻 · 记者专访</span></div></a>
+<a class="item" href="https://cbgc.scol.com.cn/news/8108265" target="_blank" rel="noopener noreferrer"><div class="item-title">陆林谈脑科学与 AI：研究工具在进步，在线自测不能替代诊断</div><div class="item-note">封面新闻 11/2 专访讨论 AI 辅助认知训练及专业服务的空间，同时强调网络量表不能取代临床评估。这里记录专家对工具边界的意见，不把研究方向写成已获验证的治疗效果。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">封面新闻 · 川观新闻全文刊载</span></div></a>
+</section>
+<section aria-label="AI 安全 · 伦理 · 监管"><div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">AI 安全 · 伦理 · 监管</h2><span class="sec-tag">补丁回移 · 平台治理 · 对齐论证</span></div>
+<p class="coverage">本窗口未核验到新的生效法规原文，监管项暂无确认更新；以下保留新发布的安全实践、平台调查与对齐讨论。观点不当定论，披露不当独立复测。</p>
+<a class="item" href="https://blog.trailofbits.com/2026/11/02/backporting-security-fixes-at-scale-with-codex/" target="_blank" rel="noopener noreferrer"><div class="item-title">Trail of Bits 用 Codex 回移安全补丁：Agent 准备证据，人类审核提交</div><div class="item-note">11/2 团队报告：截至 10/29，项目帮助 149 个不同 CVE 的修复进入稳定内核。简单回移约需 30 分钟人工准备与审查；不含项目初始搭建，仍需回归测试与维护者接受。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">Trail of Bits · 一手实践报告</span></div></a>
+<a class="item" href="https://www.wired.com/story/hundreds-of-mundane-ai-apps-are-hiding-abusive-deepfake-features/" target="_blank" rel="noopener noreferrer"><div class="item-title">WIRED 调查：约 400 个普通外观的 AI 应用与网站暗藏侵害性深伪功能</div><div class="item-note">11/2 原始调查发现，部分服务会按访问条件切换内容，以绕过审核；Apple 在收到问询后移除 19 个应用。问题不只在模型输出，也在分发与审核链路。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">WIRED · Matt Burgess 原始调查</span></div></a>
+<a class="item" href="https://www.lesswrong.com/posts/5a4tuSNDNodPsiS26/some-coherence-arguments-are-two-different-things-in-a" target="_blank" rel="noopener noreferrer"><div class="item-title">Steven Byrnes：行为自洽，不必然等于只追逐长期最终目标</div><div class="item-note">11/2 原文拆解市场竞争、自我修改与训练中的三类“连贯性论证”：推动自洽的压力，与推动极端长期结果导向的压力，强度和条件并不相同。属于对齐理论争论，非实证安全结论。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">Steven Byrnes · LessWrong / AI Alignment Forum</span></div></a>
+</section>
+<section aria-label="科技商业 · 战略思维"><div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">科技商业 · 战略思维</h2><span class="sec-tag">光互连并购 · 行为模型 · 算力零售</span></div>
+<a class="item" href="https://investor.marvell.com/news-events/press-releases/detail/1040/marvell-and-lumentum-to-combine-creating-a-category-leader-in-ai-connectivity" target="_blank" rel="noopener noreferrer"><div class="item-title">Marvell 拟以全股票方式收购 Lumentum，隐含企业价值约 1150 亿美元</div><div class="item-note">11/2 双方公告：每股 Lumentum 换 4.5 股 Marvell，意在整合电互连、光学和制造能力。预计 2028 年上半年交割，仍需股东与监管批准；不能写成已完成收购。</div><div class="badges"><span class="b b-src">11/2</span><span class="b b-src">Marvell · 双方联合公告</span></div></a>
+<a class="item" href="https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/" target="_blank" rel="noopener noreferrer"><div class="item-title">42AI 获 6250 万美元种子融资：行为世界模型先切入金融经纪业务</div><div class="item-note">TechCrunch 11/2 专访创始团队：模型输出个人决策概率，已在部分经纪机构使用；预测能力和初期业务结果主要来自公司自述，记者同时追问隐私与客户利益冲突。</div><div class="badges"><span class="b b-src">11/2 UTC · 11/3 北京</span><span class="b b-src">TechCrunch · Ram Iyer 原始采访</span></div></a>
+<a class="item" href="https://www.36kr.com/p/4052371477321348" target="_blank" rel="noopener noreferrer"><div class="item-title">Token 走进直播电商：渠道扩大之后，计量与复购仍是难题</div><div class="item-note">Tech商业 11/2 文章讨论千问办公进入李佳琦直播间：套餐、硬件和行业场景共同构成分发入口。天猫充值中心早在 9/3 上线；“掌握场景定价权”是作者分析，不是已证实的商业结果。</div><div class="badges"><span class="b b-src">11/2 作者日期</span><span class="b b-src">Tech商业 · 36氪授权全文</span></div></a>
+</section>
+<footer>每日 AI 速览 · 2026-11-03 · Asia/Shanghai<br>来源：各条原始发布、采访及注明的授权全文；聚合站仅用于发现线索。公司自报、研究观点、计划与独立验证分别标注。中文信息覆盖存在缺口；不构成全面监测或投资建议。<br><a href="./index.html">← 返回历史归档</a></footer></div></body></html>
