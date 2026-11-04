@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-11-04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+.coverage{color:var(--text-muted);font-size:.82rem;margin:.65rem 0 1rem;}
+.coverage a{color:var(--gold-light)}
+
+.item,.coverage{overflow-wrap:anywhere}
+@media(max-width:600px){.sec-head{flex-wrap:wrap;gap:.4rem .65rem}.sec-tag{width:100%;margin-left:0;padding-left:2.6rem}.item:hover{transform:none}}
+</style>
+</head>
+
+
+
+<body><div class="wrap"><header><div class="eyebrow">Daily AI Digest · 每日速览</div><h1>今日 AI 速览</h1>
+<div class="sub">2026-11-04 · 周三 · 六板块等权 · 18 条</div>
+<p class="coverage">检索截至北京时间 2026-11-04 09:48。聚焦近24–48小时的新发布、原始报道与实质更新；原文只给日期的边界条目已单列，不伪造小时。GitHub 周榜使用独立一周窗口。</p></header>
+<section aria-label="海外头部 AI 公司"><div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">海外头部 AI 公司</h2><span class="sec-tag">科学工作流 · 教育产品 · 长程会话</span></div><p class="coverage">重点看工具如何进入真实工作流。Anthropic 公告标注 11/2、未提供时分，属于本期 48 小时窗口的日期边界；不将其写成今日首发。</p>
+<a class="item" href="https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/" target="_blank" rel="noopener noreferrer"><div class="item-title">Google Antigravity 新增化学信息学技能：模型编排，专业工具算分子</div><div class="item-note">11/3 官方技术演示：约一小时检索数千化合物、分析匹配分子对并提出合成路线；计算交给 RDKit 等工具。候选分子仍须合成与实验验证，不是已发现可用新药。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">Google DeepMind · 原始技术文</span></div></a>
+<a class="item" href="https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/" target="_blank" rel="noopener noreferrer"><div class="item-title">Google 将 Guided Learning 带进课堂：教学引导与管理员开关一起推进</div><div class="item-note">11/3 公告：教师布置的引导学习在 Classroom 全球开放，Search 学生账号试点本月稍后启动；K–12 多项 AI 产品将改为管理员显式开启，具体管控变更仍待后续落地。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">Google for Education · 官方公告</span></div></a>
+<a class="item" href="https://claude.com/resources/articles/message-threads" target="_blank" rel="noopener noreferrer"><div class="item-title">Anthropic Message threads 公测：长会话只传增量，但不减少计费上下文</div><div class="item-note">11/2 官方说明：会话在线程内存中加密保存，闲置五分钟过期；50万至100万 token 请求的首 token 中位延迟据称下降约35%。模型仍读取全上下文，不能把传输优化当作 token 费用下降。</div><div class="badges"><span class="b b-src">11/2 · 未给时分</span><span class="b b-src">Anthropic · 官方公告</span></div></a>
+</section>
+<section aria-label="中国互联网 AI 团队"><div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">中国互联网 AI 团队</h2><span class="sec-tag">千问系统入口 · 商汤交付 · 字节出海</span></div><p class="coverage">中文公开来源覆盖不完全。国行预览版按 IT之家今晨实测入选；商汤正文为 11/2、站内索引出现 11/3，以正文和发布时间元数据为准；商业数据注明消息来源。</p>
+<a class="item" href="https://www.ithome.com/1/021/861.htm" target="_blank" rel="noopener noreferrer"><div class="item-title">千问进入国行 Apple 智能：今晨 iOS 27.3 开发者预览版已有实测</div><div class="item-note">IT之家 11/4 03:08 报道在国行设备看到设置入口；Siri、写作工具和视觉智能的部分体验接入千问。当前是开发者预览版，不能写成面向所有用户的正式版已推送。</div><div class="badges"><span class="b b-cn">11/4 03:08</span><span class="b b-src">IT之家 · 原始实测报道</span></div></a>
+<a class="item" href="https://www.sensetime.com/cn/news/sensenova-6-8-flash-release-20261103-1421" target="_blank" rel="noopener noreferrer"><div class="item-title">商汤 SenseNova 6.8 Flash 正式版：长期任务与可编辑设计产物并进</div><div class="item-note">11/2 19:57 北京时间发布：支持办公协作以及 Web、SVG、PPT、Blender 等交付形式。主动提醒案例来自小浣熊内部研发版；模型正式发布，不等于演示功能已全部开放。</div><div class="badges"><span class="b b-cn">11/2 19:57 北京</span><span class="b b-src">商汤 · 官方发布</span></div></a>
+<a class="item" href="https://www.36kr.com/p/4053733300196487" target="_blank" rel="noopener noreferrer"><div class="item-title">36氪独家：Seedance 海外收入占比达50%，腾讯、B站是国内大客户</div><div class="item-note">11/3 原始报道援引接近火山引擎人士：过去半年海外收入增长近5倍。这里是媒体获悉的经营数据，不是经审计披露；模型更新与版权合作是背景，未被重新算作今日发布。</div><div class="badges"><span class="b b-cn">11/3 16:28</span><span class="b b-src">36氪智能涌现 · 张雨忻独家</span></div></a>
+</section>
+<section aria-label="GitHub 每日好项目"><div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">GitHub 每日好项目</h2><span class="sec-tag">真实 daily / weekly Trending</span></div><p class="coverage">北京时间 11/4 09:43 直接抓取 GitHub 日榜和周榜；新增星数来自榜单快照，不是历史总星数。以下项目已读仓库说明，但未安装或运行，热度不代表质量认证。</p>
+<a class="item" href="https://github.com/max-sixty/worktrunk" target="_blank" rel="noopener noreferrer"><div class="item-title">max-sixty/worktrunk · 当日新增 438 星</div><div class="item-note">管理 Git worktree 的 Rust CLI，提供切换、创建、清理与工作流自动化；适合隔离多条并行改动，合并质量仍需代码审查。</div><div class="badges"><span class="b b-star">当日 +438</span><span class="b b-src">GitHub daily Trending · Rust</span></div></a>
+<a class="item" href="https://github.com/JustVugg/colibri" target="_blank" rel="noopener noreferrer"><div class="item-title">JustVugg/colibri · 当日新增 802 星</div><div class="item-note">分层加载混合专家模型的 C 推理引擎：热数据驻留 GPU/RAM，冷专家从 NVMe 读取；可运行不等于高吞吐，效果取决于内存、磁盘与模型。</div><div class="badges"><span class="b b-star">当日 +802</span><span class="b b-src">GitHub daily Trending · C</span></div></a>
+<a class="item" href="https://github.com/cloudflare/security-audit-skill" target="_blank" rel="noopener noreferrer"><div class="item-title">cloudflare/security-audit-skill · 本周新增 8,598 星</div><div class="item-note">多阶段安全审计技能，强调独立核验、可机读发现与系统上下文；入榜不表示已经找全漏洞，也不替代工程团队修复与验收。</div><div class="badges"><span class="b b-star">本周 +8,598</span><span class="b b-src">GitHub weekly Trending · JavaScript</span></div></a>
+<p class="coverage">榜单原页：<a href="https://github.com/trending?since=daily">Daily Trending</a> · <a href="https://github.com/trending?since=weekly">Weekly Trending</a>。星数为抓取快照，随后可能变化。</p>
+</section>
+<section aria-label="峰会 · 访谈 · 演讲"><div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">峰会 · 访谈 · 演讲</h2><span class="sec-tag">财务事实层 · 语音任务 · 金融领袖峰会</span></div><p class="coverage">两篇 11/3 原始访谈，加一条香港金融管理局峰会场边视频。视频读到公开转录，未核对原音频；受访者观点与企业案例不当作独立验证结果。</p>
+<a class="item" href="https://www.unite.ai/john-glasgow-ceo-cfo-and-founder-of-campfire-interview-series/" target="_blank" rel="noopener noreferrer"><div class="item-title">Campfire 创始人 John Glasgow：已发生、已承诺和 AI 估计必须分层</div><div class="item-note">11/3 专访：总账保留交易明细，预测只估计真正未知部分；Forecast 不自动过账，Agent 动作应可追溯到原始账务。重点不是给 ERP 加聊天框，而是让事实、估计与执行边界能被审查。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">Unite.AI · Antoine Tardif 原始专访</span></div></a>
+<a class="item" href="https://www.unite.ai/alex-smola-co-founder-of-boson-ai-interview-series/" target="_blank" rel="noopener noreferrer"><div class="item-title">Boson AI 联合创始人 Alex Smola：语音自然，不等于任务完成可靠</div><div class="item-note">11/3 专访强调被打断后的恢复、系统写权限、失败转人工与推理成本。演示和生产的差别，在于能否接上真实客户历史、承受工具失败并完成任务；案例成效为受访者自述。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">Unite.AI · Antoine Tardif 原始专访</span></div></a>
+<a class="item" href="https://finance.yahoo.com/video/ai-bubble-wall-street-titans-061821566.html" target="_blank" rel="noopener noreferrer"><div class="item-title">香港金融领袖峰会场边：多位机构负责人不认同 AI 已全面泡沫化</div><div class="item-note">Bloomberg 11/3 视频集纳 Solomon、Johnson、Pick 等人看法；Roman 认为 AI 融资尚未明显扭曲更广泛信用市场。是受访者的市场判断，不能据此断言风险不存在或形成投资结论。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">Bloomberg · Yahoo 原始视频与转录</span></div></a>
+</section>
+<section aria-label="AI 安全 · 伦理 · 监管"><div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">AI 安全 · 伦理 · 监管</h2><span class="sec-tag">模型身份证明 · 算力盗用 · 基础设施韧性</span></div><p class="coverage">本次未核验到足够的新生效法规原文，监管新增暂无确认更新；以下为原始安全研究和政府风险评估。FlashProve 正文 11/2、页面元数据 11/3 更新，按更新材料跟踪。</p>
+<a class="item" href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener noreferrer"><div class="item-title">FlashProve 开源研究原型：证明回复来自承诺权重，不证明答案正确</div><div class="item-note">Anthropic 11/3 更新材料：零知识证明让用户无需知道权重即可核验推理来源。当前仅针对整数化模型与贪心解码，证明仍有显著开销，快速代码也没有完整形式化保证；不是已部署的通用防护。</div><div class="badges"><span class="b b-src">11/2 正文 · 11/3 更新</span><span class="b b-src">Anthropic Frontier Red Team · 原始研究</span></div></a>
+<a class="item" href="https://cloud.google.com/blog/topics/threat-intelligence/llmjacking-monetizing-compromised-cloud-models/" target="_blank" rel="noopener noreferrer"><div class="item-title">Google Threat Intelligence：LLMJacking 已形成盗取访问权与转售分工</div><div class="item-note">11/3 一手事件响应报告：攻击者利用泄露身份令牌或暴露端点，再通过非法模型网关转售调用；个案单日欺诈消耗超过10万美元。它首先是身份、端点与账单监测问题，不只是提示词问题。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">Google GTIG / Mandiant · 原始事件报告</span></div></a>
+<a class="item" href="https://www.ncsc.gov.uk/news/cyber-chief-uk-facing-ai-powered-attacks-on-critical-infrastructure-in-two-years" target="_blank" rel="noopener noreferrer"><div class="item-title">英国 NCSC 警告：AI 会更快放大长期容忍的基础安全缺陷</div><div class="item-note">11/3 报告及发布说明认为，两年内敌对方采用 AI 极可能提高入侵效率，并警示关键基础设施勒索风险。是前瞻风险判断，不是攻击已发生；机构应补齐资产暴露与韧性基础投入。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">英国 NCSC · 官方报告发布说明</span></div></a>
+</section>
+<section aria-label="科技商业 · 战略思维"><div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">科技商业 · 战略思维</h2><span class="sec-tag">语音入口并购 · 商业平台 · Token 零售</span></div><p class="coverage">本期看企业如何连接客户上下文、交易结果与分发渠道。并购协议不是交割完成；营收和平台交易额分别记录，不把市场判断混入财报事实。</p>
+<a class="item" href="https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-cresta/" target="_blank" rel="noopener noreferrer"><div class="item-title">Salesforce 签约收购 Cresta：把语音交互接到 CRM 与业务执行上</div><div class="item-note">11/2 21:00 UTC 公告（北京11/3）：拟把语音 Agent、实时坐席辅导与 Service Cloud 连接，目标是让对话关联客户与结果。预计2028财年第一季度交割，仍需审批；官方未公布交易价格。</div><div class="badges"><span class="b b-src">11/2 UTC · 11/3 北京</span><span class="b b-src">Salesforce · 官方并购公告</span></div></a>
+<a class="item" href="https://www.shopify.com/news/shopify-q3-2026-financial-results" target="_blank" rel="noopener noreferrer"><div class="item-title">Shopify Q3：营收增长32%，继续把商业能力铺向 Agent 等新入口</div><div class="item-note">11/3 官方业绩：平台商品交易额1190亿美元，自由现金流率22%。管理层强调服务现有商家并建设 Agent 商业入口；这些总体指标不能直接解释为 AI 带来的收入或效率增量。</div><div class="badges"><span class="b b-src">11/3</span><span class="b b-src">Shopify · 原始季度业绩公告</span></div></a>
+<a class="item" href="https://www.36kr.com/p/4053687541896321" target="_blank" rel="noopener noreferrer"><div class="item-title">Token 走进直播电商：销售套餐不等于模型调用已经发生</div><div class="item-note">界面新闻 11/3 报道李佳琦销售 AI 调用额度，并比较官方旗舰店和第三方授权套餐。天猫、京东入口早在9月布局；本次看渠道与计量变化，不把售出额度当真实消耗或持续复购。</div><div class="badges"><span class="b b-src">11/3 16:15 刊载</span><span class="b b-src">界面新闻 · 江怡曼 / 36氪授权全文</span></div></a>
+</section>
+<footer>每日 AI 速览 · 2026-11-04 · Asia/Shanghai<br>来源：各条原始公告、研究、采访与注明的授权全文；聚合站仅用于发现线索。公司披露、匿名消息、研究演示与独立验证分别标注。中文信息覆盖存在缺口，不构成全面监测或投资建议。<br><a href="./index.html">← 返回历史归档</a></footer></div></body></html>
