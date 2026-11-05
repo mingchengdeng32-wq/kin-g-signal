@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-11-05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+.coverage{color:var(--text-muted);font-size:.82rem;margin:.65rem 0 1rem;}
+.coverage a{color:var(--gold-light)}
+
+.item,.coverage{overflow-wrap:anywhere}
+@media(max-width:600px){.sec-head{flex-wrap:wrap;gap:.4rem .65rem}.sec-tag{width:100%;margin-left:0;padding-left:2.6rem}.item:hover{transform:none}}
+</style>
+</head>
+
+
+
+
+<body><div class="wrap"><header><div class="eyebrow">Daily AI Digest · 每日速览</div><h1>今日 AI 速览</h1>
+<div class="sub">2026-11-05 · 周四 · 六板块等权 · 18 条</div>
+<p class="coverage">检索截至北京时间 2026-11-05 10:18。聚焦近24–48小时的新公告、原始报道与研究介绍；日期以原文正文或元数据为准，仅给日期时不补造时分。GitHub 周榜为独立一周热度窗口。</p></header>
+<section aria-label="海外头部 AI 公司"><div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">海外头部 AI 公司</h2><span class="sec-tag">代码协作 · 企业数据 · 语音客服</span></div><p class="coverage">三份官方新公告。Google Cloud 正文与元数据标北京时间 11/5，虽被部分聚合站归到 11/4，本刊以原文为准；收购待交割、预览待验证，不混写成已全面上线。</p>
+<a class="item" href="https://openai.com/index/openai-to-acquire-pierre/" target="_blank" rel="noopener noreferrer"><div class="item-title">OpenAI 拟收购 Pierre：Codex 继续补齐代码浏览、审查与 Git 工作流</div><div class="item-note">11/4 官方公告：Trees、Diffs 已用于 Codex；未来拟整合 Code Storage 等能力，开源项目保持开源。交易仍待常规条件及监管批准，双方在交割前保持独立，不是已完成收购。</div><div class="badges"><span class="b b-src">11/4 · 原文日期</span><span class="b b-src">OpenAI · 原始并购公告</span></div></a>
+<a class="item" href="https://cloud.google.com/blog/products/databases/whats-new-across-googles-agentic-data-cloud/" target="_blank" rel="noopener noreferrer"><div class="item-title">Google Agentic Data Cloud：把业务定义和用户权限带进 Agent 查询</div><div class="item-note">今晨官方更新：跨云湖仓连接、Knowledge Catalog 与语义模型协同，生成 SQL 前先解析业务口径、可信表和关联路径。自动补充上下文、管理工作台等仍在预览；不是让模型自行决定财务公式。</div><div class="badges"><span class="b b-src">11/5 06:00 北京</span><span class="b b-src">Google Cloud · 官方产品更新</span></div></a>
+<a class="item" href="https://elevenlabs.io/blog/elevenagents-contact-center-integrations" target="_blank" rel="noopener noreferrer"><div class="item-title">ElevenAgents 原生接入四大联络中心：沿用现有路由，转人工带回上下文</div><div class="item-note">11/4 公告覆盖 NiCE、Genesys Cloud、Amazon Connect、Five9，其他平台可走 SIP。Agent 可核验来电者、执行任务并记入 CRM；降本与体验改善属于厂商主张，各平台开通条件仍有区别。</div><div class="badges"><span class="b b-src">11/4 20:00 北京</span><span class="b b-src">ElevenLabs · 原始集成公告</span></div></a>
+</section>
+<section aria-label="中国互联网 AI 团队"><div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">中国互联网 AI 团队</h2><span class="sec-tag">混元 Hy4 · 连接器生态 · 硬件入口</span></div><p class="coverage">一份腾讯官方发布、两篇中文原始报道。中文公开源覆盖仍不完全；性能分数不作独立实测结论，产品新升级与报道中回顾的旧动作分别标注。</p>
+<a class="item" href="https://www.tencent.com/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/" target="_blank" rel="noopener noreferrer"><div class="item-title">腾讯 Hy4 正式发布：新增视觉理解与电脑操作，权重尚待开放</div><div class="item-note">11/4 公告称模型已进入 TokenHub、WorkBuddy、CodeBuddy 等产品，可操作命令行和图形界面。官方表示权重及系统卡将在未来数日发布；不能把可调用等同于可下载，安全与性能比较为腾讯评估。</div><div class="badges"><span class="b b-cn">11/4 16:06 北京</span><span class="b b-src">腾讯 · 官方发布</span></div></a>
+<a class="item" href="https://m.ebrun.com/718235.html" target="_blank" rel="noopener noreferrer"><div class="item-title">灵光外部连接器扩至40项：从单次代办转向持续跟进生活事务</div><div class="item-note">亿邦动力 11/4 原创报道：新增播客、夸克网盘、哈啰打车、麦当劳与微信读书等服务。此次是生态扩容，灵光2.0本身发布于10/27；持续办事仍依赖用户授权与服务方开放接口。</div><div class="badges"><span class="b b-cn">11/4 15:42 北京</span><span class="b b-src">亿邦动力 · 胡镤心原创报道</span></div></a>
+<a class="item" href="https://m.21jingji.com/article/20261104/ed657e76cc06c6fe4edb017936ee1c34.html" target="_blank" rel="noopener noreferrer"><div class="item-title">21世纪经济报道：腾讯、字节、阿里的语音硬件，争的是 Agent 入口</div><div class="item-note">11/4 新分析比较腾讯接入伙伴硬件、字节绑定超级应用、阿里自有品牌闭环三条路线。文中多项设备动作发生于此前数月，部分互通仍在测试；这是渠道与成本结构观察，不是今天同时发布新品。</div><div class="badges"><span class="b b-cn">11/4 07:00 北京</span><span class="b b-src">21世纪经济报道 · 石恩泽原始报道</span></div></a>
+</section>
+<section aria-label="GitHub 每日好项目"><div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">GitHub 每日好项目</h2><span class="sec-tag">真实 daily / weekly Trending</span></div><p class="coverage">北京时间 11/05 10:13 直接读取 GitHub 日榜与周榜。直接读取 GitHub 日榜与周榜；新增星数、语言与仓库名称来自本期保存的真实快照，不是历史总星数排序。已核对 README，未安装运行，入榜不代表质量或安全认证。</p>
+<a class="item" href="https://github.com/NVIDIA/auto-ontology" target="_blank" rel="noopener noreferrer"><div class="item-title">NVIDIA/auto-ontology · 当日新增 2,050 星</div><div class="item-note">从企业元数据构建本体与语义上下文，经 MCP、CLI、API 提供业务口径、血缘和查询校验；有助于约束自然语言查数，但仍需认证口径与数据权限。</div><div class="badges"><span class="b b-star">当日 +2,050</span><span class="b b-src">GitHub daily Trending · Python</span></div></a>
+<a class="item" href="https://github.com/vercel-labs/agent-desktop" target="_blank" rel="noopener noreferrer"><div class="item-title">vercel-labs/agent-desktop · 当日新增 2,470 星</div><div class="item-note">供 AI Agent 使用电脑的命令行工具，围绕桌面观察与操作建立执行接口；操作能力不自动包含业务授权，部署仍须限定会话与可触达资源。</div><div class="badges"><span class="b b-star">当日 +2,470</span><span class="b b-src">GitHub daily Trending · Rust</span></div></a>
+<a class="item" href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener noreferrer"><div class="item-title">Nutlope/hallmark · 本周新增 7,622 星</div><div class="item-note">面向编码 Agent 的界面设计技能，包含风格约束、静态及浏览器检查，并可核对改版是否保留既有功能；规则与视觉审查不能代替真实用户验收。</div><div class="badges"><span class="b b-star">本周 +7,622</span><span class="b b-src">GitHub weekly Trending · CSS</span></div></a>
+<p class="coverage">榜单原页：<a href="https://github.com/trending?since=daily">Daily Trending</a> · <a href="https://github.com/trending?since=weekly">Weekly Trending</a>。新增星数为抓取快照，随后可能变化。</p>
+</section>
+<section aria-label="峰会 · 访谈 · 演讲"><div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">峰会 · 访谈 · 演讲</h2><span class="sec-tag">工业边缘 AI · 法律证据链 · 乌镇教育讨论</span></div><p class="coverage">两篇 11/4 书面原始专访与一篇同日峰会现场报道；受访者自述、记者记录与独立评估分开。本栏不以发布预告冒充已发生的演讲。</p>
+<a class="item" href="https://www.unite.ai/andrei-kulik-co-founder-of-xenom-interview-series/" target="_blank" rel="noopener noreferrer"><div class="item-title">XENOM 创始人 Andrei Kulik：安全帽端侧处理，风险告警由主管核验</div><div class="item-note">11/4 专访：语音和跌落等时效任务在设备端处理，站点平台负责整体分析；疑似受损状态只触发人工检查，不自动处罚工人。隐私用途限制与误报治理是设计主张，不能据此认定已消除现场风险。</div><div class="badges"><span class="b b-src">11/4 · 原文日期</span><span class="b b-src">Unite.AI · Antoine Tardif 原始专访</span></div></a>
+<a class="item" href="https://www.unite.ai/roderick-lucas-co-founder-and-ceo-of-moonlit-interview-series/" target="_blank" rel="noopener noreferrer"><div class="item-title">Moonlit CEO Roderick Lucas：法律 AI 先有可核验资料层，再谈自动解释</div><div class="item-note">11/4 专访：保留官方原文与引用关系，以统一资料层供平台、API和只读 MCP 工具使用；评论稿由署名专家复核。真实引文仍可能被误读，不能把引用可追溯当作法律解释正确。</div><div class="badges"><span class="b b-src">11/4 · 原文日期</span><span class="b b-src">Unite.AI · Antoine Tardif 原始专访</span></div></a>
+<a class="item" href="https://dzrb.dzng.com/general/0/NEWS3795811XSFQFEMVNGAYF" target="_blank" rel="noopener noreferrer"><div class="item-title">乌镇峰会现场：AI 几分钟找齐资料，人才培养如何保留思考过程</div><div class="item-note">大众新闻 11/4 现场报道：嘉宾讨论信息搜集自动化后的隐性能力流失，以及随技术更新的人机协作原则。问题不是只算获取答案的速度，还要看理解与责任；这是一场讨论，并非能力退化的实验结论。</div><div class="badges"><span class="b b-src">11/4 17:35 北京</span><span class="b b-src">大众新闻 · 王嘉一现场报道</span></div></a>
+</section>
+<section aria-label="AI 安全 · 伦理 · 监管"><div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">AI 安全 · 伦理 · 监管</h2><span class="sec-tag">Agent 访问策略 · 分级审批 · 主观分类边界</span></div><p class="coverage">本次检索未确认窗口内新的生效法规原文，监管新增暂无确认更新。以下三条分别是厂商访问控制、审批机制说明与人机协作研究，不当作监管义务或通用防护保证。</p>
+<a class="item" href="https://blog.cloudflare.com/personal-agents-visibility-control/" target="_blank" rel="noopener noreferrer"><div class="item-title">Cloudflare 增加个人 Agent 识别与逐个放行策略：认出 Agent 不等于认出授权</div><div class="item-note">11/4 发布个人助手流量分析及细粒度 Allow／Block 策略，账户防滥用产品还可关联用户。官方明确，携带用户关系、权限与责任上下文仍是后续目标；身份分类不能替代用户授权校验。</div><div class="badges"><span class="b b-src">11/4 22:00 北京</span><span class="b b-src">Cloudflare · 官方安全产品公告</span></div></a>
+<a class="item" href="https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters/" target="_blank" rel="noopener noreferrer"><div class="item-title">AWS Smart Approvals：模型判断能少问一次，不能扩一次权限</div><div class="item-note">11/4 官方说明：先执行权限与强制人工审批规则，再由分类器审查合资格动作；自动批准仅对精确参数单次有效，超时回到人工。审批日志不证明执行完成，仍需目标系统记录确认结果。</div><div class="badges"><span class="b b-src">11/5 00:33 北京 · 原文11/4</span><span class="b b-src">AWS · 原始治理机制说明</span></div></a>
+<a class="item" href="https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/" target="_blank" rel="noopener noreferrer"><div class="item-title">Google Agile Deliberation：先澄清人的灰区定义，再优化分类器</div><div class="item-note">11/4 研究通过范围拆分、边界图像反馈与提示优化帮助用户明确主观概念，包含18场真人会话。适用于理解内容审核等规则分歧，但小规模主观分类研究不代表已解决价值对齐或群体公平问题。</div><div class="badges"><span class="b b-src">11/4 · 原文日期</span><span class="b b-src">Google Research · 原始研究介绍</span></div></a>
+</section>
+<section aria-label="科技商业 · 战略思维"><div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">科技商业 · 战略思维</h2><span class="sec-tag">电商分发 · 算力效率 · 数据中心许可</span></div><p class="coverage">从商品连接、推理成本与建设许可看商业约束。厂商指标是披露口径，作者观点是情景判断，不把技术演示推算成企业利润，也不提供投资结论。</p>
+<a class="item" href="https://www.aboutamazon.com/news/retail/amazon-shop-direct-merchant-workspace" target="_blank" rel="noopener noreferrer"><div class="item-title">Amazon 推出 Shop Direct 商家工作台：把站外商品接进 Agent 购物入口</div><div class="item-note">11/4 官方公告：合资格商家可免费提交现有商品目录，接入 Amazon 与 Alexa for Shopping。普通 Shop Direct 导流至商家站，符合条件的 Buy for Me 才代购；商家仍负责履约与售后，非所有交易转成平台自营。</div><div class="badges"><span class="b b-src">11/4 22:00 北京</span><span class="b b-src">Amazon · 原始商家产品公告</span></div></a>
+<a class="item" href="https://www.together.ai/blog/together-compiler-continual-compilation-for-ai-inference" target="_blank" rel="noopener noreferrer"><div class="item-title">Together Compiler：推理优化从一次调参，转向随流量持续重编译</div><div class="item-note">11/4 原始技术文：依据模型、硬件、流量形状，用常驻引擎快速试验并重载候选优化。厂商报告部分开放模型吞吐最高提升2.6倍；优势取决于基线和负载，不等于所有用户成本同比例下降。</div><div class="badges"><span class="b b-src">11/4 · 原文日期</span><span class="b b-src">Together AI · 原始技术与业务说明</span></div></a>
+<a class="item" href="https://stratechery.com/2026/ai-on-the-ballot/" target="_blank" rel="noopener noreferrer"><div class="item-title">Ben Thompson：数据中心的长期稀缺，可能来自政治许可而不只是芯片</div><div class="item-note">11/4 原文从地方反对建设切入，推演已有许可的资产、超大云厂商与新兴算力商将受到不同影响。核心是把许可纳入产能假设；这是作者的条件性战略判断，不是所有项目停建或长期供给不足已成定论。</div><div class="badges"><span class="b b-src">11/4 · 原文日期</span><span class="b b-src">Stratechery · Ben Thompson 原始评论</span></div></a>
+</section>
+<footer>每日 AI 速览 · 2026-11-05 · Asia/Shanghai<br>来源：各条官方公告、原始研究、采访与现场报道；聚合站仅用于线索发现。厂商披露、受访者主张与作者判断分别注明；中文信息覆盖存在缺口，不构成全面监测或投资建议。<br><a href="./index.html">← 返回历史归档</a></footer></div></body></html>
