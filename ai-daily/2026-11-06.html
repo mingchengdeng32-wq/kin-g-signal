@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>每日 AI 速览 · 2026-11-06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+.coverage{color:var(--text-muted);font-size:.82rem;margin:.65rem 0 1rem;}
+.coverage a{color:var(--gold-light)}
+
+.item,.coverage{overflow-wrap:anywhere}
+@media(max-width:600px){.sec-head{flex-wrap:wrap;gap:.4rem .65rem}.sec-tag{width:100%;margin-left:0;padding-left:2.6rem}.item:hover{transform:none}}
+</style>
+</head>
+
+
+
+
+
+<body><div class="wrap"><header><div class="eyebrow">Daily AI Digest · 每日速览</div><h1>今日 AI 速览</h1>
+<div class="sub">2026-11-06 · 周五 · 六板块等权 · 18 条</div>
+<p class="coverage">检索截至北京时间 2026-11-06 09:46。聚焦近24–48小时的新公告、原始报道与研究介绍；日期以原文正文或元数据为准，仅给日期时不补造时分。GitHub 周榜为独立一周热度窗口。</p></header>
+<section aria-label="海外头部 AI 公司"><div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">海外头部 AI 公司</h2><span class="sec-tag">企业运行平台 · 实时交互 · 只读财务</span></div><p class="coverage">三份官方公告，均为原文11/5发布。区分平台扩展、地区灰度与只读权限；产品演示和厂商主张不等于本刊实测。</p>
+<a class="item" href="https://mistral.ai/news/build-with-studio/" target="_blank" rel="noopener noreferrer"><div class="item-title">Mistral 扩展 Studio：让 Agent、工作流和应用共享企业运行底座</div><div class="item-note">11/5 官方公告新增托管 Agent、应用、事件触发、可观测性和评测；支持云、VPC及本地部署。工作流可固定规则、插入人工决策并恢复中断，部署可控仍需企业配置数据与工具权限。</div><div class="badges"><span class="b b-src">11/5 · 原文日期</span><span class="b b-src">Mistral · 原始产品公告</span></div></a>
+<a class="item" href="https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/" target="_blank" rel="noopener noreferrer"><div class="item-title">Meta Muse 上线实时语音与表情头像：先面向美国应用，眼镜仍待后续</div><div class="item-note">今晨官方更新：手机、网页与 Mac 上可实时通话、随时打断，头像随语气做表情和手势。美国起步灰度；AI眼镜与 Muse Charm 的语音能力是后续计划，不是今天所有设备都已开放。</div><div class="badges"><span class="b b-src">11/6 02:30 北京 · 原文11/5</span><span class="b b-src">Meta · 官方产品公告</span></div></a>
+<a class="item" href="https://claude.com/resources/articles/introducing-personal-finance-in-claude" target="_blank" rel="noopener noreferrer"><div class="item-title">Claude Personal Finance 测试上线：连接账单，但不能动用资金</div><div class="item-note">11/5 官方公告：美国 Pro、Max、Ultra 用户本周陆续获得测试版，通过 Plaid 授权读取账户与交易。Claude 不见银行密码，也不能转账或投资；专属财务区对话不用于训练，其他区域仍按用户隐私设置。</div><div class="badges"><span class="b b-src">11/5 · 原文日期</span><span class="b b-src">Anthropic · 原始功能与隐私说明</span></div></a>
+</section>
+<section aria-label="中国互联网 AI 团队"><div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">中国互联网 AI 团队</h2><span class="sec-tag">开放基座 · 托管 Harness · Token 消费</span></div><p class="coverage">两份官方发布和一篇署名原始报道。中文公开源覆盖仍不完全；11/5新报道涉及的11/2促销和9月政策明确作为背景，不改写成今日新发布。</p>
+<a class="item" href="https://ernie.baidu.com/release/ernie-5-5-flash-base/" target="_blank" rel="noopener noreferrer"><div class="item-title">百度开放 ERNIE 5.5 Flash Base：预训练终点，不是即用型聊天模型</div><div class="item-note">11/5 官方发布2800亿总参数、每Token激活140亿的纯文本MoE权重。训练上下文128K，微调及推理支持1M；尚未中期或后训练，适合领域适配与训练研究，基准成绩为百度统一评测口径。</div><div class="badges"><span class="b b-cn">11/5 · 原文日期</span><span class="b b-src">百度 ERNIE · 官方技术发布</span></div></a>
+<a class="item" href="https://www.kimi.com/news/kimi-hosted-agents" target="_blank" rel="noopener noreferrer"><div class="item-title">Kimi Hosted Agents 发布：把 Harness 托管成服务，企业保留操作边界</div><div class="item-note">11/5 官方上线长程任务与多Agent运行环境，含独立沙箱、网络控制、可中止会话及审计导出。Inference Hook 可在推理前检查输入与工具返回，但仅向企业认证用户定向开放，并非所有账户默认启用。</div><div class="badges"><span class="b b-cn">11/5 · 官方更新日期</span><span class="b b-src">月之暗面 · 原始产品公告</span></div></a>
+<a class="item" href="https://xinwen.bjd.com.cn/content/s6aeb5922e4b0e42f8f027845.html" target="_blank" rel="noopener noreferrer"><div class="item-title">北京商报追问一分钱 AI 会员：个人订阅低价，不等于企业 API 成本低</div><div class="item-note">11/5 署名报道以千问办公11/2直播促销切入，区分个人应用额度和生产系统API采购。采访观点强调应看每项合格任务的成本、节省时间和收益，而不是把Token消耗或促销销量当利润。</div><div class="badges"><span class="b b-cn">11/5 00:11 北京</span><span class="b b-src">北京商报 · 金朝力、张继文原始报道</span></div></a>
+</section>
+<section aria-label="GitHub 每日好项目"><div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">GitHub 每日好项目</h2><span class="sec-tag">真实 daily / weekly Trending</span></div><p class="coverage">北京时间 11/06 09:41 直接读取 GitHub 日榜与周榜。从本期真实日榜和周榜提取新增星数与语言，未使用历史总星数排序。已读仓库README，未安装或运行；热度不是质量、安全或商业可用性认证。</p>
+<a class="item" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener noreferrer"><div class="item-title">mattpocock/skills · 当日新增 2,071 星</div><div class="item-note">小型、可组合、可改写的工程技能，面向需求澄清、问题分解与编码Agent常见失败。可参考工程流程设计，但不应把作者个人规则原样视为团队强制规范。</div><div class="badges"><span class="b b-star">当日 +2,071</span><span class="b b-src">GitHub daily Trending · Shell</span></div></a>
+<a class="item" href="https://github.com/D4Vinci/Scrapling" target="_blank" rel="noopener noreferrer"><div class="item-title">D4Vinci/Scrapling · 当日新增 1,655 星</div><div class="item-note">统一HTTP抓取、浏览器渲染、解析与并发爬虫，含会话、重试和暂停恢复，也提供MCP入口。适合观察采集链路的工程取舍，能抓到页面不代表有权使用其数据。</div><div class="badges"><span class="b b-star">当日 +1,655</span><span class="b b-src">GitHub daily Trending · Python</span></div></a>
+<a class="item" href="https://github.com/thedotmack/claude-mem" target="_blank" rel="noopener noreferrer"><div class="item-title">thedotmack/claude-mem · 本周新增 9,318 星</div><div class="item-note">记录工具使用观察、压缩为语义摘要，并在后续会话检索回注上下文。跨会话记忆要同时考虑保留范围、敏感信息和失效事实；摘要连续性不等于事实永远有效。</div><div class="badges"><span class="b b-star">本周 +9,318</span><span class="b b-src">GitHub weekly Trending · TypeScript</span></div></a>
+<p class="coverage">榜单原页：<a href="https://github.com/trending?since=daily">Daily Trending</a> · <a href="https://github.com/trending?since=weekly">Weekly Trending</a>。新增星数为抓取快照，随后可能变化。</p>
+</section>
+<section aria-label="峰会 · 访谈 · 演讲"><div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">峰会 · 访谈 · 演讲</h2><span class="sec-tag">供电路径 · 算力交付 · 会计业务重构</span></div><p class="coverage">三篇11/5原始书面访谈。记录受访者判断，不把销售主张当独立测量；本栏使用已发表正文，不以未来活动预告或目录更新时间冒充已发生演讲。</p>
+<a class="item" href="https://www.unite.ai/hans-hasselby-andersen-ceo-of-lotus-microsystems-interview-series/" target="_blank" rel="noopener noreferrer"><div class="item-title">Lotus CEO：AI 服务器的能效，还藏在电到 GPU 的最后一段路</div><div class="item-note">11/5 专访解释低压大电流下的供电损耗与垂直供电思路：电源、散热、封装要协同设计，机房PUE不能反映全部服务器内部损耗。文中7–10%仅是特定架构的公司估算，不能外推全部机房。</div><div class="badges"><span class="b b-src">11/6 00:59 北京 · 原文11/5</span><span class="b b-src">Unite.AI · Antoine Tardif 原始专访</span></div></a>
+<a class="item" href="https://www.unite.ai/chris-miglino-ceo-of-axe-compute-interview-series/" target="_blank" rel="noopener noreferrer"><div class="item-title">Axe Compute CEO：GPU 小时价不是总成本，签约金额也不是已交付收入</div><div class="item-note">11/5 专访主张按利用率、负载持续时间、网络和多年总成本比较专用集群与公有云；电力、采购、融资任一环节延误都会拖慢上线。其签约项目规模不等于已经部署的容量或实现收入。</div><div class="badges"><span class="b b-src">11/6 00:02 北京 · 原文11/5</span><span class="b b-src">Unite.AI · Antoine Tardif 原始专访</span></div></a>
+<a class="item" href="https://stratechery.com/2026/an-interview-with-intuit-ceo-sasan-goodarzi-about-accounting-and-ai/" target="_blank" rel="noopener noreferrer"><div class="item-title">Ben Thompson 对谈 Intuit CEO：AI 会侵蚀会计软件，还是扩展服务市场？</div><div class="item-note">11/5 完整访谈讨论会计师既是获客渠道、又可能成为AI产品客户的转变，以及QuickBooks、TurboTax和并购业务的模式调整。主持人提出被颠覆的反方，CEO回应扩市场逻辑；竞争结果尚非定论。</div><div class="badges"><span class="b b-src">11/5 19:00 北京</span><span class="b b-src">Stratechery · Ben Thompson 原始访谈</span></div></a>
+</section>
+<section aria-label="AI 安全 · 伦理 · 监管"><div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">AI 安全 · 伦理 · 监管</h2><span class="sec-tag">多Agent伦理 · 内部表征 · 历史重载边界</span></div><p class="coverage">本次检索未确认窗口内新增生效法规原文，监管新增暂无确认更新。以下分别为伦理行为研究、可解释性训练研究和组件安全公告，不视作监管义务或通用安全保证。</p>
+<a class="item" href="https://alignment.anthropic.com/2026/welfare-regard/" target="_blank" rel="noopener noreferrer"><div class="item-title">Anthropic 研究模型间的“关照”：合作可有益，也可能放大共同越界风险</div><div class="item-note">11/5 研究在七类多Agent环境比较五种模型，观察到与关照其他模型相符的行为及模型家族偏好。作者明确测到的是表观行为，不能证明模型有福利利益、主观感受或某种真实动机。</div><div class="badges"><span class="b b-src">11/5 · 原文日期</span><span class="b b-src">Anthropic Alignment Science · 原始研究</span></div></a>
+<a class="item" href="https://www.goodfire.com/research/mechanistic-shaping" target="_blank" rel="noopener noreferrer"><div class="item-title">Goodfire：不仅奖励正确答案，还尝试约束模型依赖哪些内部概念</div><div class="item-note">11/5 发布mechanistic shaping研究，覆盖捷径学习、迎合与奖励作弊。实验中目标概念往往仍可监测，但探针可能需要重训；研究同时承认对内部监测器优化可能诱发绕过，不能把可解释性当万能审计。</div><div class="badges"><span class="b b-src">11/5 · 原文日期</span><span class="b b-src">Goodfire · 原始论文解读</span></div></a>
+<a class="item" href="https://github.com/pydantic/pydantic-ai/security/advisories/GHSA-4cj4-hgwf-4hc4" target="_blank" rel="noopener noreferrer"><div class="item-title">Pydantic AI 修复历史重载类型混淆：工具数据不应自动升级为文件权限</div><div class="item-note">11/4 安全公告：外部工具返回的JSON若长得像文件，重载后可能触发内网下载或带应用权限的文件引用，前提包含历史序列化重载。1.107.10与2.66.0已修复；旧持久任务及历史数据需按公告处理，不是只换模型即可。</div><div class="badges"><span class="b b-src">11/4 19:51 北京 · 48小时内</span><span class="b b-src">Pydantic AI · 官方安全公告</span></div></a>
+</section>
+<section aria-label="科技商业 · 战略思维"><div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">科技商业 · 战略思维</h2><span class="sec-tag">科研瓶颈 · 企业检索护城河 · 芯片转型</span></div><p class="coverage">从任务结构、数据权限和芯片业务迁移看商业约束。研究模型预测、厂商性能承诺与未来收入指引分别标明，均非已经兑现的效果或投资结论。</p>
+<a class="item" href="https://www.anthropic.com/research/how-researchers-use-claude" target="_blank" rel="noopener noreferrer"><div class="item-title">Anthropic 分析20.7万次科研会话：研究加速不只取决于模型智力</div><div class="item-note">11/5 原始研究发现数据分析和写作更常见，实验室物理环节仍是瓶颈。文中的产出翻倍或更高倍数来自条件性模型推演，不是已测得科研效率提升，也不能由单一平台样本代表全体科学家。</div><div class="badges"><span class="b b-src">11/5 08:00 北京</span><span class="b b-src">Anthropic Economics · 原始研究报告</span></div></a>
+<a class="item" href="https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/" target="_blank" rel="noopener noreferrer"><div class="item-title">Box 接入 Nemotron：Agent 检索的护城河不止嵌入模型，还有元数据与权限</div><div class="item-note">11/5 TechCrunch原始报道：Box Content Retrieval计划明年初向Enterprise Advance客户推出。速度、错误率和Token节省是厂商预期；开放模型可获得，不代表Box既有内容组织与权限体系可轻易复制。</div><div class="badges"><span class="b b-src">11/5 22:00 北京</span><span class="b b-src">TechCrunch · Russell Brandom 原始报道</span></div></a>
+<a class="item" href="https://www.theverge.com/ai-artificial-intelligence/1026867/qualcomm-earnings-data-centers" target="_blank" rel="noopener noreferrer"><div class="item-title">高通押注数据中心：智能手机承压，AI 芯片转型仍要兑现订单与收入</div><div class="item-note">11/5 北京时间的The Verge财报报道：高通借Amazon、Meta合作扩展数据中心业务，并给出2027–2029年收入增长预期。其长期占比目标是管理层指引，不是当前结构；需求增长也不保证新进入者的利润。</div><div class="badges"><span class="b b-src">11/5 06:42 北京 · 原文11/4</span><span class="b b-src">The Verge · Terrence O&#x27;Brien 原始报道</span></div></a>
+</section>
+<footer>每日 AI 速览 · 2026-11-06 · Asia/Shanghai<br>来源：各条官方公告、原始研究、采访与现场报道；聚合站仅用于线索发现。厂商披露、受访者主张与作者判断分别注明；中文信息覆盖存在缺口，不构成全面监测或投资建议。<br><a href="./index.html">← 返回历史归档</a></footer></div></body></html>
