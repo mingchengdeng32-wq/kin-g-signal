@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>每日 AI 速览 · 2026-11-17</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&amp;family=Noto+Serif+SC:wght@500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#07080F; --surface:rgba(255,255,255,.042); --surface-hover:rgba(255,255,255,.075);
+  --border:rgba(201,163,71,.18); --border-subtle:rgba(255,255,255,.07);
+  --gold:#C9A347; --gold-light:#E8C76A; --gold-dim:rgba(201,163,71,.25);
+  --bull:#15B77D; --bear:#E04455; --ice:#4A9EDB; --amber:#F5A623;
+  --text:#E2D9CC; --text-muted:rgba(226,217,204,.55); --text-dim:rgba(226,217,204,.35);
+  --serif:'Noto Serif SC',serif; --sans:'Noto Sans SC',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.6;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -10%,rgba(201,163,71,.08),transparent);}
+.wrap{max-width:860px;margin:0 auto;padding:clamp(2rem,5vw,4.5rem) clamp(1.1rem,4vw,2rem) 5rem;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.6rem;margin-bottom:2.4rem;}
+.eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2rem,6vw,3.1rem);line-height:1.1;margin:.5rem 0 .7rem;
+  background:linear-gradient(180deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{color:var(--text-muted);font-size:.92rem;font-family:var(--mono);}
+section{margin-top:2.6rem;}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;margin-bottom:1.1rem;}
+.sec-num{font-family:var(--mono);font-size:.8rem;color:var(--gold-dim);border:1px solid var(--gold-dim);
+  border-radius:4px;padding:.1rem .45rem;color:var(--gold);}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--gold-light);}
+.sec-tag{margin-left:auto;font-family:var(--mono);font-size:.68rem;color:var(--text-dim);}
+.item{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--border-subtle);
+  border-left:2px solid var(--gold-dim);border-radius:8px;padding:.85rem 1.05rem;margin-bottom:.6rem;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;}
+.item:hover{background:var(--surface-hover);border-left-color:var(--gold);transform:translateX(3px);}
+.item-title{font-weight:500;font-size:1.02rem;color:var(--text);}
+.item-title .cn{color:var(--gold-light);}
+.item-note{color:var(--text-muted);font-size:.86rem;margin-top:.25rem;}
+.badges{margin-top:.45rem;display:flex;gap:.4rem;flex-wrap:wrap;}
+.b{font-family:var(--mono);font-size:.66rem;padding:.08rem .4rem;border-radius:4px;letter-spacing:.03em;}
+.b-src{background:rgba(255,255,255,.05);color:var(--text-dim);}
+.b-hot{background:var(--bear-dim,rgba(224,68,85,.15));color:var(--bear);}
+.b-cn{background:rgba(224,68,85,.13);color:#ff7a88;}
+.b-star{background:rgba(201,163,71,.14);color:var(--gold-light);}
+footer{margin-top:3.5rem;padding-top:1.4rem;border-top:1px solid var(--border-subtle);
+  color:var(--text-dim);font-size:.78rem;font-family:var(--mono);line-height:1.8;}
+footer a{color:var(--text-muted);}
+.disc{color:var(--amber);}
+.coverage{color:var(--text-muted);font-size:.82rem;margin:.65rem 0 1rem;}
+.coverage a{color:var(--gold-light)}
+
+.item,.coverage{overflow-wrap:anywhere}
+@media(max-width:600px){.sec-head{flex-wrap:wrap;gap:.4rem .65rem}.sec-tag{width:100%;margin-left:0;padding-left:2.6rem}.item:hover{transform:none}}
+</style>
+</head>
+<body><div class="wrap"><header><div class="eyebrow">Daily AI Digest · 每日速览</div><h1>今日 AI 速览</h1>
+<div class="sub">2026-11-17 · 周二 · 六板块等权 · 18条</div>
+<p class="coverage">搜集截至北京时间 2026-11-17 11:19 +0800，聚焦此前24–48小时。原文只有日历日期时不补造时分；产品发布、报道发布、状态更新与活动排期分别标注。峰会按本窗口活动日期纳入，不把较早公布的议程冒充今日新闻；GitHub周榜使用独立一周窗口。</p></header>
+<section aria-label="海外头部 AI 公司"><div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">海外头部 AI 公司</h2><span class="sec-tag">Global AI</span></div><p class="coverage">两项产品更新与一项最新服务状态。Google、OpenAI依据11月16日原文；Claude依据今天的官方事件更新。未核实到可补充的Meta、xAI新发布，相关方向今日无已核实更新。</p>
+<a class="item" href="https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/" rel="noopener noreferrer" target="_blank"><div class="item-title">Google Ask Maps扩展行程与预约：从找地点，走向替用户协调安排</div><div class="item-note">11月16日官方宣布可生成多日行程、查看路线实时信息、检索收藏地点，并寻找美容、宠物及维修服务的预约时段，部分场景可致电商家。功能与地区覆盖不同，不能把全球路线更新理解为所有地区都已开放自动预约。</div><div class="badges"><span class="b b-src">11/16 22:00 北京时间 · 公告发布</span><span class="b b-src">Google Maps · 产品负责人原文</span></div></a>
+<a class="item" href="https://help.openai.com/en/articles/9624314-model-release-notes" rel="noopener noreferrer" target="_blank"><div class="item-title">OpenAI开放儿童性虐待材料图像分类器：免费API面向获批机构</div><div class="item-note">模型更新记录新增图像分类器，帮助经过验证的机构筛查疑似儿童性虐待材料，包括AI生成内容。输出分数用于训练有素的审核人员安排优先级，不替代人工判断；申请、验证、接入培训和条款接受仍是使用前提。</div><div class="badges"><span class="b b-src">11/16 · 官方更新日期，未提供时分</span><span class="b b-src">OpenAI Help Center · 模型更新记录</span></div></a>
+<a class="item" href="https://status.claude.com/incidents/b5cq662qf2wm" rel="noopener noreferrer" target="_blank"><div class="item-title">Claude Meetings尚未完全恢复：企业客户重开，Team新增入会仍暂停</div><div class="item-note">官方今天10:02更新称，测试版需求超预期，已采取缓解措施。Enterprise客户重新启用，但加入会议可能变慢；Team客户把Claude加入新会议及自动入会仍暂停。已有会议和其他功能此前注明不受影响，本条不把部分恢复写成故障结束。</div><div class="badges"><span class="b b-src">11/17 10:02 北京时间 · 事件状态更新</span><span class="b b-src">Anthropic · Claude官方状态页</span></div></a>
+</section>
+<section aria-label="中国互联网 AI 团队"><div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">中国互联网 AI 团队</h2><span class="sec-tag">China AI</span></div><p class="coverage">阿里、腾讯各一份官方模型公告，另纳入豆包工作的新报道。价格与性能按原文条件呈现；豆包的确切首次上线时刻未披露，只确认报道发布日。DeepSeek、Kimi、智谱在本次检索中未取得可纳入的新发布原文，相关方向今日无已核实更新。</p>
+<a class="item" href="https://www.alibabacloud.com/en/press-room/alibaba-unveils-qwen4-max?_p_lc=1" rel="noopener noreferrer" target="_blank"><div class="item-title">Qwen4-Max正式发布：2.4T总参数、百万上下文，主攻长任务与专业交付</div><div class="item-note">阿里公告确认原生视觉、每token激活710亿参数，并已提供API与Token Plan访问。官方自有Work360评测称，High推理模式较上代少用35% token、平均单任务成本降约60%；这些是厂商测评，不是本日报复测。小尺寸开放权重模型仍属后续计划。</div><div class="badges"><span class="b b-cn">11/16 · 官方公告日期</span><span class="b b-src">Alibaba Cloud · 官方新闻稿</span></div></a>
+<a class="item" href="https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/" rel="noopener noreferrer" target="_blank"><div class="item-title">腾讯Hy4 flash发布：用较小激活规模争取日常工作流性价比</div><div class="item-note">官方称总参数2240亿（含640亿Engram参数）、激活120亿，支持多模态输入和百万上下文；公告列每百万输入／输出token约0.070／0.281美元。WorkIndex任务成本优势和超过150 token/秒的解码速度均为厂商测试口径，不能直接当作所有地区、套餐和负载的保证。</div><div class="badges"><span class="b b-cn">11/16 22:27 北京时间 · 公告发布</span><span class="b b-src">Tencent · 官方英文公告</span></div></a>
+<a class="item" href="https://www.bjnews.com.cn/detail/1794813894129825.html" rel="noopener noreferrer" target="_blank"><div class="item-title">豆包工作上线专业“工作台”：把技能、工具与任务入口预先组合</div><div class="item-note">新京报11月16日据官方介绍报道，首批覆盖金融、医疗、教育、创意设计等21个专业场景，也允许创建并分享自定义工作台。金融数据插件需用户授权相关终端账号；这不是免费取得第三方数据的通行证。报道说“近日上线”，并未公开精确首发日期或独立效率测试。</div><div class="badges"><span class="b b-cn">11/16 15:42 北京时间 · 报道发布，首发时刻未披露</span><span class="b b-src">新京报 · 据豆包工作官方介绍的原始报道</span></div></a>
+</section>
+<section aria-label="GitHub 每日好项目"><div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">GitHub 每日好项目</h2><span class="sec-tag">Real Trending</span></div><p class="coverage">直接读取本次daily与weekly原榜并留存快照。新增星数是各榜对应窗口的热度，不是历史总星数；日榜和周榜不相加。项目说明核对仓库首页，未替用户安装或宣称完成安全评测。</p>
+<a class="item" href="https://github.com/ag-ui-protocol/ag-ui" rel="noopener noreferrer" target="_blank"><div class="item-title">ag-ui-protocol/ag-ui · 当日新增791星</div><div class="item-note">日榜第1，TypeScript。为智能体与前端应用定义交互协议，面向流式事件、状态与人机交互；它解决的是交互连接方式，不替代业务权限。与昨天相比，本条报告的是今天榜单重新测得的新增热度。</div><div class="badges"><span class="b b-star">11/17 11:11 北京时间 · 原榜抓取</span><span class="b b-src">GitHub daily Trending · TypeScript</span></div></a>
+<a class="item" href="https://github.com/backnotprop/plannotator" rel="noopener noreferrer" target="_blank"><div class="item-title">backnotprop/plannotator · 当日新增696星</div><div class="item-note">日榜第2，TypeScript。让用户在界面上标注和审阅AI编码计划、分享给团队，并把反馈送回编码智能体。适合关注“先审计划再执行”的协作环节，但计划被接受不等于代码质量或后续动作已自动获得授权。</div><div class="badges"><span class="b b-star">11/17 11:11 北京时间 · 原榜抓取</span><span class="b b-src">GitHub daily Trending · TypeScript</span></div></a>
+<a class="item" href="https://github.com/GoogleChrome/modern-web-guidance-src" rel="noopener noreferrer" target="_blank"><div class="item-title">GoogleChrome/modern-web-guidance-src · 本周新增6,542星</div><div class="item-note">周榜第1，TypeScript。Google Chrome团队维护现代Web开发指导，帮助编码智能体使用较新的浏览器实践。知识更新与实际浏览器兼容性仍要分开检查；周榜增长是热度，不是生产部署的验收证据。</div><div class="badges"><span class="b b-star">11/17 11:11 北京时间 · 原榜抓取</span><span class="b b-src">GitHub weekly Trending · TypeScript</span></div></a>
+<p class="coverage">原榜：<a href="https://github.com/trending?since=daily">Daily Trending</a> · <a href="https://github.com/trending?since=weekly">Weekly Trending</a>。新增星数随榜单刷新变化。</p>
+</section>
+<section aria-label="峰会 · 访谈 · 演讲"><div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">峰会 · 访谈 · 演讲</h2><span class="sec-tag">Talks &amp; Events</span></div><p class="coverage">本栏三条均为11月16–17日活动的主办方议程，不冒充现场报道或回放精读。本次未核实到适合另补的新访谈逐字稿，访谈方向今日无已核实更新；活动排期、已披露议题和实际讨论成果分开呈现。</p>
+<a class="item" href="https://live.handelsblatt.com/en/event/handelsblatt-ai-summit/program/" rel="noopener noreferrer" target="_blank"><div class="item-title">Handelsblatt AI Summit：从零散试点，转向企业的智能体运营模式</div><div class="item-note">慕尼黑峰会11月16–17日以“Agents &amp; Agency”为主题。主办方把落地案例、规模化、治理和安全放在TODAY舞台，未来技术与数据、平台、技能准备放在TOMORROW舞台。可关注谁负责跨部门流程、如何证明持续价值；这是一份议程观察，不是已经验证的转型成果。</div><div class="badges"><span class="b b-src">11/16–17 · 慕尼黑当地活动日期</span><span class="b b-src">Handelsblatt Live · 主办方正式议程</span></div></a>
+<a class="item" href="https://www.swissaisummit.com/" rel="noopener noreferrer" target="_blank"><div class="item-title">Swiss AI Summit苏黎世场：把模型讨论放到金融、制造与公共部门现场</div><div class="item-note">官网确认11月16日在苏黎世Kunsthaus举行，行业方向包括金融保险、工业制造、网络安全、生命科学及公共部门。议题重点是受约束环境中的部署、扩展和治理；嘉宾与合作伙伴名单不等于已交付项目，官网动态计数显示为零的字段也不据此当作真实到场人数。</div><div class="badges"><span class="b b-src">11/16 · 苏黎世当地活动日期</span><span class="b b-src">Swiss AI Summit · 主办方官网</span></div></a>
+<a class="item" href="https://forum.openai.com/public/events/protecting-children-online-harnessing-ai-tools-to-fight-against-child-exploitation-gfxwhfvkjb" rel="noopener noreferrer" target="_blank"><div class="item-title">OpenAI Forum儿童保护活动：政策、调查与工具培训分别设场</div><div class="item-note">华盛顿闭门活动安排政策制定者、执法人员、技术与儿童保护机构交流，午后培训只面向儿童安全调查人员。议程区分跨机构讨论与受限调查培训；不能从活动存在推定某工具已适合所有机构，也没有据议程编造嘉宾发言或侦办效果。</div><div class="badges"><span class="b b-src">11/16 22:30–11/17 03:00 北京时间 · 活动排期</span><span class="b b-src">OpenAI Forum · 主办方活动页及议程</span></div></a>
+</section>
+<section aria-label="AI 安全 · 伦理 · 监管"><div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">AI 安全 · 伦理 · 监管</h2><span class="sec-tag">Safety &amp; Governance</span></div><p class="coverage">本窗口可核实的更新集中在独立评估、内容来源标识和青少年使用观点。未核实到可补充的新立法原文，新增法律方向今日无已核实更新；企业技术措施、试点协议和作者政策主张不写成法律要求。</p>
+<a class="item" href="https://www.apolloresearch.ai/blog/pilot-towards-embedded-evaluations" rel="noopener noreferrer" target="_blank"><div class="item-title">Apollo启动OpenAI驻场评估试点：能公开边界，不等于获得无限访问</div><div class="item-note">Apollo宣布六人团队驻场四个月，评估训练、测试和内部部署中模型是否试图破坏控制机制。它明确说试点尚未满足理想的完整访问与披露标准：访问限于约定范围，部分材料仍可因安全、技术或知识产权原因拒绝；公开说明这些限制的权利，是外界判断结论可信度的基础。</div><div class="badges"><span class="b b-src">11/16 · 评估方公告日期</span><span class="b b-src">Apollo Research · 评估方一手说明</span></div></a>
+<a class="item" href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener noreferrer" target="_blank"><div class="item-title">Anthropic扩展旧版Claude文本水印：采样参数可能影响标识</div><div class="item-note">11月16日平台记录称，Opus 4.6、Opus 4.5、Sonnet 4.5和Haiku 4.5在受支持平台生成的文本带有其文本水印；若temperature、top_p或top_k采用非默认值，文本可能不带水印。不要把它泛化到所有Claude型号、平台和采样设置，也不能凭无水印就证明文本由人类写成。</div><div class="badges"><span class="b b-src">11/16 · 官方平台更新日期</span><span class="b b-src">Anthropic · Claude Platform更新记录</span></div></a>
+<a class="item" href="https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/what-teenagers-really-think-about-online-safety-and-ai/" rel="noopener noreferrer" target="_blank"><div class="item-title">ParentZone谈青少年AI安全：限制之外，还要补家长与孩子的判断能力</div><div class="item-note">ParentZone负责人在Google博客引用英国6000名青少年的调查：77%自述经常或总会考虑线上内容是否可信，81%愿就虚假信息、诈骗或网络欺凌向家长求助。作者主张把家长支持、媒介素养和适龄使用放在一起；这些是英国样本的自述及作者观点，不代表全球实际识骗能力或政策效果。</div><div class="badges"><span class="b b-src">11/16 16:00 北京时间 · 文章发布</span><span class="b b-src">Google博客 · ParentZone CEO Vicki Shotbolt署名文章</span></div></a>
+</section>
+<section aria-label="科技商业 · 战略思维"><div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">科技商业 · 战略思维</h2><span class="sec-tag">Business &amp; Strategy</span></div><p class="coverage">企业收入结构、算力融资风险、宏观生产率三层观察。两篇美联储演讲关注点不同，分别讨论金融系统脆弱性与经济情景；均是讲话分析，不是收益预测、投资建议或新的货币政策决定。</p>
+<a class="item" href="https://www.prnewswire.com/news-releases/baidu-announces-third-quarter-2026-results-302940183.html" rel="noopener noreferrer" target="_blank"><div class="item-title">百度Q3：AI云增速强，但集团收入仍承压，转型不能只看一个增长数字</div><div class="item-note">百度公布未经审计的三季度结果：集团收入308亿元、同比降1%；一般业务收入250亿元、同比增1%。AI云基础设施收入82亿元、同比增94%，而一般业务在线营销收入119亿元、同比降22%。AI增长与旧业务压力同时存在，不能把一个子业务增速当作集团增速；来源是公司自行发布的业绩稿。</div><div class="badges"><span class="b b-src">11/16 17:00 北京时间 · 公司业绩稿发布</span><span class="b b-src">Baidu, Inc. · PR Newswire原始分发稿</span></div></a>
+<a class="item" href="https://www.federalreserve.gov/newsevents/speech/barr20261116a.htm" rel="noopener noreferrer" target="_blank"><div class="item-title">Barr谈AI资本链：不只盯直接债务，还要追踪杠杆与共同风险暴露</div><div class="item-note">美联储理事在米兰AI金融会议演讲中讨论算力投资、交易模型同质化和网络风险。他认为目前直接债务损失较有限，但股价反转、对冲基金杠杆、共同交易策略可能相互放大；GPU折旧及电力网络资产能否另作他用也需持续观察。这是风险传导分析，不是宣布泡沫已经破裂。</div><div class="badges"><span class="b b-src">11/16 · 官方演讲日期</span><span class="b b-src">Federal Reserve · Michael S. Barr完整讲稿</span></div></a>
+<a class="item" href="https://www.federalreserve.gov/newsevents/speech/warsh20261116a.htm" rel="noopener noreferrer" target="_blank"><div class="item-title">Warsh谈AI与生产率：广泛受益、岗位冲击和投资失望都应进入预案</div><div class="item-note">在生产率与就业专题会议开场讲话中，他把AI视为可能改变创意生成速度的通用技术，同时强调人类判断和责任不可替代。讲话列出生产率普惠、增长伴随就业摩擦、投入回报不及预期三类情景，并明确这些是用于准备的示意情景，不是美联储预测；企业同样不宜只用单一乐观情景做预算。</div><div class="badges"><span class="b b-src">11/16 · 官方演讲日期</span><span class="b b-src">Federal Reserve · Kevin Warsh完整开场讲稿</span></div></a>
+</section>
+<footer>每日 AI 速览 · 2026-11-17 · Asia/Shanghai<br/>来源：逐条链接至官方公告、状态页、技术记录、评估方说明、公司原始业绩稿、主办方议程或署名原始文章。聚合站仅用于发现线索，未作事实依据。<br/>厂商自测、样本自述、政策主张与已验证事实分别呈现；中文覆盖仍有缺口，不代表全面监测。内容不构成投资或法律意见。<br/><a href="./index.html">← 返回历史归档</a></footer></div></body></html>
